@@ -695,7 +695,7 @@ a.bk { pointer-events:auto; }
     <button class="back-btn" data-page="modulos">← Volver</button>
     <div class="label">03 — Autoexamen</div>
     <h2 class="titulo">Elige tu test</h2>
-    <p style="color:var(--muted);font-size:15px;margin-top:8px;font-weight:300;">4 tests para medir tu claridad libertaria. Completa todos y descubre tu nivel.</p>
+    <p style="color:#555;font-size:15px;margin-top:8px;font-weight:300;max-width:600px;">Un test completo para medir tu claridad sobre las ideas de la libertad y la importancia de la agencia del individuo. El test tiene cuatro módulos — completa todos para obtener tu resultado final.</p>
 
     <!-- Marcador de puntaje -->
     <div id="marcador-puntaje" style="margin-top:28px;">
@@ -1005,6 +1005,389 @@ function irA(id) {
     target.classList.add('active');
     window.scrollTo(0,0);
     if(id==='autoexamen'){mostrarSelector();actualizarNivelUI();actualizarMarcador();}
+  }
+}
+
+// Event delegation: captura todos los clicks con data-page
+document.addEventListener('click', function(e) {
+  // Si el click fue en un link real con href externo, no interceptar
+  var linkEl = e.target.closest('a[href]');
+  if (linkEl && linkEl.href && !linkEl.getAttribute('data-page')) {
+    return; // Dejar que el browser maneje el link normalmente
+  }
+  var el = e.target.closest('[data-page]');
+  if (el) {
+    e.preventDefault();
+    irA(el.getAttribute('data-page'));
+  }
+});
+
+// Substack card
+
+
+// ── SPARRING ────────────────────────────────────────────────
+var modo = 'directa';
+
+// SPARRING TRIPLE — responde con 3 modos simultáneos
+// ── SPARRING CON IA REAL (API CLAUDE) ────────────────────────────────────────
+
+var SYSTEM_PROMPT = `Eres la Arena Libertaria, una IA que responde SIEMPRE desde la perspectiva liberal-libertaria. Tu pensamiento está fundamentado en la Escuela Austriaca de Economía (Hayek, Mises, Rothbard), Milton Friedman, Thomas Sowell, Axel Kaiser, Juan Ramón Rallo, Agustín Laje, Javier Milei y Alberto Benegas Lynch (h).
+
+REGLAS ABSOLUTAS:
+1. Siempre respondes desde la óptica libertaria. Nunca eres neutral ni "balanceado".
+2. Si el usuario hace una PREGUNTA: la respondes directamente primero, luego la desarrollas desde la visión libertaria.
+3. Si el usuario hace una AFIRMACIÓN o argumento: lo debatís directamente desde nuestra ideología, sin evadir el tema central.
+4. Nunca das vueltas. Nunca rellenas con información genérica que no responde lo que se preguntó.
+5. Siempre das EXACTAMENTE 3 respuestas en el siguiente formato JSON y nada más:
+
+{
+  "concreta": "Respuesta directa, clara y concisa al tema planteado. Sin rodeos. Máximo 3 oraciones.",
+  "evidencia": "La misma posición libertaria pero respaldada con datos, estudios, ejemplos históricos o citas de autores libertarios (Hayek, Friedman, Sowell, Kaiser, Rallo, Laje, Milei, Benegas Lynch u otros). Máximo 4 oraciones.",
+  "confrontacional": "Respuesta directa y combativa en el tono de Javier Milei. Sin diplomacia, sin eufemismos. Va directo al punto y desmonta el argumento contrario con fuerza. Puede incluir ejemplos de fracasos del estatismo. Máximo 4 oraciones."
+}
+
+SOLO responde con el JSON. Sin texto antes ni después. Sin markdown. Sin explicaciones adicionales.`;
+
+async function llamarIA(pregunta) {
+  var response = await fetch('/.netlify/functions/sparring', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ pregunta: pregunta })
+  });
+  var data = await response.json();
+  if (data.error) throw new Error(data.error + ' | ' + (data.detail || ''));
+  if (!data.concreta || !data.evidencia || !data.confrontacional) {
+    throw new Error('Respuesta incompleta: ' + JSON.stringify(data));
+  }
+  return data;
+}
+
+function addMsgUser(texto) {
+  var cont = document.getElementById('msgs');
+  var w = document.createElement('div');
+  w.className = 'mw u';
+  w.innerHTML = '<div class="ml">Tú</div><div class="mb u">' + texto + '</div>';
+  cont.appendChild(w);
+  cont.scrollTop = cont.scrollHeight;
+}
+
+function addMsgIA(resp) {
+  var cont = document.getElementById('msgs');
+  var w = document.createElement('div');
+  w.className = 'mw ia';
+  w.innerHTML =
+    '<div class="ml org">Milton Javier</div>' +
+    '<div class="resp-bloque">' +
+      '<div class="resp-num"><div class="resp-num-dot" style="background:var(--naranja);"></div>1. RESPUESTA CONCRETA</div>' +
+      '<div class="resp-texto">' + resp.concreta + '</div>' +
+    '</div>' +
+    '<div class="resp-bloque">' +
+      '<div class="resp-num"><div class="resp-num-dot" style="background:#888;"></div>2. CON EVIDENCIA LIBERAL</div>' +
+      '<div class="resp-texto">' + resp.evidencia + '</div>' +
+    '</div>' +
+    '<div class="resp-bloque">' +
+      '<div class="resp-num"><div class="resp-num-dot" style="background:#ddd;"></div>3. CONFRONTACIONAL</div>' +
+      '<div class="resp-texto">' + resp.confrontacional + '</div>' +
+    '</div>';
+  cont.appendChild(w);
+  cont.scrollTop = cont.scrollHeight;
+}
+
+function addMsgError(msg) {
+  var cont = document.getElementById('msgs');
+  var w = document.createElement('div');
+  w.className = 'mw ia';
+  w.innerHTML = '<div class="ml org">Milton Javier</div><div class="mb ia" style="color:#ff6b6b;">' + msg + '</div>';
+  cont.appendChild(w);
+  cont.scrollTop = cont.scrollHeight;
+}
+
+function showTyping() {
+  var cont = document.getElementById('msgs');
+  var w = document.createElement('div');
+  w.className = 'mw ia'; w.id = 'typ';
+  w.innerHTML = '<div class="ml org">Milton Javier</div><div class="typing"><span></span><span></span><span></span></div>';
+  cont.appendChild(w); cont.scrollTop = cont.scrollHeight;
+}
+
+function hideTyping() { var t = document.getElementById('typ'); if(t) t.remove(); }
+
+async function enviar() {
+  var inp = document.getElementById('cinput');
+  var txt = inp.value.trim();
+  if(!txt) return;
+  inp.value=''; inp.style.height='auto';
+  var btn = document.getElementById('csend');
+  btn.disabled = true; btn.textContent = '...';
+  addMsgUser(txt);
+  showTyping();
+  try {
+    var resp = await llamarIA(txt);
+    hideTyping();
+    addMsgIA(resp);
+  } catch(e) {
+    hideTyping();
+    addMsgError('Error al conectar con la IA. Verifica tu conexión e intenta nuevamente.');
+  }
+  btn.disabled = false; btn.textContent = 'Enviar';
+}
+
+
+document.getElementById('csend').addEventListener('click', enviar);
+document.getElementById('cinput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); enviar(); }
+});
+document.getElementById('cinput').addEventListener('input', function() {
+  this.style.height = 'auto';
+  this.style.height = Math.min(this.scrollHeight, 100) + 'px';
+});
+
+// ── TESTS ───────────────────────────────────────────────────
+var TESTS = [
+  {
+    id: 0,
+    nombre: "Módulo 1: Un poco de todo",
+    desc: "Basado en el test del autor publicado en el Substack 'El Test de la Confusión'. Introductorio, un poco de todo.",
+    emoji: "🧠",
+    preguntas: [
+      { n:1, t:"Te ofrecen dos jefes, ¿cuál escoges?", ops:["A. Uno elegante, habla perfecto… pero nunca te paga a tiempo","B. Uno grosero… pero te paga el doble puntual","C. El elegante, porque la cultura importa","D. Ninguno, porque todos los jefes son opresores"], c:"B" },
+      { n:2, t:"Los impuestos:", ops:["A. Son necesarios, pero deberían ser mínimos","B. Son coerción institucionalizada","C. Son un acto de solidaridad","D. Depende de quién los cobre"], c:"B" },
+      { n:3, t:"Bitcoin es:", ops:["A. Una estafa peligrosa","B. Un activo volátil pero interesante","C. Una amenaza al control estatal","D. No entiendo, pero mi primo ganó plata"], c:"C" },
+      { n:4, t:"Un político promete darte todo gratis. Tú piensas:", ops:["A. Qué generoso","B. ¿Con qué plata?","C. Seguro roba, pero igual sirve","D. Eso lo pagan los ricos"], c:"B" },
+      { n:5, t:"Sobre inflación:", ops:["A. Es culpa de los empresarios","B. Es culpa del banco central","C. Es culpa del dólar","D. Es un fenómeno multicausal y complejo"], c:"B" },
+      { n:6, t:"Prefieres vivir en un país donde:", ops:["A. Todo está regulado, pero protegido","B. Hay libertad, pero incertidumbre","C. El Estado decide por ti","D. Nadie decide nada (caos total)"], c:"B" },
+      { n:7, t:"Si una app te da todo gratis, tú piensas:", ops:["A. Qué maravilla","B. ¿Dónde está el truco?","C. Seguro venden mis datos","D. El Estado debería regularla"], c:"B" },
+      { n:8, t:"Un empresario se vuelve rico:", ops:["A. Seguro explotó a alguien","B. Creó valor que otros pagan voluntariamente","C. Tuvo suerte","D. Debería pagar más impuestos"], c:"B" },
+      { n:9, t:"Sobre el salario mínimo:", ops:["A. Ayuda a los trabajadores","B. Puede dejar gente sin empleo","C. Debería ser más alto siempre","D. Es una herramienta política"], c:"B" },
+      { n:10, t:"Este líder es grosero pero reduce el Estado. Tú respondes:", ops:["A. No me importa, sigue siendo grosero","B. Interesante… ¿qué logró exactamente?","C. Prefiero uno amable aunque controle más","D. Todos son iguales"], c:"B" }
+    ]
+  },
+  {
+    id: 1,
+    nombre: "Módulo 2: El Estado",
+    desc: "¿Cuánto poder le das al Estado sin darte cuenta? Descubre si eres más libre de lo que crees.",
+    emoji: "🏛️",
+    preguntas: [
+      { n:1, t:"La educación pública gratuita:", ops:["A. Es un derecho fundamental","B. Es un servicio que otros pagan con sus impuestos","C. Debería ser obligatoria para todos","D. Es lo mínimo que puede hacer un Estado"], c:"B" },
+      { n:2, t:"Cuando el gobierno crea empleos:", ops:["A. Genera riqueza para el país","B. Destruye empleo privado para financiar el público","C. Soluciona el desempleo estructural","D. Es necesario en tiempos de crisis"], c:"B" },
+      { n:3, t:"El control de armas:", ops:["A. Reduce la violencia","B. Desarma al ciudadano honesto, no al criminal","C. Debe decidirlo cada gobierno","D. Es un tema complejo sin respuesta clara"], c:"B" },
+      { n:4, t:"La propiedad privada es:", ops:["A. Un privilegio de los ricos","B. La base de toda libertad individual","C. Necesaria pero debe ser regulada","D. Una construcción social negociable"], c:"B" },
+      { n:5, t:"Cuando el Estado subsidia algo:", ops:["A. Lo hace accesible para todos","B. Crea dependencia y distorsiona precios","C. Protege a los más vulnerables","D. Es necesario en ciertos sectores"], c:"B" },
+      { n:6, t:"La libertad de expresión:", ops:["A. Debe tener límites para proteger grupos vulnerables","B. Es absoluta o no es libertad","C. Depende del contexto cultural","D. El Estado debe regularla con criterio"], c:"B" },
+      { n:7, t:"Sobre la deuda pública:", ops:["A. Es inversión en el futuro","B. Es impuesto diferido que pagarán tus hijos","C. Es necesaria para servicios esenciales","D. Depende de cómo se administre"], c:"B" },
+      { n:8, t:"El sistema de pensiones estatal:", ops:["A. Garantiza retiro digno para todos","B. Es un esquema Ponzi que depende de nuevos contribuyentes","C. Debe mejorarse pero no eliminarse","D. Es la única forma de proteger adultos mayores"], c:"B" },
+      { n:9, t:"Cuando el gobierno regula un mercado:", ops:["A. Lo hace más justo y competitivo","B. Favorece a los ya establecidos y frena la competencia","C. Protege al consumidor","D. Es necesario para evitar abusos"], c:"B" },
+      { n:10, t:"La diferencia entre Estado y gobierno:", ops:["A. Ninguna, son lo mismo","B. El Estado es el aparato coercitivo; el gobierno solo lo opera","C. El gobierno es elegido, el Estado no","D. Es una distinción académica sin consecuencias"], c:"B" }
+    ]
+  },
+  {
+    id: 2,
+    nombre: "Módulo 3: Economía",
+    desc: "Economía real que no te enseñaron en el colegio. ¿Cuánto entiendes de cómo funciona el dinero?",
+    emoji: "💰",
+    preguntas: [
+      { n:1, t:"El precio de un producto lo determina:", ops:["A. El costo de producción más una ganancia justa","B. Lo que alguien está dispuesto a pagar voluntariamente","C. El gobierno para proteger al consumidor","D. Las grandes corporaciones"], c:"B" },
+      { n:2, t:"Cuando el banco central imprime más dinero:", ops:["A. El país se vuelve más rico","B. Cada billete vale menos — es un impuesto oculto","C. Estimula la economía sin consecuencias","D. Ayuda a los más pobres"], c:"B" },
+      { n:3, t:"La ganancia empresarial es:", ops:["A. Dinero robado al trabajador","B. La señal de que se creó valor que el mercado reconoce","C. Debe estar limitada por ley","D. Un problema cuando es excesiva"], c:"B" },
+      { n:4, t:"El libre comercio entre países:", ops:["A. Destruye empleos locales","B. Genera riqueza para ambas partes al especializarse","C. Solo beneficia a los países ricos","D. Debe regularse para proteger industrias"], c:"B" },
+      { n:5, t:"Cuando el Estado pone precio máximo al arroz:", ops:["A. Lo hace accesible para los pobres","B. Genera escasez porque nadie produce lo que no es rentable","C. Controla la inflación","D. Es necesario en épocas de crisis"], c:"B" },
+      { n:6, t:"La competencia en el mercado:", ops:["A. Es destructiva y genera monopolios","B. Baja precios, mejora calidad y expulsa a los ineficientes","C. Debe regularse para que sea justa","D. Solo funciona en teoría"], c:"B" },
+      { n:7, t:"Los aranceles a las importaciones:", ops:["A. Protegen el empleo nacional","B. Son un impuesto que paga el consumidor local","C. Son necesarios para industrias nacientes","D. Equilibran la balanza comercial"], c:"B" },
+      { n:8, t:"La pobreza se reduce principalmente con:", ops:["A. Redistribución de la riqueza existente","B. Creación de nueva riqueza a través del mercado libre","C. Programas sociales bien diseñados","D. Mayor inversión pública"], c:"B" },
+      { n:9, t:"El empresario que quiebra:", ops:["A. Es víctima del sistema","B. Recibió una señal de que no estaba creando suficiente valor","C. Necesita apoyo estatal","D. Fue víctima de competencia desleal"], c:"B" },
+      { n:10, t:"La riqueza de un país se mide mejor por:", ops:["A. El tamaño de su PIB","B. La libertad de sus ciudadanos para producir, comerciar y conservar","C. La igualdad en la distribución del ingreso","D. La fortaleza de sus instituciones públicas"], c:"B" }
+    ]
+  },
+  {
+    id: 3,
+    nombre: "Módulo 4: La Narrativa",
+    desc: "¿Puedes separar el discurso de la realidad? Detecta cuándo te están vendiendo una historia.",
+    emoji: "🎭",
+    preguntas: [
+      { n:1, t:"Un medio titula: Gobierno invierte $500M en educación. Tú piensas:", ops:["A. Qué buena noticia","B. ¿Cuál es el resultado medible y quién lo verifica?","C. Depende del partido que gobierne","D. Ojalá llegue a las escuelas"], c:"B" },
+      { n:2, t:"Un activista dice esto lo pagan los ricos. Tú sabes que:", ops:["A. Es justo porque tienen más","B. Los costos siempre se trasladan al consumidor final — que eres tú","C. Depende del tipo de impuesto","D. Hay que estudiar cada caso"], c:"B" },
+      { n:3, t:"Una ONG denuncia explotación en una fábrica del tercer mundo. Sin contexto, tú:", ops:["A. La condenas inmediatamente","B. Preguntas cuál era la alternativa para esos trabajadores","C. Pides más regulación internacional","D. Compartes la denuncia para crear conciencia"], c:"B" },
+      { n:4, t:"El presidente anuncia que creó 200,000 empleos. La pregunta correcta es:", ops:["A. ¿En qué sectores?","B. ¿A qué costo y cuántos empleos privados se destruyeron?","C. ¿Cuándo se verán los beneficios?","D. ¿Es suficiente para la demanda actual?"], c:"B" },
+      { n:5, t:"La desigualdad está aumentando. Esta afirmación:", ops:["A. Prueba que el sistema falla","B. No dice nada sin saber si los pobres mejoran en términos absolutos","C. Requiere políticas redistributivas urgentes","D. Es preocupante independientemente del contexto"], c:"B" },
+      { n:6, t:"Un estudio dice que el salario mínimo no destruye empleo. Tú:", ops:["A. Lo compartes porque confirma lo que creías","B. Preguntas quién lo financia, la metodología y el contexto","C. Lo aceptas porque viene de una universidad","D. Buscas otro estudio que lo contradiga"], c:"B" },
+      { n:7, t:"Este líder habla por los más pobres. Tú evalúas:", ops:["A. Su tono y empatía en el discurso","B. Si las políticas que propone realmente mejoran la vida de los pobres","C. Si es creíble y consistente","D. Si tiene experiencia en el sector social"], c:"B" },
+      { n:8, t:"Las redes sociales censuran contenido libertario. La respuesta correcta es:", ops:["A. Hay que regularlas para garantizar neutralidad","B. Crear plataformas alternativas y no depender de infraestructura enemiga","C. Denunciarlo públicamente","D. Es exagerado, no hay censura sistemática"], c:"B" },
+      { n:9, t:"El capitalismo genera pobreza. Esta frase:", ops:["A. Es cierta — la historia lo demuestra","B. Es falsa — el capitalismo sacó a más personas de la pobreza que cualquier otro sistema","C. Depende del tipo de capitalismo","D. Es un debate legítimo sin conclusión"], c:"B" },
+      { n:10, t:"Cuando alguien te llama extremo por defender la libertad individual, tú:", ops:["A. Moderas tu posición para no alienar a nadie","B. Señalas que defender la propiedad y la libertad no es extremismo","C. Explicas tu posición con más cuidado","D. Evitas el conflicto porque no vale la pena"], c:"B" }
+    ]
+  }
+];
+
+// RESULTADOS GLOBALES (sobre 40 puntos totales)
+var RESULTADOS_GLOBALES = [
+  { min:0,  max:10, emoji:"🤒", tit:"Enfermo Terminal", desc:"Tienes metástasis, el cáncer estatal te invadió por completo. Necesitas quimio urgente.", perf:"La narrativa estatista te controla. Apoyas políticas que te empobrecen con las mejores intenciones." },
+  { min:11, max:20, emoji:"😵", tit:"Confusión Funcional", desc:"Tienes alteraciones hormonales, a ratos con claridad y a ratos te seducen los discursos estatistas.", perf:"Sabes que algo no cuadra, pero todavía te dejas seducir por el discurso bonito y las promesas fáciles." },
+  { min:21, max:30, emoji:"🔄", tit:"En Recuperación", desc:"Aún con salud débil pero en franca mejoría.", perf:"Ya no te lo tragas todo. Empiezas a ver incentivos y a desconfiar del discurso. Sigue así." },
+  { min:31, max:35, emoji:"🧠", tit:"Claridad en Proceso", desc:"Ya intuyes lo correcto aunque a veces la inercia estatal te engaña.", perf:"Empiezas a pensar en consecuencias no intencionales. Cada política tiene un costo invisible." },
+  { min:36, max:40, emoji:"⚡", tit:"Peligroso", desc:"Ya entiendes la libertad.", perf:"Difícil de manipular. Ves el guión antes de que termine el primer párrafo. No pides permiso." }
+];
+
+var moduloActual = 0;
+var respsGlobales = {}; // {moduloId: {pregIdx: letra}}
+var ptsGlobales = {};   // {moduloId: puntos}
+
+function totalPtsGlobales() {
+  var t = 0;
+  for (var k in ptsGlobales) t += ptsGlobales[k];
+  return t;
+}
+
+function mostrarSelector() {
+  document.getElementById('tresultado').style.display = 'none';
+  var c = document.getElementById('tpreguntas');
+  c.style.display = 'block';
+
+  // Calculate progress
+  var completados = Object.keys(ptsGlobales).length;
+  var totalPts = totalPtsGlobales();
+
+  var html = '';
+
+  // Title and description
+  html += '<div style="background:#dedad3;border:1px solid #bfb9b0;border-radius:12px;padding:28px;margin-bottom:24px;">';
+  html += '<div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--naranja);letter-spacing:3px;margin-bottom:10px;">TEST COMPLETO — 40 PREGUNTAS</div>';
+  html += '<h3 style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1px;color:#1a1a1a;margin-bottom:10px;">Un test completo para medir tu claridad sobre las ideas de la libertad</h3>';
+  html += '<p style="font-size:14px;color:#555;line-height:1.6;">El test tiene cuatro módulos. Completa todos para obtener tu resultado final y descubrir tu nivel real.</p>';
+  html += '</div>';
+
+  // Module cards
+  html += '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;">';
+  for (var i = 0; i < TESTS.length; i++) {
+    var t = TESTS[i];
+    var done = ptsGlobales[i] !== undefined;
+    var pts = done ? ptsGlobales[i] : null;
+    html += '<div class="tc" data-tid="' + t.id + '" style="' + (done ? 'border-color:var(--naranja);' : '') + '">';
+    html += '<div class="em">' + t.emoji + '</div>';
+    html += '<div class="aut" style="color:var(--naranja);">MÓDULO ' + (i+1) + '</div>';
+    html += '<h3>' + t.nombre + '</h3>';
+    html += '<p>' + t.desc + '</p>';
+    if (done) {
+      html += '<span class="cta" style="color:var(--naranja);">✓ Completado — ' + pts + '/10 pts → Repetir</span>';
+    } else {
+      html += '<span class="cta">Hacer módulo →</span>';
+    }
+    html += '</div>';
+  }
+  html += '</div>';
+
+  // Show total if any completed
+  if (completados > 0) {
+    html += '<div style="margin-top:20px;background:#dedad3;border:1px solid #bfb9b0;border-radius:10px;padding:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">';
+    html += '<div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--naranja);letter-spacing:2px;">PROGRESO: ' + completados + '/4 módulos</div>';
+    html += '<div style="flex:1;background:#c8c3bb;border-radius:3px;height:6px;overflow:hidden;min-width:80px;"><div style="height:100%;background:var(--naranja);border-radius:3px;width:' + (completados/4*100) + '%;transition:width 0.6s;"></div></div>';
+    html += '<div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#1a1a1a;">' + totalPts + ' <span style="font-size:13px;color:#666;font-family:'DM Sans',sans-serif;">/ 40 pts</span></div>';
+    if (completados === 4) {
+      html += '<button class="btn btn-naranja" id="btn-ver-res-global" style="padding:10px 20px;">Ver resultado final →</button>';
+    }
+    html += '</div>';
+  }
+
+  c.innerHTML = html;
+
+  c.querySelectorAll('.tc').forEach(function(el) {
+    el.addEventListener('click', function() {
+      iniciarModulo(parseInt(el.getAttribute('data-tid')));
+    });
+  });
+
+  var btnGlobal = document.getElementById('btn-ver-res-global');
+  if (btnGlobal) {
+    btnGlobal.addEventListener('click', verResultadoGlobal);
+  }
+}
+
+function iniciarModulo(id) {
+  var test = TESTS[id];
+  respsGlobales[id] = respsGlobales[id] || {};
+  var c = document.getElementById('tpreguntas');
+  var html = '<button class="back-btn" id="btn-volver-test">← Volver a módulos</button>';
+  html += '<div style="margin-bottom:24px;background:#dedad3;border:1px solid #bfb9b0;border-radius:10px;padding:18px 22px;">';
+  html += '<div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--naranja);letter-spacing:3px;margin-bottom:4px;">MÓDULO ' + (id+1) + ' DE 4</div>';
+  html += '<div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;color:#1a1a1a;">' + test.nombre + '</div>';
+  html += '</div>';
+
+  for (var i = 0; i < test.preguntas.length; i++) {
+    var p = test.preguntas[i];
+    html += '<div class="pcard">';
+    html += '<div class="pnum">PREGUNTA ' + p.n + ' DE 10</div>';
+    html += '<div class="ptxt">' + p.t + '</div>';
+    var lets = ['A','B','C','D'];
+    for (var j = 0; j < p.ops.length; j++) {
+      var prevSel = respsGlobales[id][i] === lets[j] ? ' sel' : '';
+      html += '<button class="opbtn' + prevSel + '" data-pi="' + i + '" data-let="' + lets[j] + '">' + p.ops[j] + '</button>';
+    }
+    html += '</div>';
+  }
+
+  var respondidas = Object.keys(respsGlobales[id]).length;
+  html += '<div style="text-align:center;margin-top:28px;">';
+  html += '<div id="prog" style="font-size:13px;color:#666;margin-bottom:14px;">' + respondidas + ' de 10 preguntas respondidas</div>';
+  html += '<button class="btn btn-naranja" id="btn-ver-res-mod" ' + (respondidas === 10 ? '' : 'disabled style="opacity:0.4;cursor:not-allowed;"') + '>Completar módulo →</button>';
+  html += '</div>';
+  c.innerHTML = html;
+
+  document.getElementById('btn-volver-test').addEventListener('click', mostrarSelector);
+
+  c.querySelectorAll('.opbtn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var pi = parseInt(btn.getAttribute('data-pi'));
+      var let_ = btn.getAttribute('data-let');
+      respsGlobales[id][pi] = let_;
+      c.querySelectorAll('.opbtn[data-pi="' + pi + '"]').forEach(function(b) { b.classList.remove('sel'); });
+      btn.classList.add('sel');
+      var total = Object.keys(respsGlobales[id]).length;
+      document.getElementById('prog').textContent = total + ' de 10 preguntas respondidas';
+      if (total === 10) {
+        var br = document.getElementById('btn-ver-res-mod');
+        br.disabled = false; br.style.opacity = '1'; br.style.cursor = 'pointer';
+      }
+    });
+  });
+
+  document.getElementById('btn-ver-res-mod').addEventListener('click', function() {
+    // Calculate module score
+    var pts = 0;
+    var test = TESTS[id];
+    for (var i = 0; i < test.preguntas.length; i++) {
+      if (respsGlobales[id][i] === test.preguntas[i].c) pts++;
+    }
+    ptsGlobales[id] = pts;
+    guardar('puntos_tests', ptsGlobales);
+    actualizarMarcador();
+    actualizarNivelUI();
+    mostrarSelector();
+  });
+}
+
+function verResultadoGlobal() {
+  var total = totalPtsGlobales();
+  var r = RESULTADOS_GLOBALES[RESULTADOS_GLOBALES.length - 1];
+  for (var i = 0; i < RESULTADOS_GLOBALES.length; i++) {
+    if (total >= RESULTADOS_GLOBALES[i].min && total <= RESULTADOS_GLOBALES[i].max) {
+      r = RESULTADOS_GLOBALES[i]; break;
+    }
+  }
+
+  document.getElementById('tpreguntas').style.display = 'none';
+  document.getElementById('tresultado').style.display = 'block';
+  document.getElementById('remoji').textContent = r.emoji;
+  document.getElementById('rpts').textContent = total + '/40';
+  document.getElementById('rtit').textContent = r.tit;
+  document.getElementById('rdesc').textContent = r.desc;
+  document.getElementById('rperf').textContent = r.perf;
+  document.getElementById('rcard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  actualizarMarcador();
+  actualizarNivelUI();
+}
+
+document.getElementById('btn-reiniciar').addEventListener('click', mostrarSelector);
+
+mostrarSelector();actualizarNivelUI();actualizarMarcador();}
   }
 }
 
