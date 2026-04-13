@@ -695,7 +695,7 @@ a.bk { pointer-events:auto; }
     <button class="back-btn" data-page="modulos">← Volver</button>
     <div class="label">03 — Autoexamen</div>
     <h2 class="titulo">Autoexamen Cultural</h2>
-    <p style="color:#555;font-size:15px;margin-top:8px;font-weight:300;max-width:640px;line-height:1.7;">Un test completo para medir tu claridad sobre las ideas de la libertad y la importancia de la agencia del individuo. El test tiene cuatro módulos: <strong style="color:#1a1a1a;">Módulo 1: Introductorio, un poco de todo.</strong> Basado en el test del autor publicado en el Substack "El Test de la Confusión". Módulos 2, 3 y 4: profundizan en el Estado, la economía y las narrativas.</p>
+    <p style="color:#555;font-size:15px;margin-top:8px;font-weight:300;max-width:640px;line-height:1.7;">Un test completo para medir tu claridad sobre las ideas de la libertad y la importancia de la agencia del individuo. El test tiene cuatro módulos: <strong style="color:#1a1a1a;">Módulo 1: Introductorio, un poco de todo</strong> — basado en el test del autor publicado en el Substack "El Test de la Confusión". <strong style="color:#1a1a1a;">Módulo 2: El Estado</strong> — ¿cuánto poder le das al Estado sin darte cuenta? <strong style="color:#1a1a1a;">Módulo 3: Economía</strong> — lo que no te enseñaron en el colegio sobre cómo funciona el dinero. <strong style="color:#1a1a1a;">Módulo 4: La Narrativa</strong> — ¿puedes separar el discurso de la realidad?</p>
 
     <!-- Marcador de puntaje unificado -->
     <div id="marcador-puntaje" style="margin-top:28px;">
@@ -866,9 +866,11 @@ a.bk { pointer-events:auto; }
 
 <script>
 
-// ── PERSISTENCIA ─────────────────────────────────────────────────────────────
-function guardar(k,v){try{localStorage.setItem('npm_'+k,JSON.stringify(v));}catch(e){}}
-function cargar(k,d){try{var v=localStorage.getItem('npm_'+k);return v!==null?JSON.parse(v):d;}catch(e){return d;}}
+// ── PERSISTENCIA — deshabilitada: siempre arranca en ceros ───────────────────
+function guardar(k,v){ /* sin persistencia */ }
+function cargar(k,d){ return d; }
+// Limpiar datos previos de versiones anteriores
+try{ Object.keys(localStorage).filter(function(k){return k.indexOf('npm_')===0;}).forEach(function(k){localStorage.removeItem(k);}); }catch(e){}
 
 // ── NIVELES ───────────────────────────────────────────────────────────────────
 var puntosTests = cargar('puntos_tests', {0:null,1:null,2:null,3:null});
