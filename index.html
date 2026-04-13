@@ -888,6 +888,9 @@ function cargar(k,d){try{var v=localStorage.getItem('npm_'+k);return v!==null?JS
 
 // ── NIVELES ───────────────────────────────────────────────────────────────────
 var puntosTests = cargar('puntos_tests', {0:null,1:null,2:null,3:null});
+var ptsGlobales = {};
+// Sync ptsGlobales with puntosTests on load
+for(var _k in puntosTests){if(puntosTests[_k]!==null)ptsGlobales[_k]=puntosTests[_k];}
 var NIVELES = [
   {min:0,  max:9,  emoji:'🌱', nombre:'Iniciado'},
   {min:10, max:19, emoji:'⚔️', nombre:'Militante'},
@@ -898,7 +901,7 @@ var NOMBRES_T = ['Test de la Confusión','Test del Estado','Test Económico','Te
 
 function totalPuntos(){
   var t=0;
-  for(var i=0;i<4;i++){if(puntosTests[i]!==null)t+=puntosTests[i];}
+  for(var k in ptsGlobales){t+=ptsGlobales[k];}
   return t;
 }
 
@@ -921,8 +924,8 @@ function actualizarMarcador(){
     if(!card) continue;
     var numEl = card.querySelector('div:nth-child(2)');
     var subEl = card.querySelector('div:nth-child(3)');
-    if(puntosTests[i] !== null){
-      var pts = puntosTests[i];
+    if(ptsGlobales[i] !== undefined){
+      var pts = ptsGlobales[i];
       var color = pts >= 8 ? '#E85D00' : pts >= 5 ? '#fff' : '#888';
       numEl.style.color = color;
       numEl.textContent = pts;
@@ -985,10 +988,10 @@ function actualizarNivelUI(){
   if(bd){
     var html='';
     for(var i=0;i<4;i++){
-      if(puntosTests[i]!==null){
-        html+='<span class="nv-badge hecho">'+NOMBRES_T[i]+' ✓ '+puntosTests[i]+'/10</span>';
+      if(ptsGlobales[i]!==undefined){
+        html+='<span class="nv-badge hecho">Módulo '+(i+1)+' ✓ '+ptsGlobales[i]+'/10</span>';
       } else {
-        html+='<span class="nv-badge pend">'+NOMBRES_T[i]+'</span>';
+        html+='<span class="nv-badge pend">Módulo '+(i+1)+'</span>';
       }
     }
     bd.innerHTML=html;
@@ -1229,13 +1232,8 @@ var RESULTADOS_GLOBALES = [
 
 var moduloActual = 0;
 var respsGlobales = {}; // {moduloId: {pregIdx: letra}}
-var ptsGlobales = {};   // {moduloId: puntos}
 
-function totalPtsGlobales() {
-  var t = 0;
-  for (var k in ptsGlobales) t += ptsGlobales[k];
-  return t;
-}
+function totalPtsGlobales() { return totalPuntos(); }
 
 function mostrarSelector() {
   document.getElementById('tresultado').style.display = 'none';
@@ -1357,6 +1355,7 @@ function iniciarModulo(id) {
       if (respsGlobales[id][i] === test.preguntas[i].c) pts++;
     }
     ptsGlobales[id] = pts;
+    puntosTests[id] = pts;
     guardar('puntos_tests', ptsGlobales);
     actualizarMarcador();
     actualizarNivelUI();
