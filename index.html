@@ -696,89 +696,25 @@ a.bk { pointer-events:auto; }
     <div class="label">03 — Autoexamen</div>
     <h2 class="titulo">Autoexamen Cultural</h2>
     <p style="color:#555;font-size:15px;margin-top:8px;font-weight:300;max-width:640px;line-height:1.9;">
-      Un test completo para medir tu claridad sobre las ideas de la libertad y la importancia de la agencia del individuo.<br>
-      <br>
+      Un test corto pero potente para medir tu claridad sobre las ideas de la libertad y la importancia de la agencia del individuo. Un total de 20 preguntas, 5 por módulo.<br><br>
       <strong style="color:#1a1a1a;">Módulo 1: Introductorio, un poco de todo</strong> — basado en el test del autor publicado en el Substack "El Test de la Confusión".<br>
       <strong style="color:#1a1a1a;">Módulo 2: El Estado</strong> — ¿cuánto poder le das al Estado sin darte cuenta?<br>
       <strong style="color:#1a1a1a;">Módulo 3: Economía</strong> — lo que no te enseñaron en el colegio sobre cómo funciona el dinero.<br>
       <strong style="color:#1a1a1a;">Módulo 4: La Narrativa</strong> — ¿puedes separar el discurso de la realidad?
     </p>
 
-    <!-- Marcador de puntaje unificado -->
-    <div id="marcador-puntaje" style="margin-top:28px;">
-      <div style="background:#dedad3;border:1px solid #bfb9b0;border-radius:12px;padding:22px;">
-        <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:3px;margin-bottom:16px;">PROGRESO — 4 MÓDULOS · 40 PUNTOS TOTALES</div>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px;">
-          <div id="rec-t0" style="background:#d0cbc3;border:1px solid #bfb9b0;border-radius:8px;padding:12px;text-align:center;">
-            <div style="font-size:10px;color:#666;margin-bottom:4px;font-family:DM Mono,monospace;letter-spacing:1px;">MÓD. 1</div>
-            <div style="font-family:Bebas Neue,sans-serif;font-size:30px;line-height:1;color:#aaa;">—</div>
-            <div style="font-size:10px;color:#aaa;margin-top:2px;">/ 10 pts</div>
-          </div>
-          <div id="rec-t1" style="background:#d0cbc3;border:1px solid #bfb9b0;border-radius:8px;padding:12px;text-align:center;">
-            <div style="font-size:10px;color:#666;margin-bottom:4px;font-family:DM Mono,monospace;letter-spacing:1px;">MÓD. 2</div>
-            <div style="font-family:Bebas Neue,sans-serif;font-size:30px;line-height:1;color:#aaa;">—</div>
-            <div style="font-size:10px;color:#aaa;margin-top:2px;">/ 10 pts</div>
-          </div>
-          <div id="rec-t2" style="background:#d0cbc3;border:1px solid #bfb9b0;border-radius:8px;padding:12px;text-align:center;">
-            <div style="font-size:10px;color:#666;margin-bottom:4px;font-family:DM Mono,monospace;letter-spacing:1px;">MÓD. 3</div>
-            <div style="font-family:Bebas Neue,sans-serif;font-size:30px;line-height:1;color:#aaa;">—</div>
-            <div style="font-size:10px;color:#aaa;margin-top:2px;">/ 10 pts</div>
-          </div>
-          <div id="rec-t3" style="background:#d0cbc3;border:1px solid #bfb9b0;border-radius:8px;padding:12px;text-align:center;">
-            <div style="font-size:10px;color:#666;margin-bottom:4px;font-family:DM Mono,monospace;letter-spacing:1px;">MÓD. 4</div>
-            <div style="font-family:Bebas Neue,sans-serif;font-size:30px;line-height:1;color:#aaa;">—</div>
-            <div style="font-size:10px;color:#aaa;margin-top:2px;">/ 10 pts</div>
-          </div>
-        </div>
-        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-          <div style="flex:1;min-width:120px;">
-            <div style="background:#c8c3bb;border-radius:4px;height:6px;overflow:hidden;">
-              <div id="rec-barra" style="height:100%;background:var(--naranja);border-radius:4px;transition:width 1s;width:0%;"></div>
-            </div>
-          </div>
-          <div style="display:flex;align-items:baseline;gap:4px;">
-            <span id="rec-total" style="font-family:Bebas Neue,sans-serif;font-size:36px;line-height:1;color:#1a1a1a;">0</span>
-            <span style="font-size:13px;color:#666;">/ 40 pts</span>
-          </div>
-          <div id="rec-nivel" style="font-family:Bebas Neue,sans-serif;font-size:16px;letter-spacing:1px;color:var(--naranja);">Completa los 4 módulos</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Widget de nivel (oculto hasta completar) -->
-    <div class="nv-widget-auto" id="nv-auto" style="margin-top:24px;display:none;">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px;">
-        <div>
-          <div style="font-family:Bebas Neue,sans-serif;font-size:26px;letter-spacing:1px;color:var(--blanco);" id="nva-nombre">Completa los módulos</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:2px;">Completa los 4 módulos para ver tu diagnóstico</div>
-        </div>
-        <div style="font-size:13px;color:var(--naranja);font-weight:600;" id="nva-pts">0 / 40 pts</div>
-      </div>
-      <div style="background:#1a1a1a;border-radius:4px;height:6px;margin-bottom:18px;overflow:hidden;">
-        <div id="nva-barra" style="height:100%;border-radius:4px;background:var(--naranja);transition:width 0.8s;width:0%;"></div>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:16px;">
-        <div class="nv-step nv-curr" id="nva-s0"><div style="font-size:18px;margin-bottom:3px;">☠️</div><div style="font-family:Bebas Neue,sans-serif;font-size:10px;letter-spacing:0px;color:var(--blanco);line-height:1.2;">Enfermo Terminal</div><div style="font-size:9px;color:var(--naranja);">0–10</div></div>
-        <div class="nv-step" id="nva-s1"><div style="font-size:18px;margin-bottom:3px;">😵</div><div style="font-family:Bebas Neue,sans-serif;font-size:10px;letter-spacing:0px;color:var(--muted);line-height:1.2;">Confusión Funcional</div><div style="font-size:9px;color:var(--muted);">11–20</div></div>
-        <div class="nv-step" id="nva-s2"><div style="font-size:18px;margin-bottom:3px;">🌿</div><div style="font-family:Bebas Neue,sans-serif;font-size:10px;letter-spacing:0px;color:var(--muted);line-height:1.2;">En Recuperación</div><div style="font-size:9px;color:var(--muted);">21–30</div></div>
-        <div class="nv-step" id="nva-s3"><div style="font-size:18px;margin-bottom:3px;">🔍</div><div style="font-family:Bebas Neue,sans-serif;font-size:10px;letter-spacing:0px;color:var(--muted);line-height:1.2;">Claridad en Proceso</div><div style="font-size:9px;color:var(--muted);">31–35</div></div>
-        <div class="nv-step" id="nva-s4"><div style="font-size:18px;margin-bottom:3px;">⚡</div><div style="font-family:Bebas Neue,sans-serif;font-size:10px;letter-spacing:0px;color:var(--muted);line-height:1.2;">Peligroso</div><div style="font-size:9px;color:var(--muted);">36–40</div></div>
-      </div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;" id="nva-badges"></div>
-    </div>
-
-    <!-- Área de tests -->
-    <div id="test-area" style="margin-top:28px;">
+    <!-- Área del test -->
+    <div id="test-area" style="margin-top:32px;">
       <div id="tpreguntas"></div>
       <div id="tresultado" style="display:none;">
-        <div id="rcard" style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:12px;padding:40px;text-align:center;margin-top:28px;">
-          <div id="remoji" style="font-size:46px;margin-bottom:14px;"></div>
-          <div style="font-size:11px;color:var(--naranja);letter-spacing:2px;margin-bottom:7px;font-family:monospace;">TU RESULTADO</div>
-          <div id="rpts" style="font-family:Bebas Neue,sans-serif;font-size:60px;line-height:1;margin-bottom:4px;"></div>
-          <div id="rtit" style="font-family:Bebas Neue,sans-serif;font-size:30px;color:var(--naranja);letter-spacing:1px;margin-bottom:18px;"></div>
-          <div id="rdesc" style="font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:18px;"></div>
-          <div id="rperf" style="font-size:13px;color:var(--muted);font-style:italic;border-top:1px solid var(--gris-borde);padding-top:18px;line-height:1.6;"></div>
-          <button class="btn btn-naranja" id="btn-reiniciar" style="margin-top:24px;">Hacer otro módulo</button>
+        <div id="rcard" style="background:#dedad3;border:1px solid #bfb9b0;border-radius:12px;padding:40px;text-align:center;margin-top:28px;">
+          <div id="remoji" style="font-size:52px;margin-bottom:14px;"></div>
+          <div style="font-size:11px;color:var(--naranja);letter-spacing:2px;margin-bottom:7px;font-family:DM Mono,monospace;">TU RESULTADO</div>
+          <div id="rpts" style="font-family:Bebas Neue,sans-serif;font-size:64px;line-height:1;margin-bottom:4px;color:#1a1a1a;"></div>
+          <div id="rtit" style="font-family:Bebas Neue,sans-serif;font-size:32px;color:var(--naranja);letter-spacing:1px;margin-bottom:18px;"></div>
+          <div id="rdesc" style="font-size:15px;color:#444;line-height:1.7;margin-bottom:18px;"></div>
+          <div id="rperf" style="font-size:13px;color:#666;font-style:italic;border-top:1px solid #bfb9b0;padding-top:18px;line-height:1.6;"></div>
+          <button class="btn btn-naranja" id="btn-reiniciar" style="margin-top:24px;">Repetir el test</button>
         </div>
       </div>
     </div>
@@ -874,152 +810,124 @@ a.bk { pointer-events:auto; }
 <script>
 
 // ── PERSISTENCIA — deshabilitada: siempre arranca en ceros ───────────────────
-function guardar(k,v){ /* sin persistencia */ }
-function cargar(k,d){ return d; }
-// Limpiar datos previos de versiones anteriores
 try{ Object.keys(localStorage).filter(function(k){return k.indexOf('npm_')===0;}).forEach(function(k){localStorage.removeItem(k);}); }catch(e){}
 
-// ── NIVELES ───────────────────────────────────────────────────────────────────
-var puntosTests = cargar('puntos_tests', {0:null,1:null,2:null,3:null});
-var ptsGlobales = {};
-// Sync ptsGlobales with puntosTests on load
-for(var _k in puntosTests){if(puntosTests[_k]!==null)ptsGlobales[_k]=puntosTests[_k];}
+// ── NIVELES (sobre 20 pts) ────────────────────────────────────────────────────
 var NIVELES = [
-  {min:0,  max:10, emoji:'☠️', nombre:'Enfermo Terminal'},
-  {min:11, max:20, emoji:'😵', nombre:'Confusión Funcional'},
-  {min:21, max:30, emoji:'🌿', nombre:'En Recuperación'},
-  {min:31, max:35, emoji:'🔍', nombre:'Claridad en Proceso'},
-  {min:36, max:40, emoji:'⚡', nombre:'Peligroso'}
+  {min:0,  max:5,  emoji:'☠️', tit:'Enfermo Terminal',    desc:'Tienes metástasis. El cáncer estatal te invadió por completo. Necesitas quimio urgente.',                                       perf:'La narrativa estatista te controla totalmente. Apoyas con entusiasmo las políticas que te empobrecen.'},
+  {min:6,  max:10, emoji:'😵', tit:'Confusión Funcional', desc:'Tienes alteraciones hormonales: a ratos con claridad, y a ratos te seducen los discursos estatistas.',                           perf:'Sabes que algo no cuadra, pero todavía te dejas seducir por el discurso bonito y las promesas fáciles.'},
+  {min:11, max:14, emoji:'🌿', tit:'En Recuperación',     desc:'Aún con salud débil pero en franca mejoría.',                                                                                    perf:'Ya no te lo tragas todo. Empiezas a ver incentivos y a desconfiar del discurso. Sigue así.'},
+  {min:15, max:17, emoji:'🔍', tit:'Claridad en Proceso', desc:'Ya intuyes lo correcto aunque a veces la inercia estatal te engaña.',                                                             perf:'Empiezas a pensar en consecuencias no intencionales. Cada política tiene un costo invisible que ya empiezas a ver.'},
+  {min:18, max:20, emoji:'⚡', tit:'Peligroso',           desc:'Ya entiendes la libertad.',                                                                                                      perf:'Difícil de manipular. Ves el guión antes de que termine el primer párrafo. No pides permiso. Nunca.'}
 ];
-var NOMBRES_T = ['Módulo 1: Introductorio','Módulo 2: El Estado','Módulo 3: Economía','Módulo 4: La Narrativa'];
 
-function totalPuntos(){
-  var t=0;
-  for(var k in ptsGlobales){t+=ptsGlobales[k];}
-  return t;
-}
+// ── 20 PREGUNTAS FIJAS (5 por módulo) ────────────────────────────────────────
+var PREGUNTAS = [
+  {mod:'M1',n:1, t:'Te ofrecen dos jefes, ¿cuál escoges?', ops:['A. Uno elegante, habla perfecto… pero nunca te paga a tiempo','B. Uno grosero… pero te paga el doble puntual','C. El elegante, porque la cultura importa','D. Ninguno, porque todos los jefes son opresores'],c:'B'},
+  {mod:'M1',n:2, t:'Los impuestos:', ops:['A. Son necesarios, pero deberían ser mínimos','B. Son coerción institucionalizada','C. Son un acto de solidaridad','D. Depende de quién los cobre'],c:'B'},
+  {mod:'M1',n:3, t:'Bitcoin es:', ops:['A. Una estafa peligrosa','B. Un activo volátil pero interesante','C. Una amenaza al control estatal','D. No entiendo, pero mi primo ganó plata'],c:'C'},
+  {mod:'M1',n:4, t:'Un político promete darte todo gratis. Tú piensas:', ops:['A. Qué generoso','B. ¿Con qué plata?','C. Seguro roba, pero igual sirve','D. Eso lo pagan los ricos'],c:'B'},
+  {mod:'M1',n:5, t:'Un empresario se vuelve rico:', ops:['A. Seguro explotó a alguien','B. Creó valor que otros pagan voluntariamente','C. Tuvo suerte','D. Debería pagar más impuestos'],c:'B'},
+  {mod:'M2',n:6, t:'La educación pública gratuita:', ops:['A. Es un derecho fundamental','B. Es un servicio que otros pagan con sus impuestos','C. Debería ser obligatoria para todos','D. Es lo mínimo que puede hacer un Estado'],c:'B'},
+  {mod:'M2',n:7, t:'La propiedad privada es:', ops:['A. Un privilegio de los ricos','B. La base de toda libertad individual','C. Necesaria pero debe ser regulada','D. Una construcción social negociable'],c:'B'},
+  {mod:'M2',n:8, t:'El sistema de pensiones estatal:', ops:['A. Garantiza retiro digno para todos','B. Es un esquema Ponzi que depende de nuevos contribuyentes','C. Debe mejorarse pero no eliminarse','D. Es la única forma de proteger adultos mayores'],c:'B'},
+  {mod:'M2',n:9, t:'Sobre la deuda pública:', ops:['A. Es inversión en el futuro','B. Es impuesto diferido que pagarán tus hijos','C. Es necesaria para servicios esenciales','D. Depende de cómo se administre'],c:'B'},
+  {mod:'M2',n:10,t:'La libertad de expresión:', ops:['A. Debe tener límites para proteger grupos vulnerables','B. Es absoluta o no es libertad','C. Depende del contexto cultural','D. El Estado debe regularla con criterio'],c:'B'},
+  {mod:'M3',n:11,t:'Cuando el banco central imprime más dinero:', ops:['A. El país se vuelve más rico','B. Cada billete vale menos — es un impuesto oculto','C. Estimula la economía sin consecuencias','D. Ayuda a los más pobres'],c:'B'},
+  {mod:'M3',n:12,t:'Cuando el Estado pone precio máximo al arroz:', ops:['A. Lo hace accesible para los pobres','B. Genera escasez porque nadie produce lo que no es rentable','C. Controla la inflación','D. Es necesario en épocas de crisis'],c:'B'},
+  {mod:'M3',n:13,t:'Los aranceles a las importaciones:', ops:['A. Protegen el empleo nacional','B. Son un impuesto que paga el consumidor local','C. Son necesarios para industrias nacientes','D. Equilibran la balanza comercial'],c:'B'},
+  {mod:'M3',n:14,t:'La pobreza se reduce principalmente con:', ops:['A. Redistribución de la riqueza existente','B. Creación de nueva riqueza a través del mercado libre','C. Programas sociales bien diseñados','D. Mayor inversión pública'],c:'B'},
+  {mod:'M3',n:15,t:'La ganancia empresarial es:', ops:['A. Dinero robado al trabajador','B. La señal de que se creó valor que el mercado reconoce','C. Debe estar limitada por ley','D. Un problema cuando es excesiva'],c:'B'},
+  {mod:'M4',n:16,t:'El presidente anuncia que creó 200,000 empleos. La pregunta correcta es:', ops:['A. ¿En qué sectores?','B. ¿A qué costo y cuántos empleos privados se destruyeron?','C. ¿Cuándo se verán los beneficios?','D. ¿Es suficiente para la demanda actual?'],c:'B'},
+  {mod:'M4',n:17,t:'La desigualdad está aumentando. Esta afirmación:', ops:['A. Prueba que el sistema falla','B. No dice nada sin saber si los pobres mejoran en términos absolutos','C. Requiere políticas redistributivas urgentes','D. Es preocupante independientemente del contexto'],c:'B'},
+  {mod:'M4',n:18,t:'Un estudio dice que el salario mínimo no destruye empleo. Tú:', ops:['A. Lo compartes porque confirma lo que creías','B. Preguntas quién lo financia, la metodología y el contexto','C. Lo aceptas porque viene de una universidad','D. Buscas otro estudio que lo contradiga'],c:'B'},
+  {mod:'M4',n:19,t:'El capitalismo genera pobreza. Esta frase:', ops:['A. Es cierta — la historia lo demuestra','B. Es falsa — el capitalismo sacó a más personas de la pobreza que cualquier otro sistema','C. Depende del tipo de capitalismo','D. Es un debate legítimo sin conclusión'],c:'B'},
+  {mod:'M4',n:20,t:'Cuando alguien te llama extremo por defender la libertad individual, tú:', ops:['A. Moderas tu posición para no alienar a nadie','B. Señalas que defender la propiedad y la libertad no es extremismo','C. Explicas tu posición con más cuidado','D. Evitas el conflicto porque no vale la pena'],c:'B'}
+];
 
-function nivelActual(pts){
-  var idx=0;
-  for(var i=0;i<NIVELES.length;i++){if(pts>=NIVELES[i].min)idx=i;}
-  return idx;
-}
+// ── TEST ÚNICO ────────────────────────────────────────────────────────────────
+var resps = {};
 
-function actualizarMarcador(){
-  var ETIQUETAS = ['CONFUSIÓN','ESTADO','ECONÓMICO','NARRATIVA'];
-  var total = totalPuntos();
-  var idx = nivelActual(total);
-  var nv = NIVELES[idx];
-  var pct = Math.round((total/40)*100);
-
-  // Actualizar cada tarjeta de test
-  for(var i=0;i<4;i++){
-    var card = document.getElementById('rec-t'+i);
-    if(!card) continue;
-    var numEl = card.querySelector('div:nth-child(2)');
-    var subEl = card.querySelector('div:nth-child(3)');
-    if(ptsGlobales[i] !== undefined){
-      var pts = ptsGlobales[i];
-      var color = pts >= 8 ? '#E85D00' : pts >= 5 ? '#fff' : '#888';
-      numEl.style.color = color;
-      numEl.textContent = pts;
-      subEl.style.color = pts >= 8 ? 'rgba(232,93,0,0.7)' : 'var(--muted)';
-      card.style.borderColor = pts >= 8 ? 'rgba(232,93,0,0.4)' : pts >= 5 ? '#3a3a3a' : '#2a2a2a';
-      card.style.background = pts >= 8 ? 'rgba(232,93,0,0.06)' : '#111';
-    } else {
-      numEl.style.color = '#333';
-      numEl.textContent = '—';
-      subEl.style.color = '#333';
-      card.style.borderColor = '#2a2a2a';
-      card.style.background = '#111';
+function iniciarTest() {
+  resps = {};
+  var c = document.getElementById('tpreguntas');
+  document.getElementById('tresultado').style.display = 'none';
+  c.style.display = 'block';
+  var html = '';
+  for (var i = 0; i < PREGUNTAS.length; i++) {
+    var p = PREGUNTAS[i];
+    html += '<div class="pcard">';
+    html += '<div class="pnum" style="display:flex;justify-content:space-between;"><span>PREGUNTA ' + p.n + ' DE 20</span><span style="color:#aaa;font-size:10px;">' + p.mod + '</span></div>';
+    html += '<div class="ptxt">' + p.t + '</div>';
+    var lets = ['A','B','C','D'];
+    for (var j = 0; j < p.ops.length; j++) {
+      html += '<button class="opbtn" data-pi="' + i + '" data-let="' + lets[j] + '">' + p.ops[j] + '</button>';
     }
+    html += '</div>';
   }
+  html += '<div style="text-align:center;margin-top:28px;">';
+  html += '<div id="prog" style="font-size:13px;color:#666;margin-bottom:14px;">0 de 20 preguntas respondidas</div>';
+  html += '<button class="btn btn-naranja" id="btn-ver-res" disabled style="opacity:0.4;cursor:not-allowed;">Ver mi resultado</button>';
+  html += '</div>';
+  c.innerHTML = html;
 
-  // Total
-  var totalEl = document.getElementById('rec-total');
-  if(totalEl) totalEl.textContent = total;
-
-  // Barra
-  var barraEl = document.getElementById('rec-barra');
-  if(barraEl) barraEl.style.width = pct+'%';
-
-  // Nivel
-  var nivelEl = document.getElementById('rec-nivel');
-  if(nivelEl){
-    var completados = 0;
-    for(var i=0;i<4;i++){if(puntosTests[i]!==null)completados++;}
-    nivelEl.textContent = (completados===4 ? nv.emoji+' '+nv.nombre : completados+' / 4 módulos completados');
-  }
-}
-
-function actualizarNivelUI(){
-  var total=totalPuntos();
-  var idx=nivelActual(total);
-  var nv=NIVELES[idx];
-  var pct=Math.round((total/40)*100);
-  var widget=document.getElementById('nv-auto');
-  if(!widget) return;
-
-  // Mostrar widget si hay al menos un test completado
-  var hayAlguno=false;
-  for(var i=0;i<4;i++){if(puntosTests[i]!==null){hayAlguno=true;break;}}
-  widget.style.display = hayAlguno ? 'block' : 'none';
-  if(!hayAlguno) return;
-
-  actualizarMarcador();
-
-  document.getElementById('nva-nombre').textContent = nv.emoji+' '+nv.nombre;
-  document.getElementById('nva-pts').textContent = total+' / 40 pts';
-  document.getElementById('nva-barra').style.width = pct+'%';
-
-  for(var i=0;i<5;i++){
-    var s=document.getElementById('nva-s'+i);
-    if(!s) continue;
-    s.className='nv-step'+(i<idx?' nv-done':(i===idx?' nv-curr':''));
-  }
-
-  var bd=document.getElementById('nva-badges');
-  if(bd){
-    var html='';
-    for(var i=0;i<4;i++){
-      if(ptsGlobales[i]!==undefined){
-        html+='<span class="nv-badge hecho">Módulo '+(i+1)+' ✓ '+ptsGlobales[i]+'/10</span>';
-      } else {
-        html+='<span class="nv-badge pend">Módulo '+(i+1)+'</span>';
+  c.querySelectorAll('.opbtn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var pi = parseInt(btn.getAttribute('data-pi'));
+      var let_ = btn.getAttribute('data-let');
+      resps[pi] = let_;
+      c.querySelectorAll('.opbtn[data-pi="' + pi + '"]').forEach(function(b) { b.classList.remove('sel'); });
+      btn.classList.add('sel');
+      var total = Object.keys(resps).length;
+      document.getElementById('prog').textContent = total + ' de 20 preguntas respondidas';
+      if (total === 20) {
+        var br = document.getElementById('btn-ver-res');
+        br.disabled = false; br.style.opacity = '1'; br.style.cursor = 'pointer';
       }
-    }
-    bd.innerHTML=html;
-  }
+    });
+  });
+
+  document.getElementById('btn-ver-res').addEventListener('click', verResultado);
 }
+
+function verResultado() {
+  var pts = 0;
+  for (var i = 0; i < PREGUNTAS.length; i++) {
+    if (resps[i] === PREGUNTAS[i].c) pts++;
+  }
+  var nv = NIVELES[NIVELES.length - 1];
+  for (var i = 0; i < NIVELES.length; i++) {
+    if (pts >= NIVELES[i].min && pts <= NIVELES[i].max) { nv = NIVELES[i]; break; }
+  }
+  document.getElementById('tpreguntas').style.display = 'none';
+  document.getElementById('tresultado').style.display = 'block';
+  document.getElementById('remoji').textContent = nv.emoji;
+  document.getElementById('rpts').textContent = pts + ' / 20';
+  document.getElementById('rtit').textContent = nv.tit;
+  document.getElementById('rdesc').textContent = nv.desc;
+  document.getElementById('rperf').textContent = nv.perf;
+  document.getElementById('rcard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+document.getElementById('btn-reiniciar').addEventListener('click', iniciarTest);
 
 // ── NAVEGACIÓN ──────────────────────────────────────────────
 function irA(id) {
-  document.querySelectorAll('.page').forEach(function(p) {
-    p.classList.remove('active');
-  });
+  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
   var target = document.getElementById(id);
   if (target) {
     target.classList.add('active');
     window.scrollTo(0,0);
-    if(id==='autoexamen'){ mostrarSelector(); actualizarNivelUI(); actualizarMarcador(); }
+    if (id === 'autoexamen') { iniciarTest(); }
   }
 }
 
-// Event delegation: captura todos los clicks con data-page
 document.addEventListener('click', function(e) {
   var linkEl = e.target.closest('a[href]');
-  if (linkEl && linkEl.href && !linkEl.getAttribute('data-page')) {
-    return;
-  }
+  if (linkEl && linkEl.href && !linkEl.getAttribute('data-page')) { return; }
   var el = e.target.closest('[data-page]');
-  if (el) {
-    e.preventDefault();
-    irA(el.getAttribute('data-page'));
-  }
+  if (el) { e.preventDefault(); irA(el.getAttribute('data-page')); }
 });
-
-// Substack card
-
 
 // ── SPARRING ────────────────────────────────────────────────
 var modo = 'directa';
