@@ -1379,26 +1379,7 @@ function verResultadoGlobal() {
 
 document.getElementById('btn-reiniciar').addEventListener('click', mostrarSelector);
 
-mostrarSelector();actualizarNivelUI();actualizarMarcador();}
-  }
-}
-
-// Event delegation: captura todos los clicks con data-page
-document.addEventListener('click', function(e) {
-  // Si el click fue en un link real con href externo, no interceptar
-  var linkEl = e.target.closest('a[href]');
-  if (linkEl && linkEl.href && !linkEl.getAttribute('data-page')) {
-    return; // Dejar que el browser maneje el link normalmente
-  }
-  var el = e.target.closest('[data-page]');
-  if (el) {
-    e.preventDefault();
-    irA(el.getAttribute('data-page'));
-  }
-});
-
-// Substack card
-
+mostrarSelector();actualizarNivelUI();actualizarMarcador();
 
 // ── SPARRING ────────────────────────────────────────────────
 var modo = 'directa';
