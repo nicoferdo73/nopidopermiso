@@ -12,6 +12,7 @@
 body{background:#1c1c1c;color:var(--blanco);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
 .page{display:none;min-height:100vh;}
 .page.active{display:block;}
+.page:not(.active) footer{display:none!important;}
 nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(10,10,10,0.95);border-bottom:1px solid var(--gris-borde);}
 .logo{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--blanco);cursor:pointer;text-decoration:none;}
 .logo span{color:var(--naranja);}
