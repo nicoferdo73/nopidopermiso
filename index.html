@@ -251,7 +251,7 @@ a.bk { pointer-events:auto; }
   <a class="logo" data-page="home">nopido<span>permiso</span></a>
   <ul class="nav-links">
     <li><a data-page="biblioteca">Biblioteca</a></li>
-    <li><a data-page="sparring">Sparring IA</a></li>
+    <li><a data-page="sparring">Milton Javier IA</a></li>
     <li><a data-page="autoexamen">Autoexamen</a></li>
     <li><a data-page="substack">Substack</a></li>
     <li><a data-page="sobreautor">Sobre el Autor</a></li>
@@ -316,10 +316,10 @@ a.bk { pointer-events:auto; }
         <span class="mod-tag">Entrar →</span>
       </div>
       <div class="mod-card" data-page="sparring">
-        <div class="mod-num">02 — SPARRING IA</div>
+        <div class="mod-num">02 — MILTON JAVIER IA</div>
         <div class="mod-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-        <h3>Sparring con IA</h3>
-        <p>Una IA que te lleva a la arena libertaria. Te responde preguntas o te ayuda a debatir como si fueras Milei o Friedman. Te responde en 3 modos: directo, con evidencia y en tono confrontacional.</p>
+        <h3>Entrénate con Milton Javier</h3>
+        <p>Milton Javier es una IA que es tu mejor profesor y sparring para temas de ideas de la libertad. Te ayuda a resolver tus dudas y te sirve de respaldo en debates. Te da tres tipos de respuestas: concreta, con evidencia y confrontacional.</p>
         <span class="mod-tag">Entrar →</span>
       </div>
       <div class="mod-card" data-page="autoexamen">
@@ -638,16 +638,23 @@ a.bk { pointer-events:auto; }
 <div id="sparring" class="page">
   <div class="inner">
     <button class="back-btn" data-page="modulos">← Volver</button>
-    <div class="label">02 — Sparring con IA</div>
-    <h2 class="titulo">Arena Libertaria</h2>
-    <p style="color:var(--muted);font-size:15px;margin-top:8px;font-weight:300;">Escribe cualquier pregunta o argumento. La IA responde siempre desde la visión libertaria — con <strong style="color:var(--blanco);">3 respuestas simultáneas</strong>.</p>
+    <div class="label">02 — Milton Javier IA</div>
+    <h2 class="titulo">Milton Javier</h2>
+    <p style="color:var(--muted);font-size:15px;margin-top:8px;font-weight:300;max-width:640px;">Milton Javier te saluda! Escribe cualquier pregunta sobre economía, política, libertad o cualquier argumento que quieras debatir. Recibirás <strong style="color:var(--blanco);">tres (3) respuestas simultáneas</strong> al mejor estilo Friedman, Rothbard, Von Mises, Hayek o Javier — los gigantes de las ideas de la libertad.</p>
 
-    <div class="chat-box" style="margin-top:28px;">
+    <div style="display:flex;align-items:center;gap:24px;margin-top:28px;margin-bottom:8px;flex-wrap:wrap;">
+      <img src="/milton-javier.png" alt="Milton Javier" style="width:110px;border-radius:16px;border:2px solid var(--naranja);flex-shrink:0;box-shadow:0 4px 24px rgba(232,93,0,0.25);">
+      <div>
+        <h3 style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;">Milton Javier</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;">Tu asistente virtual de ideas libertarias. Habla como Milei, piensa como Friedman y no le da papaya a nadie.</p>
+      </div>
+    </div>
+    <div class="chat-box" style="margin-top:16px;">
       <div class="chat-top">
         <div class="dot" style="background:#ff5f57;"></div>
         <div class="dot" style="background:#ffbd2e;"></div>
         <div class="dot" style="background:#28c840;"></div>
-        <span class="chat-title-bar">Arena Libertaria — Escuela Austriaca · Friedman · Sowell · Kaiser · Rallo · Laje · Milei · Benegas Lynch</span>
+        <span class="chat-title-bar">Milton Javier — Escuela Austriaca · Friedman · Sowell · Kaiser · Rallo · Laje · Milei · Benegas Lynch</span>
       </div>
       <div style="display:flex;gap:16px;padding:12px 18px;border-bottom:1px solid var(--gris-borde);background:var(--negro);flex-wrap:wrap;">
         <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:50%;background:var(--naranja);flex-shrink:0;"></div><span style="font-size:11px;color:var(--muted);font-weight:600;letter-spacing:0.5px;">1. CONCRETA</span></div>
@@ -656,8 +663,8 @@ a.bk { pointer-events:auto; }
       </div>
       <div id="msgs" style="padding:20px;min-height:300px;max-height:520px;overflow-y:auto;display:flex;flex-direction:column;gap:20px;">
         <div class="mw ia">
-          <div class="ml org">Arena Libertaria</div>
-          <div class="mb ia">Bienvenido. Escribe cualquier pregunta sobre economía, política, libertad o cualquier argumento que quieras debatir. Recibirás 3 respuestas simultáneas desde la visión libertaria.</div>
+          <div class="ml org">Milton Javier</div>
+          <div class="mb ia">¡Milton Javier te saluda! Escribe cualquier pregunta sobre economía, política, libertad o cualquier argumento que quieras debatir. Recibirás 3 respuestas simultáneas al mejor estilo Friedman, Rothbard, Von Mises, Hayek o Javier — los gigantes de las ideas de la libertad.</div>
         </div>
       </div>
       <div class="chat-input-area">
@@ -1043,7 +1050,7 @@ function addMsgIA(resp) {
   var w = document.createElement('div');
   w.className = 'mw ia';
   w.innerHTML =
-    '<div class="ml org">Arena Libertaria</div>' +
+    '<div class="ml org">Milton Javier</div>' +
     '<div class="resp-bloque">' +
       '<div class="resp-num"><div class="resp-num-dot" style="background:var(--naranja);"></div>1. RESPUESTA CONCRETA</div>' +
       '<div class="resp-texto">' + resp.concreta + '</div>' +
@@ -1064,7 +1071,7 @@ function addMsgError(msg) {
   var cont = document.getElementById('msgs');
   var w = document.createElement('div');
   w.className = 'mw ia';
-  w.innerHTML = '<div class="ml org">Arena Libertaria</div><div class="mb ia" style="color:#ff6b6b;">' + msg + '</div>';
+  w.innerHTML = '<div class="ml org">Milton Javier</div><div class="mb ia" style="color:#ff6b6b;">' + msg + '</div>';
   cont.appendChild(w);
   cont.scrollTop = cont.scrollHeight;
 }
@@ -1073,7 +1080,7 @@ function showTyping() {
   var cont = document.getElementById('msgs');
   var w = document.createElement('div');
   w.className = 'mw ia'; w.id = 'typ';
-  w.innerHTML = '<div class="ml org">Arena Libertaria</div><div class="typing"><span></span><span></span><span></span></div>';
+  w.innerHTML = '<div class="ml org">Milton Javier</div><div class="typing"><span></span><span></span><span></span></div>';
   cont.appendChild(w); cont.scrollTop = cont.scrollHeight;
 }
 
