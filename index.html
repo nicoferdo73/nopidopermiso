@@ -823,9 +823,26 @@ function iniciarTest() {
   var c = document.getElementById('tpreguntas');
   document.getElementById('tresultado').style.display = 'none';
   c.style.display = 'block';
+
+  var modTitulos = {
+    'M1': 'Módulo 1 — Introductorio',
+    'M2': 'Módulo 2 — El Estado',
+    'M3': 'Módulo 3 — Economía',
+    'M4': 'Módulo 4 — La Narrativa'
+  };
+
   var html = '';
+  var modActual = '';
   for (var i = 0; i < PREGUNTAS.length; i++) {
     var p = PREGUNTAS[i];
+    // Insertar separador de módulo cuando cambia
+    if (p.mod !== modActual) {
+      modActual = p.mod;
+      html += '<div style="margin:32px 0 20px;padding:14px 20px;background:rgba(232,93,0,0.08);border-left:3px solid var(--naranja);border-radius:0 8px 8px 0;">';
+      html += '<div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:3px;margin-bottom:3px;">AUTOEXAMEN CULTURAL</div>';
+      html += '<div style="font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:1px;color:#1a1a1a;">' + modTitulos[p.mod] + '</div>';
+      html += '</div>';
+    }
     html += '<div class="pcard">';
     html += '<div class="pnum" style="display:flex;justify-content:space-between;"><span>PREGUNTA ' + p.n + ' DE 20</span><span style="color:#aaa;font-size:10px;">' + p.mod + '</span></div>';
     html += '<div class="ptxt">' + p.t + '</div>';
