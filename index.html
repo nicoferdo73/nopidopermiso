@@ -899,7 +899,7 @@ function verResultado() {
 document.getElementById('btn-reiniciar').addEventListener('click', iniciarTest);
 
 // ── NAVEGACIÓN ──────────────────────────────────────────────
-function irA(id) {
+function irA(id, pushHistory) {
   document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
   var target = document.getElementById(id);
   if (target) {
@@ -907,7 +907,27 @@ function irA(id) {
     window.scrollTo(0,0);
     if (id === 'autoexamen') { iniciarTest(); }
   }
+  if (pushHistory !== false) {
+    history.pushState({ page: id }, '', '#' + id);
+  }
 }
+
+// Manejar botón atrás/adelante del browser
+window.addEventListener('popstate', function(e) {
+  var id = (e.state && e.state.page) ? e.state.page : 'home';
+  irA(id, false);
+});
+
+// Cargar página según hash en la URL al iniciar
+(function() {
+  var hash = window.location.hash.replace('#', '');
+  var validPages = ['home','modulos','biblioteca','sparring','autoexamen','substack','sobreautor','rinconcito','plataformas'];
+  if (hash && validPages.indexOf(hash) !== -1) {
+    irA(hash, false);
+  } else {
+    history.replaceState({ page: 'home' }, '', '#home');
+  }
+})();
 
 document.addEventListener('click', function(e) {
   var linkEl = e.target.closest('a[href]');
