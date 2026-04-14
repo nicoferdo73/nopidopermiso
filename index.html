@@ -361,8 +361,8 @@ a.bk { pointer-events:auto; }
 
     <!-- TABS -->
     <div style="display:flex;gap:4px;margin-bottom:36px;background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:8px;padding:4px;width:fit-content;">
-      <button class="btab active" data-tab="libros" style="padding:8px 20px;border-radius:6px;border:none;font-family:DM Sans,sans-serif;font-size:13px;font-weight:600;cursor:pointer;background:var(--naranja);color:var(--blanco);">Libros</button>
-      <button class="btab" data-tab="podcasts" style="padding:8px 20px;border-radius:6px;border:none;font-family:DM Sans,sans-serif;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:var(--muted);">Podcasts</button>
+      <button class="btab active" onclick="switchTab('libros')" style="padding:8px 20px;border-radius:6px;border:none;font-family:DM Sans,sans-serif;font-size:13px;font-weight:600;cursor:pointer;background:var(--naranja);color:var(--blanco);">Libros</button>
+      <button class="btab" onclick="switchTab('podcasts')" style="padding:8px 20px;border-radius:6px;border:none;font-family:DM Sans,sans-serif;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:var(--muted);">Podcasts</button>
     </div>
 
     <!-- LIBROS -->
@@ -1380,22 +1380,21 @@ document.getElementById('cinput').addEventListener('input', function() {
 
 
 // TABS BIBLIOTECA
-document.addEventListener('click', function(e) {
-  var tab = e.target.closest('.btab');
-  if (!tab) return;
-  e.stopPropagation();
-  var tabId = tab.getAttribute('data-tab');
+function switchTab(tabId) {
   document.querySelectorAll('.btab').forEach(function(b) {
     b.classList.remove('active');
     b.style.background = 'transparent';
     b.style.color = 'var(--muted)';
   });
-  tab.classList.add('active');
-  tab.style.background = 'var(--naranja)';
-  tab.style.color = 'var(--blanco)';
+  var activeBtn = document.querySelector('.btab[onclick="switchTab(\'' + tabId + '\')"]');
+  if (activeBtn) {
+    activeBtn.classList.add('active');
+    activeBtn.style.background = 'var(--naranja)';
+    activeBtn.style.color = 'var(--blanco)';
+  }
   document.getElementById('tab-libros').style.display = tabId === 'libros' ? 'block' : 'none';
   document.getElementById('tab-podcasts').style.display = tabId === 'podcasts' ? 'block' : 'none';
-});
+}
 
 
 actualizarMarcador();
