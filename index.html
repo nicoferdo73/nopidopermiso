@@ -1383,6 +1383,7 @@ document.getElementById('cinput').addEventListener('input', function() {
 document.addEventListener('click', function(e) {
   var tab = e.target.closest('.btab');
   if (!tab) return;
+  e.stopPropagation();
   var tabId = tab.getAttribute('data-tab');
   document.querySelectorAll('.btab').forEach(function(b) {
     b.classList.remove('active');
