@@ -6,6 +6,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nopidopermiso</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+// Menú móvil — debe estar en el head para que onclick funcione
+var menuAbierto = false;
+function toggleMenu(e) {
+  if (e) { e.preventDefault(); e.stopPropagation(); }
+  menuAbierto = !menuAbierto;
+  var mm = document.getElementById('mobile-menu');
+  var hb = document.getElementById('hamburger');
+  if (menuAbierto) {
+    mm.style.cssText = 'display:block!important;position:fixed;top:57px;left:0;right:0;background:#1e1c1a;z-index:9999;padding:8px 0;border-bottom:1px solid #333;';
+    if (hb) hb.classList.add('open');
+  } else {
+    mm.style.cssText = 'display:none;';
+    if (hb) hb.classList.remove('open');
+  }
+}
+function cerrarMenu() {
+  menuAbierto = false;
+  var mm = document.getElementById('mobile-menu');
+  var hb = document.getElementById('hamburger');
+  if (mm) mm.style.cssText = 'display:none;';
+  if (hb) hb.classList.remove('open');
+}
+</script>
 <style>
 :root{--naranja:#E85D00;--negro:#e8ede8;--gris-oscuro:#d8e4d8;--gris-medio:#ccd8cc;--gris-borde:#2A2A2A;--blanco:#1a1a1a;--muted:#888;}
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -869,29 +893,6 @@ a.bk { pointer-events:auto; }
 
 
 <script>
-
-// ── MENÚ MÓVIL ───────────────────────────────────────────────
-var menuAbierto = false;
-function toggleMenu(e) {
-  if (e) { e.preventDefault(); e.stopPropagation(); }
-  menuAbierto = !menuAbierto;
-  var mm = document.getElementById('mobile-menu');
-  var hb = document.getElementById('hamburger');
-  if (menuAbierto) {
-    mm.style.cssText = 'display:block!important;position:fixed;top:57px;left:0;right:0;background:#1e1c1a;z-index:9999;padding:8px 0;border-bottom:1px solid #333;';
-    if (hb) hb.classList.add('open');
-  } else {
-    mm.style.cssText = 'display:none;';
-    if (hb) hb.classList.remove('open');
-  }
-}
-function cerrarMenu() {
-  menuAbierto = false;
-  var mm = document.getElementById('mobile-menu');
-  var hb = document.getElementById('hamburger');
-  if (mm) mm.style.cssText = 'display:none;';
-  if (hb) hb.classList.remove('open');
-}
 
 // ── PERSISTENCIA — deshabilitada: siempre arranca en ceros ───────────────────
 try{ Object.keys(localStorage).filter(function(k){return k.indexOf('npm_')===0;}).forEach(function(k){localStorage.removeItem(k);}); }catch(e){}
