@@ -1013,10 +1013,7 @@ function irA(id, pushHistory) {
     if (id === 'autoexamen') { iniciarTest(); }
   }
   // Cerrar menú móvil
-  var hb = document.getElementById('hamburger');
-  var mm = document.getElementById('mobile-menu');
-  if (hb) hb.classList.remove('open');
-  if (mm) mm.classList.remove('open');
+  cerrarMenu();
   if (pushHistory !== false) {
     history.pushState({ page: id }, '', '#' + id);
   }
@@ -1529,27 +1526,34 @@ document.getElementById('cinput').addEventListener('input', function() {
 // ── HAMBURGUESA ──────────────────────────────────────────────
 var hamburger = document.getElementById('hamburger');
 var mobileMenu = document.getElementById('mobile-menu');
+var menuAbierto = false;
+
+function toggleMenu(e) {
+  if (e) { e.preventDefault(); e.stopPropagation(); }
+  menuAbierto = !menuAbierto;
+  if (menuAbierto) {
+    hamburger.classList.add('open');
+    mobileMenu.style.display = 'block';
+  } else {
+    hamburger.classList.remove('open');
+    mobileMenu.style.display = 'none';
+  }
+}
+
+function cerrarMenu() {
+  menuAbierto = false;
+  if (hamburger) hamburger.classList.remove('open');
+  if (mobileMenu) mobileMenu.style.display = 'none';
+}
 
 if (hamburger) {
-  hamburger.addEventListener('click', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-  });
-  hamburger.addEventListener('touchend', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-  });
+  hamburger.addEventListener('click', toggleMenu, true);
+  hamburger.addEventListener('touchstart', toggleMenu, true);
 }
 
 document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
-  link.addEventListener('click', function() {
-    if (hamburger) hamburger.classList.remove('open');
-    if (mobileMenu) mobileMenu.classList.remove('open');
-  });
+  link.addEventListener('click', cerrarMenu);
+  link.addEventListener('touchstart', cerrarMenu);
 });
 
 // TABS BIBLIOTECA
