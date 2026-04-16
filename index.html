@@ -361,11 +361,11 @@ a.bk { pointer-events:auto; }
     <li><a data-page="plataformas">Plataformas</a></li>
     <li><a data-page="modulos" class="nav-btn">Dar la batalla ahora</a></li>
   </ul>
-  <div id="hamburger" ontouchstart="toggleMenu(event)" onclick="toggleMenu(event)" style="display:none;cursor:pointer;padding:12px 8px;flex-direction:column;gap:5px;-webkit-tap-highlight-color:transparent;touch-action:manipulation;">
+  <a href="javascript:void(0)" id="hamburger" onclick="toggleMenu(event)" style="display:none;cursor:pointer;padding:12px 8px;-webkit-tap-highlight-color:transparent;touch-action:manipulation;flex-direction:column;gap:5px;text-decoration:none;">
     <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;margin-bottom:5px;pointer-events:none;"></span>
     <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;margin-bottom:5px;pointer-events:none;"></span>
     <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;pointer-events:none;"></span>
-  </div>
+  </a>
 </nav>
 
 <!-- MENÚ MÓVIL -->
@@ -1069,7 +1069,6 @@ window.addEventListener('popstate', function(e) {
 })();
 
 document.addEventListener('click', function(e) {
-  // Ignorar clicks en el hamburguesa
   if (e.target.closest('#hamburger')) { return; }
   var linkEl = e.target.closest('a[href]');
   if (linkEl && linkEl.href && !linkEl.getAttribute('data-page')) { return; }
