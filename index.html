@@ -147,6 +147,66 @@ footer p{font-size:13px;color:#aaa;}
   .grid-2,.test-grid,.bib-grid{grid-template-columns:1fr;}
   footer{flex-direction:column;text-align:center;}
   .flinks{justify-content:center;}
+
+  /* HERO */
+  .hero{padding:80px 16px 48px;}
+  .hero h1{font-size:clamp(48px,14vw,90px);}
+  .hero p{font-size:16px;}
+
+  /* MÓDULOS */
+  .mod-card{padding:28px 20px;}
+
+  /* BIBLIOTECA */
+  .bib-grid{grid-template-columns:1fr;}
+
+  /* RINCONCITO */
+  div[style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr!important;}
+  div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}
+  div[style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr!important;}
+
+  /* SUBSTACK HERO */
+  div[style*="display:flex;align-items:center;gap:28px"]{flex-direction:column!important;}
+
+  /* SOBRE EL AUTOR */
+  div[style*="display:flex;align-items:center;gap:20px"]{flex-direction:column!important;}
+  div[style*="display:flex;gap:12px;margin-top:8px"]{flex-wrap:wrap!important;}
+
+  /* PLATAFORMAS */
+  div[style*="display:flex;align-items:center;gap:16px;margin-bottom:12px"]{flex-wrap:wrap!important;}
+
+  /* AUTOEXAMEN */
+  .pcard{padding:18px 14px;}
+  .opbtn{font-size:13px;padding:10px 12px;}
+
+  /* RESULTADO */
+  #rcard{padding:24px 16px;}
+  #rpts{font-size:48px;}
+  #rtit{font-size:24px;}
+
+  /* SPARRING */
+  #msgs{max-height:280px;}
+  .chat-input-area{flex-direction:column;}
+
+  /* CTA BAR */
+  .cta-bar{padding:40px 20px;}
+
+  /* NAVEGACION NIVEL GLOBAL */
+  .barra-nivel-global{padding:7px 16px;}
+
+  /* SUBSTACK LISTA */
+  .art-row{padding:12px 14px;}
+}
+
+@media(max-width:480px){
+  .hero h1{font-size:clamp(40px,12vw,72px);}
+  .nav-links li:last-child a{padding:7px 14px;font-size:13px;}
+  .modulos-wrap,.inner{padding:72px 12px 40px;}
+  .mod-card{padding:22px 16px;}
+  .pcard{padding:14px 12px;}
+  .opbtn{font-size:12px;}
+  #rpts{font-size:40px;}
+  #rtit{font-size:20px;}
+  .bk-inner{flex-direction:column;}
 }
 
 /* BIBLIOTECA */
