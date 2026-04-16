@@ -9,8 +9,12 @@
 <script>
 // Menú móvil — debe estar en el head para que onclick funcione
 var menuAbierto = false;
+var lastToggle = 0;
 function toggleMenu(e) {
   if (e) { e.preventDefault(); e.stopPropagation(); }
+  var now = Date.now();
+  if (now - lastToggle < 300) return; // evitar doble disparo touch+click
+  lastToggle = now;
   menuAbierto = !menuAbierto;
   var mm = document.getElementById('mobile-menu');
   var hb = document.getElementById('hamburger');
@@ -357,11 +361,11 @@ a.bk { pointer-events:auto; }
     <li><a data-page="plataformas">Plataformas</a></li>
     <li><a data-page="modulos" class="nav-btn">Dar la batalla ahora</a></li>
   </ul>
-  <button onclick="toggleMenu(event)" id="hamburger" style="display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;" aria-label="Menú">
-    <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;"></span>
-    <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;"></span>
-    <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;"></span>
-  </button>
+  <div id="hamburger" ontouchstart="toggleMenu(event)" onclick="toggleMenu(event)" style="display:none;cursor:pointer;padding:12px 8px;flex-direction:column;gap:5px;-webkit-tap-highlight-color:transparent;touch-action:manipulation;">
+    <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;margin-bottom:5px;pointer-events:none;"></span>
+    <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;margin-bottom:5px;pointer-events:none;"></span>
+    <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;pointer-events:none;"></span>
+  </div>
 </nav>
 
 <!-- MENÚ MÓVIL -->
