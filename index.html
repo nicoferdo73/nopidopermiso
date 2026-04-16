@@ -1065,6 +1065,8 @@ window.addEventListener('popstate', function(e) {
 })();
 
 document.addEventListener('click', function(e) {
+  // Ignorar clicks en el hamburguesa
+  if (e.target.closest('#hamburger')) { return; }
   var linkEl = e.target.closest('a[href]');
   if (linkEl && linkEl.href && !linkEl.getAttribute('data-page')) { return; }
   var el = e.target.closest('[data-page]');
