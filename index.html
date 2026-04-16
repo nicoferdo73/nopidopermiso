@@ -360,26 +360,27 @@ a.bk { pointer-events:auto; }
     <li><a data-page="plataformas">Plataformas</a></li>
     <li><a data-page="modulos" class="nav-btn">Dar la batalla ahora</a></li>
   </ul>
-  <button type="button" id="hamburger" onclick="toggleMenu(event)" style="display:none;cursor:pointer;padding:12px 8px;background:none;border:none;-webkit-appearance:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation;">
-    <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;margin-bottom:5px;pointer-events:none;"></span>
-    <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;margin-bottom:5px;pointer-events:none;"></span>
-    <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;pointer-events:none;"></span>
+  <button type="button" id="hamburger" onclick="toggleMenu(event)" style="display:none;cursor:pointer;padding:12px 8px;background:none;border:none;-webkit-appearance:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation;line-height:0;">
+    <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="pointer-events:none;">
+      <rect y="0" width="24" height="2" rx="1" fill="white"/>
+      <rect y="8" width="24" height="2" rx="1" fill="white"/>
+      <rect y="16" width="24" height="2" rx="1" fill="white"/>
+    </svg>
   </button>
 </nav>
 
 <!-- MENÚ MÓVIL -->
-<div class="mobile-menu" id="mobile-menu" style="display:none;">
-  <a data-page="modulos" class="mobile-nav-link" onclick="cerrarMenu()">Módulos</a>
-  <a data-page="biblioteca" class="mobile-nav-link" onclick="cerrarMenu()">Biblioteca</a>
-  <a data-page="sparring" class="mobile-nav-link" onclick="cerrarMenu()">Milton Javier IA</a>
-  <a data-page="autoexamen" class="mobile-nav-link" onclick="cerrarMenu()">Autoexamen</a>
-  <a data-page="substack" class="mobile-nav-link" onclick="cerrarMenu()">Substack</a>
-  <a data-page="sobreautor" class="mobile-nav-link" onclick="cerrarMenu()">Sobre el Autor</a>
-  <a data-page="rinconcito" class="mobile-nav-link" onclick="cerrarMenu()">Rinconcito Colombiano</a>
-  <a data-page="plataformas" class="mobile-nav-link" onclick="cerrarMenu()">Plataformas</a>
-  <a data-page="modulos" class="mobile-nav-link" onclick="cerrarMenu()">Dar la batalla ahora</a>
+<div id="mobile-menu" style="display:none;position:fixed;top:57px;left:0;right:0;background:#1e1c1a;z-index:9999;padding:8px 0;border-bottom:1px solid #333;">
+  <a data-page="modulos" class="mobile-nav-link" onclick="cerrarMenu()" style="display:block;padding:14px 24px;color:#ccc;font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid #2a2a2a;">Módulos</a>
+  <a data-page="biblioteca" class="mobile-nav-link" onclick="cerrarMenu()" style="display:block;padding:14px 24px;color:#ccc;font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid #2a2a2a;">Biblioteca</a>
+  <a data-page="sparring" class="mobile-nav-link" onclick="cerrarMenu()" style="display:block;padding:14px 24px;color:#ccc;font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid #2a2a2a;">Milton Javier IA</a>
+  <a data-page="autoexamen" class="mobile-nav-link" onclick="cerrarMenu()" style="display:block;padding:14px 24px;color:#ccc;font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid #2a2a2a;">Autoexamen</a>
+  <a data-page="substack" class="mobile-nav-link" onclick="cerrarMenu()" style="display:block;padding:14px 24px;color:#ccc;font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid #2a2a2a;">Substack</a>
+  <a data-page="sobreautor" class="mobile-nav-link" onclick="cerrarMenu()" style="display:block;padding:14px 24px;color:#ccc;font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid #2a2a2a;">Sobre el Autor</a>
+  <a data-page="rinconcito" class="mobile-nav-link" onclick="cerrarMenu()" style="display:block;padding:14px 24px;color:#ccc;font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid #2a2a2a;">Rinconcito Colombiano</a>
+  <a data-page="plataformas" class="mobile-nav-link" onclick="cerrarMenu()" style="display:block;padding:14px 24px;color:#ccc;font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid #2a2a2a;">Plataformas</a>
+  <a data-page="modulos" class="mobile-nav-link" onclick="cerrarMenu()" style="display:block;padding:14px 24px;color:#fff;font-size:15px;font-weight:600;text-decoration:none;background:var(--naranja);text-align:center;margin:12px 16px;border-radius:8px;">Dar la batalla ahora</a>
 </div>
-</nav>
 <div class="barra-nivel-global" id="barra-global">
   <div style="display:flex;align-items:center;gap:10px;">
     <span id="bg-emoji" style="font-size:16px;">🌱</span>
