@@ -13,17 +13,16 @@ var lastToggle = 0;
 function toggleMenu(e) {
   if (e) { e.preventDefault(); e.stopPropagation(); }
   var now = Date.now();
-  if (now - lastToggle < 300) return; // evitar doble disparo touch+click
+  if (now - lastToggle < 300) return;
   lastToggle = now;
   menuAbierto = !menuAbierto;
   var mm = document.getElementById('mobile-menu');
   var hb = document.getElementById('hamburger');
+  alert('menu: ' + menuAbierto + ' mm:' + (mm ? 'ok' : 'null'));
   if (menuAbierto) {
     mm.style.cssText = 'display:block!important;position:fixed;top:57px;left:0;right:0;background:#1e1c1a;z-index:9999;padding:8px 0;border-bottom:1px solid #333;';
-    if (hb) hb.classList.add('open');
   } else {
     mm.style.cssText = 'display:none;';
-    if (hb) hb.classList.remove('open');
   }
 }
 function cerrarMenu() {
