@@ -6,38 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nopidopermiso</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script>
-var menuAbierto = false;
-function toggleMenu(e) {
-  if (e) { e.preventDefault(); e.stopPropagation(); }
-  menuAbierto = !menuAbierto;
-  var mm = document.getElementById('mobile-menu');
-  if (menuAbierto) {
-    mm.style.display = 'block';
-  } else {
-    mm.style.display = 'none';
-  }
-}
-function cerrarMenu() {
-  menuAbierto = false;
-  var mm = document.getElementById('mobile-menu');
-  if (mm) mm.style.display = 'none';
-}
-document.addEventListener('DOMContentLoaded', function() {
-  var hb = document.getElementById('hamburger');
-  if (hb) {
-    hb.addEventListener('click', function(e) {
-      e.stopImmediatePropagation();
-      e.preventDefault();
-      toggleMenu(e);
-    }, true);
-  }
-});
-</script>
 <style>
-:root{--naranja:#E85D00;--negro:#e8ede8;--gris-oscuro:#d8e4d8;--gris-medio:#ccd8cc;--gris-borde:#2A2A2A;--blanco:#1a1a1a;--muted:#888;}
+:root{--naranja:#E85D00;--negro:#e8e5e0;--gris-oscuro:#d8d4ce;--gris-medio:#ccc8c2;--gris-borde:#2A2A2A;--blanco:#1a1a1a;--muted:#888;}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:#ffffff;color:#1a1a1a;font-family:DM Sans,sans-serif;overflow-x:hidden;}
+body{background:#e8e3dc;color:#1a1a1a;font-family:DM Sans,sans-serif;overflow-x:hidden;}
 .page{display:none;min-height:100vh;}
 .page.active{display:block;}
 .page:not(.active) footer{display:none!important;visibility:hidden!important;height:0!important;overflow:hidden!important;padding:0!important;margin:0!important;border:none!important;}
@@ -69,8 +41,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:cen
 .titulo{font-family:Bebas Neue,sans-serif;font-size:clamp(36px,5vw,54px);line-height:1;letter-spacing:1px;margin-bottom:12px;color:#1a1a1a;}
 .desc{font-size:16px;color:#555;max-width:460px;margin:0 auto;line-height:1.7;font-weight:300;}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;max-width:1080px;margin:0 auto;background:var(--gris-borde);border:1px solid var(--gris-borde);border-radius:12px;overflow:hidden;}.grid-2 .mod-card:last-child:nth-child(odd){grid-column:1/-1;}
-.mod-card{background:#dae8da;padding:44px;cursor:pointer;position:relative;overflow:hidden;transition:background 0.25s;}
-.mod-card:hover{background:#cddacd;}
+.mod-card{background:#dedad3;padding:44px;cursor:pointer;position:relative;overflow:hidden;transition:background 0.25s;}
+.mod-card:hover{background:#d4cfc7;}
 .mod-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--naranja);transform:scaleY(0);transition:transform 0.3s;transform-origin:bottom;}
 .mod-card:hover::before{transform:scaleY(1);}
 .mod-num{font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:2px;margin-bottom:18px;opacity:0.9;}
@@ -86,11 +58,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:cen
 .back-btn:hover{border-color:#888;color:#1a1a1a;}
 
 /* SPARRING */
-.chat-box{background:#dae8da;border:1px solid #b0c8b0;border-radius:12px;overflow:hidden;margin-top:28px;}
-.chat-top{background:#bfd4bf;padding:13px 18px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #b0c8b0;}
+.chat-box{background:#dedad3;border:1px solid #bfb9b0;border-radius:12px;overflow:hidden;margin-top:28px;}
+.chat-top{background:#c8c3bb;padding:13px 18px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #bfb9b0;}
 .dot{width:8px;height:8px;border-radius:50%;}
 .chat-title-bar{margin-left:8px;font-size:13px;color:#555;}
-.modos{display:flex;gap:8px;padding:14px 18px;border-bottom:1px solid #b0c8b0;background:#cfe0cf;}
+.modos{display:flex;gap:8px;padding:14px 18px;border-bottom:1px solid #bfb9b0;background:#d8d3cb;}
 .mbtn{padding:6px 13px;border-radius:6px;border:1px solid var(--gris-borde);background:transparent;color:var(--muted);font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif;transition:all 0.2s;}
 .mbtn.on{border-color:var(--naranja);color:var(--naranja);background:rgba(232,93,0,0.08);}
 #msgs{padding:20px;min-height:260px;max-height:380px;overflow-y:auto;display:flex;flex-direction:column;gap:14px;}
@@ -101,7 +73,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:cen
 .ml.org{color:var(--naranja);}
 .mb{max-width:82%;padding:11px 15px;border-radius:10px;font-size:14px;line-height:1.55;}
 .mb.u{background:rgba(232,93,0,0.18);border:1px solid rgba(232,93,0,0.3);border-radius:10px 10px 2px 10px;color:#1a1a1a;}
-.mb.ia{background:#bfd4bf;border:1px solid #b0c8b0;border-radius:10px 10px 10px 2px;color:#1a1a1a;}
+.mb.ia{background:#c8c3bb;border:1px solid #bfb9b0;border-radius:10px 10px 10px 2px;color:#1a1a1a;}
 .badge{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;border-radius:3px;margin-bottom:4px;display:inline-block;}
 .badge.d{background:rgba(232,93,0,0.15);color:var(--naranja);}
 .badge.e{background:rgba(136,136,136,0.15);color:#aaa;}
@@ -111,28 +83,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:cen
 .typing span:nth-child(2){animation-delay:.2s;}
 .typing span:nth-child(3){animation-delay:.4s;}
 @keyframes ty{0%,80%,100%{transform:scale(.6);opacity:.4}40%{transform:scale(1);opacity:1}}
-.chat-input-area{padding:14px 18px;border-top:1px solid #b0c8b0;display:flex;gap:10px;background:#cfe0cf;}
-#cinput{flex:1;background:#ede9e3;border:1px solid #b0c8b0;border-radius:7px;padding:9px 13px;color:#1a1a1a;font-size:14px;font-family:DM Sans,sans-serif;resize:none;min-height:40px;max-height:100px;}
+.chat-input-area{padding:14px 18px;border-top:1px solid #bfb9b0;display:flex;gap:10px;background:#d8d3cb;}
+#cinput{flex:1;background:#ede9e3;border:1px solid #bfb9b0;border-radius:7px;padding:9px 13px;color:#1a1a1a;font-size:14px;font-family:DM Sans,sans-serif;resize:none;min-height:40px;max-height:100px;}
 #cinput:focus{outline:none;border-color:var(--naranja);}
 #csend{background:var(--naranja);border:none;border-radius:7px;padding:9px 15px;cursor:pointer;color:var(--blanco);font-size:14px;font-weight:600;font-family:DM Sans,sans-serif;}
 #csend:hover{background:#FF7A1A;}
 
 /* TESTS */
 .test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px;}
-.tc{background:#dae8da;border:1px solid #b0c8b0;border-radius:11px;padding:26px;cursor:pointer;transition:all 0.2s;}
+.tc{background:#dedad3;border:1px solid #bfb9b0;border-radius:11px;padding:26px;cursor:pointer;transition:all 0.2s;}
 .tc:hover{border-color:var(--naranja);transform:translateY(-2px);}
 .tc .em{font-size:30px;margin-bottom:10px;}
 .tc .aut{font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:2px;margin-bottom:7px;}
 .tc h3{font-family:Bebas Neue,sans-serif;font-size:20px;letter-spacing:1px;color:#1a1a1a;margin-bottom:7px;}
 .tc p{font-size:13px;color:#555;line-height:1.5;margin-bottom:14px;}
 .tc .cta{color:var(--naranja);font-size:12px;font-weight:600;}
-.pcard{background:#dae8da;border:1px solid #b0c8b0;border-radius:11px;padding:26px 30px;margin-bottom:14px;}
+.pcard{background:#dedad3;border:1px solid #bfb9b0;border-radius:11px;padding:26px 30px;margin-bottom:14px;}
 .pnum{font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:2px;margin-bottom:9px;}
 .ptxt{font-size:16px;font-weight:500;color:#1a1a1a;margin-bottom:18px;line-height:1.5;}
-.opbtn{display:block;width:100%;text-align:left;padding:11px 15px;border-radius:7px;border:1px solid #b0c8b0;background:#cddacd;color:#444;font-size:14px;cursor:pointer;font-family:DM Sans,sans-serif;margin-bottom:9px;transition:all 0.2s;}
+.opbtn{display:block;width:100%;text-align:left;padding:11px 15px;border-radius:7px;border:1px solid #bfb9b0;background:#d0cbc3;color:#444;font-size:14px;cursor:pointer;font-family:DM Sans,sans-serif;margin-bottom:9px;transition:all 0.2s;}
 .opbtn:hover{border-color:#555;}
 .opbtn.sel{border-color:var(--naranja);background:rgba(232,93,0,0.11);color:var(--blanco);}
-#rcard{background:#dae8da;border:1px solid #b0c8b0;border-radius:12px;padding:40px;text-align:center;margin-top:28px;}
+#rcard{background:#dedad3;border:1px solid #bfb9b0;border-radius:12px;padding:40px;text-align:center;margin-top:28px;}
 
 /* SUBSTACK */
 .sub-card{background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:12px;padding:32px;max-width:400px;margin-top:32px;transition:border-color 0.2s;}
@@ -170,89 +142,15 @@ footer p{font-size:13px;color:#aaa;}
 
 @media(max-width:768px){
   nav{padding:14px 16px;}
-  .nav-links{display:none!important;}
-  #hamburger{display:flex!important;}
+  .nav-links li:not(:last-child){display:none;}
   .modulos-wrap,.inner{padding:80px 16px 48px;}
   .grid-2,.test-grid,.bib-grid{grid-template-columns:1fr;}
   footer{flex-direction:column;text-align:center;}
   .flinks{justify-content:center;}
-
-  /* HERO */
-  .hero{padding:80px 16px 48px;}
-  .hero h1{font-size:clamp(48px,14vw,90px);}
-  .hero p{font-size:16px;}
-
-  /* MÓDULOS */
-  .mod-card{padding:28px 20px;}
-
-  /* BIBLIOTECA */
-  .bib-grid{grid-template-columns:1fr;}
-
-  /* RINCONCITO */
-  div[style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr!important;}
-  div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}
-  div[style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr!important;}
-
-  /* SUBSTACK HERO */
-  div[style*="display:flex;align-items:center;gap:28px"]{flex-direction:column!important;}
-
-  /* SOBRE EL AUTOR */
-  div[style*="display:flex;align-items:center;gap:20px"]{flex-direction:column!important;}
-  div[style*="display:flex;gap:12px;margin-top:8px"]{flex-wrap:wrap!important;}
-
-  /* PLATAFORMAS */
-  div[style*="display:flex;align-items:center;gap:16px;margin-bottom:12px"]{flex-wrap:wrap!important;}
-
-  /* AUTOEXAMEN */
-  .pcard{padding:18px 14px;}
-  .opbtn{font-size:13px;padding:10px 12px;}
-
-  /* RESULTADO */
-  #rcard{padding:24px 16px;}
-  #rpts{font-size:48px;}
-  #rtit{font-size:24px;}
-
-  /* SPARRING */
-  #msgs{max-height:280px;}
-  .chat-input-area{flex-direction:column;}
-
-  /* CTA BAR */
-  .cta-bar{padding:40px 20px;}
-
-  /* NAVEGACION NIVEL GLOBAL */
-  .barra-nivel-global{padding:7px 16px;}
-
-  /* SUBSTACK LISTA */
-  .art-row{padding:12px 14px;}
 }
 
-@media(max-width:480px){
-  .hero h1{font-size:clamp(40px,12vw,72px);}
-  .nav-links li:last-child a{padding:7px 14px;font-size:13px;}
-  .modulos-wrap,.inner{padding:72px 12px 40px;}
-  .mod-card{padding:22px 16px;}
-  .pcard{padding:14px 12px;}
-  .opbtn{font-size:12px;}
-  #rpts{font-size:40px;}
-  #rtit{font-size:20px;}
-  .bk-inner{flex-direction:column;}
-}
-
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px 4px;background:none;border:none;z-index:1000;}
-.hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all 0.3s;}
-.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
-.hamburger.open span:nth-child(2){opacity:0;}
-.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
-.mobile-menu{display:none;position:fixed;top:57px;left:0;right:0;background:rgba(30,28,26,0.99);z-index:9999;padding:8px 0;border-bottom:1px solid #333;}
-.mobile-menu.open{display:block;}
-.mobile-menu a{display:block;padding:14px 24px;color:#ccc;font-size:15px;font-weight:500;text-decoration:none;cursor:pointer;border-bottom:1px solid #2a2a2a;}
-.mobile-menu a:last-child{color:#fff;background:var(--naranja);text-align:center;margin:12px 16px;border-radius:8px;padding:12px 24px;border-bottom:none;}
-.mobile-menu a:active{background:rgba(232,93,0,0.2);}
-
-@media(max-width:768px){
-  .hamburger{display:flex!important;}
-  .nav-links{display:none!important;}
-}border:1px solid #b0c8b0;border-radius:10px;overflow:hidden;transition:all 0.2s;cursor:default; }
+/* BIBLIOTECA */
+.bk { background:#dedad3;border:1px solid #bfb9b0;border-radius:10px;overflow:hidden;transition:all 0.2s;cursor:default; }
 .bk:hover { border-color:var(--naranja);transform:translateY(-2px); }
 .bk-cat { font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--naranja);padding:10px 14px 0;opacity:0.8; }
 .bk-inner { display:flex;gap:14px;padding:12px 14px 16px; }
@@ -265,7 +163,7 @@ footer p{font-size:13px;color:#aaa;}
 .btab:not(.active):hover { color:var(--blanco)!important; }
 
 /* PODCASTS */
-.pk { background:#dae8da;border:1px solid #b0c8b0;border-radius:10px;padding:18px;display:flex;gap:14px;transition:all 0.2s; }
+.pk { background:#dedad3;border:1px solid #bfb9b0;border-radius:10px;padding:18px;display:flex;gap:14px;transition:all 0.2s; }
 .pk:hover { border-color:var(--naranja);transform:translateY(-1px); }
 .pk-logo { width:50px;height:50px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0; }
 .pk-info h4 { font-size:14px;font-weight:600;color:#1a1a1a;margin-bottom:4px; }
@@ -276,7 +174,7 @@ footer p{font-size:13px;color:#aaa;}
 .pk-link:hover { text-decoration:underline; }
 
 /* SPARRING TRIPLE */
-.resp-bloque { background:#cfe0cf;border:1px solid #b0c8b0;border-radius:10px;padding:16px;margin-bottom:10px; }
+.resp-bloque { background:#d8d3cb;border:1px solid #bfb9b0;border-radius:10px;padding:16px;margin-bottom:10px; }
 .resp-bloque:last-child { margin-bottom:0; }
 .resp-num { font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:6px; }
 .resp-num-dot { width:7px;height:7px;border-radius:50%; }
@@ -287,10 +185,10 @@ a.bk:hover { border-color:var(--naranja);transform:translateY(-2px); }
 a.bk .bk-tag { background:rgba(232,93,0,0.08); }
 a.bk:hover .bk-tag { background:rgba(232,93,0,0.2);color:var(--naranja); }
 
-.art-row { display:flex;align-items:center;gap:16px;padding:14px 18px;background:#dae8da;border:1px solid #b0c8b0;border-radius:8px;margin-bottom:2px;text-decoration:none;color:inherit;transition:all 0.2s;cursor:pointer;position:relative;z-index:1; }
+.art-row { display:flex;align-items:center;gap:16px;padding:14px 18px;background:#dedad3;border:1px solid #bfb9b0;border-radius:8px;margin-bottom:2px;text-decoration:none;color:inherit;transition:all 0.2s;cursor:pointer;position:relative;z-index:1; }
 .art-row * { pointer-events:none; }
 .art-row { pointer-events:auto; }
-.art-row:hover { border-color:var(--naranja);background:#cddacd;transform:translateX(4px); }
+.art-row:hover { border-color:var(--naranja);background:#d4cfc7;transform:translateX(4px); }
 .art-row.featured { border-left:3px solid var(--naranja); }
 .art-num { font-family:monospace;font-size:11px;color:var(--naranja);min-width:28px;opacity:0.7; }
 .art-titulo { flex:1;font-size:14px;font-weight:500;color:#1a1a1a;line-height:1.4; }
@@ -298,7 +196,7 @@ a.bk:hover .bk-tag { background:rgba(232,93,0,0.2);color:var(--naranja); }
 .art-arrow { font-size:14px;color:var(--naranja);opacity:0;transition:opacity 0.2s; }
 .art-row:hover .art-arrow { opacity:1; }
 
-.nv-widget-auto{background:#dae8da;border:1px solid #b0c8b0;border-radius:12px;padding:24px 28px;}
+.nv-widget-auto{background:#dedad3;border:1px solid #bfb9b0;border-radius:12px;padding:24px 28px;}
 .nv-header-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px;}
 .nv-titulo-actual{font-family:Bebas Neue,sans-serif;font-size:26px;letter-spacing:1px;color:var(--blanco);}
 .nv-subtxt{font-size:12px;color:var(--muted);margin-top:2px;}
@@ -306,7 +204,7 @@ a.bk:hover .bk-tag { background:rgba(232,93,0,0.2);color:var(--naranja); }
 .nv-barra-outer{background:#1a1a1a;border-radius:4px;height:6px;margin-bottom:18px;overflow:hidden;}
 .nv-barra-inner{height:100%;border-radius:4px;background:var(--naranja);transition:width 0.8s;}
 .nv-steps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;}
-.nv-step{background:#cddacd;border:1px solid #b0c8b0;border-radius:8px;padding:10px 6px;text-align:center;}
+.nv-step{background:#d0cbc3;border:1px solid #bfb9b0;border-radius:8px;padding:10px 6px;text-align:center;}
 .nv-step.nv-done{border-color:rgba(232,93,0,0.35);background:rgba(232,93,0,0.06);}
 .nv-step.nv-curr{border-color:var(--naranja);background:rgba(232,93,0,0.12);}
 .nv-step-emo{font-size:18px;margin-bottom:3px;}
@@ -318,7 +216,7 @@ a.bk:hover .bk-tag { background:rgba(232,93,0,0.2);color:var(--naranja); }
 .nv-b{font-size:10px;font-weight:700;letter-spacing:0.5px;padding:3px 9px;border-radius:8px;}
 .nv-b.nv-hecho{background:rgba(232,93,0,0.15);color:var(--naranja);border:1px solid rgba(232,93,0,0.3);}
 .nv-b.nv-pend{background:#1a1a1a;color:#555;border:1px solid #2a2a2a;}
-.blq-card{background:#dae8da;border:1px solid #b0c8b0;border-radius:12px;padding:24px;cursor:pointer;transition:all 0.2s;position:relative;text-align:left;}
+.blq-card{background:#dedad3;border:1px solid #bfb9b0;border-radius:12px;padding:24px;cursor:pointer;transition:all 0.2s;position:relative;text-align:left;}
 .blq-card:hover{border-color:var(--naranja);transform:translateY(-2px);}
 .blq-card.bloqueado{opacity:0.55;cursor:default;}
 .blq-card.bloqueado:hover{transform:none;border-color:var(--gris-borde);}
@@ -336,8 +234,8 @@ a.bk { pointer-events:auto; }
 .pk-link * { pointer-events:none; }
 .pk-link { pointer-events:auto; }
 
-.nv-widget-auto{background:#dae8da;border:1px solid #b0c8b0;border-radius:12px;padding:24px 28px;}
-.nv-step{background:#cddacd;border:1px solid #b0c8b0;border-radius:8px;padding:10px 6px;text-align:center;}
+.nv-widget-auto{background:#dedad3;border:1px solid #bfb9b0;border-radius:12px;padding:24px 28px;}
+.nv-step{background:#d0cbc3;border:1px solid #bfb9b0;border-radius:8px;padding:10px 6px;text-align:center;}
 .nv-step.nv-done{border-color:rgba(232,93,0,0.35);background:rgba(232,93,0,0.06);}
 .nv-step.nv-curr{border-color:var(--naranja);background:rgba(232,93,0,0.12);}
 .nv-step.nv-done div:nth-child(2),.nv-step.nv-curr div:nth-child(2){color:var(--blanco)!important;}
@@ -361,27 +259,7 @@ a.bk { pointer-events:auto; }
     <li><a data-page="plataformas">Plataformas</a></li>
     <li><a data-page="modulos" class="nav-btn">Dar la batalla ahora</a></li>
   </ul>
-  <button type="button" id="hamburger" style="display:none;cursor:pointer;padding:12px 8px;background:none;border:none;-webkit-appearance:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation;line-height:0;">
-    <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="pointer-events:none;">
-      <rect y="0" width="24" height="2" rx="1" fill="white"/>
-      <rect y="8" width="24" height="2" rx="1" fill="white"/>
-      <rect y="16" width="24" height="2" rx="1" fill="white"/>
-    </svg>
-  </button>
 </nav>
-
-<!-- MENÚ MÓVIL -->
-<div id="mobile-menu" style="display:none;position:fixed;top:57px;left:0;right:0;background:#1e1c1a;z-index:9999;padding:8px 0;border-bottom:1px solid #333;">
-  <a data-page="modulos" class="mobile-nav-link" onclick="cerrarMenu()" style="display:block;padding:14px 24px;color:#ccc;font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid #2a2a2a;">Módulos</a>
-  <a data-page="biblioteca" class="mobile-nav-link" onclick="cerrarMenu()" style="display:block;padding:14px 24px;color:#ccc;font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid #2a2a2a;">Biblioteca</a>
-  <a data-page="sparring" class="mobile-nav-link" onclick="cerrarMenu()" style="display:block;padding:14px 24px;color:#ccc;font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid #2a2a2a;">Milton Javier IA</a>
-  <a data-page="autoexamen" class="mobile-nav-link" onclick="cerrarMenu()" style="display:block;padding:14px 24px;color:#ccc;font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid #2a2a2a;">Autoexamen</a>
-  <a data-page="substack" class="mobile-nav-link" onclick="cerrarMenu()" style="display:block;padding:14px 24px;color:#ccc;font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid #2a2a2a;">Substack</a>
-  <a data-page="sobreautor" class="mobile-nav-link" onclick="cerrarMenu()" style="display:block;padding:14px 24px;color:#ccc;font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid #2a2a2a;">Sobre el Autor</a>
-  <a data-page="rinconcito" class="mobile-nav-link" onclick="cerrarMenu()" style="display:block;padding:14px 24px;color:#ccc;font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid #2a2a2a;">Rinconcito Colombiano</a>
-  <a data-page="plataformas" class="mobile-nav-link" onclick="cerrarMenu()" style="display:block;padding:14px 24px;color:#ccc;font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid #2a2a2a;">Plataformas</a>
-  <a data-page="modulos" class="mobile-nav-link" onclick="cerrarMenu()" style="display:block;padding:14px 24px;color:#fff;font-size:15px;font-weight:600;text-decoration:none;background:var(--naranja);text-align:center;margin:12px 16px;border-radius:8px;">Dar la batalla ahora</a>
-</div>
 <div class="barra-nivel-global" id="barra-global">
   <div style="display:flex;align-items:center;gap:10px;">
     <span id="bg-emoji" style="font-size:16px;">🌱</span>
@@ -404,10 +282,22 @@ a.bk { pointer-events:auto; }
 <!-- HOME -->
 <div id="home" class="page active">
   <div class="hero">
-    <h1>LA <span class="acc">LIBERTAD</span><br>NO SE <span class="acc">NEGOCIA</span></h1>
+    <h1>LA <span class="acc">LIBERTAD</span><br>NO SE <span class="acc">NEGOCIA.</span></h1>
     <p>Aprende, practica y lleva la batalla cultural con argumentos liberales claros y concretos. Sin permiso de nadie.</p>
     <button class="btn btn-naranja" data-page="modulos">Dar la batalla ahora</button>
   </div>
+  <footer>
+    <div class="fl" data-page="home" style="color:#fff;">nopido<span style="color:#E85D00;">permiso</span></div>
+    <p>La libertad no se negocia.</p>
+    <div class="flinks">
+      <a data-page="biblioteca">Biblioteca</a>
+      <a data-page="sparring">Sparring</a>
+      <a data-page="autoexamen">Autoexamen</a>
+      <a data-page="substack">Substack</a>
+      <a data-page="sobreautor">Sobre el Autor</a>
+      <a data-page="rinconcito">Rinconcito Colombiano</a>
+    </div>
+  </footer>
 </div>
 
 <!-- MÓDULOS -->
@@ -437,7 +327,7 @@ a.bk { pointer-events:auto; }
         <div class="mod-num">03 — AUTOEXAMEN</div>
         <div class="mod-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
         <h3>Autoexamen Cultural</h3>
-        <p>Test completo pero corto para medir tu nivel de claridad en las ideas de la libertad. Sin filtros ni rodeos.</p>
+        <p>4 tests para medir tu nivel de claridad libertaria. Sin filtros ni rodeos.</p>
         <span class="mod-tag">Entrar →</span>
       </div>
       <div class="mod-card" data-page="substack">
@@ -465,7 +355,7 @@ a.bk { pointer-events:auto; }
         <div class="mod-num">07 — PLATAFORMAS ASOCIADAS</div>
         <div class="mod-icon"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></div>
         <h3>Plataformas Asociadas</h3>
-        <p>Las herramientas de los cracks que conozco. Sin comisiones, sin intereses comerciales. Libertad pura para compartir el mejor alpha que hay.</p>
+        <p>Herramientas de cracks que conozco. Sin comisiones, sin intereses comerciales. Solo el deseo de ayudar.</p>
         <span class="mod-tag">Ver →</span>
       </div>
     </div>
@@ -483,8 +373,8 @@ a.bk { pointer-events:auto; }
 
     <!-- TABS -->
     <div style="display:flex;gap:4px;margin-bottom:36px;background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:8px;padding:4px;width:fit-content;">
-      <button class="btab active" onclick="switchTab('libros')" style="padding:8px 20px;border-radius:6px;border:none;font-family:DM Sans,sans-serif;font-size:13px;font-weight:600;cursor:pointer;background:var(--naranja);color:var(--blanco);">Libros</button>
-      <button class="btab" onclick="switchTab('podcasts')" style="padding:8px 20px;border-radius:6px;border:none;font-family:DM Sans,sans-serif;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:var(--muted);">Videos</button>
+      <button class="btab active" data-tab="libros" style="padding:8px 20px;border-radius:6px;border:none;font-family:DM Sans,sans-serif;font-size:13px;font-weight:600;cursor:pointer;background:var(--naranja);color:var(--blanco);">Libros</button>
+      <button class="btab" data-tab="podcasts" style="padding:8px 20px;border-radius:6px;border:none;font-family:DM Sans,sans-serif;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:var(--muted);">Podcasts</button>
     </div>
 
     <!-- LIBROS -->
@@ -611,10 +501,9 @@ a.bk { pointer-events:auto; }
           </div>
         </a>
 
-      </div><!-- cierre grid libros -->
 
-      <p style="font-size:12px;color:#aaa;line-height:1.6;margin-top:20px;font-style:italic;padding:12px 16px;border:1px solid #e0e0e0;border-radius:8px;">⚠️ Disclaimer: Los enlaces a libros proporcionados en esta sección apuntan a recursos de acceso público disponibles en internet. No tengo ningún vínculo comercial con los sitios enlazados, no cobro por el acceso y no me responsabilizo por la disponibilidad, contenido o cambios en dichos recursos externos. El acceso es bajo la entera responsabilidad del usuario.</p>
-    </div><!-- cierre tab-libros -->
+      </div>
+    </div>
 
     <!-- PODCASTS -->
     <div id="tab-podcasts" style="display:none;">
@@ -740,15 +629,15 @@ a.bk { pointer-events:auto; }
           </div>
         </div>
 
-      </div><!-- cierre grid videos -->
+      </div>
+    </div>
 
-      <p style="font-size:12px;color:#aaa;line-height:1.6;margin-top:20px;font-style:italic;padding:12px 16px;border:1px solid #e0e0e0;border-radius:8px;">⚠️ Disclaimer: Los enlaces a videos proporcionados en esta sección apuntan a contenido de acceso público disponible en plataformas como YouTube. No tengo ningún vínculo comercial con los canales enlazados, no cobro por el acceso y no me responsabilizo por la disponibilidad, contenido o cambios en dichos recursos externos. El acceso es bajo la entera responsabilidad del usuario.</p>
-    </div><!-- cierre tab-podcasts -->
+    </div>
 
     <div class="cta-bar">
       <h2>¿LISTO PARA PRACTICAR?</h2>
-      <p>Pon a prueba lo que aprendiste. Ahora a entrenar con Milton Javier!</p>
-      <button class="btn btn-blanco" data-page="sparring">Milton Javier IA</button>
+      <p>Pon a prueba lo que aprendiste con el Sparring IA.</p>
+      <button class="btn btn-blanco" data-page="sparring">Ir al Sparring</button>
     </div>
   </div>
 </div>
@@ -792,6 +681,11 @@ a.bk { pointer-events:auto; }
       </div>
     </div>
   </div>
+  <footer>
+    <div class="fl" data-page="home" style="color:#fff;">nopido<span style="color:#E85D00;">permiso</span></div>
+    <p>La libertad no se negocia.</p>
+    <div class="flinks"><a data-page="modulos">Módulos</a><a data-page="autoexamen">Autoexamen</a></div>
+  </footer>
 </div>
 
 
@@ -800,34 +694,110 @@ a.bk { pointer-events:auto; }
   <div class="inner" style="max-width:740px;">
     <button class="back-btn" data-page="modulos">← Volver</button>
     <div class="label">03 — Autoexamen</div>
-    <h2 class="titulo">Autoexamen Cultural</h2>
-    <p style="color:#555;font-size:15px;margin-top:8px;font-weight:300;max-width:640px;line-height:1.9;">
-      Un test corto pero potente para medir tu claridad sobre las ideas de la libertad y la importancia de la agencia del individuo. Un total de 20 preguntas, 5 por módulo.<br><br>
-      <strong style="color:#1a1a1a;">Módulo 1: Introductorio, un poco de todo</strong> — basado en el test del autor publicado en el Substack "El Test de la Confusión".<br>
-      <strong style="color:#1a1a1a;">Módulo 2: El Estado</strong> — ¿cuánto poder le das al Estado sin darte cuenta?<br>
-      <strong style="color:#1a1a1a;">Módulo 3: Economía</strong> — lo que no te enseñaron en el colegio sobre cómo funciona el dinero.<br>
-      <strong style="color:#1a1a1a;">Módulo 4: La Narrativa</strong> — ¿puedes separar el discurso de la realidad?<br><br>
-      <em style="color:#888;">⚠️ Si acudes a Milton Javier para hacer el autoexamen, tienes el mayor nivel de confusión de todos — porque ya no necesitas que nadie te engañe. Te engañas a ti mismo.</em>
-    </p>
+    <h2 class="titulo">Elige tu test</h2>
+    <p style="color:#555;font-size:15px;margin-top:8px;font-weight:300;max-width:600px;">Un test completo para medir tu claridad sobre las ideas de la libertad y la importancia de la agencia del individuo. El test tiene cuatro módulos — completa todos para obtener tu resultado final.</p>
 
-    <!-- Área del test -->
-    <div id="test-area" style="margin-top:32px;">
+    <!-- Marcador de puntaje -->
+    <div id="marcador-puntaje" style="margin-top:28px;">
+      <div style="display:flex;align-items:stretch;gap:12px;flex-wrap:wrap;">
+
+        <!-- Left: 4 test scores -->
+        <div style="flex:1;min-width:260px;background:#dedad3;border:1px solid #bfb9b0;border-radius:12px;padding:22px;">
+          <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:3px;margin-bottom:14px;">HAZ LOS 4 TESTS</div>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;">
+            <div id="rec-t0" style="background:#d0cbc3;border:1px solid #bfb9b0;border-radius:8px;padding:12px;text-align:center;">
+              <div style="font-size:10px;color:#666;margin-bottom:4px;font-family:DM Mono,monospace;letter-spacing:1px;">CONFUSIÓN</div>
+              <div style="font-family:Bebas Neue,sans-serif;font-size:30px;line-height:1;color:#aaa;">—</div>
+              <div style="font-size:10px;color:#aaa;margin-top:2px;">/ 10 pts</div>
+            </div>
+            <div id="rec-t1" style="background:#d0cbc3;border:1px solid #bfb9b0;border-radius:8px;padding:12px;text-align:center;">
+              <div style="font-size:10px;color:#666;margin-bottom:4px;font-family:DM Mono,monospace;letter-spacing:1px;">ESTADO</div>
+              <div style="font-family:Bebas Neue,sans-serif;font-size:30px;line-height:1;color:#aaa;">—</div>
+              <div style="font-size:10px;color:#aaa;margin-top:2px;">/ 10 pts</div>
+            </div>
+            <div id="rec-t2" style="background:#d0cbc3;border:1px solid #bfb9b0;border-radius:8px;padding:12px;text-align:center;">
+              <div style="font-size:10px;color:#666;margin-bottom:4px;font-family:DM Mono,monospace;letter-spacing:1px;">ECONÓMICO</div>
+              <div style="font-family:Bebas Neue,sans-serif;font-size:30px;line-height:1;color:#aaa;">—</div>
+              <div style="font-size:10px;color:#aaa;margin-top:2px;">/ 10 pts</div>
+            </div>
+            <div id="rec-t3" style="background:#d0cbc3;border:1px solid #bfb9b0;border-radius:8px;padding:12px;text-align:center;">
+              <div style="font-size:10px;color:#666;margin-bottom:4px;font-family:DM Mono,monospace;letter-spacing:1px;">NARRATIVA</div>
+              <div style="font-family:Bebas Neue,sans-serif;font-size:30px;line-height:1;color:#aaa;">—</div>
+              <div style="font-size:10px;color:#aaa;margin-top:2px;">/ 10 pts</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrow -->
+        <div style="display:flex;align-items:center;justify-content:center;padding:0 4px;">
+          <div style="font-size:36px;color:var(--naranja);">➜</div>
+        </div>
+
+        <!-- Right: Total score -->
+        <div style="flex:0 0 180px;min-width:160px;background:#dedad3;border:1px solid #bfb9b0;border-radius:12px;padding:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+          <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:3px;margin-bottom:12px;">TU NIVEL</div>
+          <div id="rec-nivel">
+            <div style="font-size:32px;margin-bottom:6px;">🌱</div>
+            <div style="font-family:Bebas Neue,sans-serif;font-size:20px;letter-spacing:1px;color:#1a1a1a;">Iniciado</div>
+            <div style="font-size:11px;color:#666;margin-top:4px;">Completa los 4 tests</div>
+          </div>
+          <div style="margin-top:14px;">
+            <div style="display:flex;align-items:baseline;gap:4px;justify-content:center;">
+              <span id="rec-total" style="font-family:Bebas Neue,sans-serif;font-size:40px;line-height:1;color:#1a1a1a;">0</span>
+              <span style="font-size:13px;color:#666;">/ 40 pts</span>
+            </div>
+            <div style="margin-top:8px;background:#c8c3bb;border-radius:4px;height:5px;overflow:hidden;">
+              <div id="rec-barra" style="height:100%;background:var(--naranja);border-radius:4px;transition:width 1s;width:0%;"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Widget de nivel -->
+    <div class="nv-widget-auto" id="nv-auto" style="margin-top:24px;display:none;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px;">
+        <div>
+          <div style="font-family:Bebas Neue,sans-serif;font-size:26px;letter-spacing:1px;color:var(--blanco);" id="nva-nombre">🌱 Iniciado</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px;">Completa los 4 tests para subir de nivel</div>
+        </div>
+        <div style="font-size:13px;color:var(--naranja);font-weight:600;" id="nva-pts">0 / 40 pts</div>
+      </div>
+      <div style="background:#1a1a1a;border-radius:4px;height:6px;margin-bottom:18px;overflow:hidden;">
+        <div id="nva-barra" style="height:100%;border-radius:4px;background:var(--naranja);transition:width 0.8s;width:0%;"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;">
+        <div class="nv-step nv-curr" id="nva-s0"><div style="font-size:18px;margin-bottom:3px;">🌱</div><div style="font-family:Bebas Neue,sans-serif;font-size:12px;letter-spacing:1px;color:var(--blanco);">Iniciado</div><div style="font-size:10px;color:var(--naranja);">0–9</div></div>
+        <div class="nv-step" id="nva-s1"><div style="font-size:18px;margin-bottom:3px;">⚔️</div><div style="font-family:Bebas Neue,sans-serif;font-size:12px;letter-spacing:1px;color:var(--muted);">Militante</div><div style="font-size:10px;color:var(--muted);">10–19</div></div>
+        <div class="nv-step" id="nva-s2"><div style="font-size:18px;margin-bottom:3px;">🧠</div><div style="font-family:Bebas Neue,sans-serif;font-size:12px;letter-spacing:1px;color:var(--muted);">Estratega</div><div style="font-size:10px;color:var(--muted);">20–29</div></div>
+        <div class="nv-step" id="nva-s3"><div style="font-size:18px;margin-bottom:3px;">🎙️</div><div style="font-family:Bebas Neue,sans-serif;font-size:12px;letter-spacing:1px;color:var(--muted);">Orador</div><div style="font-size:10px;color:var(--muted);">30–40</div></div>
+      </div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;" id="nva-badges"></div>
+    </div>
+
+    <!-- Área de tests -->
+    <div id="test-area" style="margin-top:28px;">
       <div id="tpreguntas"></div>
       <div id="tresultado" style="display:none;">
-        <div id="rcard" style="background:#dae8da;border:1px solid #b0c8b0;border-radius:12px;padding:40px;text-align:center;margin-top:28px;">
-          <div id="remoji" style="font-size:52px;margin-bottom:14px;"></div>
-          <div style="font-size:11px;color:var(--naranja);letter-spacing:2px;margin-bottom:7px;font-family:DM Mono,monospace;">TU RESULTADO</div>
-          <div id="rpts" style="font-family:Bebas Neue,sans-serif;font-size:64px;line-height:1;margin-bottom:4px;color:#1a1a1a;"></div>
-          <div id="rtit" style="font-family:Bebas Neue,sans-serif;font-size:32px;color:var(--naranja);letter-spacing:1px;margin-bottom:18px;"></div>
-          <div id="rdesc" style="font-size:15px;color:#444;line-height:1.7;margin-bottom:18px;"></div>
-          <div id="rperf" style="font-size:13px;color:#666;font-style:italic;border-top:1px solid #b0c8b0;padding-top:18px;line-height:1.6;"></div>
-          <div id="rincorrectas" style="font-size:13px;color:#555;margin-top:16px;padding:12px 16px;background:rgba(232,93,0,0.06);border:1px solid rgba(232,93,0,0.2);border-radius:8px;line-height:1.6;text-align:left;"></div>
-          <button class="btn btn-naranja" id="btn-reiniciar" style="margin-top:24px;">Repetir el test</button>
+        <div id="rcard" style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:12px;padding:40px;text-align:center;margin-top:28px;">
+          <div id="remoji" style="font-size:46px;margin-bottom:14px;"></div>
+          <div style="font-size:11px;color:var(--naranja);letter-spacing:2px;margin-bottom:7px;font-family:monospace;">TU RESULTADO</div>
+          <div id="rpts" style="font-family:Bebas Neue,sans-serif;font-size:60px;line-height:1;margin-bottom:4px;"></div>
+          <div id="rtit" style="font-family:Bebas Neue,sans-serif;font-size:30px;color:var(--naranja);letter-spacing:1px;margin-bottom:18px;"></div>
+          <div id="rdesc" style="font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:18px;"></div>
+          <div id="rperf" style="font-size:13px;color:var(--muted);font-style:italic;border-top:1px solid var(--gris-borde);padding-top:18px;line-height:1.6;"></div>
+          <button class="btn btn-naranja" id="btn-reiniciar" style="margin-top:24px;">Elegir otro test</button>
         </div>
       </div>
     </div>
 
   </div>
+  <footer>
+    <div class="fl" data-page="home" style="color:#fff;">nopido<span style="color:#E85D00;">permiso</span></div>
+    <p>La libertad no se negocia.</p>
+    <div class="flinks"><a data-page="modulos">Módulos</a><a data-page="sparring">Sparring</a></div>
+  </footer>
 </div>
 
 <!-- SUBSTACK -->
@@ -838,12 +808,13 @@ a.bk { pointer-events:auto; }
     <h2 class="titulo">Substack de Nicolás</h2>
 
     <!-- HERO NICOLÁS -->
-    <div style="display:flex;align-items:center;gap:28px;padding:36px;background:#dae8da;border:1px solid #b0c8b0;border-radius:14px;margin-bottom:48px;flex-wrap:wrap;">
+    <div style="display:flex;align-items:center;gap:28px;padding:36px;background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;margin-bottom:48px;flex-wrap:wrap;">
       <div style="width:72px;height:72px;border-radius:50%;background:var(--naranja);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:28px;color:#fff;flex-shrink:0;">NF</div>
       <div style="flex:1;min-width:220px;">
         <div style="font-family:monospace;font-size:10px;color:var(--naranja);letter-spacing:3px;text-transform:uppercase;margin-bottom:6px;">Substack</div>
         <h2 style="font-family:Bebas Neue,sans-serif;font-size:32px;letter-spacing:1px;color:#1a1a1a;margin-bottom:6px;">Nicolás Fernández</h2>
-        <p style="font-size:14px;color:#555;line-height:1.6;margin-bottom:0;">Reflexiones sobre ideas liberales, política, economía e inversiones. Siempre en lenguaje que todos podamos entender. Sarcástico, mordaz y sin pedir permiso, enmarcado siempre en la batalla cultural por las ideas que elevan la agencia del individuo.<br><br>Si te gusta el capitalismo consciente, el buenismo, la social democracia, la corrección política y la tutela del Estado… te equivocaste de sitio.<br><br>Pero si te gusta la igualdad, te tengo buenas noticias. Aquí sí somos iguales, pero sólo al inicio. Lo que pase después ya no es desigualdad… es desempeño.</p>
+        <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:0;">Reflexiones sobre ideas liberales, política, economía e inversiones. Siempre en lenguaje que todos podamos entender. Sarcástico, mordaz y sin pedir permiso, enmarcado siempre en la batalla cultural por las ideas que elevan la agencia del individuo.<br><br><em>Si te gusta el capitalismo consciente, el buenismo, la social democracia, la corrección política y la tutela del Estado… te equivocaste de sitio. En este sitio sí somos iguales todos.</em></p>
+        <p style="font-size:14px;color:#555;line-height:1.6;margin-top:12px;font-style:italic;border-top:1px solid #bfb9b0;padding-top:12px;"><em>Aquí el coeficiente de Gini sí es cero: todos arrancan igual. Lo que pase después ya no es desigualdad… es desempeño.</em></p>
       </div>
 
     </div>
@@ -853,230 +824,210 @@ a.bk { pointer-events:auto; }
 
     <div style="display:flex;flex-direction:column;gap:3px;">
 
-      <a class="art-row" href="https://nicolasfernandezgiraldo.substack.com/p/los-electrones-no-votan" target="_blank"><span class="art-num">01</span><span class="art-titulo">Los electrones no votan</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://nicolasfernandezgiraldo.substack.com/p/el-pecado-de-saylor-no-pedir-permiso" target="_blank"><span class="art-num">02</span><span class="art-titulo">El pecado de Saylor: no pedir permiso</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://nicolasfernandezgiraldo.substack.com/p/francia-donde-el-poder-aprendio-a" target="_blank"><span class="art-num">03</span><span class="art-titulo">Francia: donde el poder aprendió a vestirse</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-192635516" target="_blank"><span class="art-num">04</span><span class="art-titulo">El Test de la Confusión</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-191868900" target="_blank"><span class="art-num">05</span><span class="art-titulo">Así se fabrica una crisis</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-191194492" target="_blank"><span class="art-num">06</span><span class="art-titulo">Las cuentas de Baldor llegan al mar</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-190618712" target="_blank"><span class="art-num">07</span><span class="art-titulo">Baldor explica las elecciones</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-190017542" target="_blank"><span class="art-num">08</span><span class="art-titulo">Una paloma que no come Zucaritas</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-188951446" target="_blank"><span class="art-num">09</span><span class="art-titulo">No bote su voto</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-188418178" target="_blank"><span class="art-num">10</span><span class="art-titulo">La matemática no miente en esta encuesta presidencial</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-187893819" target="_blank"><span class="art-num">11</span><span class="art-titulo">Tus derechos, mi factura</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-187200214" target="_blank"><span class="art-num">12</span><span class="art-titulo">La volatilidad no te quiebra, te delata</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-186325061" target="_blank"><span class="art-num">13</span><span class="art-titulo">Sin pedir permiso para ser odiado</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-185657616" target="_blank"><span class="art-num">14</span><span class="art-titulo">El día que los cerdos comieron pan</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-184986666" target="_blank"><span class="art-num">15</span><span class="art-titulo">La servilleta de Laffer</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-184250225" target="_blank"><span class="art-num">16</span><span class="art-titulo">Café con aroma de consigna</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-183591710" target="_blank"><span class="art-num">17</span><span class="art-titulo">El verdadero enemigo es lo imposible</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-182798850" target="_blank"><span class="art-num">18</span><span class="art-titulo">El 60/40 está muerto</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-182101959" target="_blank"><span class="art-num">19</span><span class="art-titulo">Las palabras nos delatan</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-181374802" target="_blank"><span class="art-num">20</span><span class="art-titulo">La encuesta que importa</span><span class="art-arrow">→</span></a>
-      <a class="art-row featured" href="https://substack.com/home/post/p-180957948" target="_blank"><span class="art-num">21</span><span class="art-titulo">Batalla Cultural — Episodio 4</span><span class="art-arrow">→</span></a>
-      <a class="art-row featured" href="https://substack.com/home/post/p-180318480" target="_blank"><span class="art-num">22</span><span class="art-titulo">Batalla Cultural — Episodio 3</span><span class="art-arrow">→</span></a>
-      <a class="art-row featured" href="https://substack.com/home/post/p-179736557" target="_blank"><span class="art-num">23</span><span class="art-titulo">Batalla Cultural — Episodio 2</span><span class="art-arrow">→</span></a>
-      <a class="art-row featured" href="https://substack.com/home/post/p-179297389" target="_blank"><span class="art-num">24</span><span class="art-titulo">Batalla Cultural — Episodio 1</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-178550783" target="_blank"><span class="art-num">25</span><span class="art-titulo">Anna Karenina en Wall Street</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-178126609" target="_blank"><span class="art-num">26</span><span class="art-titulo">Nos robaron el futuro</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-177515083" target="_blank"><span class="art-num">27</span><span class="art-titulo">El fin de la escasez</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-176571563" target="_blank"><span class="art-num">28</span><span class="art-titulo">Forbes no te lo dice: somos muy pobres</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-176039894" target="_blank"><span class="art-num">29</span><span class="art-titulo">El aleteo de una mariposa</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-175530894" target="_blank"><span class="art-num">30</span><span class="art-titulo">El promedio: el placebo cognitivo más costoso</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-174950321" target="_blank"><span class="art-num">31</span><span class="art-titulo">Pensando en serio</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-174298422" target="_blank"><span class="art-num">32</span><span class="art-titulo">Lo imposible: el negocio más grande del mundo</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-173879298" target="_blank"><span class="art-num">33</span><span class="art-titulo">Tokenización: la última frontera de la desintermediación financiera</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-173134821" target="_blank"><span class="art-num">34</span><span class="art-titulo">La dos caras</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-172608680" target="_blank"><span class="art-num">35</span><span class="art-titulo">Mineral oculto que enciende la modernidad</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-172297989" target="_blank"><span class="art-num">36</span><span class="art-titulo">La Shakira del Blockchain</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-171770929" target="_blank"><span class="art-num">37</span><span class="art-titulo">El músculo invisible de la IA</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-170548122" target="_blank"><span class="art-num">38</span><span class="art-titulo">Hidrófugo para la mente</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-169229200" target="_blank"><span class="art-num">39</span><span class="art-titulo">Que buena copia</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-165823374" target="_blank"><span class="art-num">40</span><span class="art-titulo">Más espuma, menos orina</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-165309027" target="_blank"><span class="art-num">41</span><span class="art-titulo">¿Dónde está la bolita?</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-165049441" target="_blank"><span class="art-num">42</span><span class="art-titulo">Engaños absurdos</span><span class="art-arrow">→</span></a>
-      <a class="art-row" href="https://substack.com/home/post/p-164592489" target="_blank"><span class="art-num">43</span><span class="art-titulo">El Golden Circle aplicado a la comunidad de 10 AM Pro</span><span class="art-arrow">→</span></a>
+            <a class="art-row" href="https://nicolasfernandezgiraldo.substack.com/p/el-bobo-escondido-en-la-factura" target="_blank"><span class="art-num">01</span><span class="art-titulo">El bobo escondido en la factura</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://nicolasfernandezgiraldo.substack.com/p/el-espejo-para-el-vampiro" target="_blank"><span class="art-num">02</span><span class="art-titulo">El espejo para el vampiro</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://nicolasfernandezgiraldo.substack.com/p/los-electrones-no-votan" target="_blank"><span class="art-num">03</span><span class="art-titulo">Los electrones no votan</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://www.nopidopermiso.com/p/el-pecado-de-saylor-no-pedir-permiso" target="_blank"><span class="art-num">04</span><span class="art-titulo">El pecado de Saylor: no pedir permiso</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://www.nopidopermiso.com/p/francia-donde-el-poder-aprendio-a" target="_blank"><span class="art-num">05</span><span class="art-titulo">Francia: donde el poder aprendió a vestirse</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-192635516" target="_blank"><span class="art-num">06</span><span class="art-titulo">El Test de la Confusión</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-191868900" target="_blank"><span class="art-num">07</span><span class="art-titulo">Así se fabrica una crisis</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-191194492" target="_blank"><span class="art-num">08</span><span class="art-titulo">Las cuentas de Baldor llegan al mar</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-190618712" target="_blank"><span class="art-num">09</span><span class="art-titulo">Baldor explica las elecciones</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-190017542" target="_blank"><span class="art-num">10</span><span class="art-titulo">Una paloma que no come Zucaritas</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-188951446" target="_blank"><span class="art-num">11</span><span class="art-titulo">No bote su voto</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-188418178" target="_blank"><span class="art-num">12</span><span class="art-titulo">La matemática no miente en esta encuesta presidencial</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-187893819" target="_blank"><span class="art-num">13</span><span class="art-titulo">Tus derechos, mi factura</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-187200214" target="_blank"><span class="art-num">14</span><span class="art-titulo">La volatilidad no te quiebra, te delata</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-186325061" target="_blank"><span class="art-num">15</span><span class="art-titulo">Sin pedir permiso para ser odiado</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-185657616" target="_blank"><span class="art-num">16</span><span class="art-titulo">El día que los cerdos comieron pan</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-184986666" target="_blank"><span class="art-num">17</span><span class="art-titulo">La servilleta de Laffer</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-184250225" target="_blank"><span class="art-num">18</span><span class="art-titulo">Café con aroma de consigna</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-183591710" target="_blank"><span class="art-num">19</span><span class="art-titulo">El verdadero enemigo es lo imposible</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-182798850" target="_blank"><span class="art-num">20</span><span class="art-titulo">El 60/40 está muerto</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-182101959" target="_blank"><span class="art-num">21</span><span class="art-titulo">Las palabras nos delatan</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-181374802" target="_blank"><span class="art-num">22</span><span class="art-titulo">La encuesta que importa</span><span class="art-arrow">→</span></a>
+      <a class="art-row featured" href="https://substack.com/home/post/p-180957948" target="_blank"><span class="art-num">23</span><span class="art-titulo">Batalla Cultural — Episodio 4</span><span class="art-arrow">→</span></a>
+      <a class="art-row featured" href="https://substack.com/home/post/p-180318480" target="_blank"><span class="art-num">24</span><span class="art-titulo">Batalla Cultural — Episodio 3</span><span class="art-arrow">→</span></a>
+      <a class="art-row featured" href="https://substack.com/home/post/p-179736557" target="_blank"><span class="art-num">25</span><span class="art-titulo">Batalla Cultural — Episodio 2</span><span class="art-arrow">→</span></a>
+      <a class="art-row featured" href="https://substack.com/home/post/p-179297389" target="_blank"><span class="art-num">26</span><span class="art-titulo">Batalla Cultural — Episodio 1</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-178550783" target="_blank"><span class="art-num">27</span><span class="art-titulo">Anna Karenina en Wall Street</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-178126609" target="_blank"><span class="art-num">28</span><span class="art-titulo">Nos robaron el futuro</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-177515083" target="_blank"><span class="art-num">29</span><span class="art-titulo">El fin de la escasez</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-176571563" target="_blank"><span class="art-num">30</span><span class="art-titulo">Forbes no te lo dice: somos muy pobres</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-176039894" target="_blank"><span class="art-num">31</span><span class="art-titulo">El aleteo de una mariposa</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-175530894" target="_blank"><span class="art-num">32</span><span class="art-titulo">El promedio: el placebo cognitivo más costoso</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-174950321" target="_blank"><span class="art-num">33</span><span class="art-titulo">Pensando en serio</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-174298422" target="_blank"><span class="art-num">34</span><span class="art-titulo">Lo imposible: el negocio más grande del mundo</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-173879298" target="_blank"><span class="art-num">35</span><span class="art-titulo">Tokenización: la última frontera de la desintermediación financiera</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-173134821" target="_blank"><span class="art-num">36</span><span class="art-titulo">La dos caras</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-172608680" target="_blank"><span class="art-num">37</span><span class="art-titulo">Mineral oculto que enciende la modernidad</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-172297989" target="_blank"><span class="art-num">38</span><span class="art-titulo">La Shakira del Blockchain</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-171770929" target="_blank"><span class="art-num">39</span><span class="art-titulo">El músculo invisible de la IA</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-170548122" target="_blank"><span class="art-num">40</span><span class="art-titulo">Hidrófugo para la mente</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-169229200" target="_blank"><span class="art-num">41</span><span class="art-titulo">Que buena copia</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-165823374" target="_blank"><span class="art-num">42</span><span class="art-titulo">Más espuma, menos orina</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-165309027" target="_blank"><span class="art-num">43</span><span class="art-titulo">¿Dónde está la bolita?</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-165049441" target="_blank"><span class="art-num">44</span><span class="art-titulo">Engaños absurdos</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://substack.com/home/post/p-164592489" target="_blank"><span class="art-num">45</span><span class="art-titulo">El Golden Circle aplicado a la comunidad de 10 AM Pro</span><span class="art-arrow">→</span></a>
 
     </div>
   </div>
+  <footer>
+    <div class="fl" data-page="home" style="color:#fff;">nopido<span style="color:#E85D00;">permiso</span></div>
+    <p>La libertad no se negocia.</p>
+    <div class="flinks">
+      <a data-page="modulos">Módulos</a>
+      <a data-page="biblioteca">Biblioteca</a>
+    </div>
+  </footer>
 </div>
 
 
 <script>
 
-// ── PERSISTENCIA — deshabilitada: siempre arranca en ceros ───────────────────
-try{ Object.keys(localStorage).filter(function(k){return k.indexOf('npm_')===0;}).forEach(function(k){localStorage.removeItem(k);}); }catch(e){}
+// ── PERSISTENCIA ─────────────────────────────────────────────────────────────
+function guardar(k,v){try{localStorage.setItem('npm_'+k,JSON.stringify(v));}catch(e){}}
+function cargar(k,d){try{var v=localStorage.getItem('npm_'+k);return v!==null?JSON.parse(v):d;}catch(e){return d;}}
 
-// ── NIVELES (sobre 20 pts) ────────────────────────────────────────────────────
+// ── NIVELES ───────────────────────────────────────────────────────────────────
+var puntosTests = cargar('puntos_tests', {0:null,1:null,2:null,3:null});
+var ptsGlobales = {};
+// Sync ptsGlobales with puntosTests on load
+for(var _k in puntosTests){if(puntosTests[_k]!==null)ptsGlobales[_k]=puntosTests[_k];}
 var NIVELES = [
-  {min:0,  max:5,  emoji:'☠️', tit:'Enfermo Terminal',    desc:'Tienes metástasis. El cáncer estatal te invadió por completo. Necesitas quimio urgente.',                                       perf:'La narrativa estatista te controla totalmente. Apoyas con entusiasmo las políticas que te empobrecen.'},
-  {min:6,  max:10, emoji:'😵', tit:'Confusión Funcional', desc:'Tienes alteraciones hormonales: a ratos con claridad, y a ratos te seducen los discursos estatistas.',                           perf:'Sabes que algo no cuadra, pero todavía te dejas seducir por el discurso bonito y las promesas fáciles.'},
-  {min:11, max:14, emoji:'🌿', tit:'En Recuperación',     desc:'Aún con salud débil pero en franca mejoría.',                                                                                    perf:'Ya no te lo tragas todo. Empiezas a ver incentivos y a desconfiar del discurso. Sigue así.'},
-  {min:15, max:17, emoji:'🔍', tit:'Claridad en Proceso', desc:'Ya intuyes lo correcto aunque a veces la inercia estatal te engaña.',                                                             perf:'Empiezas a pensar en consecuencias no intencionales. Cada política tiene un costo invisible que ya empiezas a ver.'},
-  {min:18, max:20, emoji:'⚡', tit:'Peligroso',           desc:'Ya entiendes la libertad.',                                                                                                      perf:'Difícil de manipular. Ves el guión antes de que termine el primer párrafo. No pides permiso. Nunca.'}
+  {min:0,  max:9,  emoji:'🌱', nombre:'Iniciado'},
+  {min:10, max:19, emoji:'⚔️', nombre:'Militante'},
+  {min:20, max:29, emoji:'🧠', nombre:'Estratega'},
+  {min:30, max:40, emoji:'🎙️', nombre:'Orador'}
 ];
+var NOMBRES_T = ['Test de la Confusión','Test del Estado','Test Económico','Test de la Narrativa'];
 
-// ── 20 PREGUNTAS FIJAS (5 por módulo) ────────────────────────────────────────
-var PREGUNTAS = [
-  {mod:'M1',n:1, t:'Te ofrecen dos jefes, ¿cuál escoges?', ops:['A. Uno grosero… pero te paga el doble puntual','B. Uno elegante, habla perfecto… pero nunca te paga a tiempo','C. El elegante, porque la cultura importa','D. Ninguno, porque todos los jefes son opresores'],c:'A'},
-  {mod:'M1',n:2, t:'Los impuestos:', ops:['A. Son necesarios, pero deberían ser mínimos','B. Son coerción institucionalizada','C. Son un acto de solidaridad','D. Depende de quién los cobre'],c:'B'},
-  {mod:'M1',n:3, t:'Bitcoin es:', ops:['A. Una estafa peligrosa','B. Un activo volátil pero interesante','C. Una amenaza al control estatal','D. No entiendo, pero mi primo ganó plata'],c:'C'},
-  {mod:'M1',n:4, t:'Un político promete darte todo gratis. Tú piensas:', ops:['A. Qué generoso','B. Seguro roba, pero igual sirve','C. Eso lo pagan los ricos','D. ¿Con qué plata?'],c:'D'},
-  {mod:'M1',n:5, t:'Un empresario se vuelve rico:', ops:['A. Creó valor que otros pagan voluntariamente','B. Seguro explotó a alguien','C. Tuvo suerte','D. Debería pagar más impuestos'],c:'A'},
-  {mod:'M2',n:6, t:'La educación pública gratuita:', ops:['A. Es un derecho fundamental','B. Debería ser obligatoria para todos','C. Es un servicio que otros pagan con sus impuestos','D. Es lo mínimo que puede hacer un Estado'],c:'C'},
-  {mod:'M2',n:7, t:'La propiedad privada es:', ops:['A. Un privilegio de los ricos','B. La base de toda libertad individual','C. Necesaria pero debe ser regulada','D. Una construcción social negociable'],c:'B'},
-  {mod:'M2',n:8, t:'El sistema de pensiones estatal:', ops:['A. Garantiza retiro digno para todos','B. Debe mejorarse pero no eliminarse','C. Es la única forma de proteger adultos mayores','D. Es un esquema Ponzi que depende de nuevos contribuyentes'],c:'D'},
-  {mod:'M2',n:9, t:'Sobre la deuda pública:', ops:['A. Es impuesto diferido que pagarán tus hijos','B. Es inversión en el futuro','C. Es necesaria para servicios esenciales','D. Depende de cómo se administre'],c:'A'},
-  {mod:'M2',n:10,t:'La libertad de expresión:', ops:['A. Debe tener límites para proteger grupos vulnerables', 'B. Depende del contexto cultural', 'C. Es absoluta o no es libertad', 'D. El Estado debe regularla con criterio'],c:'C'},
-  {mod:'M3',n:11,t:'Cuando el banco central imprime más dinero:', ops:['A. El país se vuelve más rico','B. Cada billete vale menos — es un impuesto oculto','C. Estimula la economía sin consecuencias','D. Ayuda a los más pobres'],c:'B'},
-  {mod:'M3',n:12,t:'Cuando el Estado pone precio máximo al arroz:', ops:['A. Lo hace accesible para los pobres', 'B. Es necesario en épocas de crisis', 'C. Controla la inflación', 'D. Genera escasez porque nadie produce lo que no es rentable'],c:'D'},
-  {mod:'M3',n:13,t:'Los aranceles a las importaciones:', ops:['A. Son un impuesto que paga el consumidor local', 'B. Protegen el empleo nacional', 'C. Son necesarios para industrias nacientes', 'D. Equilibran la balanza comercial'],c:'A'},
-  {mod:'M3',n:14,t:'La pobreza se reduce principalmente con:', ops:['A. Redistribución de la riqueza existente', 'B. Programas sociales bien diseñados', 'C. Creación de nueva riqueza a través del mercado libre', 'D. Mayor inversión pública'],c:'C'},
-  {mod:'M3',n:15,t:'La ganancia empresarial es:', ops:['A. Dinero robado al trabajador','B. La señal de que se creó valor que el mercado reconoce','C. Debe estar limitada por ley','D. Un problema cuando es excesiva'],c:'B'},
-  {mod:'M4',n:16,t:'El presidente anuncia que creó 200,000 empleos. La pregunta correcta es:', ops:['A. ¿En qué sectores?', 'B. ¿Es suficiente para la demanda actual?', 'C. ¿Cuándo se verán los beneficios?', 'D. ¿A qué costo y cuántos empleos privados se destruyeron?'],c:'D'},
-  {mod:'M4',n:17,t:'La desigualdad está aumentando. Esta afirmación:', ops:['A. Hay personas creando más valor que otras', 'B. Prueba que el sistema falla', 'C. Requiere políticas redistributivas urgentes', 'D. Es preocupante independientemente del contexto'],c:'A'},
-  {mod:'M4',n:18,t:'Un estudio dice que el salario mínimo no destruye empleo. Tú:', ops:['A. Lo compartes porque confirma lo que creías','B. Preguntas quién lo financia, la metodología y el contexto','C. Lo aceptas porque viene de una universidad','D. Cierras la discusión y te retiras'],c:'B'},
-  {mod:'M4',n:19,t:'El capitalismo genera pobreza. Esta frase:', ops:['A. Es cierta — la historia lo demuestra', 'B. Depende del tipo de capitalismo', 'C. Es falsa — el capitalismo sacó a más personas de la pobreza que cualquier otro sistema', 'D. Es un debate legítimo sin conclusión'],c:'C'},
-  {mod:'M4',n:20,t:'Cuando alguien te llama extremo por defender la libertad individual, tú:', ops:['A. Moderas tu posición para no alienar a nadie', 'B. Evitas el conflicto porque no vale la pena', 'C. Explicas tu posición con más cuidado', 'D. Señalas que defender la propiedad y la libertad no es extremismo'],c:'D'}
-];
-
-// ── TEST ÚNICO ────────────────────────────────────────────────────────────────
-var resps = {};
-
-function iniciarTest() {
-  resps = {};
-  var c = document.getElementById('tpreguntas');
-  document.getElementById('tresultado').style.display = 'none';
-  c.style.display = 'block';
-
-  var modTitulos = {
-    'M1': 'Módulo 1 — Introductorio',
-    'M2': 'Módulo 2 — El Estado',
-    'M3': 'Módulo 3 — Economía',
-    'M4': 'Módulo 4 — La Narrativa'
-  };
-
-  var html = '';
-  var modActual = '';
-  for (var i = 0; i < PREGUNTAS.length; i++) {
-    var p = PREGUNTAS[i];
-    // Insertar separador de módulo cuando cambia
-    if (p.mod !== modActual) {
-      modActual = p.mod;
-      html += '<div style="margin:32px 0 20px;padding:14px 20px;background:rgba(232,93,0,0.08);border-left:3px solid var(--naranja);border-radius:0 8px 8px 0;">';
-      html += '<div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:3px;margin-bottom:3px;">AUTOEXAMEN CULTURAL</div>';
-      html += '<div style="font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:1px;color:#1a1a1a;">' + modTitulos[p.mod] + '</div>';
-      html += '</div>';
-    }
-    html += '<div class="pcard">';
-    html += '<div class="pnum" style="display:flex;justify-content:space-between;"><span>PREGUNTA ' + p.n + ' DE 20</span><span style="color:#aaa;font-size:10px;">' + p.mod + '</span></div>';
-    html += '<div class="ptxt">' + p.t + '</div>';
-    var lets = ['A','B','C','D'];
-    for (var j = 0; j < p.ops.length; j++) {
-      html += '<button class="opbtn" data-pi="' + i + '" data-let="' + lets[j] + '">' + p.ops[j] + '</button>';
-    }
-    html += '</div>';
-  }
-  html += '<div style="text-align:center;margin-top:28px;">';
-  html += '<div id="prog" style="font-size:13px;color:#666;margin-bottom:14px;">0 de 20 preguntas respondidas</div>';
-  html += '<button class="btn btn-naranja" id="btn-ver-res" disabled style="opacity:0.4;cursor:not-allowed;">Ver mi resultado</button>';
-  html += '</div>';
-  c.innerHTML = html;
-
-  c.querySelectorAll('.opbtn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var pi = parseInt(btn.getAttribute('data-pi'));
-      var let_ = btn.getAttribute('data-let');
-      resps[pi] = let_;
-      c.querySelectorAll('.opbtn[data-pi="' + pi + '"]').forEach(function(b) { b.classList.remove('sel'); });
-      btn.classList.add('sel');
-      var total = Object.keys(resps).length;
-      document.getElementById('prog').textContent = total + ' de 20 preguntas respondidas';
-      if (total === 20) {
-        var br = document.getElementById('btn-ver-res');
-        br.disabled = false; br.style.opacity = '1'; br.style.cursor = 'pointer';
-      }
-    });
-  });
-
-  document.getElementById('btn-ver-res').addEventListener('click', verResultado);
+function totalPuntos(){
+  var t=0;
+  for(var k in ptsGlobales){t+=ptsGlobales[k];}
+  return t;
 }
 
-function verResultado() {
-  var pts = 0;
-  var incorrectas = [];
-  for (var i = 0; i < PREGUNTAS.length; i++) {
-    if (resps[i] === PREGUNTAS[i].c) {
-      pts++;
+function nivelActual(pts){
+  var idx=0;
+  for(var i=0;i<NIVELES.length;i++){if(pts>=NIVELES[i].min)idx=i;}
+  return idx;
+}
+
+function actualizarMarcador(){
+  var ETIQUETAS = ['CONFUSIÓN','ESTADO','ECONÓMICO','NARRATIVA'];
+  var total = totalPuntos();
+  var idx = nivelActual(total);
+  var nv = NIVELES[idx];
+  var pct = Math.round((total/40)*100);
+
+  // Actualizar cada tarjeta de test
+  for(var i=0;i<4;i++){
+    var card = document.getElementById('rec-t'+i);
+    if(!card) continue;
+    var numEl = card.querySelector('div:nth-child(2)');
+    var subEl = card.querySelector('div:nth-child(3)');
+    if(ptsGlobales[i] !== undefined){
+      var pts = ptsGlobales[i];
+      var color = pts >= 8 ? '#E85D00' : pts >= 5 ? '#fff' : '#888';
+      numEl.style.color = color;
+      numEl.textContent = pts;
+      subEl.style.color = pts >= 8 ? 'rgba(232,93,0,0.7)' : 'var(--muted)';
+      card.style.borderColor = pts >= 8 ? 'rgba(232,93,0,0.4)' : pts >= 5 ? '#3a3a3a' : '#2a2a2a';
+      card.style.background = pts >= 8 ? 'rgba(232,93,0,0.06)' : '#111';
     } else {
-      incorrectas.push(PREGUNTAS[i].n);
+      numEl.style.color = '#333';
+      numEl.textContent = '—';
+      subEl.style.color = '#333';
+      card.style.borderColor = '#2a2a2a';
+      card.style.background = '#111';
     }
   }
-  var nv = NIVELES[NIVELES.length - 1];
-  for (var i = 0; i < NIVELES.length; i++) {
-    if (pts >= NIVELES[i].min && pts <= NIVELES[i].max) { nv = NIVELES[i]; break; }
-  }
-  document.getElementById('tpreguntas').style.display = 'none';
-  document.getElementById('tresultado').style.display = 'block';
-  document.getElementById('remoji').textContent = nv.emoji;
-  document.getElementById('rpts').textContent = pts + ' / 20';
-  document.getElementById('rtit').textContent = nv.tit;
-  document.getElementById('rdesc').textContent = nv.desc;
-  document.getElementById('rperf').textContent = nv.perf;
 
-  // Mostrar preguntas incorrectas
-  var errEl = document.getElementById('rincorrectas');
-  if (incorrectas.length === 0) {
-    errEl.innerHTML = '<span style="color:var(--naranja);font-weight:600;">✓ ¡Perfecto! No tuviste ninguna respuesta incorrecta.</span>';
-  } else {
-    errEl.innerHTML = '<strong style="color:#1a1a1a;">Respuestas incorrectas (' + incorrectas.length + '):</strong> preguntas ' + incorrectas.join(', ') + '.';
-  }
+  // Total
+  var totalEl = document.getElementById('rec-total');
+  if(totalEl) totalEl.textContent = total;
 
-  document.getElementById('rcard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  // Barra
+  var barraEl = document.getElementById('rec-barra');
+  if(barraEl) barraEl.style.width = pct+'%';
+
+  // Nivel
+  var nivelEl = document.getElementById('rec-nivel');
+  if(nivelEl){
+    var completados = 0;
+    for(var i=0;i<4;i++){if(puntosTests[i]!==null)completados++;}
+    nivelEl.innerHTML = '<div style="font-size:28px;margin-bottom:4px;">'+nv.emoji+'</div><div style="font-family:Bebas Neue,sans-serif;font-size:20px;letter-spacing:1px;color:var(--blanco);">'+nv.nombre+'</div><div style="font-size:11px;color:var(--muted);margin-top:2px;">'+(completados===4?'¡Todos completados!':completados+' / 4 tests')+'</div>';
+  }
 }
 
-document.getElementById('btn-reiniciar').addEventListener('click', iniciarTest);
+function actualizarNivelUI(){
+  var total=totalPuntos();
+  var idx=nivelActual(total);
+  var nv=NIVELES[idx];
+  var pct=Math.round((total/40)*100);
+  var widget=document.getElementById('nv-auto');
+  if(!widget) return;
+
+  // Mostrar widget si hay al menos un test completado
+  var hayAlguno=false;
+  for(var i=0;i<4;i++){if(puntosTests[i]!==null){hayAlguno=true;break;}}
+  widget.style.display = hayAlguno ? 'block' : 'none';
+  if(!hayAlguno) return;
+
+  actualizarMarcador();
+
+  document.getElementById('nva-nombre').textContent = nv.emoji+' '+nv.nombre;
+  document.getElementById('nva-pts').textContent = total+' / 40 pts';
+  document.getElementById('nva-barra').style.width = pct+'%';
+
+  for(var i=0;i<4;i++){
+    var s=document.getElementById('nva-s'+i);
+    if(!s) continue;
+    s.className='nv-step'+(i<idx?' nv-done':(i===idx?' nv-curr':''));
+  }
+
+  var bd=document.getElementById('nva-badges');
+  if(bd){
+    var html='';
+    for(var i=0;i<4;i++){
+      if(ptsGlobales[i]!==undefined){
+        html+='<span class="nv-badge hecho">Módulo '+(i+1)+' ✓ '+ptsGlobales[i]+'/10</span>';
+      } else {
+        html+='<span class="nv-badge pend">Módulo '+(i+1)+'</span>';
+      }
+    }
+    bd.innerHTML=html;
+  }
+}
 
 // ── NAVEGACIÓN ──────────────────────────────────────────────
-function irA(id, pushHistory) {
-  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+function irA(id) {
+  document.querySelectorAll('.page').forEach(function(p) {
+    p.classList.remove('active');
+  });
   var target = document.getElementById(id);
   if (target) {
     target.classList.add('active');
     window.scrollTo(0,0);
-    if (id === 'autoexamen') { iniciarTest(); }
-  }
-  // Cerrar menú móvil
-  cerrarMenu();
-  if (pushHistory !== false) {
-    history.pushState({ page: id }, '', '#' + id);
-  }
-}
+    if(id==='autoexamen'){mostrarSelector();
 
-// Manejar botón atrás/adelante del browser
-window.addEventListener('popstate', function(e) {
-  var id = (e.state && e.state.page) ? e.state.page : 'home';
-  irA(id, false);
-});
-
-// Cargar página según hash en la URL al iniciar
-(function() {
-  var hash = window.location.hash.replace('#', '');
-  var validPages = ['home','modulos','biblioteca','sparring','autoexamen','substack','sobreautor','rinconcito','plataformas'];
-  if (hash && validPages.indexOf(hash) !== -1) {
-    irA(hash, false);
-  } else {
-    history.replaceState({ page: 'home' }, '', '#home');
-  }
-})();
-
+// Event delegation: captura todos los clicks con data-page
 document.addEventListener('click', function(e) {
-  if (e.target.closest('#hamburger')) { return; }
+  // Si el click fue en un link real con href externo, no interceptar
   var linkEl = e.target.closest('a[href]');
-  if (linkEl && linkEl.href && !linkEl.getAttribute('data-page')) { return; }
+  if (linkEl && linkEl.href && !linkEl.getAttribute('data-page')) {
+    return; // Dejar que el browser maneje el link normalmente
+  }
   var el = e.target.closest('[data-page]');
-  if (el) { e.preventDefault(); irA(el.getAttribute('data-page')); }
+  if (el) {
+    e.preventDefault();
+    irA(el.getAttribute('data-page'));
+  }
 });
+
+// Substack card
+
 
 // ── SPARRING ────────────────────────────────────────────────
 var modo = 'directa';
@@ -1199,8 +1150,8 @@ document.getElementById('cinput').addEventListener('input', function() {
 var TESTS = [
   {
     id: 0,
-    nombre: "Módulo 1: Introductorio",
-    desc: "Un poco de todo. Basado en el test del autor publicado en el Substack \"El Test de la Confusión\".",
+    nombre: "Módulo 1: Un poco de todo",
+    desc: "Basado en el test del autor publicado en el Substack 'El Test de la Confusión'. Introductorio, un poco de todo.",
     emoji: "🧠",
     preguntas: [
       { n:1, t:"Te ofrecen dos jefes, ¿cuál escoges?", ops:["A. Uno elegante, habla perfecto… pero nunca te paga a tiempo","B. Uno grosero… pero te paga el doble puntual","C. El elegante, porque la cultura importa","D. Ninguno, porque todos los jefes son opresores"], c:"B" },
@@ -1273,11 +1224,11 @@ var TESTS = [
 
 // RESULTADOS GLOBALES (sobre 40 puntos totales)
 var RESULTADOS_GLOBALES = [
-  { min:0,  max:10, emoji:"☠️", tit:"Enfermo Terminal", desc:"Tienes metástasis. El cáncer estatal te invadió por completo. Necesitas quimio urgente.", perf:"La narrativa estatista te controla totalmente. Apoyas con entusiasmo las políticas que te empobrecen." },
-  { min:11, max:20, emoji:"😵", tit:"Confusión Funcional", desc:"Tienes alteraciones hormonales: a ratos con claridad, y a ratos te seducen los discursos estatistas.", perf:"Sabes que algo no cuadra, pero todavía te dejas seducir por el discurso bonito y las promesas fáciles." },
-  { min:21, max:30, emoji:"🌿", tit:"En Recuperación", desc:"Aún con salud débil pero en franca mejoría.", perf:"Ya no te lo tragas todo. Empiezas a ver incentivos y a desconfiar del discurso. Sigue así, el proceso es largo." },
-  { min:31, max:35, emoji:"🔍", tit:"Claridad en Proceso", desc:"Ya intuyes lo correcto aunque a veces la inercia estatal te engaña.", perf:"Empiezas a pensar en consecuencias no intencionales. Cada política tiene un costo invisible que ya empiezas a ver." },
-  { min:36, max:40, emoji:"⚡", tit:"Peligroso", desc:"Ya entiendes la libertad.", perf:"Difícil de manipular. Ves el guión antes de que termine el primer párrafo. No pides permiso. Nunca." }
+  { min:0,  max:10, emoji:"🤒", tit:"Enfermo Terminal", desc:"Tienes metástasis, el cáncer estatal te invadió por completo. Necesitas quimio urgente.", perf:"La narrativa estatista te controla. Apoyas políticas que te empobrecen con las mejores intenciones." },
+  { min:11, max:20, emoji:"😵", tit:"Confusión Funcional", desc:"Tienes alteraciones hormonales, a ratos con claridad y a ratos te seducen los discursos estatistas.", perf:"Sabes que algo no cuadra, pero todavía te dejas seducir por el discurso bonito y las promesas fáciles." },
+  { min:21, max:30, emoji:"🔄", tit:"En Recuperación", desc:"Aún con salud débil pero en franca mejoría.", perf:"Ya no te lo tragas todo. Empiezas a ver incentivos y a desconfiar del discurso. Sigue así." },
+  { min:31, max:35, emoji:"🧠", tit:"Claridad en Proceso", desc:"Ya intuyes lo correcto aunque a veces la inercia estatal te engaña.", perf:"Empiezas a pensar en consecuencias no intencionales. Cada política tiene un costo invisible." },
+  { min:36, max:40, emoji:"⚡", tit:"Peligroso", desc:"Ya entiendes la libertad.", perf:"Difícil de manipular. Ves el guión antes de que termine el primer párrafo. No pides permiso." }
 ];
 
 var moduloActual = 0;
@@ -1297,7 +1248,7 @@ function mostrarSelector() {
   var html = '';
 
   // Title and description
-  html += '<div style="background:#dae8da;border:1px solid #b0c8b0;border-radius:12px;padding:28px;margin-bottom:24px;">';
+  html += '<div style="background:#dedad3;border:1px solid #bfb9b0;border-radius:12px;padding:28px;margin-bottom:24px;">';
   html += '<div style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:3px;margin-bottom:10px;">TEST COMPLETO — 40 PREGUNTAS</div>';
   html += '<h3 style="font-family:Bebas Neue,sans-serif;font-size:24px;letter-spacing:1px;color:#1a1a1a;margin-bottom:10px;">Un test completo para medir tu claridad sobre las ideas de la libertad</h3>';
   html += '<p style="font-size:14px;color:#555;line-height:1.6;">El test tiene cuatro módulos. Completa todos para obtener tu resultado final y descubrir tu nivel real.</p>';
@@ -1325,9 +1276,9 @@ function mostrarSelector() {
 
   // Show total if any completed
   if (completados > 0) {
-    html += '<div style="margin-top:20px;background:#dae8da;border:1px solid #b0c8b0;border-radius:10px;padding:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">';
+    html += '<div style="margin-top:20px;background:#dedad3;border:1px solid #bfb9b0;border-radius:10px;padding:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">';
     html += '<div style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:2px;">PROGRESO: ' + completados + '/4 módulos</div>';
-    html += '<div style="flex:1;background:#bfd4bf;border-radius:3px;height:6px;overflow:hidden;min-width:80px;"><div style="height:100%;background:var(--naranja);border-radius:3px;width:' + (completados/4*100) + '%;transition:width 0.6s;"></div></div>';
+    html += '<div style="flex:1;background:#c8c3bb;border-radius:3px;height:6px;overflow:hidden;min-width:80px;"><div style="height:100%;background:var(--naranja);border-radius:3px;width:' + (completados/4*100) + '%;transition:width 0.6s;"></div></div>';
     html += '<div style="font-family:Bebas Neue,sans-serif;font-size:22px;color:#1a1a1a;">' + totalPts + ' <span style="font-size:13px;color:#666;font-family:DM Sans,sans-serif;">/ 40 pts</span></div>';
     if (completados === 4) {
       html += '<button class="btn btn-naranja" id="btn-ver-res-global" style="padding:10px 20px;">Ver resultado final →</button>';
@@ -1354,7 +1305,7 @@ function iniciarModulo(id) {
   respsGlobales[id] = respsGlobales[id] || {};
   var c = document.getElementById('tpreguntas');
   var html = '<button class="back-btn" id="btn-volver-test">← Volver a módulos</button>';
-  html += '<div style="margin-bottom:24px;background:#dae8da;border:1px solid #b0c8b0;border-radius:10px;padding:18px 22px;">';
+  html += '<div style="margin-bottom:24px;background:#dedad3;border:1px solid #bfb9b0;border-radius:10px;padding:18px 22px;">';
   html += '<div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:3px;margin-bottom:4px;">MÓDULO ' + (id+1) + ' DE 4</div>';
   html += '<div style="font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:1px;color:#1a1a1a;">' + test.nombre + '</div>';
   html += '</div>';
@@ -1436,7 +1387,26 @@ function verResultadoGlobal() {
 
 document.getElementById('btn-reiniciar').addEventListener('click', mostrarSelector);
 
-mostrarSelector();actualizarNivelUI();actualizarMarcador();
+mostrarSelector();actualizarNivelUI();actualizarMarcador();}
+  }
+}
+
+// Event delegation: captura todos los clicks con data-page
+document.addEventListener('click', function(e) {
+  // Si el click fue en un link real con href externo, no interceptar
+  var linkEl = e.target.closest('a[href]');
+  if (linkEl && linkEl.href && !linkEl.getAttribute('data-page')) {
+    return; // Dejar que el browser maneje el link normalmente
+  }
+  var el = e.target.closest('[data-page]');
+  if (el) {
+    e.preventDefault();
+    irA(el.getAttribute('data-page'));
+  }
+});
+
+// Substack card
+
 
 // ── SPARRING ────────────────────────────────────────────────
 var modo = 'directa';
@@ -1555,26 +1525,236 @@ document.getElementById('cinput').addEventListener('input', function() {
   this.style.height = Math.min(this.scrollHeight, 100) + 'px';
 });
 
+// ── TESTS ───────────────────────────────────────────────────
+var TESTS = [
+  {
+    id: 0,
+    nombre: "El Test de la Confusión",
+    desc: 'El test original de Nicolás Fernández propuesto en el Substack "El Test de la Confusión". Un poco de todo para un test rápido.',
+    emoji: "🧠",
+    preguntas: [
+      { n:1, t:"Te ofrecen dos jefes, ¿cuál escoges?", ops:["A. Uno elegante, habla perfecto… pero nunca te paga a tiempo","B. Uno grosero… pero te paga el doble puntual","C. El elegante, porque la cultura importa","D. Ninguno, porque todos los jefes son opresores"], c:"B" },
+      { n:2, t:"Los impuestos:", ops:["A. Son necesarios, pero deberían ser mínimos","B. Son coerción institucionalizada","C. Son un acto de solidaridad","D. Depende de quién los cobre"], c:"B" },
+      { n:3, t:"Bitcoin es:", ops:["A. Una estafa peligrosa","B. Un activo volátil pero interesante","C. Una amenaza al control estatal","D. No entiendo, pero mi primo ganó plata"], c:"C" },
+      { n:4, t:"Un político promete darte todo gratis. Tú piensas:", ops:["A. Qué generoso","B. ¿Con qué plata?","C. Seguro roba, pero igual sirve","D. Eso lo pagan los ricos"], c:"B" },
+      { n:5, t:"Sobre inflación:", ops:["A. Es culpa de los empresarios","B. Es culpa del banco central","C. Es culpa del dólar","D. Es un fenómeno multicausal y complejo"], c:"B" },
+      { n:6, t:"Prefieres vivir en un país donde:", ops:["A. Todo está regulado, pero protegido","B. Hay libertad, pero incertidumbre","C. El Estado decide por ti","D. Nadie decide nada (caos total)"], c:"B" },
+      { n:7, t:"Si una app te da todo gratis, tú piensas:", ops:["A. Qué maravilla","B. ¿Dónde está el truco?","C. Seguro venden mis datos","D. El Estado debería regularla"], c:"B" },
+      { n:8, t:"Un empresario se vuelve rico:", ops:["A. Seguro explotó a alguien","B. Creó valor que otros pagan voluntariamente","C. Tuvo suerte","D. Debería pagar más impuestos"], c:"B" },
+      { n:9, t:"Sobre el salario mínimo:", ops:["A. Ayuda a los trabajadores","B. Puede dejar gente sin empleo","C. Debería ser más alto siempre","D. Es una herramienta política"], c:"B" },
+      { n:10, t:"Este líder es grosero pero reduce el Estado. Tú respondes:", ops:["A. No me importa, sigue siendo grosero","B. Interesante… ¿qué logró exactamente?","C. Prefiero uno amable aunque controle más","D. Todos son iguales"], c:"B" }
+    ],
+    resultados: [
+      { min:0, max:3, emoji:"🤒", tit:"Enfermo Terminal", desc:"Vives en el mundo de las formas. Te venden narrativa y la compras con emoción.", perf:"Arquetipo: el indignado. Profesor universitario, funcionario público o estudiante idealista." },
+      { min:4, max:6, emoji:"☕", tit:"Confusión Funcional", desc:"Sabes que algo no cuadra, pero todavía te dejas seducir por el discurso bonito.", perf:"Arquetipo: el analista de café. Cuestiona, duda, pero no rompe." },
+      { min:7, max:8, emoji:"🔄", tit:"Claridad en Proceso", desc:"Ya no te lo tragas todo. Empiezas a ver incentivos y a desconfiar del discurso.", perf:"Arquetipo: el converso. En transición. Ya rompiste con varias narrativas." },
+      { min:9, max:10, emoji:"⚡", tit:"El Peligroso", desc:"No te dejas manipular por formas. Entiendes incentivos y detectas narrativa de inmediato.", perf:"Arquetipo: el incómodo. No necesitas pertenecer, no buscas aprobación." }
+    ]
+  },
+  {
+    id: 1,
+    nombre: "El Test del Estado",
+    desc: "¿Cuánto poder le das al Estado sin darte cuenta? Descubre si eres más libre de lo que crees.",
+    emoji: "🏛️",
+    preguntas: [
+      { n:1, t:"La educación pública gratuita:", ops:["A. Es un derecho fundamental","B. Es un servicio que otros pagan con sus impuestos","C. Debería ser obligatoria para todos","D. Es lo mínimo que puede hacer un Estado"], c:"B" },
+      { n:2, t:"Cuando el gobierno crea empleos:", ops:["A. Genera riqueza para el país","B. Destruye empleo privado para financiar el público","C. Soluciona el desempleo estructural","D. Es necesario en tiempos de crisis"], c:"B" },
+      { n:3, t:"El control de armas:", ops:["A. Reduce la violencia","B. Desarma al ciudadano honesto, no al criminal","C. Debe decidirlo cada gobierno","D. Es un tema complejo sin respuesta clara"], c:"B" },
+      { n:4, t:"La propiedad privada es:", ops:["A. Un privilegio de los ricos","B. La base de toda libertad individual","C. Necesaria pero debe ser regulada","D. Una construcción social negociable"], c:"B" },
+      { n:5, t:"Cuando el Estado subsidia algo:", ops:["A. Lo hace accesible para todos","B. Crea dependencia y distorsiona precios","C. Protege a los más vulnerables","D. Es necesario en ciertos sectores"], c:"B" },
+      { n:6, t:"La libertad de expresión:", ops:["A. Debe tener límites para proteger grupos vulnerables","B. Es absoluta o no es libertad","C. Depende del contexto cultural","D. El Estado debe regularla con criterio"], c:"B" },
+      { n:7, t:"Sobre la deuda pública:", ops:["A. Es inversión en el futuro","B. Es impuesto diferido que pagarán tus hijos","C. Es necesaria para servicios esenciales","D. Depende de cómo se administre"], c:"B" },
+      { n:8, t:"El sistema de pensiones estatal:", ops:["A. Garantiza retiro digno para todos","B. Es un esquema Ponzi que depende de nuevos contribuyentes","C. Debe mejorarse pero no eliminarse","D. Es la única forma de proteger adultos mayores"], c:"B" },
+      { n:9, t:"Cuando el gobierno regula un mercado:", ops:["A. Lo hace más justo y competitivo","B. Favorece a los ya establecidos y frena la competencia","C. Protege al consumidor","D. Es necesario para evitar abusos"], c:"B" },
+      { n:10, t:"La diferencia entre Estado y gobierno:", ops:["A. Ninguna, son lo mismo","B. El Estado es el aparato coercitivo; el gobierno solo lo opera","C. El gobierno es elegido, el Estado no","D. Es una distinción académica sin consecuencias"], c:"B" }
+    ],
+    resultados: [
+      { min:0, max:3, emoji:"⛓️", tit:"Estatista Convencido", desc:"Le entregas al Estado poder que nunca te va a devolver. Confundes gestión con coerción.", perf:"Perfil: el ciudadano bien portado. Cree que las reglas existen para protegerlo." },
+      { min:4, max:6, emoji:"😵", tit:"Estatista con Dudas", desc:"Algo no te cierra, pero el marco mental estatista sigue dominando.", perf:"Perfil: el reformista eterno. Siempre cree que el problema es la implementación, nunca el sistema." },
+      { min:7, max:8, emoji:"🔍", tit:"Despertando", desc:"Ya ves el patrón. Empiezas a entender que el Estado no falla por accidente.", perf:"Perfil: el escéptico en transición. Todavía busca soluciones dentro del sistema." },
+      { min:9, max:10, emoji:"🗽", tit:"Libre de Verdad", desc:"Entiendes que el Estado no es tu amigo ni tu protector. Funciona mejor cuando es mínimo.", perf:"Perfil: el libertario convencido. No pides permiso, no delegas tu responsabilidad." }
+    ]
+  },
+  {
+    id: 2,
+    nombre: "El Test Económico",
+    desc: "Economía real que no te enseñaron en el colegio. ¿Cuánto entiendes de cómo funciona el dinero?",
+    emoji: "💰",
+    preguntas: [
+      { n:1, t:"El precio de un producto lo determina:", ops:["A. El costo de producción más una ganancia justa","B. Lo que alguien está dispuesto a pagar voluntariamente","C. El gobierno para proteger al consumidor","D. Las grandes corporaciones"], c:"B" },
+      { n:2, t:"Cuando el banco central imprime más dinero:", ops:["A. El país se vuelve más rico","B. Cada billete vale menos — es un impuesto oculto","C. Estimula la economía sin consecuencias","D. Ayuda a los más pobres"], c:"B" },
+      { n:3, t:"La ganancia empresarial es:", ops:["A. Dinero robado al trabajador","B. La señal de que se creó valor que el mercado reconoce","C. Debe estar limitada por ley","D. Un problema cuando es excesiva"], c:"B" },
+      { n:4, t:"El libre comercio entre países:", ops:["A. Destruye empleos locales","B. Genera riqueza para ambas partes al especializarse","C. Solo beneficia a los países ricos","D. Debe regularse para proteger industrias"], c:"B" },
+      { n:5, t:"Cuando el Estado pone precio máximo al arroz:", ops:["A. Lo hace accesible para los pobres","B. Genera escasez porque nadie produce lo que no es rentable","C. Controla la inflación","D. Es necesario en épocas de crisis"], c:"B" },
+      { n:6, t:"La competencia en el mercado:", ops:["A. Es destructiva y genera monopolios","B. Baja precios, mejora calidad y expulsa a los ineficientes","C. Debe regularse para que sea justa","D. Solo funciona en teoría"], c:"B" },
+      { n:7, t:"Los aranceles a las importaciones:", ops:["A. Protegen el empleo nacional","B. Son un impuesto que paga el consumidor local","C. Son necesarios para industrias nacientes","D. Equilibran la balanza comercial"], c:"B" },
+      { n:8, t:"La pobreza se reduce principalmente con:", ops:["A. Redistribución de la riqueza existente","B. Creación de nueva riqueza a través del mercado libre","C. Programas sociales bien diseñados","D. Mayor inversión pública"], c:"B" },
+      { n:9, t:"El empresario que quiebra:", ops:["A. Es víctima del sistema","B. Recibió una señal de que no estaba creando suficiente valor","C. Necesita apoyo estatal","D. Fue víctima de competencia desleal"], c:"B" },
+      { n:10, t:"La riqueza de un país se mide mejor por:", ops:["A. El tamaño de su PIB","B. La libertad de sus ciudadanos para producir, comerciar y conservar","C. La igualdad en la distribución del ingreso","D. La fortaleza de sus instituciones públicas"], c:"B" }
+    ],
+    resultados: [
+      { min:0, max:3, emoji:"📉", tit:"Analfabeta Económico", desc:"Te educaron para consumir narrativa económica sin cuestionarla. Apoyas políticas que te empobrecen.", perf:"Perfil: el votante bien intencionado. Sus intenciones son buenas. Sus efectos, devastadores." },
+      { min:4, max:6, emoji:"📊", tit:"Economista de Titulares", desc:"Entiendes algo, pero te quedas en la superficie. Ves los efectos visibles e ignoras los invisibles.", perf:"Perfil: el analista de primera capa. Ve el problema, no las causas." },
+      { min:7, max:8, emoji:"📈", tit:"Pensamiento Económico Real", desc:"Ya piensas en incentivos y consecuencias no intencionales. Cada política tiene un costo.", perf:"Perfil: el que hace preguntas incómodas. ¿Quién paga esto? ¿Qué incentivo genera?" },
+      { min:9, max:10, emoji:"🏆", tit:"Economista Libre", desc:"Piensas como Bastiat: ves lo que se ve y lo que no se ve.", perf:"Perfil: el peligroso en reuniones de familia. Ese que arruina el argumento del salario mínimo con un dato." }
+    ]
+  },
+  {
+    id: 3,
+    nombre: "El Test de la Narrativa",
+    desc: "¿Puedes separar el discurso de la realidad? Detecta cuándo te están vendiendo una historia.",
+    emoji: "🎭",
+    preguntas: [
+      { n:1, t:"Un medio titula: Gobierno invierte $500M en educación. Tú piensas:", ops:["A. Qué buena noticia","B. ¿Cuál es el resultado medible y quién lo verifica?","C. Depende del partido que gobierne","D. Ojalá llegue a las escuelas"], c:"B" },
+      { n:2, t:"Un activista dice esto lo pagan los ricos. Tú sabes que:", ops:["A. Es justo porque tienen más","B. Los costos siempre se trasladan al consumidor final — que eres tú","C. Depende del tipo de impuesto","D. Hay que estudiar cada caso"], c:"B" },
+      { n:3, t:"Una ONG denuncia explotación en una fábrica del tercer mundo. Sin contexto, tú:", ops:["A. La condenas inmediatamente","B. Preguntas cuál era la alternativa para esos trabajadores","C. Pides más regulación internacional","D. Compartes la denuncia para crear conciencia"], c:"B" },
+      { n:4, t:"El presidente anuncia que creó 200,000 empleos. La pregunta correcta es:", ops:["A. ¿En qué sectores?","B. ¿A qué costo y cuántos empleos privados se destruyeron?","C. ¿Cuándo se verán los beneficios?","D. ¿Es suficiente para la demanda actual?"], c:"B" },
+      { n:5, t:"La desigualdad está aumentando. Esta afirmación:", ops:["A. Prueba que el sistema falla","B. No dice nada sin saber si los pobres mejoran en términos absolutos","C. Requiere políticas redistributivas urgentes","D. Es preocupante independientemente del contexto"], c:"B" },
+      { n:6, t:"Un estudio dice que el salario mínimo no destruye empleo. Tú:", ops:["A. Lo compartes porque confirma lo que creías","B. Preguntas quién lo financia, la metodología y el contexto","C. Lo aceptas porque viene de una universidad","D. Buscas otro estudio que lo contradiga"], c:"B" },
+      { n:7, t:"Este líder habla por los más pobres. Tú evalúas:", ops:["A. Su tono y empatía en el discurso","B. Si las políticas que propone realmente mejoran la vida de los pobres","C. Si es creíble y consistente","D. Si tiene experiencia en el sector social"], c:"B" },
+      { n:8, t:"Las redes sociales censuran contenido libertario. La respuesta correcta es:", ops:["A. Hay que regularlas para garantizar neutralidad","B. Crear plataformas alternativas y no depender de infraestructura enemiga","C. Denunciarlo públicamente","D. Es exagerado, no hay censura sistemática"], c:"B" },
+      { n:9, t:"El capitalismo genera pobreza. Esta frase:", ops:["A. Es cierta — la historia lo demuestra","B. Es falsa — el capitalismo sacó a más personas de la pobreza que cualquier otro sistema","C. Depende del tipo de capitalismo","D. Es un debate legítimo sin conclusión"], c:"B" },
+      { n:10, t:"Cuando alguien te llama extremo por defender la libertad individual, tú:", ops:["A. Moderas tu posición para no alienar a nadie","B. Señalas que defender la propiedad y la libertad no es extremismo","C. Explicas tu posición con más cuidado","D. Evitas el conflicto porque no vale la pena"], c:"B" }
+    ],
+    resultados: [
+      { min:0, max:3, emoji:"🎣", tit:"Pez en el Anzuelo", desc:"La narrativa te tiene exactamente donde quiere. Reaccionas a las formas, al tono — nunca al resultado real.", perf:"Perfil: el consumidor de noticias estándar. Comparte titulares, se indigna por temporadas." },
+      { min:4, max:6, emoji:"🤔", tit:"Escéptico Selectivo", desc:"Dudas de algunas cosas pero no de otras. Tu escepticismo está condicionado por tus preferencias.", perf:"Perfil: el que cuestiona al bando contrario pero traga la propia narrativa sin masticar." },
+      { min:7, max:8, emoji:"🔎", tit:"Detector en Calibración", desc:"Ya tienes el instinto. Preguntas quién financia, qué incentivo hay, cuál es el efecto real.", perf:"Perfil: el que incomoda en las reuniones pero todavía pide disculpas por hacerlo." },
+      { min:9, max:10, emoji:"🛡️", tit:"Inmune a la Narrativa", desc:"Difícil de manipular. Ves el guión antes de que termine el primer párrafo.", perf:"Perfil: el que no comparte sin leer, no opina sin datos y no aplaude sin resultados." }
+    ]
+  }
+];
 
 
 
-// ── HAMBURGUESA ──────────────────────────────────────────────
+var testActual = null;
+var resps = {};
+
+function mostrarSelector() {
+  document.getElementById('tresultado').style.display = 'none';
+  var c = document.getElementById('tpreguntas');
+  c.style.display = 'block';
+  var html = '<div class="test-grid">';
+  for (var i = 0; i < TESTS.length; i++) {
+    var t = TESTS[i];
+    html += '<div class="tc" data-tid="' + t.id + '">';
+    html += '<div class="em">' + t.emoji + '</div>';
+    html += '<div class="aut">NOPIDOPERMISO</div>';
+    html += '<h3>' + t.nombre + '</h3>';
+    html += '<p>' + t.desc + '</p>';
+    html += '<span class="cta">Hacer el test →</span>';
+    html += '</div>';
+  }
+  html += '</div>';
+  c.innerHTML = html;
+
+  c.querySelectorAll('.tc').forEach(function(el) {
+    el.addEventListener('click', function() {
+      iniciarTest(parseInt(el.getAttribute('data-tid')));
+    });
+  });
+}
+
+function iniciarTest(id) {
+  testActual = TESTS[id];
+  resps = {};
+  var c = document.getElementById('tpreguntas');
+  var html = '<button class="back-btn" id="btn-volver-test">← Volver</button>';
+  html += '<div style="margin-bottom:28px;">';
+  html += '<div style="font-size:10px;color:var(--naranja);letter-spacing:2px;font-family:monospace;margin-bottom:4px;">NOPIDOPERMISO</div>';
+  html += '<div style="font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:1px;">' + testActual.nombre + '</div>';
+  html += '</div>';
+
+  for (var i = 0; i < testActual.preguntas.length; i++) {
+    var p = testActual.preguntas[i];
+    html += '<div class="pcard">';
+    html += '<div class="pnum">PREGUNTA ' + p.n + ' DE 10</div>';
+    html += '<div class="ptxt">' + p.t + '</div>';
+    var lets = ['A','B','C','D'];
+    for (var j = 0; j < p.ops.length; j++) {
+      html += '<button class="opbtn" data-pi="' + i + '" data-let="' + lets[j] + '">' + p.ops[j] + '</button>';
+    }
+    html += '</div>';
+  }
+
+  html += '<div style="text-align:center;margin-top:28px;">';
+  html += '<div id="prog" style="font-size:13px;color:var(--muted);margin-bottom:14px;">0 de 10 preguntas respondidas</div>';
+  html += '<button class="btn btn-naranja" id="btn-ver-res" disabled style="opacity:0.4;cursor:not-allowed;">Ver mi resultado</button>';
+  html += '</div>';
+  c.innerHTML = html;
+
+  document.getElementById('btn-volver-test').addEventListener('click', mostrarSelector);
+
+  c.querySelectorAll('.opbtn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var pi = parseInt(btn.getAttribute('data-pi'));
+      var let_ = btn.getAttribute('data-let');
+      resps[pi] = let_;
+      c.querySelectorAll('.opbtn[data-pi="' + pi + '"]').forEach(function(b) { b.classList.remove('sel'); });
+      btn.classList.add('sel');
+      var total = Object.keys(resps).length;
+      document.getElementById('prog').textContent = total + ' de 10 preguntas respondidas';
+      if (total === 10) {
+        var br = document.getElementById('btn-ver-res');
+        br.disabled = false;
+        br.style.opacity = '1';
+        br.style.cursor = 'pointer';
+      }
+    });
+  });
+
+  document.getElementById('btn-ver-res').addEventListener('click', verResultado);
+}
+
+function verResultado() {
+  var pts = 0;
+  for (var i = 0; i < testActual.preguntas.length; i++) {
+    if (resps[i] === testActual.preguntas[i].c) pts++;
+  }
+  var r = null;
+  for (var i = 0; i < testActual.resultados.length; i++) {
+    if (pts >= testActual.resultados[i].min && pts <= testActual.resultados[i].max) {
+      r = testActual.resultados[i]; break;
+    }
+  }
+  // Guardar puntuación del test actual
+  puntosTests[testActual.id] = pts;
+  guardar('puntos_tests', puntosTests);
+
+  document.getElementById('tpreguntas').style.display = 'none';
+  document.getElementById('tresultado').style.display = 'block';
+  document.getElementById('remoji').textContent = r.emoji;
+  document.getElementById('rpts').textContent = pts + '/10';
+  document.getElementById('rtit').textContent = r.tit;
+  document.getElementById('rdesc').textContent = r.desc;
+  document.getElementById('rperf').textContent = r.perf;
+  document.getElementById('rcard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+  // Actualizar marcador y nivel
+  actualizarMarcador();
+  actualizarNivelUI();
+}
+
+document.getElementById('btn-reiniciar').addEventListener('click', mostrarSelector);
+
+mostrarSelector();
+
 // TABS BIBLIOTECA
-function switchTab(tabId) {
+document.addEventListener('click', function(e) {
+  var tab = e.target.closest('.btab');
+  if (!tab) return;
+  var tabId = tab.getAttribute('data-tab');
   document.querySelectorAll('.btab').forEach(function(b) {
     b.classList.remove('active');
     b.style.background = 'transparent';
     b.style.color = 'var(--muted)';
   });
-  var activeBtn = document.querySelector('.btab[onclick="switchTab(\'' + tabId + '\')"]');
-  if (activeBtn) {
-    activeBtn.classList.add('active');
-    activeBtn.style.background = 'var(--naranja)';
-    activeBtn.style.color = 'var(--blanco)';
-  }
+  tab.classList.add('active');
+  tab.style.background = 'var(--naranja)';
+  tab.style.color = 'var(--blanco)';
   document.getElementById('tab-libros').style.display = tabId === 'libros' ? 'block' : 'none';
   document.getElementById('tab-podcasts').style.display = tabId === 'podcasts' ? 'block' : 'none';
-}
+});
 
 
 actualizarMarcador();
@@ -1595,23 +1775,19 @@ actualizarMarcador();
           <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:4px;">Nicolás Fernández</h3>
           <p style="font-size:13px;color:var(--naranja);font-weight:600;letter-spacing:1px;text-transform:uppercase;">Empresario · Escritor Amateur · Co-Host 10AMPRO</p>
           <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;">
-            <a href="https://www.linkedin.com/in/nicolas-fernandez-2a83886/" target="_blank" style="font-size:12px;color:#555;text-decoration:none;display:flex;align-items:center;gap:4px;border:1px solid #b0c8b0;padding:3px 10px;border-radius:4px;background:#cddacd;">
+            <a href="https://www.linkedin.com/in/nicolas-fernandez-2a83886/" target="_blank" style="font-size:12px;color:#555;text-decoration:none;display:flex;align-items:center;gap:4px;border:1px solid #bfb9b0;padding:3px 10px;border-radius:4px;background:#d0cbc3;">
               <span style="font-weight:700;color:#0077b5;">in</span> LinkedIn
             </a>
-            <a href="https://x.com/nicoferdo73" target="_blank" style="font-size:12px;color:#555;text-decoration:none;display:flex;align-items:center;gap:4px;border:1px solid #b0c8b0;padding:3px 10px;border-radius:4px;background:#cddacd;">
+            <a href="https://x.com/nicoferdo73" target="_blank" style="font-size:12px;color:#555;text-decoration:none;display:flex;align-items:center;gap:4px;border:1px solid #bfb9b0;padding:3px 10px;border-radius:4px;background:#d0cbc3;">
               <span style="font-weight:700;color:#1a1a1a;">𝕏</span> @nicoferdo73
-            </a>
-            <a href="https://substack.com/@nicolasfernandezgiraldo" target="_blank" style="font-size:12px;color:#555;text-decoration:none;display:flex;align-items:center;gap:4px;border:1px solid #b0c8b0;padding:3px 10px;border-radius:4px;background:#cddacd;">
-              <span style="font-weight:700;color:var(--naranja);">S</span> Substack
             </a>
           </div>
         </div>
       </div>
-      <p style="font-size:15px;color:#333;line-height:1.8;font-weight:400;font-family:DM Sans,sans-serif;">Soy un inquieto por los temas políticos y culturales, y un fuerte defensor de la plena autonomía del individuo. Hoy me reconozco como libertario, aunque he transitado por muchos espacios del espectro político. No me arrepiento de ello, simplemente me estoy curando. La derecha es medio bruta y casi siempre nos confunde, la izquierda nos manipula y luego nos destruye y el centro critica y facilita todo. Lo cierto es que hoy no hay representación para el individuo, todo es para el Estado.</p>
-      <p style="font-size:15px;color:#333;line-height:1.8;font-weight:400;font-family:DM Sans,sans-serif;margin-top:14px;">Eso me genera inconformidad y preocupación. Existe una confusión generalizada en torno al rol del Estado y, sobre todo, en su impacto negativo en la calidad de vida de las personas.</p>
-      <p style="font-size:15px;color:#333;line-height:1.8;font-weight:400;font-family:DM Sans,sans-serif;margin-top:14px;">Esta plataforma, <strong style="color:#1a1a1a;font-weight:700;">NOPIDOPERMISO</strong>, es un primer intento por ordenar y consolidar esa inconformidad. Pero, con acción, a través de la pedagogía y la promulgación de ideas correctas en favor de la libertad y la autonomía individual. En camino viene un <strong style="color:var(--naranja);font-weight:700;">MASTERCLASS de Batalla Cultural</strong>, que estará disponible en esta plataforma y también en formato presencial para empresas, familias y grupos.</p>
-      <p style="font-size:13px;color:#888;line-height:1.6;font-weight:400;font-family:DM Sans,sans-serif;margin-top:16px;padding-top:14px;border-top:1px solid #b0c8b0;font-style:italic;">Disclaimer: Este sitio utiliza herramientas de IA. Milton Javier es el sparring de la libertad.</p>
-      <p style="font-size:13px;color:#888;line-height:1.6;font-weight:400;font-family:DM Sans,sans-serif;margin-top:10px;font-style:italic;">Créditos a mi hijo Benjamín quien fue fundamental en la creación de este aplicativo. En pleno ejercicio de su libertad decidió apoyarme en la construcción de esta herramienta.</p>
+      <p style="font-size:15px;color:#333;line-height:1.8;font-weight:400;font-family:DM Sans,sans-serif;">Soy un inquieto de los temas políticos y culturales, y un fuerte defensor de la plena autonomía del individuo. Hoy me reconozco como libertario, aunque he transitado por todo el espectro político. No me arrepiento, simplemente me estoy curando. La derecha casi siempre nos confunde, la izquierda nos destruye y el centro lo critica todo.</p>
+      <p style="font-size:15px;color:#333;line-height:1.8;font-weight:400;font-family:DM Sans,sans-serif;margin-top:14px;">Más allá de etiquetas, hay algo claro: estoy inconforme y preocupado por la confusión generalizada en torno al rol del Estado y, sobre todo, por su impacto negativo en la calidad de vida de las personas.</p>
+      <p style="font-size:15px;color:#333;line-height:1.8;font-weight:400;font-family:DM Sans,sans-serif;margin-top:14px;">Este aplicativo, <strong style="color:#1a1a1a;font-weight:700;">NOPIDOPERMISO</strong>, es un primer intento por ordenar y consolidar las ideas que promulgo. En camino viene un <strong style="color:var(--naranja);font-weight:700;">MASTERCLASS de Batalla Cultural</strong>, disponible en esta plataforma y también en formato presencial para empresas, familias y grupos.</p>
+      <p style="font-size:13px;color:#888;line-height:1.6;font-weight:400;font-family:DM Sans,sans-serif;margin-top:16px;padding-top:14px;border-top:1px solid #bfb9b0;font-style:italic;">Disclaimer: Este sitio utiliza herramientas de IA. Milton Javier es el sparring de la libertad.</p>
     </div>
 
     <!-- Batalla Cultural series -->
@@ -1666,6 +1842,14 @@ actualizarMarcador();
     </div>
 
   </div>
+  <footer>
+    <div class="fl" data-page="home" style="color:#fff;">nopido<span style="color:#E85D00;">permiso</span></div>
+    <p>La libertad no se negocia.</p>
+    <div class="flinks">
+      <a data-page="modulos">Módulos</a>
+      <a data-page="rinconcito">Rinconcito Colombiano</a>
+    </div>
+  </footer>
 </div>
 
 <!-- RINCONCITO COLOMBIANO -->
@@ -1680,9 +1864,10 @@ actualizarMarcador();
 
       <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:12px;padding:28px;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--naranja)'" onmouseout="this.style.borderColor='var(--gris-borde)'">
         <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#1a0a00,#3a1500);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:20px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);margin-bottom:16px;">JMG</div>
-        <h3 style="font-family:Bebas Neue,sans-serif;font-size:24px;letter-spacing:1px;margin-bottom:6px;">Juan Mario Giraldo</h3>
-        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:10px;">Estratega empresarial y peso pesado del orden espontáneo en Colombia. Fundador de Reframe Consulting, firma de consultoría en estrategia.</p>
-        <a href="https://x.com/juanmgiraldor" target="_blank" style="font-size:12px;color:var(--naranja);font-weight:600;text-decoration:none;display:inline-block;margin-top:4px;">𝕏 @juanmgiraldor →</a>
+        <h3 style="font-family:Bebas Neue,sans-serif;font-size:24px;letter-spacing:1px;margin-bottom:6px;">Juan Mario Giraldo <span style="font-size:11px;color:var(--naranja);font-family:DM Mono,monospace;">(*)</span></h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:10px;">Estratega y pensador del orden espontáneo. Fundador de Reframe Consulting, empresa de consultoría en estrategia.</p>
+        <a href="https://x.com/juanmgiraldor" target="_blank" style="font-size:12px;color:var(--naranja);font-weight:600;text-decoration:none;display:inline-block;margin-top:4px;">𝕏 @juanmgiraldor — Barriga de Sapo →</a>
+        <p style="font-size:11px;color:#666;margin-top:8px;font-style:italic;">(*) Es primo mío</p>
       </div>
 
       <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:12px;padding:28px;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--naranja)'" onmouseout="this.style.borderColor='var(--gris-borde)'">
@@ -1711,7 +1896,7 @@ actualizarMarcador();
     <!-- Recuadro adicional -->
     <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:12px;padding:32px;margin-top:20px;">
       <div style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;">Ecosistema Liberal Colombiano</div>
-      <p style="font-size:15px;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:20px;">Adicional a los referentes mencionados, hay un listado de políticos, empresarios e influenciadores que aportan a las ideas liberales. El listado es corto porque pocos entienden de libertad realmente.</p>
+      <p style="font-size:15px;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:20px;">Adicional a los referentes mencionados, hay un listado de políticos, empresarios e influenciadores que aportan a las ideas liberales. El listado es corto porque pocos entienden de libertad realmente. <span style="font-family:DM Sans,sans-serif;font-style:italic;color:#888;">Derecha prebendaria no es lo mismo que libertad.</span></p>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;">
         <div style="background:#1a1a1a;border:1px solid var(--gris-borde);border-radius:8px;padding:16px;">
           <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:var(--naranja);margin-bottom:8px;text-transform:uppercase;">Empresarios</div>
@@ -1719,7 +1904,7 @@ actualizarMarcador();
         </div>
         <div style="background:#1a1a1a;border:1px solid var(--gris-borde);border-radius:8px;padding:16px;">
           <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:var(--naranja);margin-bottom:8px;text-transform:uppercase;">Políticos</div>
-          <p style="font-size:13px;color:var(--muted);line-height:1.6;">Muy pocos. Resalto a Daniel Briceño y María Clara Posada.</p>
+          <p style="font-size:13px;color:var(--muted);line-height:1.6;">Muy pocos. Resalto a Daniel Briceño.</p>
         </div>
         <div style="background:#1a1a1a;border:1px solid var(--gris-borde);border-radius:8px;padding:16px;">
           <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:var(--naranja);margin-bottom:8px;text-transform:uppercase;">Periodistas</div>
@@ -1727,20 +1912,28 @@ actualizarMarcador();
         </div>
         <div style="background:#1a1a1a;border:1px solid var(--gris-borde);border-radius:8px;padding:16px;">
           <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:var(--naranja);margin-bottom:8px;text-transform:uppercase;">Influencers</div>
-          <p style="font-size:13px;color:var(--muted);line-height:1.6;">Julio César Iglesias, Rusy Millán, Jerome Sanabria.</p>
+          <p style="font-size:13px;color:var(--muted);line-height:1.6;">Julio César Iglesias, Rusy Millán.</p>
         </div>
         <div style="background:#1a1a1a;border:1px solid var(--gris-borde);border-radius:8px;padding:16px;">
           <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:var(--naranja);margin-bottom:8px;text-transform:uppercase;">Analistas</div>
-          <p style="font-size:13px;color:var(--muted);line-height:1.6;">María José Bernal, Andrés Felipe Arias, Thierry Ways.</p>
+          <p style="font-size:13px;color:var(--muted);line-height:1.6;">María José Bernal.</p>
         </div>
         <div style="background:#1a1a1a;border:1px solid var(--gris-borde);border-radius:8px;padding:16px;">
           <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:var(--naranja);margin-bottom:8px;text-transform:uppercase;">Inversionistas</div>
-          <p style="font-size:13px;color:var(--muted);line-height:1.6;">Sebastián Toro (Arena Alfa), Simón Restrepo (One to One), Hernán Jaramillo y muchos otros de 10AMPRO.</p>
+          <p style="font-size:13px;color:var(--muted);line-height:1.6;">Sebastián Toro el de Arena Alfa y muchos del combo 10AMPRO.</p>
         </div>
       </div>
     </div>
 
   </div>
+  <footer>
+    <div class="fl" data-page="home" style="color:#fff;">nopido<span style="color:#E85D00;">permiso</span></div>
+    <p>La libertad no se negocia.</p>
+    <div class="flinks">
+      <a data-page="modulos">Módulos</a>
+      <a data-page="sobreautor">Sobre el Autor</a>
+    </div>
+  </footer>
 </div>
 
 
@@ -1750,12 +1943,12 @@ actualizarMarcador();
     <button class="back-btn" data-page="modulos">← Volver</button>
     <div class="label">07 — Plataformas Asociadas</div>
     <h2 class="titulo">Plataformas Asociadas</h2>
-    <p style="font-size:15px;color:#555;margin-top:8px;margin-bottom:40px;font-weight:300;line-height:1.7;">Las herramientas de los cracks que conozco. Sin comisiones, sin intereses comerciales. Libertad pura para compartir el mejor alpha que hay.</p>
+    <p style="font-size:15px;color:#555;margin-top:8px;margin-bottom:40px;font-weight:300;line-height:1.7;">Compartiendo de forma libre y espontánea las herramientas de muchos "cracks" que conozco. Es el ejercicio de más pura libertad, sin comisiones, sin intereses comerciales, sólo el deseo de ayudar y darlos a conocer.</p>
 
     <div style="display:flex;flex-direction:column;gap:16px;">
 
       <a href="https://www.10am.pro/" target="_blank" style="text-decoration:none;">
-        <div style="background:#dae8da;border:1px solid #b8ccb8;border-radius:12px;padding:28px;transition:all 0.2s;" onmouseover="this.style.borderColor='#E85D00';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#b8ccb8';this.style.transform='none'">
+        <div style="background:#dedad4;border:1px solid #c8c4be;border-radius:12px;padding:28px;transition:all 0.2s;" onmouseover="this.style.borderColor='#E85D00';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#c8c4be';this.style.transform='none'">
           <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
             <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#1a1a1a,#3a1500);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:14px;color:#E85D00;border:1px solid rgba(232,93,0,0.3);flex-shrink:0;">10AM</div>
             <div>
@@ -1763,25 +1956,12 @@ actualizarMarcador();
               <span style="font-size:11px;color:#E85D00;font-weight:600;letter-spacing:1px;">www.10am.pro</span>
             </div>
           </div>
-          <p style="font-size:14px;color:#555;line-height:1.6;">La plataforma donde más alpha de inversión se genera y se comparte en Colombia, de lejos! Y es donde me dejan "dar lora" con estos temas de batalla cultural, agradecido siempre.</p>
-        </div>
-      </a>
-
-      <a href="https://www.homeland.net.co/" target="_blank" style="text-decoration:none;">
-        <div style="background:#dae8da;border:1px solid #b8ccb8;border-radius:12px;padding:28px;transition:all 0.2s;" onmouseover="this.style.borderColor='#E85D00';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#b8ccb8';this.style.transform='none'">
-          <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
-            <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#001a0a,#003a15);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:14px;color:#E85D00;border:1px solid rgba(232,93,0,0.3);flex-shrink:0;">HL</div>
-            <div>
-              <h3 style="font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:1px;color:#1a1a1a;margin-bottom:2px;">Homeland</h3>
-              <span style="font-size:11px;color:#E85D00;font-weight:600;letter-spacing:1px;">homeland.net.co</span>
-            </div>
-          </div>
-          <p style="font-size:14px;color:#555;line-height:1.6;">La mejor plataforma para acelerar conocimiento: wealth management, educación financiera de altísimo nivel y actualidad económica. Creada por Andrés Felipe Arias, PhD en Economía.</p>
+          <p style="font-size:14px;color:#555;line-height:1.6;">El site donde más Alpha de inversión se comparte en Colombia y donde me permiten "dar lora" con estos temas de batalla cultural.</p>
         </div>
       </a>
 
       <a href="https://macrowise.co/" target="_blank" style="text-decoration:none;">
-        <div style="background:#dae8da;border:1px solid #b8ccb8;border-radius:12px;padding:28px;transition:all 0.2s;" onmouseover="this.style.borderColor='#E85D00';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#b8ccb8';this.style.transform='none'">
+        <div style="background:#dedad4;border:1px solid #c8c4be;border-radius:12px;padding:28px;transition:all 0.2s;" onmouseover="this.style.borderColor='#E85D00';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#c8c4be';this.style.transform='none'">
           <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
             <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#001a2a,#003a60);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:14px;color:#E85D00;border:1px solid rgba(232,93,0,0.3);flex-shrink:0;">MW</div>
             <div>
@@ -1789,25 +1969,33 @@ actualizarMarcador();
               <span style="font-size:11px;color:#E85D00;font-weight:600;letter-spacing:1px;">macrowise.co</span>
             </div>
           </div>
-          <p style="font-size:14px;color:#555;line-height:1.6;">Si quieres saber de geopolítica, tecnología y análisis de mercados. Nadie mejor que Guillermo Valencia y su equipo.</p>
+          <p style="font-size:14px;color:#555;line-height:1.6;">Si quieres saber de geopolítica, tecnología y análisis de mercados. Nadie mejor que Guillermo y su equipo.</p>
         </div>
       </a>
 
-      <a href="https://reframeconsulting.co/" target="_blank" style="text-decoration:none;">
-        <div style="background:#dae8da;border:1px solid #b8ccb8;border-radius:12px;padding:28px;transition:all 0.2s;" onmouseover="this.style.borderColor='#E85D00';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#b8ccb8';this.style.transform='none'">
+      <a href="https://www.homeland.net.co/" target="_blank" style="text-decoration:none;">
+        <div style="background:#dedad4;border:1px solid #c8c4be;border-radius:12px;padding:28px;transition:all 0.2s;" onmouseover="this.style.borderColor='#E85D00';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#c8c4be';this.style.transform='none'">
           <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
-            <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#001a0a,#003a15);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:14px;color:#E85D00;border:1px solid rgba(232,93,0,0.3);flex-shrink:0;">RC</div>
+            <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#001a0a,#003a15);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:14px;color:#E85D00;border:1px solid rgba(232,93,0,0.3);flex-shrink:0;">HL</div>
             <div>
-              <h3 style="font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:1px;color:#1a1a1a;margin-bottom:2px;">Reframe Consulting</h3>
-              <span style="font-size:11px;color:#E85D00;font-weight:600;letter-spacing:1px;">reframeconsulting.co</span>
+              <h3 style="font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:1px;color:#1a1a1a;margin-bottom:2px;">Homeland</h3>
+              <span style="font-size:11px;color:#E85D00;font-weight:600;letter-spacing:1px;">homeland.net.co</span>
             </div>
           </div>
-          <p style="font-size:14px;color:#555;line-height:1.6;">Reframe ayuda a empresarios y gerentes a crecer rentablemente. Sin planeación tradicional, sin diversificaciones ni reducción de costos que sólo distraen.</p>
+          <p style="font-size:14px;color:#555;line-height:1.6;">La mejor plataforma para mejorar conocimiento: wealth management, educación financiera y actualidad económica. Creada por Andrés Felipe Arias.</p>
         </div>
       </a>
 
     </div>
   </div>
+  <footer>
+    <div class="fl" data-page="home">nopido<span style="color:#E85D00;">permiso</span></div>
+    <p>La libertad no se negocia.</p>
+    <div class="flinks">
+      <a data-page="modulos">Módulos</a>
+      <a data-page="rinconcito">Rinconcito</a>
+    </div>
+  </footer>
 </div>
 
 </body>
