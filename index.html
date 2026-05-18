@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -91,20 +90,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:cen
 #csend:hover{background:#FF7A1A;}
 
 /* TESTS */
-.test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px;}
-.tc{background:#dedad3;border:1px solid #bfb9b0;border-radius:11px;padding:26px;cursor:pointer;transition:all 0.2s;}
-.tc:hover{border-color:var(--naranja);transform:translateY(-2px);}
-.tc .em{font-size:30px;margin-bottom:10px;}
-.tc .aut{font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:2px;margin-bottom:7px;}
-.tc h3{font-family:Bebas Neue,sans-serif;font-size:20px;letter-spacing:1px;color:#1a1a1a;margin-bottom:7px;}
-.tc p{font-size:13px;color:#555;line-height:1.5;margin-bottom:14px;}
-.tc .cta{color:var(--naranja);font-size:12px;font-weight:600;}
 .pcard{background:#dedad3;border:1px solid #bfb9b0;border-radius:11px;padding:26px 30px;margin-bottom:14px;}
 .pnum{font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:2px;margin-bottom:9px;}
 .ptxt{font-size:16px;font-weight:500;color:#1a1a1a;margin-bottom:18px;line-height:1.5;}
 .opbtn{display:block;width:100%;text-align:left;padding:11px 15px;border-radius:7px;border:1px solid #bfb9b0;background:#d0cbc3;color:#444;font-size:14px;cursor:pointer;font-family:DM Sans,sans-serif;margin-bottom:9px;transition:all 0.2s;}
 .opbtn:hover{border-color:#555;}
 .opbtn.sel{border-color:var(--naranja);background:rgba(232,93,0,0.11);color:var(--blanco);}
+.mod-divider{font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:3px;margin:32px 0 16px;padding:10px 14px;background:rgba(232,93,0,0.08);border-left:3px solid var(--naranja);border-radius:0 6px 6px 0;}
+.mod-divider:first-of-type{margin-top:8px;}
 #rcard{background:#dedad3;border:1px solid #bfb9b0;border-radius:12px;padding:40px;text-align:center;margin-top:28px;}
 
 /* SUBSTACK */
@@ -120,12 +113,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:cen
 .cta-bar{background:var(--naranja);padding:56px 48px;text-align:center;margin-top:64px;}
 .cta-bar h2{font-family:Bebas Neue,sans-serif;font-size:clamp(36px,5vw,60px);letter-spacing:2px;margin-bottom:12px;color:#fff;}
 .cta-bar p{font-size:16px;color:rgba(255,255,255,0.85);margin-bottom:28px;}
-
-/* BIBLIOTECA */
-.bib-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px;}
-.bib-card{background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:9px;padding:18px;}
-.bib-card h4{font-size:14px;font-weight:600;margin-bottom:6px;}
-.bib-card p{font-size:12px;color:var(--muted);line-height:1.5;}
 
 /* FOOTER */
 footer{background:#1e1c1a;border-top:1px solid var(--gris-borde);padding:28px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
@@ -145,7 +132,7 @@ footer p{font-size:13px;color:#aaa;}
   nav{padding:14px 16px;}
   .nav-links li:not(:last-child){display:none;}
   .modulos-wrap,.inner{padding:80px 16px 48px;}
-  .grid-2,.test-grid,.bib-grid{grid-template-columns:1fr;}
+  .grid-2{grid-template-columns:1fr;}
   footer{flex-direction:column;text-align:center;}
   .flinks{justify-content:center;}
 }
@@ -185,6 +172,10 @@ a.bk { text-decoration:none;color:inherit;display:block; }
 a.bk:hover { border-color:var(--naranja);transform:translateY(-2px); }
 a.bk .bk-tag { background:rgba(232,93,0,0.08); }
 a.bk:hover .bk-tag { background:rgba(232,93,0,0.2);color:var(--naranja); }
+a.bk * { pointer-events:none; }
+a.bk { pointer-events:auto; }
+.pk-link * { pointer-events:none; }
+.pk-link { pointer-events:auto; }
 
 .art-row { display:flex;align-items:center;gap:16px;padding:14px 18px;background:#dedad3;border:1px solid #bfb9b0;border-radius:8px;margin-bottom:2px;text-decoration:none;color:inherit;transition:all 0.2s;cursor:pointer;position:relative;z-index:1; }
 .art-row * { pointer-events:none; }
@@ -196,54 +187,6 @@ a.bk:hover .bk-tag { background:rgba(232,93,0,0.2);color:var(--naranja); }
 .art-row.featured .art-titulo { color:var(--blanco); }
 .art-arrow { font-size:14px;color:var(--naranja);opacity:0;transition:opacity 0.2s; }
 .art-row:hover .art-arrow { opacity:1; }
-
-.nv-widget-auto{background:#dedad3;border:1px solid #bfb9b0;border-radius:12px;padding:24px 28px;}
-.nv-header-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px;}
-.nv-titulo-actual{font-family:Bebas Neue,sans-serif;font-size:26px;letter-spacing:1px;color:var(--blanco);}
-.nv-subtxt{font-size:12px;color:var(--muted);margin-top:2px;}
-.nv-ptos{font-size:13px;color:var(--naranja);font-weight:600;}
-.nv-barra-outer{background:#1a1a1a;border-radius:4px;height:6px;margin-bottom:18px;overflow:hidden;}
-.nv-barra-inner{height:100%;border-radius:4px;background:var(--naranja);transition:width 0.8s;}
-.nv-steps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;}
-.nv-step{background:#d0cbc3;border:1px solid #bfb9b0;border-radius:8px;padding:10px 6px;text-align:center;}
-.nv-step.nv-done{border-color:rgba(232,93,0,0.35);background:rgba(232,93,0,0.06);}
-.nv-step.nv-curr{border-color:var(--naranja);background:rgba(232,93,0,0.12);}
-.nv-step-emo{font-size:18px;margin-bottom:3px;}
-.nv-step-nm{font-family:Bebas Neue,sans-serif;font-size:12px;letter-spacing:1px;color:var(--muted);}
-.nv-step.nv-done .nv-step-nm,.nv-step.nv-curr .nv-step-nm{color:var(--blanco);}
-.nv-step-r{font-size:10px;color:var(--muted);margin-top:1px;}
-.nv-step.nv-curr .nv-step-r{color:var(--naranja);}
-.nv-badges-row{display:flex;gap:6px;flex-wrap:wrap;}
-.nv-b{font-size:10px;font-weight:700;letter-spacing:0.5px;padding:3px 9px;border-radius:8px;}
-.nv-b.nv-hecho{background:rgba(232,93,0,0.15);color:var(--naranja);border:1px solid rgba(232,93,0,0.3);}
-.nv-b.nv-pend{background:#1a1a1a;color:#555;border:1px solid #2a2a2a;}
-.blq-card{background:#dedad3;border:1px solid #bfb9b0;border-radius:12px;padding:24px;cursor:pointer;transition:all 0.2s;position:relative;text-align:left;}
-.blq-card:hover{border-color:var(--naranja);transform:translateY(-2px);}
-.blq-card.bloqueado{opacity:0.55;cursor:default;}
-.blq-card.bloqueado:hover{transform:none;border-color:var(--gris-borde);}
-.blq-num{font-family:monospace;font-size:10px;color:var(--naranja);letter-spacing:2px;margin-bottom:8px;}
-.blq-tit{font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:1px;color:#1a1a1a;margin-bottom:6px;}
-.blq-sub{font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:12px;}
-.blq-score{font-size:12px;color:var(--naranja);font-weight:600;}
-.blq-lock{position:absolute;top:14px;right:14px;font-size:18px;}
-.barra-nivel-global{display:none;position:fixed;top:62px;left:0;right:0;z-index:99;background:#1e1c1a;border-bottom:1px solid #333;padding:7px 40px;align-items:center;justify-content:space-between;gap:16px;}
-.barra-nivel-global.visible{display:flex;}
-@media(max-width:600px){.bloque-grid{grid-template-columns:1fr!important;}.nv-steps-row{grid-template-columns:repeat(2,1fr);}}
-
-a.bk * { pointer-events:none; }
-a.bk { pointer-events:auto; }
-.pk-link * { pointer-events:none; }
-.pk-link { pointer-events:auto; }
-
-.nv-widget-auto{background:#dedad3;border:1px solid #bfb9b0;border-radius:12px;padding:24px 28px;}
-.nv-step{background:#d0cbc3;border:1px solid #bfb9b0;border-radius:8px;padding:10px 6px;text-align:center;}
-.nv-step.nv-done{border-color:rgba(232,93,0,0.35);background:rgba(232,93,0,0.06);}
-.nv-step.nv-curr{border-color:var(--naranja);background:rgba(232,93,0,0.12);}
-.nv-step.nv-done div:nth-child(2),.nv-step.nv-curr div:nth-child(2){color:var(--blanco)!important;}
-.nv-step.nv-curr div:nth-child(3){color:var(--naranja)!important;}
-.nv-badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:8px;}
-.nv-badge.hecho{background:rgba(232,93,0,0.15);color:var(--naranja);border:1px solid rgba(232,93,0,0.3);}
-.nv-badge.pend{background:#1a1a1a;color:#555;border:1px solid #2a2a2a;}
 </style>
 </head>
 <body>
@@ -261,24 +204,6 @@ a.bk { pointer-events:auto; }
     <li><a data-page="modulos" class="nav-btn">Dar la batalla ahora</a></li>
   </ul>
 </nav>
-<div class="barra-nivel-global" id="barra-global">
-  <div style="display:flex;align-items:center;gap:10px;">
-    <span id="bg-emoji" style="font-size:16px;">🌱</span>
-    <div>
-      <div id="bg-nivel" style="font-family:Bebas Neue,sans-serif;font-size:14px;color:#fff;letter-spacing:1px;">Iniciado</div>
-      <div id="bg-pts" style="font-size:10px;color:#888;">0 / 40 pts</div>
-    </div>
-  </div>
-  <div style="flex:1;max-width:150px;background:#1a1a1a;border-radius:3px;height:4px;overflow:hidden;">
-    <div id="bg-barra" style="height:100%;background:#E85D00;border-radius:3px;width:0%;transition:width 0.6s;"></div>
-  </div>
-  <div style="display:flex;gap:5px;">
-    <span id="bg-b0" style="font-size:10px;padding:2px 7px;border-radius:7px;background:#1a1a1a;color:#444;border:1px solid #2a2a2a;font-weight:700;">B1</span>
-    <span id="bg-b1" style="font-size:10px;padding:2px 7px;border-radius:7px;background:#1a1a1a;color:#444;border:1px solid #2a2a2a;font-weight:700;">B2</span>
-    <span id="bg-b2" style="font-size:10px;padding:2px 7px;border-radius:7px;background:#1a1a1a;color:#444;border:1px solid #2a2a2a;font-weight:700;">B3</span>
-    <span id="bg-b3" style="font-size:10px;padding:2px 7px;border-radius:7px;background:#1a1a1a;color:#444;border:1px solid #2a2a2a;font-weight:700;">B4</span>
-  </div>
-</div>
 
 <!-- HOME -->
 <div id="home" class="page active">
@@ -328,7 +253,7 @@ a.bk { pointer-events:auto; }
         <div class="mod-num">03 — AUTOEXAMEN</div>
         <div class="mod-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
         <h3>Autoexamen Cultural</h3>
-        <p>4 tests para medir tu nivel de claridad libertaria. Sin filtros ni rodeos.</p>
+        <p>Un test corto pero potente para medir tu claridad libertaria. 20 preguntas, una sola calificación.</p>
         <span class="mod-tag">Entrar →</span>
       </div>
       <div class="mod-card" data-page="substack">
@@ -361,9 +286,7 @@ a.bk { pointer-events:auto; }
       </div>
     </div>
   </div>
-  
 </div>
-
 <!-- BIBLIOTECA -->
 <div id="biblioteca" class="page">
   <div class="inner" style="max-width:1100px;">
@@ -502,7 +425,6 @@ a.bk { pointer-events:auto; }
           </div>
         </a>
 
-
       </div>
     </div>
 
@@ -633,8 +555,6 @@ a.bk { pointer-events:auto; }
       </div>
     </div>
 
-    </div>
-
     <div class="cta-bar">
       <h2>¿LISTO PARA PRACTICAR?</h2>
       <p>Pon a prueba lo que aprendiste con el Sparring IA.</p>
@@ -689,106 +609,31 @@ a.bk { pointer-events:auto; }
   </footer>
 </div>
 
-
 <!-- AUTOEXAMEN -->
 <div id="autoexamen" class="page">
   <div class="inner" style="max-width:740px;">
     <button class="back-btn" data-page="modulos">← Volver</button>
     <div class="label">03 — Autoexamen</div>
-    <h2 class="titulo">Elige tu test</h2>
-    <p style="color:#555;font-size:15px;margin-top:8px;font-weight:300;max-width:600px;">Un test completo para medir tu claridad sobre las ideas de la libertad y la importancia de la agencia del individuo. El test tiene cuatro módulos — completa todos para obtener tu resultado final.</p>
+    <h2 class="titulo">Autoexamen Cultural</h2>
+    <p style="color:#555;font-size:15px;margin-top:8px;font-weight:300;max-width:640px;line-height:1.8;">
+      Un test corto pero potente para medir tu claridad sobre las ideas de la libertad y la importancia de la agencia del individuo. Un total de 20 preguntas, 5 por módulo:<br><br>
+      <strong style="color:#1a1a1a;">Módulo 1: Introductorio, un poco de todo</strong> — basado en el test del autor publicado en el Substack "El Test de la Confusión".<br>
+      <strong style="color:#1a1a1a;">Módulo 2: El Estado</strong> — ¿cuánto poder le das al Estado sin darte cuenta?<br>
+      <strong style="color:#1a1a1a;">Módulo 3: Economía</strong> — lo que no te enseñaron en el colegio sobre cómo funciona el dinero.<br>
+      <strong style="color:#1a1a1a;">Módulo 4: La Narrativa</strong> — ¿puedes separar el discurso de la realidad?
+    </p>
 
-    <!-- Marcador de puntaje -->
-    <div id="marcador-puntaje" style="margin-top:28px;">
-      <div style="display:flex;align-items:stretch;gap:12px;flex-wrap:wrap;">
-
-        <!-- Left: 4 test scores -->
-        <div style="flex:1;min-width:260px;background:#dedad3;border:1px solid #bfb9b0;border-radius:12px;padding:22px;">
-          <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:3px;margin-bottom:14px;">HAZ LOS 4 TESTS</div>
-          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;">
-            <div id="rec-t0" style="background:#d0cbc3;border:1px solid #bfb9b0;border-radius:8px;padding:12px;text-align:center;">
-              <div style="font-size:10px;color:#666;margin-bottom:4px;font-family:DM Mono,monospace;letter-spacing:1px;">CONFUSIÓN</div>
-              <div style="font-family:Bebas Neue,sans-serif;font-size:30px;line-height:1;color:#aaa;">—</div>
-              <div style="font-size:10px;color:#aaa;margin-top:2px;">/ 10 pts</div>
-            </div>
-            <div id="rec-t1" style="background:#d0cbc3;border:1px solid #bfb9b0;border-radius:8px;padding:12px;text-align:center;">
-              <div style="font-size:10px;color:#666;margin-bottom:4px;font-family:DM Mono,monospace;letter-spacing:1px;">ESTADO</div>
-              <div style="font-family:Bebas Neue,sans-serif;font-size:30px;line-height:1;color:#aaa;">—</div>
-              <div style="font-size:10px;color:#aaa;margin-top:2px;">/ 10 pts</div>
-            </div>
-            <div id="rec-t2" style="background:#d0cbc3;border:1px solid #bfb9b0;border-radius:8px;padding:12px;text-align:center;">
-              <div style="font-size:10px;color:#666;margin-bottom:4px;font-family:DM Mono,monospace;letter-spacing:1px;">ECONÓMICO</div>
-              <div style="font-family:Bebas Neue,sans-serif;font-size:30px;line-height:1;color:#aaa;">—</div>
-              <div style="font-size:10px;color:#aaa;margin-top:2px;">/ 10 pts</div>
-            </div>
-            <div id="rec-t3" style="background:#d0cbc3;border:1px solid #bfb9b0;border-radius:8px;padding:12px;text-align:center;">
-              <div style="font-size:10px;color:#666;margin-bottom:4px;font-family:DM Mono,monospace;letter-spacing:1px;">NARRATIVA</div>
-              <div style="font-family:Bebas Neue,sans-serif;font-size:30px;line-height:1;color:#aaa;">—</div>
-              <div style="font-size:10px;color:#aaa;margin-top:2px;">/ 10 pts</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Arrow -->
-        <div style="display:flex;align-items:center;justify-content:center;padding:0 4px;">
-          <div style="font-size:36px;color:var(--naranja);">➜</div>
-        </div>
-
-        <!-- Right: Total score -->
-        <div style="flex:0 0 180px;min-width:160px;background:#dedad3;border:1px solid #bfb9b0;border-radius:12px;padding:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
-          <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:3px;margin-bottom:12px;">TU NIVEL</div>
-          <div id="rec-nivel">
-            <div style="font-size:32px;margin-bottom:6px;">🌱</div>
-            <div style="font-family:Bebas Neue,sans-serif;font-size:20px;letter-spacing:1px;color:#1a1a1a;">Iniciado</div>
-            <div style="font-size:11px;color:#666;margin-top:4px;">Completa los 4 tests</div>
-          </div>
-          <div style="margin-top:14px;">
-            <div style="display:flex;align-items:baseline;gap:4px;justify-content:center;">
-              <span id="rec-total" style="font-family:Bebas Neue,sans-serif;font-size:40px;line-height:1;color:#1a1a1a;">0</span>
-              <span style="font-size:13px;color:#666;">/ 40 pts</span>
-            </div>
-            <div style="margin-top:8px;background:#c8c3bb;border-radius:4px;height:5px;overflow:hidden;">
-              <div id="rec-barra" style="height:100%;background:var(--naranja);border-radius:4px;transition:width 1s;width:0%;"></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Widget de nivel -->
-    <div class="nv-widget-auto" id="nv-auto" style="margin-top:24px;display:none;">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px;">
-        <div>
-          <div style="font-family:Bebas Neue,sans-serif;font-size:26px;letter-spacing:1px;color:var(--blanco);" id="nva-nombre">🌱 Iniciado</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:2px;">Completa los 4 tests para subir de nivel</div>
-        </div>
-        <div style="font-size:13px;color:var(--naranja);font-weight:600;" id="nva-pts">0 / 40 pts</div>
-      </div>
-      <div style="background:#1a1a1a;border-radius:4px;height:6px;margin-bottom:18px;overflow:hidden;">
-        <div id="nva-barra" style="height:100%;border-radius:4px;background:var(--naranja);transition:width 0.8s;width:0%;"></div>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;">
-        <div class="nv-step nv-curr" id="nva-s0"><div style="font-size:18px;margin-bottom:3px;">🌱</div><div style="font-family:Bebas Neue,sans-serif;font-size:12px;letter-spacing:1px;color:var(--blanco);">Iniciado</div><div style="font-size:10px;color:var(--naranja);">0–9</div></div>
-        <div class="nv-step" id="nva-s1"><div style="font-size:18px;margin-bottom:3px;">⚔️</div><div style="font-family:Bebas Neue,sans-serif;font-size:12px;letter-spacing:1px;color:var(--muted);">Militante</div><div style="font-size:10px;color:var(--muted);">10–19</div></div>
-        <div class="nv-step" id="nva-s2"><div style="font-size:18px;margin-bottom:3px;">🧠</div><div style="font-family:Bebas Neue,sans-serif;font-size:12px;letter-spacing:1px;color:var(--muted);">Estratega</div><div style="font-size:10px;color:var(--muted);">20–29</div></div>
-        <div class="nv-step" id="nva-s3"><div style="font-size:18px;margin-bottom:3px;">🎙️</div><div style="font-family:Bebas Neue,sans-serif;font-size:12px;letter-spacing:1px;color:var(--muted);">Orador</div><div style="font-size:10px;color:var(--muted);">30–40</div></div>
-      </div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;" id="nva-badges"></div>
-    </div>
-
-    <!-- Área de tests -->
-    <div id="test-area" style="margin-top:28px;">
+    <!-- Área del test -->
+    <div id="test-area" style="margin-top:36px;">
       <div id="tpreguntas"></div>
       <div id="tresultado" style="display:none;">
-        <div id="rcard" style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:12px;padding:40px;text-align:center;margin-top:28px;">
+        <div id="rcard">
           <div id="remoji" style="font-size:46px;margin-bottom:14px;"></div>
           <div style="font-size:11px;color:var(--naranja);letter-spacing:2px;margin-bottom:7px;font-family:monospace;">TU RESULTADO</div>
-          <div id="rpts" style="font-family:Bebas Neue,sans-serif;font-size:60px;line-height:1;margin-bottom:4px;"></div>
+          <div id="rpts" style="font-family:Bebas Neue,sans-serif;font-size:60px;line-height:1;margin-bottom:4px;color:#1a1a1a;"></div>
           <div id="rtit" style="font-family:Bebas Neue,sans-serif;font-size:30px;color:var(--naranja);letter-spacing:1px;margin-bottom:18px;"></div>
-          <div id="rdesc" style="font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:18px;"></div>
-          <div id="rperf" style="font-size:13px;color:var(--muted);font-style:italic;border-top:1px solid var(--gris-borde);padding-top:18px;line-height:1.6;"></div>
-          <button class="btn btn-naranja" id="btn-reiniciar" style="margin-top:24px;">Elegir otro test</button>
+          <div id="rdesc" style="font-size:15px;color:#444;line-height:1.7;margin-bottom:18px;"></div>
+          <button class="btn btn-naranja" id="btn-reiniciar" style="margin-top:18px;">Tomar el test de nuevo</button>
         </div>
       </div>
     </div>
@@ -808,7 +653,6 @@ a.bk { pointer-events:auto; }
     <div class="label">04 — Substack</div>
     <h2 class="titulo">Substack de Nicolás</h2>
 
-    <!-- HERO NICOLÁS -->
     <div style="display:flex;align-items:center;gap:28px;padding:36px;background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;margin-bottom:48px;flex-wrap:wrap;">
       <div style="width:72px;height:72px;border-radius:50%;background:var(--naranja);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:28px;color:#fff;flex-shrink:0;">NF</div>
       <div style="flex:1;min-width:220px;">
@@ -817,15 +661,12 @@ a.bk { pointer-events:auto; }
         <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:0;">Reflexiones sobre ideas liberales, política, economía e inversiones. Siempre en lenguaje que todos podamos entender. Sarcástico, mordaz y sin pedir permiso, enmarcado siempre en la batalla cultural por las ideas que elevan la agencia del individuo.<br><br><em>Si te gusta el capitalismo consciente, el buenismo, la social democracia, la corrección política y la tutela del Estado… te equivocaste de sitio. En este sitio sí somos iguales todos.</em></p>
         <p style="font-size:14px;color:#555;line-height:1.6;margin-top:12px;font-style:italic;border-top:1px solid #bfb9b0;padding-top:12px;"><em>Aquí el coeficiente de Gini sí es cero: todos arrancan igual. Lo que pase después ya no es desigualdad… es desempeño.</em></p>
       </div>
-
     </div>
 
-    <!-- LISTA DE ARTÍCULOS -->
     <div style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;">Abajo, acceso libre a cada Substack del autor — del más reciente al más antiguo</div>
 
     <div style="display:flex;flex-direction:column;gap:3px;">
-
-            <a class="art-row" href="https://nicolasfernandezgiraldo.substack.com/p/brayan-somos-todos" target="_blank"><span class="art-num">01</span><span class="art-titulo">Brayan somos todos</span><span class="art-arrow">→</span></a>
+      <a class="art-row" href="https://nicolasfernandezgiraldo.substack.com/p/brayan-somos-todos" target="_blank"><span class="art-num">01</span><span class="art-titulo">Brayan somos todos</span><span class="art-arrow">→</span></a>
       <a class="art-row" href="https://nicolasfernandezgiraldo.substack.com/p/de-platanos-a-cohetes" target="_blank"><span class="art-num">02</span><span class="art-titulo">De plátanos a cohetes</span><span class="art-arrow">→</span></a>
       <a class="art-row" href="https://nicolasfernandezgiraldo.substack.com/p/periodicazo-para-la-paloma" target="_blank"><span class="art-num">03</span><span class="art-titulo">Periodicazo para la Paloma</span><span class="art-arrow">→</span></a>
       <a class="art-row" href="https://nicolasfernandezgiraldo.substack.com/p/el-bobo-escondido-en-la-factura" target="_blank"><span class="art-num">04</span><span class="art-titulo">El bobo escondido en la factura</span><span class="art-arrow">→</span></a>
@@ -873,7 +714,6 @@ a.bk { pointer-events:auto; }
       <a class="art-row" href="https://substack.com/home/post/p-165309027" target="_blank"><span class="art-num">46</span><span class="art-titulo">¿Dónde está la bolita?</span><span class="art-arrow">→</span></a>
       <a class="art-row" href="https://substack.com/home/post/p-165049441" target="_blank"><span class="art-num">47</span><span class="art-titulo">Engaños absurdos</span><span class="art-arrow">→</span></a>
       <a class="art-row" href="https://substack.com/home/post/p-164592489" target="_blank"><span class="art-num">48</span><span class="art-titulo">El Golden Circle aplicado a la comunidad de 10 AM Pro</span><span class="art-arrow">→</span></a>
-
     </div>
   </div>
   <footer>
@@ -885,885 +725,6 @@ a.bk { pointer-events:auto; }
     </div>
   </footer>
 </div>
-
-
-<script>
-
-// ── PERSISTENCIA ─────────────────────────────────────────────────────────────
-function guardar(k,v){try{localStorage.setItem('npm_'+k,JSON.stringify(v));}catch(e){}}
-function cargar(k,d){try{var v=localStorage.getItem('npm_'+k);return v!==null?JSON.parse(v):d;}catch(e){return d;}}
-
-// ── NIVELES ───────────────────────────────────────────────────────────────────
-var puntosTests = cargar('puntos_tests', {0:null,1:null,2:null,3:null});
-var ptsGlobales = {};
-// Sync ptsGlobales with puntosTests on load
-for(var _k in puntosTests){if(puntosTests[_k]!==null)ptsGlobales[_k]=puntosTests[_k];}
-var NIVELES = [
-  {min:0,  max:9,  emoji:'🌱', nombre:'Iniciado'},
-  {min:10, max:19, emoji:'⚔️', nombre:'Militante'},
-  {min:20, max:29, emoji:'🧠', nombre:'Estratega'},
-  {min:30, max:40, emoji:'🎙️', nombre:'Orador'}
-];
-var NOMBRES_T = ['Test de la Confusión','Test del Estado','Test Económico','Test de la Narrativa'];
-
-function totalPuntos(){
-  var t=0;
-  for(var k in ptsGlobales){t+=ptsGlobales[k];}
-  return t;
-}
-
-function nivelActual(pts){
-  var idx=0;
-  for(var i=0;i<NIVELES.length;i++){if(pts>=NIVELES[i].min)idx=i;}
-  return idx;
-}
-
-function actualizarMarcador(){
-  var ETIQUETAS = ['CONFUSIÓN','ESTADO','ECONÓMICO','NARRATIVA'];
-  var total = totalPuntos();
-  var idx = nivelActual(total);
-  var nv = NIVELES[idx];
-  var pct = Math.round((total/40)*100);
-
-  // Actualizar cada tarjeta de test
-  for(var i=0;i<4;i++){
-    var card = document.getElementById('rec-t'+i);
-    if(!card) continue;
-    var numEl = card.querySelector('div:nth-child(2)');
-    var subEl = card.querySelector('div:nth-child(3)');
-    if(ptsGlobales[i] !== undefined){
-      var pts = ptsGlobales[i];
-      var color = pts >= 8 ? '#E85D00' : pts >= 5 ? '#fff' : '#888';
-      numEl.style.color = color;
-      numEl.textContent = pts;
-      subEl.style.color = pts >= 8 ? 'rgba(232,93,0,0.7)' : 'var(--muted)';
-      card.style.borderColor = pts >= 8 ? 'rgba(232,93,0,0.4)' : pts >= 5 ? '#3a3a3a' : '#2a2a2a';
-      card.style.background = pts >= 8 ? 'rgba(232,93,0,0.06)' : '#111';
-    } else {
-      numEl.style.color = '#333';
-      numEl.textContent = '—';
-      subEl.style.color = '#333';
-      card.style.borderColor = '#2a2a2a';
-      card.style.background = '#111';
-    }
-  }
-
-  // Total
-  var totalEl = document.getElementById('rec-total');
-  if(totalEl) totalEl.textContent = total;
-
-  // Barra
-  var barraEl = document.getElementById('rec-barra');
-  if(barraEl) barraEl.style.width = pct+'%';
-
-  // Nivel
-  var nivelEl = document.getElementById('rec-nivel');
-  if(nivelEl){
-    var completados = 0;
-    for(var i=0;i<4;i++){if(puntosTests[i]!==null)completados++;}
-    nivelEl.innerHTML = '<div style="font-size:28px;margin-bottom:4px;">'+nv.emoji+'</div><div style="font-family:Bebas Neue,sans-serif;font-size:20px;letter-spacing:1px;color:var(--blanco);">'+nv.nombre+'</div><div style="font-size:11px;color:var(--muted);margin-top:2px;">'+(completados===4?'¡Todos completados!':completados+' / 4 tests')+'</div>';
-  }
-}
-
-function actualizarNivelUI(){
-  var total=totalPuntos();
-  var idx=nivelActual(total);
-  var nv=NIVELES[idx];
-  var pct=Math.round((total/40)*100);
-  var widget=document.getElementById('nv-auto');
-  if(!widget) return;
-
-  // Mostrar widget si hay al menos un test completado
-  var hayAlguno=false;
-  for(var i=0;i<4;i++){if(puntosTests[i]!==null){hayAlguno=true;break;}}
-  widget.style.display = hayAlguno ? 'block' : 'none';
-  if(!hayAlguno) return;
-
-  actualizarMarcador();
-
-  document.getElementById('nva-nombre').textContent = nv.emoji+' '+nv.nombre;
-  document.getElementById('nva-pts').textContent = total+' / 40 pts';
-  document.getElementById('nva-barra').style.width = pct+'%';
-
-  for(var i=0;i<4;i++){
-    var s=document.getElementById('nva-s'+i);
-    if(!s) continue;
-    s.className='nv-step'+(i<idx?' nv-done':(i===idx?' nv-curr':''));
-  }
-
-  var bd=document.getElementById('nva-badges');
-  if(bd){
-    var html='';
-    for(var i=0;i<4;i++){
-      if(ptsGlobales[i]!==undefined){
-        html+='<span class="nv-badge hecho">Módulo '+(i+1)+' ✓ '+ptsGlobales[i]+'/10</span>';
-      } else {
-        html+='<span class="nv-badge pend">Módulo '+(i+1)+'</span>';
-      }
-    }
-    bd.innerHTML=html;
-  }
-}
-
-// ── NAVEGACIÓN ──────────────────────────────────────────────
-function irA(id) {
-  document.querySelectorAll('.page').forEach(function(p) {
-    p.classList.remove('active');
-  });
-  var target = document.getElementById(id);
-  if (target) {
-    target.classList.add('active');
-    window.scrollTo(0,0);
-    if(id==='autoexamen'){mostrarSelector();
-
-// Event delegation: captura todos los clicks con data-page
-document.addEventListener('click', function(e) {
-  // Si el click fue en un link real con href externo, no interceptar
-  var linkEl = e.target.closest('a[href]');
-  if (linkEl && linkEl.href && !linkEl.getAttribute('data-page')) {
-    return; // Dejar que el browser maneje el link normalmente
-  }
-  var el = e.target.closest('[data-page]');
-  if (el) {
-    e.preventDefault();
-    irA(el.getAttribute('data-page'));
-  }
-});
-
-// Substack card
-
-
-// ── SPARRING ────────────────────────────────────────────────
-var modo = 'directa';
-
-// SPARRING TRIPLE — responde con 3 modos simultáneos
-// ── SPARRING CON IA REAL (API CLAUDE) ────────────────────────────────────────
-
-var SYSTEM_PROMPT = `Eres la Arena Libertaria, una IA que responde SIEMPRE desde la perspectiva liberal-libertaria. Tu pensamiento está fundamentado en la Escuela Austriaca de Economía (Hayek, Mises, Rothbard), Milton Friedman, Thomas Sowell, Axel Kaiser, Juan Ramón Rallo, Agustín Laje, Javier Milei y Alberto Benegas Lynch (h).
-
-REGLAS ABSOLUTAS:
-1. Siempre respondes desde la óptica libertaria. Nunca eres neutral ni "balanceado".
-2. Si el usuario hace una PREGUNTA: la respondes directamente primero, luego la desarrollas desde la visión libertaria.
-3. Si el usuario hace una AFIRMACIÓN o argumento: lo debatís directamente desde nuestra ideología, sin evadir el tema central.
-4. Nunca das vueltas. Nunca rellenas con información genérica que no responde lo que se preguntó.
-5. Siempre das EXACTAMENTE 3 respuestas en el siguiente formato JSON y nada más:
-
-{
-  "concreta": "Respuesta directa, clara y concisa al tema planteado. Sin rodeos. Máximo 3 oraciones.",
-  "evidencia": "La misma posición libertaria pero respaldada con datos, estudios, ejemplos históricos o citas de autores libertarios (Hayek, Friedman, Sowell, Kaiser, Rallo, Laje, Milei, Benegas Lynch u otros). Máximo 4 oraciones.",
-  "confrontacional": "Respuesta directa y combativa en el tono de Javier Milei. Sin diplomacia, sin eufemismos. Va directo al punto y desmonta el argumento contrario con fuerza. Puede incluir ejemplos de fracasos del estatismo. Máximo 4 oraciones."
-}
-
-SOLO responde con el JSON. Sin texto antes ni después. Sin markdown. Sin explicaciones adicionales.`;
-
-async function llamarIA(pregunta) {
-  var response = await fetch('/.netlify/functions/sparring', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ pregunta: pregunta })
-  });
-  var data = await response.json();
-  if (data.error) throw new Error(data.error + ' | ' + (data.detail || ''));
-  if (!data.concreta || !data.evidencia || !data.confrontacional) {
-    throw new Error('Respuesta incompleta: ' + JSON.stringify(data));
-  }
-  return data;
-}
-
-function addMsgUser(texto) {
-  var cont = document.getElementById('msgs');
-  var w = document.createElement('div');
-  w.className = 'mw u';
-  w.innerHTML = '<div class="ml">Tú</div><div class="mb u">' + texto + '</div>';
-  cont.appendChild(w);
-  cont.scrollTop = cont.scrollHeight;
-}
-
-function addMsgIA(resp) {
-  var cont = document.getElementById('msgs');
-  var w = document.createElement('div');
-  w.className = 'mw ia';
-  w.innerHTML =
-    '<div class="ml org">Milton Javier</div>' +
-    '<div class="resp-bloque">' +
-      '<div class="resp-num"><div class="resp-num-dot" style="background:var(--naranja);"></div>1. RESPUESTA CONCRETA</div>' +
-      '<div class="resp-texto">' + resp.concreta + '</div>' +
-    '</div>' +
-    '<div class="resp-bloque">' +
-      '<div class="resp-num"><div class="resp-num-dot" style="background:#888;"></div>2. CON EVIDENCIA LIBERAL</div>' +
-      '<div class="resp-texto">' + resp.evidencia + '</div>' +
-    '</div>' +
-    '<div class="resp-bloque">' +
-      '<div class="resp-num"><div class="resp-num-dot" style="background:#ddd;"></div>3. CONFRONTACIONAL</div>' +
-      '<div class="resp-texto">' + resp.confrontacional + '</div>' +
-    '</div>';
-  cont.appendChild(w);
-  cont.scrollTop = cont.scrollHeight;
-}
-
-function addMsgError(msg) {
-  var cont = document.getElementById('msgs');
-  var w = document.createElement('div');
-  w.className = 'mw ia';
-  w.innerHTML = '<div class="ml org">Milton Javier</div><div class="mb ia" style="color:#ff6b6b;">' + msg + '</div>';
-  cont.appendChild(w);
-  cont.scrollTop = cont.scrollHeight;
-}
-
-function showTyping() {
-  var cont = document.getElementById('msgs');
-  var w = document.createElement('div');
-  w.className = 'mw ia'; w.id = 'typ';
-  w.innerHTML = '<div class="ml org">Milton Javier</div><div class="typing"><span></span><span></span><span></span></div>';
-  cont.appendChild(w); cont.scrollTop = cont.scrollHeight;
-}
-
-function hideTyping() { var t = document.getElementById('typ'); if(t) t.remove(); }
-
-async function enviar() {
-  var inp = document.getElementById('cinput');
-  var txt = inp.value.trim();
-  if(!txt) return;
-  inp.value=''; inp.style.height='auto';
-  var btn = document.getElementById('csend');
-  btn.disabled = true; btn.textContent = '...';
-  addMsgUser(txt);
-  showTyping();
-  try {
-    var resp = await llamarIA(txt);
-    hideTyping();
-    addMsgIA(resp);
-  } catch(e) {
-    hideTyping();
-    addMsgError('Error al conectar con la IA. Verifica tu conexión e intenta nuevamente.');
-  }
-  btn.disabled = false; btn.textContent = 'Enviar';
-}
-
-
-document.getElementById('csend').addEventListener('click', enviar);
-document.getElementById('cinput').addEventListener('keydown', function(e) {
-  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); enviar(); }
-});
-document.getElementById('cinput').addEventListener('input', function() {
-  this.style.height = 'auto';
-  this.style.height = Math.min(this.scrollHeight, 100) + 'px';
-});
-
-// ── TESTS ───────────────────────────────────────────────────
-var TESTS = [
-  {
-    id: 0,
-    nombre: "Módulo 1: Un poco de todo",
-    desc: "Basado en el test del autor publicado en el Substack 'El Test de la Confusión'. Introductorio, un poco de todo.",
-    emoji: "🧠",
-    preguntas: [
-      { n:1, t:"Te ofrecen dos jefes, ¿cuál escoges?", ops:["A. Uno elegante, habla perfecto… pero nunca te paga a tiempo","B. Uno grosero… pero te paga el doble puntual","C. El elegante, porque la cultura importa","D. Ninguno, porque todos los jefes son opresores"], c:"B" },
-      { n:2, t:"Los impuestos:", ops:["A. Son necesarios, pero deberían ser mínimos","B. Son coerción institucionalizada","C. Son un acto de solidaridad","D. Depende de quién los cobre"], c:"B" },
-      { n:3, t:"Bitcoin es:", ops:["A. Una estafa peligrosa","B. Un activo volátil pero interesante","C. Una amenaza al control estatal","D. No entiendo, pero mi primo ganó plata"], c:"C" },
-      { n:4, t:"Un político promete darte todo gratis. Tú piensas:", ops:["A. Qué generoso","B. ¿Con qué plata?","C. Seguro roba, pero igual sirve","D. Eso lo pagan los ricos"], c:"B" },
-      { n:5, t:"Sobre inflación:", ops:["A. Es culpa de los empresarios","B. Es culpa del banco central","C. Es culpa del dólar","D. Es un fenómeno multicausal y complejo"], c:"B" },
-      { n:6, t:"Prefieres vivir en un país donde:", ops:["A. Todo está regulado, pero protegido","B. Hay libertad, pero incertidumbre","C. El Estado decide por ti","D. Nadie decide nada (caos total)"], c:"B" },
-      { n:7, t:"Si una app te da todo gratis, tú piensas:", ops:["A. Qué maravilla","B. ¿Dónde está el truco?","C. Seguro venden mis datos","D. El Estado debería regularla"], c:"B" },
-      { n:8, t:"Un empresario se vuelve rico:", ops:["A. Seguro explotó a alguien","B. Creó valor que otros pagan voluntariamente","C. Tuvo suerte","D. Debería pagar más impuestos"], c:"B" },
-      { n:9, t:"Sobre el salario mínimo:", ops:["A. Ayuda a los trabajadores","B. Puede dejar gente sin empleo","C. Debería ser más alto siempre","D. Es una herramienta política"], c:"B" },
-      { n:10, t:"Este líder es grosero pero reduce el Estado. Tú respondes:", ops:["A. No me importa, sigue siendo grosero","B. Interesante… ¿qué logró exactamente?","C. Prefiero uno amable aunque controle más","D. Todos son iguales"], c:"B" }
-    ]
-  },
-  {
-    id: 1,
-    nombre: "Módulo 2: El Estado",
-    desc: "¿Cuánto poder le das al Estado sin darte cuenta? Descubre si eres más libre de lo que crees.",
-    emoji: "🏛️",
-    preguntas: [
-      { n:1, t:"La educación pública gratuita:", ops:["A. Es un derecho fundamental","B. Es un servicio que otros pagan con sus impuestos","C. Debería ser obligatoria para todos","D. Es lo mínimo que puede hacer un Estado"], c:"B" },
-      { n:2, t:"Cuando el gobierno crea empleos:", ops:["A. Genera riqueza para el país","B. Destruye empleo privado para financiar el público","C. Soluciona el desempleo estructural","D. Es necesario en tiempos de crisis"], c:"B" },
-      { n:3, t:"El control de armas:", ops:["A. Reduce la violencia","B. Desarma al ciudadano honesto, no al criminal","C. Debe decidirlo cada gobierno","D. Es un tema complejo sin respuesta clara"], c:"B" },
-      { n:4, t:"La propiedad privada es:", ops:["A. Un privilegio de los ricos","B. La base de toda libertad individual","C. Necesaria pero debe ser regulada","D. Una construcción social negociable"], c:"B" },
-      { n:5, t:"Cuando el Estado subsidia algo:", ops:["A. Lo hace accesible para todos","B. Crea dependencia y distorsiona precios","C. Protege a los más vulnerables","D. Es necesario en ciertos sectores"], c:"B" },
-      { n:6, t:"La libertad de expresión:", ops:["A. Debe tener límites para proteger grupos vulnerables","B. Es absoluta o no es libertad","C. Depende del contexto cultural","D. El Estado debe regularla con criterio"], c:"B" },
-      { n:7, t:"Sobre la deuda pública:", ops:["A. Es inversión en el futuro","B. Es impuesto diferido que pagarán tus hijos","C. Es necesaria para servicios esenciales","D. Depende de cómo se administre"], c:"B" },
-      { n:8, t:"El sistema de pensiones estatal:", ops:["A. Garantiza retiro digno para todos","B. Es un esquema Ponzi que depende de nuevos contribuyentes","C. Debe mejorarse pero no eliminarse","D. Es la única forma de proteger adultos mayores"], c:"B" },
-      { n:9, t:"Cuando el gobierno regula un mercado:", ops:["A. Lo hace más justo y competitivo","B. Favorece a los ya establecidos y frena la competencia","C. Protege al consumidor","D. Es necesario para evitar abusos"], c:"B" },
-      { n:10, t:"La diferencia entre Estado y gobierno:", ops:["A. Ninguna, son lo mismo","B. El Estado es el aparato coercitivo; el gobierno solo lo opera","C. El gobierno es elegido, el Estado no","D. Es una distinción académica sin consecuencias"], c:"B" }
-    ]
-  },
-  {
-    id: 2,
-    nombre: "Módulo 3: Economía",
-    desc: "Economía real que no te enseñaron en el colegio. ¿Cuánto entiendes de cómo funciona el dinero?",
-    emoji: "💰",
-    preguntas: [
-      { n:1, t:"El precio de un producto lo determina:", ops:["A. El costo de producción más una ganancia justa","B. Lo que alguien está dispuesto a pagar voluntariamente","C. El gobierno para proteger al consumidor","D. Las grandes corporaciones"], c:"B" },
-      { n:2, t:"Cuando el banco central imprime más dinero:", ops:["A. El país se vuelve más rico","B. Cada billete vale menos — es un impuesto oculto","C. Estimula la economía sin consecuencias","D. Ayuda a los más pobres"], c:"B" },
-      { n:3, t:"La ganancia empresarial es:", ops:["A. Dinero robado al trabajador","B. La señal de que se creó valor que el mercado reconoce","C. Debe estar limitada por ley","D. Un problema cuando es excesiva"], c:"B" },
-      { n:4, t:"El libre comercio entre países:", ops:["A. Destruye empleos locales","B. Genera riqueza para ambas partes al especializarse","C. Solo beneficia a los países ricos","D. Debe regularse para proteger industrias"], c:"B" },
-      { n:5, t:"Cuando el Estado pone precio máximo al arroz:", ops:["A. Lo hace accesible para los pobres","B. Genera escasez porque nadie produce lo que no es rentable","C. Controla la inflación","D. Es necesario en épocas de crisis"], c:"B" },
-      { n:6, t:"La competencia en el mercado:", ops:["A. Es destructiva y genera monopolios","B. Baja precios, mejora calidad y expulsa a los ineficientes","C. Debe regularse para que sea justa","D. Solo funciona en teoría"], c:"B" },
-      { n:7, t:"Los aranceles a las importaciones:", ops:["A. Protegen el empleo nacional","B. Son un impuesto que paga el consumidor local","C. Son necesarios para industrias nacientes","D. Equilibran la balanza comercial"], c:"B" },
-      { n:8, t:"La pobreza se reduce principalmente con:", ops:["A. Redistribución de la riqueza existente","B. Creación de nueva riqueza a través del mercado libre","C. Programas sociales bien diseñados","D. Mayor inversión pública"], c:"B" },
-      { n:9, t:"El empresario que quiebra:", ops:["A. Es víctima del sistema","B. Recibió una señal de que no estaba creando suficiente valor","C. Necesita apoyo estatal","D. Fue víctima de competencia desleal"], c:"B" },
-      { n:10, t:"La riqueza de un país se mide mejor por:", ops:["A. El tamaño de su PIB","B. La libertad de sus ciudadanos para producir, comerciar y conservar","C. La igualdad en la distribución del ingreso","D. La fortaleza de sus instituciones públicas"], c:"B" }
-    ]
-  },
-  {
-    id: 3,
-    nombre: "Módulo 4: La Narrativa",
-    desc: "¿Puedes separar el discurso de la realidad? Detecta cuándo te están vendiendo una historia.",
-    emoji: "🎭",
-    preguntas: [
-      { n:1, t:"Un medio titula: Gobierno invierte $500M en educación. Tú piensas:", ops:["A. Qué buena noticia","B. ¿Cuál es el resultado medible y quién lo verifica?","C. Depende del partido que gobierne","D. Ojalá llegue a las escuelas"], c:"B" },
-      { n:2, t:"Un activista dice esto lo pagan los ricos. Tú sabes que:", ops:["A. Es justo porque tienen más","B. Los costos siempre se trasladan al consumidor final — que eres tú","C. Depende del tipo de impuesto","D. Hay que estudiar cada caso"], c:"B" },
-      { n:3, t:"Una ONG denuncia explotación en una fábrica del tercer mundo. Sin contexto, tú:", ops:["A. La condenas inmediatamente","B. Preguntas cuál era la alternativa para esos trabajadores","C. Pides más regulación internacional","D. Compartes la denuncia para crear conciencia"], c:"B" },
-      { n:4, t:"El presidente anuncia que creó 200,000 empleos. La pregunta correcta es:", ops:["A. ¿En qué sectores?","B. ¿A qué costo y cuántos empleos privados se destruyeron?","C. ¿Cuándo se verán los beneficios?","D. ¿Es suficiente para la demanda actual?"], c:"B" },
-      { n:5, t:"La desigualdad está aumentando. Esta afirmación:", ops:["A. Prueba que el sistema falla","B. No dice nada sin saber si los pobres mejoran en términos absolutos","C. Requiere políticas redistributivas urgentes","D. Es preocupante independientemente del contexto"], c:"B" },
-      { n:6, t:"Un estudio dice que el salario mínimo no destruye empleo. Tú:", ops:["A. Lo compartes porque confirma lo que creías","B. Preguntas quién lo financia, la metodología y el contexto","C. Lo aceptas porque viene de una universidad","D. Buscas otro estudio que lo contradiga"], c:"B" },
-      { n:7, t:"Este líder habla por los más pobres. Tú evalúas:", ops:["A. Su tono y empatía en el discurso","B. Si las políticas que propone realmente mejoran la vida de los pobres","C. Si es creíble y consistente","D. Si tiene experiencia en el sector social"], c:"B" },
-      { n:8, t:"Las redes sociales censuran contenido libertario. La respuesta correcta es:", ops:["A. Hay que regularlas para garantizar neutralidad","B. Crear plataformas alternativas y no depender de infraestructura enemiga","C. Denunciarlo públicamente","D. Es exagerado, no hay censura sistemática"], c:"B" },
-      { n:9, t:"El capitalismo genera pobreza. Esta frase:", ops:["A. Es cierta — la historia lo demuestra","B. Es falsa — el capitalismo sacó a más personas de la pobreza que cualquier otro sistema","C. Depende del tipo de capitalismo","D. Es un debate legítimo sin conclusión"], c:"B" },
-      { n:10, t:"Cuando alguien te llama extremo por defender la libertad individual, tú:", ops:["A. Moderas tu posición para no alienar a nadie","B. Señalas que defender la propiedad y la libertad no es extremismo","C. Explicas tu posición con más cuidado","D. Evitas el conflicto porque no vale la pena"], c:"B" }
-    ]
-  }
-];
-
-// RESULTADOS GLOBALES (sobre 40 puntos totales)
-var RESULTADOS_GLOBALES = [
-  { min:0,  max:10, emoji:"🤒", tit:"Enfermo Terminal", desc:"Tienes metástasis, el cáncer estatal te invadió por completo. Necesitas quimio urgente.", perf:"La narrativa estatista te controla. Apoyas políticas que te empobrecen con las mejores intenciones." },
-  { min:11, max:20, emoji:"😵", tit:"Confusión Funcional", desc:"Tienes alteraciones hormonales, a ratos con claridad y a ratos te seducen los discursos estatistas.", perf:"Sabes que algo no cuadra, pero todavía te dejas seducir por el discurso bonito y las promesas fáciles." },
-  { min:21, max:30, emoji:"🔄", tit:"En Recuperación", desc:"Aún con salud débil pero en franca mejoría.", perf:"Ya no te lo tragas todo. Empiezas a ver incentivos y a desconfiar del discurso. Sigue así." },
-  { min:31, max:35, emoji:"🧠", tit:"Claridad en Proceso", desc:"Ya intuyes lo correcto aunque a veces la inercia estatal te engaña.", perf:"Empiezas a pensar en consecuencias no intencionales. Cada política tiene un costo invisible." },
-  { min:36, max:40, emoji:"⚡", tit:"Peligroso", desc:"Ya entiendes la libertad.", perf:"Difícil de manipular. Ves el guión antes de que termine el primer párrafo. No pides permiso." }
-];
-
-var moduloActual = 0;
-var respsGlobales = {}; // {moduloId: {pregIdx: letra}}
-
-function totalPtsGlobales() { return totalPuntos(); }
-
-function mostrarSelector() {
-  document.getElementById('tresultado').style.display = 'none';
-  var c = document.getElementById('tpreguntas');
-  c.style.display = 'block';
-
-  // Calculate progress
-  var completados = Object.keys(ptsGlobales).length;
-  var totalPts = totalPtsGlobales();
-
-  var html = '';
-
-  // Title and description
-  html += '<div style="background:#dedad3;border:1px solid #bfb9b0;border-radius:12px;padding:28px;margin-bottom:24px;">';
-  html += '<div style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:3px;margin-bottom:10px;">TEST COMPLETO — 40 PREGUNTAS</div>';
-  html += '<h3 style="font-family:Bebas Neue,sans-serif;font-size:24px;letter-spacing:1px;color:#1a1a1a;margin-bottom:10px;">Un test completo para medir tu claridad sobre las ideas de la libertad</h3>';
-  html += '<p style="font-size:14px;color:#555;line-height:1.6;">El test tiene cuatro módulos. Completa todos para obtener tu resultado final y descubrir tu nivel real.</p>';
-  html += '</div>';
-
-  // Module cards
-  html += '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;">';
-  for (var i = 0; i < TESTS.length; i++) {
-    var t = TESTS[i];
-    var done = ptsGlobales[i] !== undefined;
-    var pts = done ? ptsGlobales[i] : null;
-    html += '<div class="tc" data-tid="' + t.id + '" style="' + (done ? 'border-color:var(--naranja);' : '') + '">';
-    html += '<div class="em">' + t.emoji + '</div>';
-    html += '<div class="aut" style="color:var(--naranja);">MÓDULO ' + (i+1) + '</div>';
-    html += '<h3>' + t.nombre + '</h3>';
-    html += '<p>' + t.desc + '</p>';
-    if (done) {
-      html += '<span class="cta" style="color:var(--naranja);">✓ Completado — ' + pts + '/10 pts → Repetir</span>';
-    } else {
-      html += '<span class="cta">Hacer módulo →</span>';
-    }
-    html += '</div>';
-  }
-  html += '</div>';
-
-  // Show total if any completed
-  if (completados > 0) {
-    html += '<div style="margin-top:20px;background:#dedad3;border:1px solid #bfb9b0;border-radius:10px;padding:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">';
-    html += '<div style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:2px;">PROGRESO: ' + completados + '/4 módulos</div>';
-    html += '<div style="flex:1;background:#c8c3bb;border-radius:3px;height:6px;overflow:hidden;min-width:80px;"><div style="height:100%;background:var(--naranja);border-radius:3px;width:' + (completados/4*100) + '%;transition:width 0.6s;"></div></div>';
-    html += '<div style="font-family:Bebas Neue,sans-serif;font-size:22px;color:#1a1a1a;">' + totalPts + ' <span style="font-size:13px;color:#666;font-family:DM Sans,sans-serif;">/ 40 pts</span></div>';
-    if (completados === 4) {
-      html += '<button class="btn btn-naranja" id="btn-ver-res-global" style="padding:10px 20px;">Ver resultado final →</button>';
-    }
-    html += '</div>';
-  }
-
-  c.innerHTML = html;
-
-  c.querySelectorAll('.tc').forEach(function(el) {
-    el.addEventListener('click', function() {
-      iniciarModulo(parseInt(el.getAttribute('data-tid')));
-    });
-  });
-
-  var btnGlobal = document.getElementById('btn-ver-res-global');
-  if (btnGlobal) {
-    btnGlobal.addEventListener('click', verResultadoGlobal);
-  }
-}
-
-function iniciarModulo(id) {
-  var test = TESTS[id];
-  respsGlobales[id] = respsGlobales[id] || {};
-  var c = document.getElementById('tpreguntas');
-  var html = '<button class="back-btn" id="btn-volver-test">← Volver a módulos</button>';
-  html += '<div style="margin-bottom:24px;background:#dedad3;border:1px solid #bfb9b0;border-radius:10px;padding:18px 22px;">';
-  html += '<div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:3px;margin-bottom:4px;">MÓDULO ' + (id+1) + ' DE 4</div>';
-  html += '<div style="font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:1px;color:#1a1a1a;">' + test.nombre + '</div>';
-  html += '</div>';
-
-  for (var i = 0; i < test.preguntas.length; i++) {
-    var p = test.preguntas[i];
-    html += '<div class="pcard">';
-    html += '<div class="pnum">PREGUNTA ' + p.n + ' DE 10</div>';
-    html += '<div class="ptxt">' + p.t + '</div>';
-    var lets = ['A','B','C','D'];
-    for (var j = 0; j < p.ops.length; j++) {
-      var prevSel = respsGlobales[id][i] === lets[j] ? ' sel' : '';
-      html += '<button class="opbtn' + prevSel + '" data-pi="' + i + '" data-let="' + lets[j] + '">' + p.ops[j] + '</button>';
-    }
-    html += '</div>';
-  }
-
-  var respondidas = Object.keys(respsGlobales[id]).length;
-  html += '<div style="text-align:center;margin-top:28px;">';
-  html += '<div id="prog" style="font-size:13px;color:#666;margin-bottom:14px;">' + respondidas + ' de 10 preguntas respondidas</div>';
-  html += '<button class="btn btn-naranja" id="btn-ver-res-mod" ' + (respondidas === 10 ? '' : 'disabled style="opacity:0.4;cursor:not-allowed;"') + '>Completar módulo →</button>';
-  html += '</div>';
-  c.innerHTML = html;
-
-  document.getElementById('btn-volver-test').addEventListener('click', mostrarSelector);
-
-  c.querySelectorAll('.opbtn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var pi = parseInt(btn.getAttribute('data-pi'));
-      var let_ = btn.getAttribute('data-let');
-      respsGlobales[id][pi] = let_;
-      c.querySelectorAll('.opbtn[data-pi="' + pi + '"]').forEach(function(b) { b.classList.remove('sel'); });
-      btn.classList.add('sel');
-      var total = Object.keys(respsGlobales[id]).length;
-      document.getElementById('prog').textContent = total + ' de 10 preguntas respondidas';
-      if (total === 10) {
-        var br = document.getElementById('btn-ver-res-mod');
-        br.disabled = false; br.style.opacity = '1'; br.style.cursor = 'pointer';
-      }
-    });
-  });
-
-  document.getElementById('btn-ver-res-mod').addEventListener('click', function() {
-    // Calculate module score
-    var pts = 0;
-    var test = TESTS[id];
-    for (var i = 0; i < test.preguntas.length; i++) {
-      if (respsGlobales[id][i] === test.preguntas[i].c) pts++;
-    }
-    ptsGlobales[id] = pts;
-    puntosTests[id] = pts;
-    guardar('puntos_tests', ptsGlobales);
-    actualizarMarcador();
-    actualizarNivelUI();
-    mostrarSelector();
-  });
-}
-
-function verResultadoGlobal() {
-  var total = totalPtsGlobales();
-  var r = RESULTADOS_GLOBALES[RESULTADOS_GLOBALES.length - 1];
-  for (var i = 0; i < RESULTADOS_GLOBALES.length; i++) {
-    if (total >= RESULTADOS_GLOBALES[i].min && total <= RESULTADOS_GLOBALES[i].max) {
-      r = RESULTADOS_GLOBALES[i]; break;
-    }
-  }
-
-  document.getElementById('tpreguntas').style.display = 'none';
-  document.getElementById('tresultado').style.display = 'block';
-  document.getElementById('remoji').textContent = r.emoji;
-  document.getElementById('rpts').textContent = total + '/40';
-  document.getElementById('rtit').textContent = r.tit;
-  document.getElementById('rdesc').textContent = r.desc;
-  document.getElementById('rperf').textContent = r.perf;
-  document.getElementById('rcard').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  actualizarMarcador();
-  actualizarNivelUI();
-}
-
-document.getElementById('btn-reiniciar').addEventListener('click', mostrarSelector);
-
-mostrarSelector();actualizarNivelUI();actualizarMarcador();}
-  }
-}
-
-// Event delegation: captura todos los clicks con data-page
-document.addEventListener('click', function(e) {
-  // Si el click fue en un link real con href externo, no interceptar
-  var linkEl = e.target.closest('a[href]');
-  if (linkEl && linkEl.href && !linkEl.getAttribute('data-page')) {
-    return; // Dejar que el browser maneje el link normalmente
-  }
-  var el = e.target.closest('[data-page]');
-  if (el) {
-    e.preventDefault();
-    irA(el.getAttribute('data-page'));
-  }
-});
-
-// Substack card
-
-
-// ── SPARRING ────────────────────────────────────────────────
-var modo = 'directa';
-
-// SPARRING TRIPLE — responde con 3 modos simultáneos
-// ── SPARRING CON IA REAL (API CLAUDE) ────────────────────────────────────────
-
-var SYSTEM_PROMPT = `Eres la Arena Libertaria, una IA que responde SIEMPRE desde la perspectiva liberal-libertaria. Tu pensamiento está fundamentado en la Escuela Austriaca de Economía (Hayek, Mises, Rothbard), Milton Friedman, Thomas Sowell, Axel Kaiser, Juan Ramón Rallo, Agustín Laje, Javier Milei y Alberto Benegas Lynch (h).
-
-REGLAS ABSOLUTAS:
-1. Siempre respondes desde la óptica libertaria. Nunca eres neutral ni "balanceado".
-2. Si el usuario hace una PREGUNTA: la respondes directamente primero, luego la desarrollas desde la visión libertaria.
-3. Si el usuario hace una AFIRMACIÓN o argumento: lo debatís directamente desde nuestra ideología, sin evadir el tema central.
-4. Nunca das vueltas. Nunca rellenas con información genérica que no responde lo que se preguntó.
-5. Siempre das EXACTAMENTE 3 respuestas en el siguiente formato JSON y nada más:
-
-{
-  "concreta": "Respuesta directa, clara y concisa al tema planteado. Sin rodeos. Máximo 3 oraciones.",
-  "evidencia": "La misma posición libertaria pero respaldada con datos, estudios, ejemplos históricos o citas de autores libertarios (Hayek, Friedman, Sowell, Kaiser, Rallo, Laje, Milei, Benegas Lynch u otros). Máximo 4 oraciones.",
-  "confrontacional": "Respuesta directa y combativa en el tono de Javier Milei. Sin diplomacia, sin eufemismos. Va directo al punto y desmonta el argumento contrario con fuerza. Puede incluir ejemplos de fracasos del estatismo. Máximo 4 oraciones."
-}
-
-SOLO responde con el JSON. Sin texto antes ni después. Sin markdown. Sin explicaciones adicionales.`;
-
-async function llamarIA(pregunta) {
-  var response = await fetch('/.netlify/functions/sparring', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ pregunta: pregunta })
-  });
-  var data = await response.json();
-  if (data.error) throw new Error(data.error + ' | ' + (data.detail || ''));
-  if (!data.concreta || !data.evidencia || !data.confrontacional) {
-    throw new Error('Respuesta incompleta: ' + JSON.stringify(data));
-  }
-  return data;
-}
-
-function addMsgUser(texto) {
-  var cont = document.getElementById('msgs');
-  var w = document.createElement('div');
-  w.className = 'mw u';
-  w.innerHTML = '<div class="ml">Tú</div><div class="mb u">' + texto + '</div>';
-  cont.appendChild(w);
-  cont.scrollTop = cont.scrollHeight;
-}
-
-function addMsgIA(resp) {
-  var cont = document.getElementById('msgs');
-  var w = document.createElement('div');
-  w.className = 'mw ia';
-  w.innerHTML =
-    '<div class="ml org">Milton Javier</div>' +
-    '<div class="resp-bloque">' +
-      '<div class="resp-num"><div class="resp-num-dot" style="background:var(--naranja);"></div>1. RESPUESTA CONCRETA</div>' +
-      '<div class="resp-texto">' + resp.concreta + '</div>' +
-    '</div>' +
-    '<div class="resp-bloque">' +
-      '<div class="resp-num"><div class="resp-num-dot" style="background:#888;"></div>2. CON EVIDENCIA LIBERAL</div>' +
-      '<div class="resp-texto">' + resp.evidencia + '</div>' +
-    '</div>' +
-    '<div class="resp-bloque">' +
-      '<div class="resp-num"><div class="resp-num-dot" style="background:#ddd;"></div>3. CONFRONTACIONAL</div>' +
-      '<div class="resp-texto">' + resp.confrontacional + '</div>' +
-    '</div>';
-  cont.appendChild(w);
-  cont.scrollTop = cont.scrollHeight;
-}
-
-function addMsgError(msg) {
-  var cont = document.getElementById('msgs');
-  var w = document.createElement('div');
-  w.className = 'mw ia';
-  w.innerHTML = '<div class="ml org">Milton Javier</div><div class="mb ia" style="color:#ff6b6b;">' + msg + '</div>';
-  cont.appendChild(w);
-  cont.scrollTop = cont.scrollHeight;
-}
-
-function showTyping() {
-  var cont = document.getElementById('msgs');
-  var w = document.createElement('div');
-  w.className = 'mw ia'; w.id = 'typ';
-  w.innerHTML = '<div class="ml org">Milton Javier</div><div class="typing"><span></span><span></span><span></span></div>';
-  cont.appendChild(w); cont.scrollTop = cont.scrollHeight;
-}
-
-function hideTyping() { var t = document.getElementById('typ'); if(t) t.remove(); }
-
-async function enviar() {
-  var inp = document.getElementById('cinput');
-  var txt = inp.value.trim();
-  if(!txt) return;
-  inp.value=''; inp.style.height='auto';
-  var btn = document.getElementById('csend');
-  btn.disabled = true; btn.textContent = '...';
-  addMsgUser(txt);
-  showTyping();
-  try {
-    var resp = await llamarIA(txt);
-    hideTyping();
-    addMsgIA(resp);
-  } catch(e) {
-    hideTyping();
-    addMsgError('Error al conectar con la IA. Verifica tu conexión e intenta nuevamente.');
-  }
-  btn.disabled = false; btn.textContent = 'Enviar';
-}
-
-
-document.getElementById('csend').addEventListener('click', enviar);
-document.getElementById('cinput').addEventListener('keydown', function(e) {
-  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); enviar(); }
-});
-document.getElementById('cinput').addEventListener('input', function() {
-  this.style.height = 'auto';
-  this.style.height = Math.min(this.scrollHeight, 100) + 'px';
-});
-
-// ── TESTS ───────────────────────────────────────────────────
-var TESTS = [
-  {
-    id: 0,
-    nombre: "El Test de la Confusión",
-    desc: 'El test original de Nicolás Fernández propuesto en el Substack "El Test de la Confusión". Un poco de todo para un test rápido.',
-    emoji: "🧠",
-    preguntas: [
-      { n:1, t:"Te ofrecen dos jefes, ¿cuál escoges?", ops:["A. Uno elegante, habla perfecto… pero nunca te paga a tiempo","B. Uno grosero… pero te paga el doble puntual","C. El elegante, porque la cultura importa","D. Ninguno, porque todos los jefes son opresores"], c:"B" },
-      { n:2, t:"Los impuestos:", ops:["A. Son necesarios, pero deberían ser mínimos","B. Son coerción institucionalizada","C. Son un acto de solidaridad","D. Depende de quién los cobre"], c:"B" },
-      { n:3, t:"Bitcoin es:", ops:["A. Una estafa peligrosa","B. Un activo volátil pero interesante","C. Una amenaza al control estatal","D. No entiendo, pero mi primo ganó plata"], c:"C" },
-      { n:4, t:"Un político promete darte todo gratis. Tú piensas:", ops:["A. Qué generoso","B. ¿Con qué plata?","C. Seguro roba, pero igual sirve","D. Eso lo pagan los ricos"], c:"B" },
-      { n:5, t:"Sobre inflación:", ops:["A. Es culpa de los empresarios","B. Es culpa del banco central","C. Es culpa del dólar","D. Es un fenómeno multicausal y complejo"], c:"B" },
-      { n:6, t:"Prefieres vivir en un país donde:", ops:["A. Todo está regulado, pero protegido","B. Hay libertad, pero incertidumbre","C. El Estado decide por ti","D. Nadie decide nada (caos total)"], c:"B" },
-      { n:7, t:"Si una app te da todo gratis, tú piensas:", ops:["A. Qué maravilla","B. ¿Dónde está el truco?","C. Seguro venden mis datos","D. El Estado debería regularla"], c:"B" },
-      { n:8, t:"Un empresario se vuelve rico:", ops:["A. Seguro explotó a alguien","B. Creó valor que otros pagan voluntariamente","C. Tuvo suerte","D. Debería pagar más impuestos"], c:"B" },
-      { n:9, t:"Sobre el salario mínimo:", ops:["A. Ayuda a los trabajadores","B. Puede dejar gente sin empleo","C. Debería ser más alto siempre","D. Es una herramienta política"], c:"B" },
-      { n:10, t:"Este líder es grosero pero reduce el Estado. Tú respondes:", ops:["A. No me importa, sigue siendo grosero","B. Interesante… ¿qué logró exactamente?","C. Prefiero uno amable aunque controle más","D. Todos son iguales"], c:"B" }
-    ],
-    resultados: [
-      { min:0, max:3, emoji:"🤒", tit:"Enfermo Terminal", desc:"Vives en el mundo de las formas. Te venden narrativa y la compras con emoción.", perf:"Arquetipo: el indignado. Profesor universitario, funcionario público o estudiante idealista." },
-      { min:4, max:6, emoji:"☕", tit:"Confusión Funcional", desc:"Sabes que algo no cuadra, pero todavía te dejas seducir por el discurso bonito.", perf:"Arquetipo: el analista de café. Cuestiona, duda, pero no rompe." },
-      { min:7, max:8, emoji:"🔄", tit:"Claridad en Proceso", desc:"Ya no te lo tragas todo. Empiezas a ver incentivos y a desconfiar del discurso.", perf:"Arquetipo: el converso. En transición. Ya rompiste con varias narrativas." },
-      { min:9, max:10, emoji:"⚡", tit:"El Peligroso", desc:"No te dejas manipular por formas. Entiendes incentivos y detectas narrativa de inmediato.", perf:"Arquetipo: el incómodo. No necesitas pertenecer, no buscas aprobación." }
-    ]
-  },
-  {
-    id: 1,
-    nombre: "El Test del Estado",
-    desc: "¿Cuánto poder le das al Estado sin darte cuenta? Descubre si eres más libre de lo que crees.",
-    emoji: "🏛️",
-    preguntas: [
-      { n:1, t:"La educación pública gratuita:", ops:["A. Es un derecho fundamental","B. Es un servicio que otros pagan con sus impuestos","C. Debería ser obligatoria para todos","D. Es lo mínimo que puede hacer un Estado"], c:"B" },
-      { n:2, t:"Cuando el gobierno crea empleos:", ops:["A. Genera riqueza para el país","B. Destruye empleo privado para financiar el público","C. Soluciona el desempleo estructural","D. Es necesario en tiempos de crisis"], c:"B" },
-      { n:3, t:"El control de armas:", ops:["A. Reduce la violencia","B. Desarma al ciudadano honesto, no al criminal","C. Debe decidirlo cada gobierno","D. Es un tema complejo sin respuesta clara"], c:"B" },
-      { n:4, t:"La propiedad privada es:", ops:["A. Un privilegio de los ricos","B. La base de toda libertad individual","C. Necesaria pero debe ser regulada","D. Una construcción social negociable"], c:"B" },
-      { n:5, t:"Cuando el Estado subsidia algo:", ops:["A. Lo hace accesible para todos","B. Crea dependencia y distorsiona precios","C. Protege a los más vulnerables","D. Es necesario en ciertos sectores"], c:"B" },
-      { n:6, t:"La libertad de expresión:", ops:["A. Debe tener límites para proteger grupos vulnerables","B. Es absoluta o no es libertad","C. Depende del contexto cultural","D. El Estado debe regularla con criterio"], c:"B" },
-      { n:7, t:"Sobre la deuda pública:", ops:["A. Es inversión en el futuro","B. Es impuesto diferido que pagarán tus hijos","C. Es necesaria para servicios esenciales","D. Depende de cómo se administre"], c:"B" },
-      { n:8, t:"El sistema de pensiones estatal:", ops:["A. Garantiza retiro digno para todos","B. Es un esquema Ponzi que depende de nuevos contribuyentes","C. Debe mejorarse pero no eliminarse","D. Es la única forma de proteger adultos mayores"], c:"B" },
-      { n:9, t:"Cuando el gobierno regula un mercado:", ops:["A. Lo hace más justo y competitivo","B. Favorece a los ya establecidos y frena la competencia","C. Protege al consumidor","D. Es necesario para evitar abusos"], c:"B" },
-      { n:10, t:"La diferencia entre Estado y gobierno:", ops:["A. Ninguna, son lo mismo","B. El Estado es el aparato coercitivo; el gobierno solo lo opera","C. El gobierno es elegido, el Estado no","D. Es una distinción académica sin consecuencias"], c:"B" }
-    ],
-    resultados: [
-      { min:0, max:3, emoji:"⛓️", tit:"Estatista Convencido", desc:"Le entregas al Estado poder que nunca te va a devolver. Confundes gestión con coerción.", perf:"Perfil: el ciudadano bien portado. Cree que las reglas existen para protegerlo." },
-      { min:4, max:6, emoji:"😵", tit:"Estatista con Dudas", desc:"Algo no te cierra, pero el marco mental estatista sigue dominando.", perf:"Perfil: el reformista eterno. Siempre cree que el problema es la implementación, nunca el sistema." },
-      { min:7, max:8, emoji:"🔍", tit:"Despertando", desc:"Ya ves el patrón. Empiezas a entender que el Estado no falla por accidente.", perf:"Perfil: el escéptico en transición. Todavía busca soluciones dentro del sistema." },
-      { min:9, max:10, emoji:"🗽", tit:"Libre de Verdad", desc:"Entiendes que el Estado no es tu amigo ni tu protector. Funciona mejor cuando es mínimo.", perf:"Perfil: el libertario convencido. No pides permiso, no delegas tu responsabilidad." }
-    ]
-  },
-  {
-    id: 2,
-    nombre: "El Test Económico",
-    desc: "Economía real que no te enseñaron en el colegio. ¿Cuánto entiendes de cómo funciona el dinero?",
-    emoji: "💰",
-    preguntas: [
-      { n:1, t:"El precio de un producto lo determina:", ops:["A. El costo de producción más una ganancia justa","B. Lo que alguien está dispuesto a pagar voluntariamente","C. El gobierno para proteger al consumidor","D. Las grandes corporaciones"], c:"B" },
-      { n:2, t:"Cuando el banco central imprime más dinero:", ops:["A. El país se vuelve más rico","B. Cada billete vale menos — es un impuesto oculto","C. Estimula la economía sin consecuencias","D. Ayuda a los más pobres"], c:"B" },
-      { n:3, t:"La ganancia empresarial es:", ops:["A. Dinero robado al trabajador","B. La señal de que se creó valor que el mercado reconoce","C. Debe estar limitada por ley","D. Un problema cuando es excesiva"], c:"B" },
-      { n:4, t:"El libre comercio entre países:", ops:["A. Destruye empleos locales","B. Genera riqueza para ambas partes al especializarse","C. Solo beneficia a los países ricos","D. Debe regularse para proteger industrias"], c:"B" },
-      { n:5, t:"Cuando el Estado pone precio máximo al arroz:", ops:["A. Lo hace accesible para los pobres","B. Genera escasez porque nadie produce lo que no es rentable","C. Controla la inflación","D. Es necesario en épocas de crisis"], c:"B" },
-      { n:6, t:"La competencia en el mercado:", ops:["A. Es destructiva y genera monopolios","B. Baja precios, mejora calidad y expulsa a los ineficientes","C. Debe regularse para que sea justa","D. Solo funciona en teoría"], c:"B" },
-      { n:7, t:"Los aranceles a las importaciones:", ops:["A. Protegen el empleo nacional","B. Son un impuesto que paga el consumidor local","C. Son necesarios para industrias nacientes","D. Equilibran la balanza comercial"], c:"B" },
-      { n:8, t:"La pobreza se reduce principalmente con:", ops:["A. Redistribución de la riqueza existente","B. Creación de nueva riqueza a través del mercado libre","C. Programas sociales bien diseñados","D. Mayor inversión pública"], c:"B" },
-      { n:9, t:"El empresario que quiebra:", ops:["A. Es víctima del sistema","B. Recibió una señal de que no estaba creando suficiente valor","C. Necesita apoyo estatal","D. Fue víctima de competencia desleal"], c:"B" },
-      { n:10, t:"La riqueza de un país se mide mejor por:", ops:["A. El tamaño de su PIB","B. La libertad de sus ciudadanos para producir, comerciar y conservar","C. La igualdad en la distribución del ingreso","D. La fortaleza de sus instituciones públicas"], c:"B" }
-    ],
-    resultados: [
-      { min:0, max:3, emoji:"📉", tit:"Analfabeta Económico", desc:"Te educaron para consumir narrativa económica sin cuestionarla. Apoyas políticas que te empobrecen.", perf:"Perfil: el votante bien intencionado. Sus intenciones son buenas. Sus efectos, devastadores." },
-      { min:4, max:6, emoji:"📊", tit:"Economista de Titulares", desc:"Entiendes algo, pero te quedas en la superficie. Ves los efectos visibles e ignoras los invisibles.", perf:"Perfil: el analista de primera capa. Ve el problema, no las causas." },
-      { min:7, max:8, emoji:"📈", tit:"Pensamiento Económico Real", desc:"Ya piensas en incentivos y consecuencias no intencionales. Cada política tiene un costo.", perf:"Perfil: el que hace preguntas incómodas. ¿Quién paga esto? ¿Qué incentivo genera?" },
-      { min:9, max:10, emoji:"🏆", tit:"Economista Libre", desc:"Piensas como Bastiat: ves lo que se ve y lo que no se ve.", perf:"Perfil: el peligroso en reuniones de familia. Ese que arruina el argumento del salario mínimo con un dato." }
-    ]
-  },
-  {
-    id: 3,
-    nombre: "El Test de la Narrativa",
-    desc: "¿Puedes separar el discurso de la realidad? Detecta cuándo te están vendiendo una historia.",
-    emoji: "🎭",
-    preguntas: [
-      { n:1, t:"Un medio titula: Gobierno invierte $500M en educación. Tú piensas:", ops:["A. Qué buena noticia","B. ¿Cuál es el resultado medible y quién lo verifica?","C. Depende del partido que gobierne","D. Ojalá llegue a las escuelas"], c:"B" },
-      { n:2, t:"Un activista dice esto lo pagan los ricos. Tú sabes que:", ops:["A. Es justo porque tienen más","B. Los costos siempre se trasladan al consumidor final — que eres tú","C. Depende del tipo de impuesto","D. Hay que estudiar cada caso"], c:"B" },
-      { n:3, t:"Una ONG denuncia explotación en una fábrica del tercer mundo. Sin contexto, tú:", ops:["A. La condenas inmediatamente","B. Preguntas cuál era la alternativa para esos trabajadores","C. Pides más regulación internacional","D. Compartes la denuncia para crear conciencia"], c:"B" },
-      { n:4, t:"El presidente anuncia que creó 200,000 empleos. La pregunta correcta es:", ops:["A. ¿En qué sectores?","B. ¿A qué costo y cuántos empleos privados se destruyeron?","C. ¿Cuándo se verán los beneficios?","D. ¿Es suficiente para la demanda actual?"], c:"B" },
-      { n:5, t:"La desigualdad está aumentando. Esta afirmación:", ops:["A. Prueba que el sistema falla","B. No dice nada sin saber si los pobres mejoran en términos absolutos","C. Requiere políticas redistributivas urgentes","D. Es preocupante independientemente del contexto"], c:"B" },
-      { n:6, t:"Un estudio dice que el salario mínimo no destruye empleo. Tú:", ops:["A. Lo compartes porque confirma lo que creías","B. Preguntas quién lo financia, la metodología y el contexto","C. Lo aceptas porque viene de una universidad","D. Buscas otro estudio que lo contradiga"], c:"B" },
-      { n:7, t:"Este líder habla por los más pobres. Tú evalúas:", ops:["A. Su tono y empatía en el discurso","B. Si las políticas que propone realmente mejoran la vida de los pobres","C. Si es creíble y consistente","D. Si tiene experiencia en el sector social"], c:"B" },
-      { n:8, t:"Las redes sociales censuran contenido libertario. La respuesta correcta es:", ops:["A. Hay que regularlas para garantizar neutralidad","B. Crear plataformas alternativas y no depender de infraestructura enemiga","C. Denunciarlo públicamente","D. Es exagerado, no hay censura sistemática"], c:"B" },
-      { n:9, t:"El capitalismo genera pobreza. Esta frase:", ops:["A. Es cierta — la historia lo demuestra","B. Es falsa — el capitalismo sacó a más personas de la pobreza que cualquier otro sistema","C. Depende del tipo de capitalismo","D. Es un debate legítimo sin conclusión"], c:"B" },
-      { n:10, t:"Cuando alguien te llama extremo por defender la libertad individual, tú:", ops:["A. Moderas tu posición para no alienar a nadie","B. Señalas que defender la propiedad y la libertad no es extremismo","C. Explicas tu posición con más cuidado","D. Evitas el conflicto porque no vale la pena"], c:"B" }
-    ],
-    resultados: [
-      { min:0, max:3, emoji:"🎣", tit:"Pez en el Anzuelo", desc:"La narrativa te tiene exactamente donde quiere. Reaccionas a las formas, al tono — nunca al resultado real.", perf:"Perfil: el consumidor de noticias estándar. Comparte titulares, se indigna por temporadas." },
-      { min:4, max:6, emoji:"🤔", tit:"Escéptico Selectivo", desc:"Dudas de algunas cosas pero no de otras. Tu escepticismo está condicionado por tus preferencias.", perf:"Perfil: el que cuestiona al bando contrario pero traga la propia narrativa sin masticar." },
-      { min:7, max:8, emoji:"🔎", tit:"Detector en Calibración", desc:"Ya tienes el instinto. Preguntas quién financia, qué incentivo hay, cuál es el efecto real.", perf:"Perfil: el que incomoda en las reuniones pero todavía pide disculpas por hacerlo." },
-      { min:9, max:10, emoji:"🛡️", tit:"Inmune a la Narrativa", desc:"Difícil de manipular. Ves el guión antes de que termine el primer párrafo.", perf:"Perfil: el que no comparte sin leer, no opina sin datos y no aplaude sin resultados." }
-    ]
-  }
-];
-
-
-
-var testActual = null;
-var resps = {};
-
-function mostrarSelector() {
-  document.getElementById('tresultado').style.display = 'none';
-  var c = document.getElementById('tpreguntas');
-  c.style.display = 'block';
-  var html = '<div class="test-grid">';
-  for (var i = 0; i < TESTS.length; i++) {
-    var t = TESTS[i];
-    html += '<div class="tc" data-tid="' + t.id + '">';
-    html += '<div class="em">' + t.emoji + '</div>';
-    html += '<div class="aut">NOPIDOPERMISO</div>';
-    html += '<h3>' + t.nombre + '</h3>';
-    html += '<p>' + t.desc + '</p>';
-    html += '<span class="cta">Hacer el test →</span>';
-    html += '</div>';
-  }
-  html += '</div>';
-  c.innerHTML = html;
-
-  c.querySelectorAll('.tc').forEach(function(el) {
-    el.addEventListener('click', function() {
-      iniciarTest(parseInt(el.getAttribute('data-tid')));
-    });
-  });
-}
-
-function iniciarTest(id) {
-  testActual = TESTS[id];
-  resps = {};
-  var c = document.getElementById('tpreguntas');
-  var html = '<button class="back-btn" id="btn-volver-test">← Volver</button>';
-  html += '<div style="margin-bottom:28px;">';
-  html += '<div style="font-size:10px;color:var(--naranja);letter-spacing:2px;font-family:monospace;margin-bottom:4px;">NOPIDOPERMISO</div>';
-  html += '<div style="font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:1px;">' + testActual.nombre + '</div>';
-  html += '</div>';
-
-  for (var i = 0; i < testActual.preguntas.length; i++) {
-    var p = testActual.preguntas[i];
-    html += '<div class="pcard">';
-    html += '<div class="pnum">PREGUNTA ' + p.n + ' DE 10</div>';
-    html += '<div class="ptxt">' + p.t + '</div>';
-    var lets = ['A','B','C','D'];
-    for (var j = 0; j < p.ops.length; j++) {
-      html += '<button class="opbtn" data-pi="' + i + '" data-let="' + lets[j] + '">' + p.ops[j] + '</button>';
-    }
-    html += '</div>';
-  }
-
-  html += '<div style="text-align:center;margin-top:28px;">';
-  html += '<div id="prog" style="font-size:13px;color:var(--muted);margin-bottom:14px;">0 de 10 preguntas respondidas</div>';
-  html += '<button class="btn btn-naranja" id="btn-ver-res" disabled style="opacity:0.4;cursor:not-allowed;">Ver mi resultado</button>';
-  html += '</div>';
-  c.innerHTML = html;
-
-  document.getElementById('btn-volver-test').addEventListener('click', mostrarSelector);
-
-  c.querySelectorAll('.opbtn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var pi = parseInt(btn.getAttribute('data-pi'));
-      var let_ = btn.getAttribute('data-let');
-      resps[pi] = let_;
-      c.querySelectorAll('.opbtn[data-pi="' + pi + '"]').forEach(function(b) { b.classList.remove('sel'); });
-      btn.classList.add('sel');
-      var total = Object.keys(resps).length;
-      document.getElementById('prog').textContent = total + ' de 10 preguntas respondidas';
-      if (total === 10) {
-        var br = document.getElementById('btn-ver-res');
-        br.disabled = false;
-        br.style.opacity = '1';
-        br.style.cursor = 'pointer';
-      }
-    });
-  });
-
-  document.getElementById('btn-ver-res').addEventListener('click', verResultado);
-}
-
-function verResultado() {
-  var pts = 0;
-  for (var i = 0; i < testActual.preguntas.length; i++) {
-    if (resps[i] === testActual.preguntas[i].c) pts++;
-  }
-  var r = null;
-  for (var i = 0; i < testActual.resultados.length; i++) {
-    if (pts >= testActual.resultados[i].min && pts <= testActual.resultados[i].max) {
-      r = testActual.resultados[i]; break;
-    }
-  }
-  // Guardar puntuación del test actual
-  puntosTests[testActual.id] = pts;
-  guardar('puntos_tests', puntosTests);
-
-  document.getElementById('tpreguntas').style.display = 'none';
-  document.getElementById('tresultado').style.display = 'block';
-  document.getElementById('remoji').textContent = r.emoji;
-  document.getElementById('rpts').textContent = pts + '/10';
-  document.getElementById('rtit').textContent = r.tit;
-  document.getElementById('rdesc').textContent = r.desc;
-  document.getElementById('rperf').textContent = r.perf;
-  document.getElementById('rcard').scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-  // Actualizar marcador y nivel
-  actualizarMarcador();
-  actualizarNivelUI();
-}
-
-document.getElementById('btn-reiniciar').addEventListener('click', mostrarSelector);
-
-mostrarSelector();
-
-// TABS BIBLIOTECA
-document.addEventListener('click', function(e) {
-  var tab = e.target.closest('.btab');
-  if (!tab) return;
-  var tabId = tab.getAttribute('data-tab');
-  document.querySelectorAll('.btab').forEach(function(b) {
-    b.classList.remove('active');
-    b.style.background = 'transparent';
-    b.style.color = 'var(--muted)';
-  });
-  tab.classList.add('active');
-  tab.style.background = 'var(--naranja)';
-  tab.style.color = 'var(--blanco)';
-  document.getElementById('tab-libros').style.display = tabId === 'libros' ? 'block' : 'none';
-  document.getElementById('tab-podcasts').style.display = tabId === 'podcasts' ? 'block' : 'none';
-});
-
-
-actualizarMarcador();
-</script>
-
 <!-- SOBRE EL AUTOR -->
 <div id="sobreautor" class="page">
   <div class="inner" style="max-width:860px;">
@@ -1771,7 +732,6 @@ actualizarMarcador();
     <div class="label">05 — Sobre el Autor</div>
     <h2 class="titulo">Nicolás Fernández</h2>
 
-    <!-- Bio card -->
     <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:36px;margin-top:28px;">
       <div style="display:flex;align-items:center;gap:20px;margin-bottom:24px;flex-wrap:wrap;">
         <div style="width:72px;height:72px;border-radius:50%;background:var(--naranja);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:28px;color:#fff;flex-shrink:0;">NF</div>
@@ -1794,7 +754,6 @@ actualizarMarcador();
       <p style="font-size:13px;color:#888;line-height:1.6;font-weight:400;font-family:DM Sans,sans-serif;margin-top:16px;padding-top:14px;border-top:1px solid #bfb9b0;font-style:italic;">Disclaimer: Este sitio utiliza herramientas de IA. Milton Javier es el sparring de la libertad.</p>
     </div>
 
-    <!-- Batalla Cultural series -->
     <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:36px;margin-top:20px;">
       <div style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;">Serie</div>
       <h3 style="font-family:Bebas Neue,sans-serif;font-size:26px;letter-spacing:1px;margin-bottom:12px;">La Serie sobre Batalla Cultural</h3>
@@ -1831,7 +790,6 @@ actualizarMarcador();
       </div>
     </div>
 
-    <!-- Podcast -->
     <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:28px;margin-top:20px;">
       <div style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;">Video</div>
       <div class="pk">
@@ -1873,9 +831,9 @@ actualizarMarcador();
     <h2 class="titulo">Rinconcito Colombiano</h2>
     <p style="color:var(--muted);font-size:15px;margin-top:8px;margin-bottom:40px;font-weight:300;">Las ideas de la libertad vienen ganando fuerza en Colombia. En mi opinión estas son las cuatro personas que mejor interpretan con pureza esas ideas. Conozco a unos, y a otros no, pero a todos los leo.</p>
 
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:12px;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:12px;">
 
-      <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:12px;padding:28px;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--naranja)'" onmouseout="this.style.borderColor='var(--gris-borde)'">
+      <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:12px;padding:28px;transition:border-color 0.2s;">
         <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#1a0a00,#3a1500);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:20px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);margin-bottom:16px;">JMG</div>
         <h3 style="font-family:Bebas Neue,sans-serif;font-size:24px;letter-spacing:1px;margin-bottom:6px;">Juan Mario Giraldo <span style="font-size:11px;color:var(--naranja);font-family:DM Mono,monospace;">(*)</span></h3>
         <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:10px;">Estratega y pensador del orden espontáneo. Fundador de Reframe Consulting, empresa de consultoría en estrategia.</p>
@@ -1883,21 +841,21 @@ actualizarMarcador();
         <p style="font-size:11px;color:#666;margin-top:8px;font-style:italic;">(*) Es primo mío</p>
       </div>
 
-      <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:12px;padding:28px;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--naranja)'" onmouseout="this.style.borderColor='var(--gris-borde)'">
+      <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:12px;padding:28px;transition:border-color 0.2s;">
         <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#001a1a,#003a3a);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:20px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);margin-bottom:16px;">DR</div>
         <h3 style="font-family:Bebas Neue,sans-serif;font-size:24px;letter-spacing:1px;margin-bottom:6px;">Daniel Raisbeck</h3>
         <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:10px;">Analista político con una visión liberal clásica clara y sin concesiones al estatismo. Probablemente el primer libertario de Colombia.</p>
         <a href="https://x.com/DanielRaisbeck" target="_blank" style="font-size:12px;color:var(--naranja);font-weight:600;text-decoration:none;display:inline-block;margin-top:4px;">𝕏 @DanielRaisbeck →</a>
       </div>
 
-      <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:12px;padding:28px;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--naranja)'" onmouseout="this.style.borderColor='var(--gris-borde)'">
+      <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:12px;padding:28px;transition:border-color 0.2s;">
         <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#0a001a,#1a0040);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:20px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);margin-bottom:16px;">CG</div>
         <h3 style="font-family:Bebas Neue,sans-serif;font-size:24px;letter-spacing:1px;margin-bottom:6px;">Camilo Guzmán</h3>
         <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:10px;">Defensor consistente de la libertad individual y los principios del libre mercado en Colombia. Director de Libertank.</p>
         <a href="https://x.com/CamiloGuzmanSa" target="_blank" style="font-size:12px;color:var(--naranja);font-weight:600;text-decoration:none;display:inline-block;margin-top:4px;">𝕏 @CamiloGuzmanSa →</a>
       </div>
 
-      <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:12px;padding:28px;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--naranja)'" onmouseout="this.style.borderColor='var(--gris-borde)'">
+      <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:12px;padding:28px;transition:border-color 0.2s;">
         <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#001a0a,#003a15);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:20px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);margin-bottom:16px;">LGV</div>
         <h3 style="font-family:Bebas Neue,sans-serif;font-size:24px;letter-spacing:1px;margin-bottom:6px;">Luis Guillermo Vélez</h3>
         <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:10px;">Economista liberal y actual concejal de Medellín.</p>
@@ -1906,7 +864,6 @@ actualizarMarcador();
 
     </div>
 
-    <!-- Recuadro adicional -->
     <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:12px;padding:32px;margin-top:20px;">
       <div style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;">Ecosistema Liberal Colombiano</div>
       <p style="font-size:15px;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:20px;">Adicional a los referentes mencionados, hay un listado de políticos, empresarios e influenciadores que aportan a las ideas liberales. El listado es corto porque pocos entienden de libertad realmente. <span style="font-family:DM Sans,sans-serif;font-style:italic;color:#888;">Derecha prebendaria no es lo mismo que libertad.</span></p>
@@ -1949,7 +906,6 @@ actualizarMarcador();
   </footer>
 </div>
 
-
 <!-- PLATAFORMAS ASOCIADAS -->
 <div id="plataformas" class="page">
   <div class="inner" style="max-width:860px;">
@@ -1961,7 +917,7 @@ actualizarMarcador();
     <div style="display:flex;flex-direction:column;gap:16px;">
 
       <a href="https://www.10am.pro/" target="_blank" style="text-decoration:none;">
-        <div style="background:#dedad4;border:1px solid #c8c4be;border-radius:12px;padding:28px;transition:all 0.2s;" onmouseover="this.style.borderColor='#E85D00';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#c8c4be';this.style.transform='none'">
+        <div style="background:#dedad4;border:1px solid #c8c4be;border-radius:12px;padding:28px;transition:all 0.2s;">
           <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
             <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#1a1a1a,#3a1500);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:14px;color:#E85D00;border:1px solid rgba(232,93,0,0.3);flex-shrink:0;">10AM</div>
             <div>
@@ -1974,7 +930,7 @@ actualizarMarcador();
       </a>
 
       <a href="https://macrowise.co/" target="_blank" style="text-decoration:none;">
-        <div style="background:#dedad4;border:1px solid #c8c4be;border-radius:12px;padding:28px;transition:all 0.2s;" onmouseover="this.style.borderColor='#E85D00';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#c8c4be';this.style.transform='none'">
+        <div style="background:#dedad4;border:1px solid #c8c4be;border-radius:12px;padding:28px;transition:all 0.2s;">
           <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
             <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#001a2a,#003a60);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:14px;color:#E85D00;border:1px solid rgba(232,93,0,0.3);flex-shrink:0;">MW</div>
             <div>
@@ -1987,7 +943,7 @@ actualizarMarcador();
       </a>
 
       <a href="https://www.homeland.net.co/" target="_blank" style="text-decoration:none;">
-        <div style="background:#dedad4;border:1px solid #c8c4be;border-radius:12px;padding:28px;transition:all 0.2s;" onmouseover="this.style.borderColor='#E85D00';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#c8c4be';this.style.transform='none'">
+        <div style="background:#dedad4;border:1px solid #c8c4be;border-radius:12px;padding:28px;transition:all 0.2s;">
           <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
             <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#001a0a,#003a15);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:14px;color:#E85D00;border:1px solid rgba(232,93,0,0.3);flex-shrink:0;">HL</div>
             <div>
@@ -2010,6 +966,295 @@ actualizarMarcador();
     </div>
   </footer>
 </div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════════════
+// NAVEGACIÓN ENTRE PÁGINAS
+// ═══════════════════════════════════════════════════════════════════════════
+
+function irA(id) {
+  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+  var target = document.getElementById(id);
+  if (target) {
+    target.classList.add('active');
+    window.scrollTo(0, 0);
+    if (id === 'autoexamen') mostrarTest();
+  }
+}
+
+// Event delegation: captura clicks con data-page (sin interferir con links externos)
+document.addEventListener('click', function(e) {
+  var linkEl = e.target.closest('a[href]');
+  if (linkEl && linkEl.href && !linkEl.getAttribute('data-page')) {
+    return; // dejar pasar links externos
+  }
+  var el = e.target.closest('[data-page]');
+  if (el) {
+    e.preventDefault();
+    irA(el.getAttribute('data-page'));
+  }
+});
+
+// ═══════════════════════════════════════════════════════════════════════════
+// SPARRING — MILTON JAVIER IA
+// ═══════════════════════════════════════════════════════════════════════════
+
+async function llamarIA(pregunta) {
+  var response = await fetch('/.netlify/functions/sparring', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ pregunta: pregunta })
+  });
+  var data = await response.json();
+  if (data.error) throw new Error(data.error + ' | ' + (data.detail || ''));
+  if (!data.concreta || !data.evidencia || !data.confrontacional) {
+    throw new Error('Respuesta incompleta: ' + JSON.stringify(data));
+  }
+  return data;
+}
+
+function addMsgUser(texto) {
+  var cont = document.getElementById('msgs');
+  var w = document.createElement('div');
+  w.className = 'mw u';
+  w.innerHTML = '<div class="ml">Tú</div><div class="mb u">' + texto + '</div>';
+  cont.appendChild(w);
+  cont.scrollTop = cont.scrollHeight;
+}
+
+function addMsgIA(resp) {
+  var cont = document.getElementById('msgs');
+  var w = document.createElement('div');
+  w.className = 'mw ia';
+  w.innerHTML =
+    '<div class="ml org">Milton Javier</div>' +
+    '<div class="resp-bloque">' +
+      '<div class="resp-num"><div class="resp-num-dot" style="background:var(--naranja);"></div>1. RESPUESTA CONCRETA</div>' +
+      '<div class="resp-texto">' + resp.concreta + '</div>' +
+    '</div>' +
+    '<div class="resp-bloque">' +
+      '<div class="resp-num"><div class="resp-num-dot" style="background:#888;"></div>2. CON EVIDENCIA LIBERAL</div>' +
+      '<div class="resp-texto">' + resp.evidencia + '</div>' +
+    '</div>' +
+    '<div class="resp-bloque">' +
+      '<div class="resp-num"><div class="resp-num-dot" style="background:#ddd;"></div>3. CONFRONTACIONAL</div>' +
+      '<div class="resp-texto">' + resp.confrontacional + '</div>' +
+    '</div>';
+  cont.appendChild(w);
+  cont.scrollTop = cont.scrollHeight;
+}
+
+function addMsgError(msg) {
+  var cont = document.getElementById('msgs');
+  var w = document.createElement('div');
+  w.className = 'mw ia';
+  w.innerHTML = '<div class="ml org">Milton Javier</div><div class="mb ia" style="color:#a30000;">' + msg + '</div>';
+  cont.appendChild(w);
+  cont.scrollTop = cont.scrollHeight;
+}
+
+function showTyping() {
+  var cont = document.getElementById('msgs');
+  var w = document.createElement('div');
+  w.className = 'mw ia'; w.id = 'typ';
+  w.innerHTML = '<div class="ml org">Milton Javier</div><div class="typing"><span></span><span></span><span></span></div>';
+  cont.appendChild(w);
+  cont.scrollTop = cont.scrollHeight;
+}
+
+function hideTyping() {
+  var t = document.getElementById('typ');
+  if (t) t.remove();
+}
+
+async function enviar() {
+  var inp = document.getElementById('cinput');
+  var txt = inp.value.trim();
+  if (!txt) return;
+  inp.value = ''; inp.style.height = 'auto';
+  var btn = document.getElementById('csend');
+  btn.disabled = true; btn.textContent = '...';
+  addMsgUser(txt);
+  showTyping();
+  try {
+    var resp = await llamarIA(txt);
+    hideTyping();
+    addMsgIA(resp);
+  } catch (e) {
+    hideTyping();
+    addMsgError('Error al conectar con la IA. Verifica tu conexión e intenta nuevamente.');
+  }
+  btn.disabled = false; btn.textContent = 'Enviar';
+}
+
+document.getElementById('csend').addEventListener('click', enviar);
+document.getElementById('cinput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); enviar(); }
+});
+document.getElementById('cinput').addEventListener('input', function() {
+  this.style.height = 'auto';
+  this.style.height = Math.min(this.scrollHeight, 100) + 'px';
+});
+
+// ═══════════════════════════════════════════════════════════════════════════
+// AUTOEXAMEN — 1 SOLO TEST DE 20 PREGUNTAS (5 POR MÓDULO)
+// ═══════════════════════════════════════════════════════════════════════════
+
+var PREGUNTAS = [
+  // ─── MÓDULO 1: INTRODUCTORIO (5 preguntas) ───
+  { mod: 1, t: "Te ofrecen dos jefes, ¿cuál escoges?", ops: ["A. Uno elegante, habla perfecto… pero nunca te paga a tiempo", "B. Uno grosero… pero te paga el doble puntual", "C. El elegante, porque la cultura importa", "D. Ninguno, porque todos los jefes son opresores"], c: "B" },
+  { mod: 1, t: "Los impuestos:", ops: ["A. Son necesarios, pero deberían ser mínimos", "B. Son coerción institucionalizada", "C. Son un acto de solidaridad", "D. Depende de quién los cobre"], c: "B" },
+  { mod: 1, t: "Un político promete darte todo gratis. Tú piensas:", ops: ["A. Qué generoso", "B. ¿Con qué plata?", "C. Seguro roba, pero igual sirve", "D. Eso lo pagan los ricos"], c: "B" },
+  { mod: 1, t: "Sobre inflación:", ops: ["A. Es culpa de los empresarios", "B. Es culpa del banco central", "C. Es culpa del dólar", "D. Es un fenómeno multicausal y complejo"], c: "B" },
+  { mod: 1, t: "Sobre el salario mínimo:", ops: ["A. Ayuda a los trabajadores", "B. Puede dejar gente sin empleo", "C. Debería ser más alto siempre", "D. Es una herramienta política"], c: "B" },
+
+  // ─── MÓDULO 2: EL ESTADO (5 preguntas) ───
+  { mod: 2, t: "Cuando el gobierno crea empleos:", ops: ["A. Genera riqueza para el país", "B. Destruye empleo privado para financiar el público", "C. Soluciona el desempleo estructural", "D. Es necesario en tiempos de crisis"], c: "B" },
+  { mod: 2, t: "La propiedad privada es:", ops: ["A. Un privilegio de los ricos", "B. La base de toda libertad individual", "C. Necesaria pero debe ser regulada", "D. Una construcción social negociable"], c: "B" },
+  { mod: 2, t: "Cuando el Estado subsidia algo:", ops: ["A. Lo hace accesible para todos", "B. Crea dependencia y distorsiona precios", "C. Protege a los más vulnerables", "D. Es necesario en ciertos sectores"], c: "B" },
+  { mod: 2, t: "Sobre la deuda pública:", ops: ["A. Es inversión en el futuro", "B. Es impuesto diferido que pagarán tus hijos", "C. Es necesaria para servicios esenciales", "D. Depende de cómo se administre"], c: "B" },
+  { mod: 2, t: "La diferencia entre Estado y gobierno:", ops: ["A. Ninguna, son lo mismo", "B. El Estado es el aparato coercitivo; el gobierno solo lo opera", "C. El gobierno es elegido, el Estado no", "D. Es una distinción académica sin consecuencias"], c: "B" },
+
+  // ─── MÓDULO 3: ECONOMÍA (5 preguntas) ───
+  { mod: 3, t: "El precio de un producto lo determina:", ops: ["A. El costo de producción más una ganancia justa", "B. Lo que alguien está dispuesto a pagar voluntariamente", "C. El gobierno para proteger al consumidor", "D. Las grandes corporaciones"], c: "B" },
+  { mod: 3, t: "Cuando el banco central imprime más dinero:", ops: ["A. El país se vuelve más rico", "B. Cada billete vale menos — es un impuesto oculto", "C. Estimula la economía sin consecuencias", "D. Ayuda a los más pobres"], c: "B" },
+  { mod: 3, t: "Cuando el Estado pone precio máximo al arroz:", ops: ["A. Lo hace accesible para los pobres", "B. Genera escasez porque nadie produce lo que no es rentable", "C. Controla la inflación", "D. Es necesario en épocas de crisis"], c: "B" },
+  { mod: 3, t: "La pobreza se reduce principalmente con:", ops: ["A. Redistribución de la riqueza existente", "B. Creación de nueva riqueza a través del mercado libre", "C. Programas sociales bien diseñados", "D. Mayor inversión pública"], c: "B" },
+  { mod: 3, t: "La riqueza de un país se mide mejor por:", ops: ["A. El tamaño de su PIB", "B. La libertad de sus ciudadanos para producir, comerciar y conservar", "C. La igualdad en la distribución del ingreso", "D. La fortaleza de sus instituciones públicas"], c: "B" },
+
+  // ─── MÓDULO 4: LA NARRATIVA (5 preguntas) ───
+  { mod: 4, t: "Un activista dice \"esto lo pagan los ricos\". Tú sabes que:", ops: ["A. Es justo porque tienen más", "B. Los costos siempre se trasladan al consumidor final — que eres tú", "C. Depende del tipo de impuesto", "D. Hay que estudiar cada caso"], c: "B" },
+  { mod: 4, t: "El presidente anuncia que creó 200,000 empleos. La pregunta correcta es:", ops: ["A. ¿En qué sectores?", "B. ¿A qué costo y cuántos empleos privados se destruyeron?", "C. ¿Cuándo se verán los beneficios?", "D. ¿Es suficiente para la demanda actual?"], c: "B" },
+  { mod: 4, t: "\"La desigualdad está aumentando\". Esta afirmación:", ops: ["A. Prueba que el sistema falla", "B. No dice nada sin saber si los pobres mejoran en términos absolutos", "C. Requiere políticas redistributivas urgentes", "D. Es preocupante independientemente del contexto"], c: "B" },
+  { mod: 4, t: "\"El capitalismo genera pobreza\". Esta frase:", ops: ["A. Es cierta — la historia lo demuestra", "B. Es falsa — el capitalismo sacó a más personas de la pobreza que cualquier otro sistema", "C. Depende del tipo de capitalismo", "D. Es un debate legítimo sin conclusión"], c: "B" },
+  { mod: 4, t: "Cuando alguien te llama extremo por defender la libertad individual, tú:", ops: ["A. Moderas tu posición para no alienar a nadie", "B. Señalas que defender la propiedad y la libertad no es extremismo", "C. Explicas tu posición con más cuidado", "D. Evitas el conflicto porque no vale la pena"], c: "B" }
+];
+
+var NOMBRES_MOD = {
+  1: "MÓDULO 1 — INTRODUCTORIO",
+  2: "MÓDULO 2 — EL ESTADO",
+  3: "MÓDULO 3 — ECONOMÍA",
+  4: "MÓDULO 4 — LA NARRATIVA"
+};
+
+var RESULTADOS = [
+  { min: 0,  max: 5,  emoji: "🤒", tit: "Enfermo Terminal",    desc: "Tienes metástasis, el cáncer estatal te invadió por completo. Necesitas quimio urgente." },
+  { min: 6,  max: 10, emoji: "😵", tit: "Confusión Funcional", desc: "Tienes alteraciones hormonales, a ratos con claridad y a ratos te seducen los discursos estatistas." },
+  { min: 11, max: 15, emoji: "🔄", tit: "En Recuperación",     desc: "Aún con salud débil pero en franca mejoría." },
+  { min: 16, max: 17, emoji: "🧠", tit: "Claridad en Proceso", desc: "Ya intuyes lo correcto aunque a veces la inercia estatal te engaña." },
+  { min: 18, max: 20, emoji: "⚡", tit: "Peligroso",           desc: "Ya entiendes la libertad." }
+];
+
+var respuestas = {}; // {indice_pregunta: "A"|"B"|"C"|"D"}
+
+function mostrarTest() {
+  document.getElementById('tresultado').style.display = 'none';
+  var c = document.getElementById('tpreguntas');
+  c.style.display = 'block';
+
+  var html = '';
+  var moduloActual = 0;
+
+  for (var i = 0; i < PREGUNTAS.length; i++) {
+    var p = PREGUNTAS[i];
+
+    // Divisor de módulo
+    if (p.mod !== moduloActual) {
+      html += '<div class="mod-divider">' + NOMBRES_MOD[p.mod] + '</div>';
+      moduloActual = p.mod;
+    }
+
+    html += '<div class="pcard">';
+    html += '<div class="pnum">PREGUNTA ' + (i + 1) + ' DE 20</div>';
+    html += '<div class="ptxt">' + p.t + '</div>';
+    var lets = ['A', 'B', 'C', 'D'];
+    for (var j = 0; j < p.ops.length; j++) {
+      var sel = respuestas[i] === lets[j] ? ' sel' : '';
+      html += '<button class="opbtn' + sel + '" data-pi="' + i + '" data-let="' + lets[j] + '">' + p.ops[j] + '</button>';
+    }
+    html += '</div>';
+  }
+
+  var respondidas = Object.keys(respuestas).length;
+  html += '<div style="text-align:center;margin-top:32px;">';
+  html += '<div id="prog" style="font-size:13px;color:#666;margin-bottom:14px;">' + respondidas + ' de 20 preguntas respondidas</div>';
+  html += '<button class="btn btn-naranja" id="btn-ver-res"' + (respondidas === 20 ? '' : ' disabled style="opacity:0.4;cursor:not-allowed;"') + '>Ver mi resultado</button>';
+  html += '</div>';
+
+  c.innerHTML = html;
+
+  // Listeners de opciones
+  c.querySelectorAll('.opbtn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var pi = parseInt(btn.getAttribute('data-pi'));
+      var let_ = btn.getAttribute('data-let');
+      respuestas[pi] = let_;
+      c.querySelectorAll('.opbtn[data-pi="' + pi + '"]').forEach(function(b) { b.classList.remove('sel'); });
+      btn.classList.add('sel');
+      var total = Object.keys(respuestas).length;
+      document.getElementById('prog').textContent = total + ' de 20 preguntas respondidas';
+      if (total === 20) {
+        var br = document.getElementById('btn-ver-res');
+        br.disabled = false;
+        br.style.opacity = '1';
+        br.style.cursor = 'pointer';
+      }
+    });
+  });
+
+  document.getElementById('btn-ver-res').addEventListener('click', verResultado);
+}
+
+function verResultado() {
+  var pts = 0;
+  for (var i = 0; i < PREGUNTAS.length; i++) {
+    if (respuestas[i] === PREGUNTAS[i].c) pts++;
+  }
+  var r = RESULTADOS[RESULTADOS.length - 1];
+  for (var i = 0; i < RESULTADOS.length; i++) {
+    if (pts >= RESULTADOS[i].min && pts <= RESULTADOS[i].max) {
+      r = RESULTADOS[i];
+      break;
+    }
+  }
+
+  document.getElementById('tpreguntas').style.display = 'none';
+  document.getElementById('tresultado').style.display = 'block';
+  document.getElementById('remoji').textContent = r.emoji;
+  document.getElementById('rpts').textContent = pts + '/20';
+  document.getElementById('rtit').textContent = r.tit;
+  document.getElementById('rdesc').textContent = r.desc;
+  document.getElementById('rcard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+document.getElementById('btn-reiniciar').addEventListener('click', function() {
+  respuestas = {};
+  mostrarTest();
+});
+
+// ═══════════════════════════════════════════════════════════════════════════
+// TABS DE LA BIBLIOTECA
+// ═══════════════════════════════════════════════════════════════════════════
+
+document.addEventListener('click', function(e) {
+  var tab = e.target.closest('.btab');
+  if (!tab) return;
+  var tabId = tab.getAttribute('data-tab');
+  document.querySelectorAll('.btab').forEach(function(b) {
+    b.classList.remove('active');
+    b.style.background = 'transparent';
+    b.style.color = 'var(--muted)';
+  });
+  tab.classList.add('active');
+  tab.style.background = 'var(--naranja)';
+  tab.style.color = 'var(--blanco)';
+  document.getElementById('tab-libros').style.display = tabId === 'libros' ? 'block' : 'none';
+  document.getElementById('tab-podcasts').style.display = tabId === 'podcasts' ? 'block' : 'none';
+});
+
+// Render inicial del test (estará oculto hasta navegar al autoexamen)
+mostrarTest();
+</script>
 
 </body>
 </html>
