@@ -1103,31 +1103,31 @@ document.getElementById('cinput').addEventListener('input', function() {
 var PREGUNTAS = [
   // ─── MÓDULO 1: INTRODUCTORIO (5 preguntas) ───
   { mod: 1, t: "Te ofrecen dos jefes, ¿cuál escoges?", ops: ["A. Uno elegante, habla perfecto… pero nunca te paga a tiempo", "B. Uno grosero… pero te paga el doble puntual", "C. El elegante, porque la cultura importa", "D. Ninguno, porque todos los jefes son opresores"], c: "B" },
-  { mod: 1, t: "Los impuestos:", ops: ["A. Son necesarios, pero deberían ser mínimos", "B. Son coerción institucionalizada", "C. Son un acto de solidaridad", "D. Depende de quién los cobre"], c: "B" },
-  { mod: 1, t: "Un político promete darte todo gratis. Tú piensas:", ops: ["A. Qué generoso", "B. ¿Con qué plata?", "C. Seguro roba, pero igual sirve", "D. Eso lo pagan los ricos"], c: "B" },
-  { mod: 1, t: "Sobre inflación:", ops: ["A. Es culpa de los empresarios", "B. Es culpa del banco central", "C. Es culpa del dólar", "D. Es un fenómeno multicausal y complejo"], c: "B" },
-  { mod: 1, t: "Sobre el salario mínimo:", ops: ["A. Ayuda a los trabajadores", "B. Puede dejar gente sin empleo", "C. Debería ser más alto siempre", "D. Es una herramienta política"], c: "B" },
+  { mod: 1, t: "Los impuestos:", ops: ["A. Depende de quién los cobre", "B. Son un acto de solidaridad", "C. Son coerción institucionalizada", "D. Son necesarios, pero deberían ser mínimos"], c: "C" },
+  { mod: 1, t: "Un político promete darte todo gratis. Tú piensas:", ops: ["A. ¿Con qué plata?", "B. Eso lo pagan los ricos", "C. Qué generoso", "D. Seguro roba, pero igual sirve"], c: "A" },
+  { mod: 1, t: "Sobre inflación:", ops: ["A. Es culpa del banco central", "B. Es un fenómeno multicausal y complejo", "C. Es culpa del dólar", "D. Es culpa de los empresarios"], c: "A" },
+  { mod: 1, t: "Sobre el salario mínimo:", ops: ["A. Es una herramienta política", "B. Ayuda a los trabajadores", "C. Debería ser más alto siempre", "D. Puede dejar gente sin empleo"], c: "D" },
 
   // ─── MÓDULO 2: EL ESTADO (5 preguntas) ───
-  { mod: 2, t: "Cuando el gobierno crea empleos:", ops: ["A. Genera riqueza para el país", "B. Destruye empleo privado para financiar el público", "C. Soluciona el desempleo estructural", "D. Es necesario en tiempos de crisis"], c: "B" },
-  { mod: 2, t: "La propiedad privada es:", ops: ["A. Un privilegio de los ricos", "B. La base de toda libertad individual", "C. Necesaria pero debe ser regulada", "D. Una construcción social negociable"], c: "B" },
-  { mod: 2, t: "Cuando el Estado subsidia algo:", ops: ["A. Lo hace accesible para todos", "B. Crea dependencia y distorsiona precios", "C. Protege a los más vulnerables", "D. Es necesario en ciertos sectores"], c: "B" },
-  { mod: 2, t: "Sobre la deuda pública:", ops: ["A. Es inversión en el futuro", "B. Es impuesto diferido que pagarán tus hijos", "C. Es necesaria para servicios esenciales", "D. Depende de cómo se administre"], c: "B" },
-  { mod: 2, t: "La diferencia entre Estado y gobierno:", ops: ["A. Ninguna, son lo mismo", "B. El Estado es el aparato coercitivo; el gobierno solo lo opera", "C. El gobierno es elegido, el Estado no", "D. Es una distinción académica sin consecuencias"], c: "B" },
+  { mod: 2, t: "Cuando el gobierno crea empleos:", ops: ["A. Genera riqueza para el país", "B. Destruye empleo privado para financiar el público", "C. Es necesario en tiempos de crisis", "D. Soluciona el desempleo estructural"], c: "B" },
+  { mod: 2, t: "La propiedad privada es:", ops: ["A. Necesaria pero debe ser regulada", "B. Una construcción social negociable", "C. La base de toda libertad individual", "D. Un privilegio de los ricos"], c: "C" },
+  { mod: 2, t: "Cuando el Estado subsidia algo:", ops: ["A. Es necesario en ciertos sectores", "B. Crea dependencia y distorsiona precios", "C. Lo hace accesible para todos", "D. Protege a los más vulnerables"], c: "B" },
+  { mod: 2, t: "Sobre la deuda pública:", ops: ["A. Depende de cómo se administre", "B. Es necesaria para servicios esenciales", "C. Es impuesto diferido que pagarán tus hijos", "D. Es inversión en el futuro"], c: "C" },
+  { mod: 2, t: "La diferencia entre Estado y gobierno:", ops: ["A. El gobierno es elegido, el Estado no", "B. El Estado es el aparato coercitivo; el gobierno solo lo opera", "C. Es una distinción académica sin consecuencias", "D. Ninguna, son lo mismo"], c: "B" },
 
   // ─── MÓDULO 3: ECONOMÍA (5 preguntas) ───
-  { mod: 3, t: "El precio de un producto lo determina:", ops: ["A. El costo de producción más una ganancia justa", "B. Lo que alguien está dispuesto a pagar voluntariamente", "C. El gobierno para proteger al consumidor", "D. Las grandes corporaciones"], c: "B" },
-  { mod: 3, t: "Cuando el banco central imprime más dinero:", ops: ["A. El país se vuelve más rico", "B. Cada billete vale menos — es un impuesto oculto", "C. Estimula la economía sin consecuencias", "D. Ayuda a los más pobres"], c: "B" },
-  { mod: 3, t: "Cuando el Estado pone precio máximo al arroz:", ops: ["A. Lo hace accesible para los pobres", "B. Genera escasez porque nadie produce lo que no es rentable", "C. Controla la inflación", "D. Es necesario en épocas de crisis"], c: "B" },
-  { mod: 3, t: "La pobreza se reduce principalmente con:", ops: ["A. Redistribución de la riqueza existente", "B. Creación de nueva riqueza a través del mercado libre", "C. Programas sociales bien diseñados", "D. Mayor inversión pública"], c: "B" },
-  { mod: 3, t: "La riqueza de un país se mide mejor por:", ops: ["A. El tamaño de su PIB", "B. La libertad de sus ciudadanos para producir, comerciar y conservar", "C. La igualdad en la distribución del ingreso", "D. La fortaleza de sus instituciones públicas"], c: "B" },
+  { mod: 3, t: "El precio de un producto lo determina:", ops: ["A. El gobierno para proteger al consumidor", "B. Las grandes corporaciones", "C. El costo de producción más una ganancia justa", "D. Lo que alguien está dispuesto a pagar voluntariamente"], c: "D" },
+  { mod: 3, t: "Cuando el banco central imprime más dinero:", ops: ["A. El país se vuelve más rico", "B. Estimula la economía sin consecuencias", "C. Cada billete vale menos — es un impuesto oculto", "D. Ayuda a los más pobres"], c: "C" },
+  { mod: 3, t: "Cuando el Estado pone precio máximo al arroz:", ops: ["A. Genera escasez porque nadie produce lo que no es rentable", "B. Es necesario en épocas de crisis", "C. Lo hace accesible para los pobres", "D. Controla la inflación"], c: "A" },
+  { mod: 3, t: "La pobreza se reduce principalmente con:", ops: ["A. Programas sociales bien diseñados", "B. Creación de nueva riqueza a través del mercado libre", "C. Redistribución de la riqueza existente", "D. Mayor inversión pública"], c: "B" },
+  { mod: 3, t: "La riqueza de un país se mide mejor por:", ops: ["A. La libertad de sus ciudadanos para producir, comerciar y conservar", "B. La fortaleza de sus instituciones públicas", "C. La igualdad en la distribución del ingreso", "D. El tamaño de su PIB"], c: "A" },
 
   // ─── MÓDULO 4: LA NARRATIVA (5 preguntas) ───
-  { mod: 4, t: "Un activista dice \"esto lo pagan los ricos\". Tú sabes que:", ops: ["A. Es justo porque tienen más", "B. Los costos siempre se trasladan al consumidor final — que eres tú", "C. Depende del tipo de impuesto", "D. Hay que estudiar cada caso"], c: "B" },
-  { mod: 4, t: "El presidente anuncia que creó 200,000 empleos. La pregunta correcta es:", ops: ["A. ¿En qué sectores?", "B. ¿A qué costo y cuántos empleos privados se destruyeron?", "C. ¿Cuándo se verán los beneficios?", "D. ¿Es suficiente para la demanda actual?"], c: "B" },
-  { mod: 4, t: "\"La desigualdad está aumentando\". Esta afirmación:", ops: ["A. Prueba que el sistema falla", "B. No dice nada sin saber si los pobres mejoran en términos absolutos", "C. Requiere políticas redistributivas urgentes", "D. Es preocupante independientemente del contexto"], c: "B" },
-  { mod: 4, t: "\"El capitalismo genera pobreza\". Esta frase:", ops: ["A. Es cierta — la historia lo demuestra", "B. Es falsa — el capitalismo sacó a más personas de la pobreza que cualquier otro sistema", "C. Depende del tipo de capitalismo", "D. Es un debate legítimo sin conclusión"], c: "B" },
-  { mod: 4, t: "Cuando alguien te llama extremo por defender la libertad individual, tú:", ops: ["A. Moderas tu posición para no alienar a nadie", "B. Señalas que defender la propiedad y la libertad no es extremismo", "C. Explicas tu posición con más cuidado", "D. Evitas el conflicto porque no vale la pena"], c: "B" }
+  { mod: 4, t: "Un activista dice \"esto lo pagan los ricos\". Tú sabes que:", ops: ["A. Los costos siempre se trasladan al consumidor final — que eres tú", "B. Depende del tipo de impuesto", "C. Hay que estudiar cada caso", "D. Es justo porque tienen más"], c: "A" },
+  { mod: 4, t: "El presidente anuncia que creó 200,000 empleos. La pregunta correcta es:", ops: ["A. ¿A qué costo y cuántos empleos privados se destruyeron?", "B. ¿Cuándo se verán los beneficios?", "C. ¿En qué sectores?", "D. ¿Es suficiente para la demanda actual?"], c: "A" },
+  { mod: 4, t: "\"La desigualdad está aumentando\". Esta afirmación:", ops: ["A. No dice nada sin saber si los pobres mejoran en términos absolutos", "B. Es preocupante independientemente del contexto", "C. Requiere políticas redistributivas urgentes", "D. Prueba que el sistema falla"], c: "A" },
+  { mod: 4, t: "\"El capitalismo genera pobreza\". Esta frase:", ops: ["A. Es un debate legítimo sin conclusión", "B. Depende del tipo de capitalismo", "C. Es cierta — la historia lo demuestra", "D. Es falsa — el capitalismo sacó a más personas de la pobreza que cualquier otro sistema"], c: "D" },
+  { mod: 4, t: "Cuando alguien te llama extremo por defender la libertad individual, tú:", ops: ["A. Explicas tu posición con más cuidado", "B. Señalas que defender la propiedad y la libertad no es extremismo", "C. Evitas el conflicto porque no vale la pena", "D. Moderas tu posición para no alienar a nadie"], c: "B" }
 ];
 
 var NOMBRES_MOD = {
