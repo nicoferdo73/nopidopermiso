@@ -128,9 +128,35 @@ footer p{font-size:13px;color:#aaa;}
 .hero p{animation:fadeUp .5s .2s ease both;}
 .hero .btn{animation:fadeUp .5s .3s ease both;}
 
+/* MENÚ HAMBURGUESA — desktop por defecto está oculto */
+.hamb{display:none;flex-direction:column;justify-content:space-between;width:26px;height:18px;background:none;border:none;cursor:pointer;padding:0;z-index:1001;}
+.hamb span{display:block;height:2px;width:100%;background:#fff;border-radius:2px;transition:all 0.3s;}
+.hamb.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+.hamb.open span:nth-child(2){opacity:0;}
+.hamb.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+
 @media(max-width:768px){
   nav{padding:14px 16px;}
-  .nav-links li:not(:last-child){display:none;}
+  .hamb{display:flex;}
+  .nav-links{
+    position:fixed;top:0;right:-100%;width:78%;max-width:320px;height:100vh;
+    background:rgba(20,18,16,0.98);
+    backdrop-filter:blur(8px);
+    flex-direction:column;align-items:flex-start;justify-content:flex-start;
+    gap:0;padding:80px 28px 28px;
+    transition:right 0.3s ease;
+    border-left:1px solid var(--gris-borde);
+    box-shadow:-8px 0 32px rgba(0,0,0,0.4);
+  }
+  .nav-links.open{right:0;}
+  .nav-links li{width:100%;border-bottom:1px solid rgba(255,255,255,0.06);}
+  .nav-links li:last-child{border-bottom:none;margin-top:12px;}
+  .nav-links li a{display:block;padding:14px 0;width:100%;font-size:15px;}
+  .nav-links li a.nav-btn{padding:12px 20px;text-align:center;width:100%;}
+  .nav-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:998;opacity:0;pointer-events:none;transition:opacity 0.3s;}
+  .nav-overlay.open{opacity:1;pointer-events:auto;}
+  body.nav-locked{overflow:hidden;}
+
   .modulos-wrap,.inner{padding:80px 16px 48px;}
   .grid-2{grid-template-columns:1fr;}
   footer{flex-direction:column;text-align:center;}
@@ -193,7 +219,10 @@ a.bk { pointer-events:auto; }
 
 <nav>
   <a class="logo" data-page="home">nopido<span>permiso</span></a>
-  <ul class="nav-links">
+  <button class="hamb" id="hamb-btn" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
     <li><a data-page="biblioteca">Biblioteca</a></li>
     <li><a data-page="sparring">Milton Javier IA</a></li>
     <li><a data-page="autoexamen">Autoexamen</a></li>
@@ -204,6 +233,7 @@ a.bk { pointer-events:auto; }
     <li><a data-page="modulos" class="nav-btn">Dar la batalla ahora</a></li>
   </ul>
 </nav>
+<div class="nav-overlay" id="nav-overlay"></div>
 
 <!-- HOME -->
 <div id="home" class="page active">
@@ -991,9 +1021,35 @@ function irA(id) {
   if (target) {
     target.classList.add('active');
     window.scrollTo(0, 0);
+    cerrarMenu(); // por si estaba abierto en mobile
     if (id === 'autoexamen') mostrarTest();
   }
 }
+
+// ─── MENÚ HAMBURGUESA (mobile) ───
+var hambBtn = document.getElementById('hamb-btn');
+var navLinks = document.getElementById('nav-links');
+var navOverlay = document.getElementById('nav-overlay');
+
+function abrirMenu() {
+  hambBtn.classList.add('open');
+  navLinks.classList.add('open');
+  navOverlay.classList.add('open');
+  document.body.classList.add('nav-locked');
+}
+function cerrarMenu() {
+  hambBtn.classList.remove('open');
+  navLinks.classList.remove('open');
+  navOverlay.classList.remove('open');
+  document.body.classList.remove('nav-locked');
+}
+function toggleMenu() {
+  if (navLinks.classList.contains('open')) cerrarMenu();
+  else abrirMenu();
+}
+
+hambBtn.addEventListener('click', toggleMenu);
+navOverlay.addEventListener('click', cerrarMenu);
 
 // Event delegation: captura clicks con data-page (sin interferir con links externos)
 document.addEventListener('click', function(e) {
