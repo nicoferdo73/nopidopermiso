@@ -15,9 +15,10 @@ body{background:#e8e3dc;color:#1a1a1a;font-family:DM Sans,sans-serif;overflow-x:
 nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;padding:18px 32px;background:rgba(30,28,26,0.97);border-bottom:1px solid var(--gris-borde);gap:36px;}
 .logo{font-family:Bebas Neue,sans-serif;font-size:22px;color:#ffffff;cursor:pointer;text-decoration:none;flex-shrink:0;}
 .logo span{color:var(--naranja);}
-.nav-links{display:flex;align-items:center;gap:24px;list-style:none;margin-left:auto;}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none;flex:1;}
 .nav-links li a{color:#ccc;font-size:13px;font-weight:500;text-decoration:none;cursor:pointer;white-space:nowrap;}
 .nav-links li a:hover{color:#fff;}
+.nav-links li:last-child{margin-left:auto;}
 .nav-btn{background:var(--naranja);color:var(--blanco)!important;padding:8px 16px;border-radius:6px;font-weight:600!important;font-size:13px;}
 
 /* HERO */
@@ -136,14 +137,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:cen
     background:rgba(20,18,16,0.98);
     backdrop-filter:blur(8px);
     flex-direction:column;align-items:flex-start;justify-content:flex-start;
-    gap:0;padding:80px 28px 28px;margin-left:0;
+    gap:0;padding:80px 28px 28px;margin-left:0;flex:none;
     transition:right 0.3s ease;
     border-left:1px solid var(--gris-borde);
     box-shadow:-8px 0 32px rgba(0,0,0,0.4);
   }
   .nav-links.open{right:0;}
   .nav-links li{width:100%;border-bottom:1px solid rgba(255,255,255,0.06);}
-  .nav-links li:last-child{border-bottom:none;margin-top:12px;}
+  .nav-links li:last-child{border-bottom:none;margin-top:12px;margin-left:0;}
   .nav-links li a{display:block;padding:14px 0;width:100%;font-size:15px;}
   .nav-links li a.nav-btn{padding:12px 20px;text-align:center;width:100%;}
   .nav-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:998;opacity:0;pointer-events:none;transition:opacity 0.3s;}
