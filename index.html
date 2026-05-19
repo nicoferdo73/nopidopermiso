@@ -12,14 +12,15 @@
 body{background:#e8e3dc;color:#1a1a1a;font-family:DM Sans,sans-serif;overflow-x:hidden;}
 .page{display:none;min-height:100vh;}
 .page.active{display:block;}
-nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;padding:18px 32px;background:rgba(30,28,26,0.97);border-bottom:1px solid var(--gris-borde);gap:36px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;padding:18px 32px;background:rgba(30,28,26,0.97);border-bottom:1px solid var(--gris-borde);}
 .logo{font-family:Bebas Neue,sans-serif;font-size:22px;color:#ffffff;cursor:pointer;text-decoration:none;flex-shrink:0;}
 .logo span{color:var(--naranja);}
-.nav-links{display:flex;align-items:center;gap:24px;list-style:none;flex:1;}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none;margin:0 auto;}
 .nav-links li a{color:#ccc;font-size:13px;font-weight:500;text-decoration:none;cursor:pointer;white-space:nowrap;}
 .nav-links li a:hover{color:#fff;}
-.nav-links li:last-child{margin-left:auto;}
-.nav-btn{background:var(--naranja);color:var(--blanco)!important;padding:8px 16px;border-radius:6px;font-weight:600!important;font-size:13px;}
+.nav-btn{background:var(--naranja);color:var(--blanco)!important;padding:8px 16px;border-radius:6px;font-weight:600!important;font-size:13px;text-decoration:none;}
+.nav-btn-desktop{flex-shrink:0;}
+.nav-btn-mobile{display:none;}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px 60px;position:relative;}
@@ -130,8 +131,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:cen
 }
 
 @media(max-width:768px){
-  nav{padding:14px 16px;gap:0;}
+  nav{padding:14px 16px;}
   .hamb{display:flex;margin-left:auto;}
+  .nav-btn-desktop{display:none;}
+  .nav-btn-mobile{display:block;}
   .nav-links{
     position:fixed;top:0;right:-100%;width:78%;max-width:320px;height:100vh;
     background:rgba(20,18,16,0.98);
@@ -144,7 +147,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:cen
   }
   .nav-links.open{right:0;}
   .nav-links li{width:100%;border-bottom:1px solid rgba(255,255,255,0.06);}
-  .nav-links li:last-child{border-bottom:none;margin-top:12px;margin-left:0;}
+  .nav-links li:last-child{border-bottom:none;margin-top:12px;}
   .nav-links li a{display:block;padding:14px 0;width:100%;font-size:15px;}
   .nav-links li a.nav-btn{padding:12px 20px;text-align:center;width:100%;}
   .nav-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:998;opacity:0;pointer-events:none;transition:opacity 0.3s;}
@@ -222,8 +225,9 @@ a.bk { pointer-events:auto; }
     <li><a data-page="sobreautor">Sobre el Autor</a></li>
     <li><a data-page="rinconcito">Rinconcito Colombiano</a></li>
     <li><a data-page="plataformas">Plataformas</a></li>
-    <li><a data-page="modulos" class="nav-btn">Dar la batalla cultural ahora</a></li>
+    <li class="nav-btn-mobile"><a data-page="modulos" class="nav-btn">Dar la batalla cultural ahora</a></li>
   </ul>
+  <a data-page="modulos" class="nav-btn nav-btn-desktop">Dar la batalla cultural ahora</a>
 </nav>
 <div class="nav-overlay" id="nav-overlay"></div>
 
