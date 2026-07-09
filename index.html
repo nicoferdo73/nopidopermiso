@@ -198,6 +198,13 @@ a.bk { pointer-events:auto; }
 .pk-link * { pointer-events:none; }
 .pk-link { pointer-events:auto; }
 
+/* FORMULARIO DE CONTACTO */
+.form-label{display:block;font-family:DM Mono,monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--naranja);margin-bottom:8px;font-weight:600;}
+.form-input{width:100%;background:#ede9e3;border:1px solid #bfb9b0;border-radius:8px;padding:12px 15px;color:#1a1a1a;font-size:14px;font-family:DM Sans,sans-serif;transition:border-color 0.2s;}
+.form-input:focus{outline:none;border-color:var(--naranja);background:#f2eee8;}
+.form-input::placeholder{color:#999;}
+textarea.form-input{resize:vertical;min-height:120px;}
+
 .art-row { display:flex;align-items:center;gap:16px;padding:14px 18px;background:#dedad3;border:1px solid #bfb9b0;border-radius:8px;margin-bottom:2px;text-decoration:none;color:inherit;transition:all 0.2s;cursor:pointer;position:relative;z-index:1; }
 .art-row * { pointer-events:none; }
 .art-row { pointer-events:auto; }
@@ -225,6 +232,7 @@ a.bk { pointer-events:auto; }
     <li><a data-page="sobreautor">Sobre el Autor</a></li>
     <li><a data-page="rinconcito">Rinconcito Colombiano</a></li>
     <li><a data-page="plataformas">Plataformas</a></li>
+    <li><a data-page="contacto">Contacto</a></li>
     <li class="nav-btn-mobile"><a data-page="modulos" class="nav-btn">Dar la batalla cultural ahora</a></li>
   </ul>
   <a data-page="modulos" class="nav-btn nav-btn-desktop">Dar la batalla cultural ahora</a>
@@ -244,7 +252,7 @@ a.bk { pointer-events:auto; }
 <div id="modulos" class="page">
   <div class="modulos-wrap">
     <div class="mod-header">
-      <div class="label">Los 7 módulos</div>
+      <div class="label">Los 8 módulos</div>
       <h2 class="titulo">Todo lo que necesitas<br>para dar la batalla</h2>
       <p class="desc">Elige el módulo con el que quieres trabajar hoy.</p>
     </div>
@@ -297,6 +305,13 @@ a.bk { pointer-events:auto; }
         <h3>Plataformas Asociadas</h3>
         <p>Herramientas de cracks que conozco. Sin comisiones, sin intereses comerciales. Solo el deseo de ayudar.</p>
         <span class="mod-tag">Ver →</span>
+      </div>
+      <div class="mod-card" data-page="contacto">
+        <div class="mod-num">08 — CONTACTO</div>
+        <div class="mod-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <h3>Escríbele al Autor</h3>
+        <p>¿Tienes una pregunta, propuesta de colaboración o quieres traer la Masterclass de Batalla Cultural a tu empresa? Escribe sin pedir permiso.</p>
+        <span class="mod-tag">Escribir →</span>
       </div>
     </div>
   </div>
@@ -962,6 +977,60 @@ a.bk { pointer-events:auto; }
   </div>
 </div>
 
+<!-- CONTACTO -->
+<div id="contacto" class="page">
+  <div class="inner" style="max-width:760px;">
+    <button class="back-btn" data-page="modulos">← Volver</button>
+    <div class="label">08 — Contacto</div>
+    <h2 class="titulo">Escríbele al Autor</h2>
+    <p style="color:#555;font-size:15px;margin-top:8px;font-weight:300;max-width:640px;line-height:1.7;">
+      ¿Una pregunta, una discrepancia bien argumentada, una propuesta de colaboración, o quieres traer la <strong style="color:#1a1a1a;">Masterclass de Batalla Cultural</strong> a tu empresa o comunidad? Escribe sin pedir permiso. Nicolás responde personalmente.
+    </p>
+
+    <form
+      name="contacto-nopidopermiso"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      id="form-contacto"
+      style="margin-top:36px;background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:36px;"
+    >
+      <!-- Netlify: identificador del formulario y honeypot -->
+      <input type="hidden" name="form-name" value="contacto-nopidopermiso">
+      <p style="display:none;"><label>No llenar: <input name="bot-field"></label></p>
+
+      <div style="margin-bottom:18px;">
+        <label for="c-nombre" class="form-label">Nombre</label>
+        <input type="text" id="c-nombre" name="nombre" required class="form-input" placeholder="Tu nombre completo">
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <label for="c-correo" class="form-label">Correo</label>
+        <input type="email" id="c-correo" name="correo" required class="form-input" placeholder="tu@correo.com">
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <label for="c-asunto" class="form-label">Asunto</label>
+        <input type="text" id="c-asunto" name="asunto" required class="form-input" placeholder="¿De qué quieres hablar?">
+      </div>
+
+      <div style="margin-bottom:24px;">
+        <label for="c-mensaje" class="form-label">Mensaje</label>
+        <textarea id="c-mensaje" name="mensaje" required class="form-input" rows="6" placeholder="Escribe tu mensaje aquí. Directo. Sin pedir permiso."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-naranja" id="btn-enviar-contacto" style="width:100%;padding:14px;font-size:15px;">Enviar mensaje</button>
+    </form>
+
+    <div id="contacto-exito" style="display:none;margin-top:24px;background:#dedad3;border:1px solid var(--naranja);border-radius:14px;padding:36px;text-align:center;">
+      <div style="font-size:44px;margin-bottom:12px;">📩</div>
+      <div style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;color:var(--naranja);margin-bottom:8px;">Mensaje enviado</div>
+      <p style="font-size:15px;color:#444;line-height:1.7;">Nicolás te responde pronto — sin pedir permiso.</p>
+    </div>
+
+  </div>
+</div>
+
 <script>
 // ═══════════════════════════════════════════════════════════════════════════
 // NAVEGACIÓN ENTRE PÁGINAS
@@ -1275,6 +1344,43 @@ document.addEventListener('click', function(e) {
 
 // Render inicial del test (estará oculto hasta navegar al autoexamen)
 mostrarTest();
+
+// ═══════════════════════════════════════════════════════════════════════════
+// FORMULARIO DE CONTACTO (Netlify Forms)
+// ═══════════════════════════════════════════════════════════════════════════
+
+var formContacto = document.getElementById('form-contacto');
+if (formContacto) {
+  formContacto.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('btn-enviar-contacto');
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    var formData = new FormData(formContacto);
+    var params = new URLSearchParams();
+    formData.forEach(function(v, k) { params.append(k, v); });
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: params.toString()
+    })
+    .then(function(response) {
+      if (response.ok) {
+        formContacto.style.display = 'none';
+        document.getElementById('contacto-exito').style.display = 'block';
+      } else {
+        throw new Error('Error del servidor');
+      }
+    })
+    .catch(function() {
+      btn.disabled = false;
+      btn.textContent = 'Enviar mensaje';
+      alert('Hubo un error al enviar el mensaje. Intenta de nuevo o escribe directamente a nicolasfernandezgiraldo@hotmail.com');
+    });
+  });
+}
 </script>
 
 </body>
