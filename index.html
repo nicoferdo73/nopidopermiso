@@ -744,28 +744,35 @@ textarea.form-input{resize:vertical;min-height:120px;}
       <div id="ana-upload">
         <div style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:28px;margin-bottom:20px;">
           <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:3px;margin-bottom:8px;">MODO 3 — ANÁLISIS DOCUMENTAL</div>
-          <h3 style="font-family:Bebas Neue,sans-serif;font-size:24px;letter-spacing:1px;color:#1a1a1a;margin-bottom:10px;">Sube una imagen para analizar</h3>
-          <p style="font-size:14px;color:#555;line-height:1.7;">Un titular, un tuit, un anuncio de política pública, un gráfico económico, una noticia. Milton Javier te dará su <strong style="color:#1a1a1a;">diagnóstico libertario</strong> en las 3 formas habituales.</p>
-          <p style="font-size:12px;color:#888;margin-top:10px;">Formatos: PNG, JPG, WEBP · Máximo 5 MB</p>
+          <h3 style="font-family:Bebas Neue,sans-serif;font-size:24px;letter-spacing:1px;color:#1a1a1a;margin-bottom:10px;">Sube una imagen o PDF para analizar</h3>
+          <p style="font-size:14px;color:#555;line-height:1.7;">Un titular, un tuit, un anuncio de política pública, un gráfico económico, una noticia, o un documento completo en PDF. Milton Javier te dará su <strong style="color:#1a1a1a;">diagnóstico libertario</strong> en las 3 formas habituales.</p>
+          <p style="font-size:12px;color:#888;margin-top:10px;">Formatos: PNG, JPG, PDF · <strong style="color:#1a1a1a;">Máximo 5 MB</strong> · PDFs máximo 20 páginas</p>
         </div>
 
         <div id="ana-drop" style="display:block;background:#dedad3;border:2px dashed #bfb9b0;border-radius:14px;padding:44px 20px;text-align:center;cursor:pointer;transition:all 0.2s;">
           <div style="pointer-events:none;">
             <div style="font-size:44px;margin-bottom:12px;">📎</div>
-            <div style="font-family:Bebas Neue,sans-serif;font-size:20px;letter-spacing:1px;color:#1a1a1a;margin-bottom:6px;">Sube o pega una imagen</div>
-            <div style="font-size:13px;color:#666;margin-bottom:4px;">Click para elegir un archivo · Arrastra la imagen · O <strong style="color:#1a1a1a;">pega con Ctrl+V</strong></div>
-            <div style="font-size:11px;color:#999;margin-top:10px;line-height:1.5;">📌 Para pantallazos en Windows usa <strong>Win+Shift+S</strong> (Snipping Tool)<br>El PrntScrn a secas no siempre carga el portapapeles — abre Paint, pega ahí, copia de nuevo, y luego pega aquí</div>
+            <div style="font-family:Bebas Neue,sans-serif;font-size:20px;letter-spacing:1px;color:#1a1a1a;margin-bottom:6px;">Sube o pega tu archivo</div>
+            <div style="font-size:13px;color:#666;margin-bottom:4px;">Click para elegir · Arrastra el archivo · O <strong style="color:#1a1a1a;">pega una imagen con Ctrl+V</strong></div>
+            <div style="font-size:11px;color:#999;margin-top:10px;line-height:1.5;">Formatos aceptados: <strong>PNG, JPG, PDF</strong> · Máximo 5 MB<br>📌 Para pantallazos en Windows usa <strong>Win+Shift+S</strong> (Snipping Tool)</div>
           </div>
-          <input type="file" id="ana-file" accept="image/png,image/jpeg,image/jpg,image/webp,image/gif" style="display:none;">
+          <input type="file" id="ana-file" accept="image/png,image/jpeg,image/jpg,application/pdf" style="display:none;">
         </div>
 
         <div id="ana-preview" style="display:none;margin-top:20px;background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:20px;">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
-            <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:2px;">IMAGEN CARGADA</div>
+            <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:2px;">ARCHIVO CARGADO</div>
             <button id="ana-cambiar" style="background:none;border:1px solid #bfb9b0;color:#555;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;font-family:DM Sans,sans-serif;">Cambiar</button>
           </div>
-          <img id="ana-img" style="max-width:100%;max-height:340px;border-radius:8px;border:1px solid #bfb9b0;display:block;margin:0 auto;">
-          <button class="btn btn-naranja" id="ana-analizar" style="width:100%;margin-top:18px;padding:14px;font-size:15px;">Analizar imagen</button>
+          <div id="ana-preview-img" style="display:none;">
+            <img id="ana-img" style="max-width:100%;max-height:340px;border-radius:8px;border:1px solid #bfb9b0;display:block;margin:0 auto;">
+          </div>
+          <div id="ana-preview-pdf" style="display:none;text-align:center;padding:24px;background:#c8c3bb;border-radius:8px;border:1px solid #bfb9b0;">
+            <div style="font-size:48px;margin-bottom:10px;">📄</div>
+            <div id="ana-pdf-nombre" style="font-family:Bebas Neue,sans-serif;font-size:18px;letter-spacing:1px;color:#1a1a1a;margin-bottom:4px;"></div>
+            <div id="ana-pdf-info" style="font-size:12px;color:#666;"></div>
+          </div>
+          <button class="btn btn-naranja" id="ana-analizar" style="width:100%;margin-top:18px;padding:14px;font-size:15px;">Analizar</button>
         </div>
       </div>
 
@@ -773,9 +780,13 @@ textarea.form-input{resize:vertical;min-height:120px;}
       <div id="ana-resultado" style="display:none;">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px;">
           <div style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:2px;">DIAGNÓSTICO LIBERTARIO</div>
-          <button id="ana-nueva" style="background:var(--naranja);color:#fff;border:none;padding:7px 16px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;font-family:DM Sans,sans-serif;">Analizar otra imagen</button>
+          <button id="ana-nueva" style="background:var(--naranja);color:#fff;border:none;padding:7px 16px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;font-family:DM Sans,sans-serif;">Analizar otro archivo</button>
         </div>
-        <img id="ana-img-result" style="max-width:100%;max-height:280px;border-radius:8px;border:1px solid #bfb9b0;display:block;margin:0 auto 20px;">
+        <img id="ana-img-result" style="max-width:100%;max-height:280px;border-radius:8px;border:1px solid #bfb9b0;display:none;margin:0 auto 20px;">
+        <div id="ana-pdf-result" style="display:none;text-align:center;padding:20px;background:#dedad3;border:1px solid #bfb9b0;border-radius:8px;margin-bottom:20px;">
+          <div style="font-size:36px;margin-bottom:6px;">📄</div>
+          <div id="ana-pdf-result-nombre" style="font-family:Bebas Neue,sans-serif;font-size:16px;letter-spacing:1px;color:#1a1a1a;"></div>
+        </div>
         <div id="ana-respuestas"></div>
       </div>
     </div>
@@ -1500,54 +1511,92 @@ document.getElementById('deb-reiniciar').addEventListener('click', resetearDebat
 
 // ─── MODO 3: ANALIZAR ───
 
-var anaImagenBase64 = null;
-var anaImagenTipo = null;
+var anaArchivoBase64 = null;
+var anaArchivoTipo = null;      // 'image/png', 'image/jpeg', 'application/pdf'
+var anaArchivoNombre = null;
+var anaArchivoTamano = null;
+var anaCategoria = null;        // 'image' | 'pdf'
 
 function resetearAnalisis() {
-  anaImagenBase64 = null;
-  anaImagenTipo = null;
+  anaArchivoBase64 = null;
+  anaArchivoTipo = null;
+  anaArchivoNombre = null;
+  anaArchivoTamano = null;
+  anaCategoria = null;
   document.getElementById('ana-upload').style.display = 'block';
   document.getElementById('ana-drop').style.display = 'block';
   document.getElementById('ana-preview').style.display = 'none';
+  document.getElementById('ana-preview-img').style.display = 'none';
+  document.getElementById('ana-preview-pdf').style.display = 'none';
   document.getElementById('ana-resultado').style.display = 'none';
+  document.getElementById('ana-img-result').style.display = 'none';
+  document.getElementById('ana-pdf-result').style.display = 'none';
   document.getElementById('ana-file').value = '';
   var aviso = document.getElementById('paste-aviso');
   if (aviso) aviso.style.display = 'none';
 }
 
-function cargarImagen(file) {
+function formatearTamano(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+  return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+}
+
+function cargarArchivo(file) {
   if (!file) return;
-  if (!file.type.startsWith('image/')) {
-    alert('El archivo debe ser una imagen (PNG, JPG, WEBP o GIF).');
+
+  var esImagen = file.type.startsWith('image/');
+  var esPdf = file.type === 'application/pdf';
+
+  if (!esImagen && !esPdf) {
+    alert('Formato no soportado. Sube una imagen (PNG, JPG) o un PDF.');
     return;
   }
+
   if (file.size > 5 * 1024 * 1024) {
-    alert('La imagen no puede pesar más de 5 MB.');
+    alert('El archivo pesa ' + formatearTamano(file.size) + '. El máximo es 5 MB. Por favor comprime el archivo o sube uno más liviano.');
     return;
   }
+
   var reader = new FileReader();
   reader.onload = function(e) {
-    anaImagenBase64 = e.target.result.split(',')[1]; // solo la parte base64
-    anaImagenTipo = file.type;
-    document.getElementById('ana-img').src = e.target.result;
+    anaArchivoBase64 = e.target.result.split(',')[1];
+    anaArchivoTipo = file.type;
+    anaArchivoNombre = file.name;
+    anaArchivoTamano = file.size;
+    anaCategoria = esImagen ? 'image' : 'pdf';
+
+    if (esImagen) {
+      document.getElementById('ana-img').src = e.target.result;
+      document.getElementById('ana-preview-img').style.display = 'block';
+      document.getElementById('ana-preview-pdf').style.display = 'none';
+    } else {
+      document.getElementById('ana-pdf-nombre').textContent = file.name;
+      document.getElementById('ana-pdf-info').textContent = formatearTamano(file.size) + ' · Se enviará a Milton Javier para análisis';
+      document.getElementById('ana-preview-pdf').style.display = 'block';
+      document.getElementById('ana-preview-img').style.display = 'none';
+    }
     document.getElementById('ana-preview').style.display = 'block';
     document.getElementById('ana-drop').style.display = 'none';
   };
   reader.readAsDataURL(file);
 }
 
+// Alias por compatibilidad con la lógica de paste (que carga imágenes)
+function cargarImagen(file) { cargarArchivo(file); }
+
 document.getElementById('ana-file').addEventListener('change', function(e) {
-  cargarImagen(e.target.files[0]);
+  cargarArchivo(e.target.files[0]);
 });
 
 var dropZone = document.getElementById('ana-drop');
 
 // Click en el drop zone abre el file picker
 dropZone.addEventListener('click', function(e) {
-  // Solo si el click NO fue en el input mismo (evitar loop)
   if (e.target.id === 'ana-file') return;
   document.getElementById('ana-file').click();
 });
+
 dropZone.addEventListener('dragover', function(e) {
   e.preventDefault();
   dropZone.classList.add('dragover');
@@ -1558,14 +1607,15 @@ dropZone.addEventListener('dragleave', function() {
 dropZone.addEventListener('drop', function(e) {
   e.preventDefault();
   dropZone.classList.remove('dragover');
-  if (e.dataTransfer.files.length > 0) cargarImagen(e.dataTransfer.files[0]);
+  if (e.dataTransfer.files.length > 0) cargarArchivo(e.dataTransfer.files[0]);
 });
 
 document.getElementById('ana-cambiar').addEventListener('click', function() {
   document.getElementById('ana-preview').style.display = 'none';
   document.getElementById('ana-drop').style.display = 'block';
   document.getElementById('ana-file').value = '';
-  anaImagenBase64 = null;
+  anaArchivoBase64 = null;
+  anaCategoria = null;
 });
 
 // Paste global: si el usuario está en el Modo Analizar y pega una imagen, cargarla
@@ -1629,7 +1679,7 @@ document.getElementById('ana-nueva').addEventListener('click', function() {
 });
 
 document.getElementById('ana-analizar').addEventListener('click', async function() {
-  if (!anaImagenBase64) return;
+  if (!anaArchivoBase64) return;
   var btn = document.getElementById('ana-analizar');
   btn.disabled = true; btn.textContent = 'Analizando...';
 
@@ -1639,8 +1689,10 @@ document.getElementById('ana-analizar').addEventListener('click', async function
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         modo: 'analizar',
-        imagenBase64: anaImagenBase64,
-        imagenTipo: anaImagenTipo
+        categoria: anaCategoria,        // 'image' | 'pdf'
+        archivoBase64: anaArchivoBase64,
+        archivoTipo: anaArchivoTipo,
+        archivoNombre: anaArchivoNombre
       })
     });
     var data = await response.json();
@@ -1649,7 +1701,17 @@ document.getElementById('ana-analizar').addEventListener('click', async function
       throw new Error('Respuesta incompleta');
     }
 
-    document.getElementById('ana-img-result').src = document.getElementById('ana-img').src;
+    // Mostrar el archivo cargado en el resultado
+    if (anaCategoria === 'image') {
+      document.getElementById('ana-img-result').src = document.getElementById('ana-img').src;
+      document.getElementById('ana-img-result').style.display = 'block';
+      document.getElementById('ana-pdf-result').style.display = 'none';
+    } else {
+      document.getElementById('ana-pdf-result-nombre').textContent = anaArchivoNombre;
+      document.getElementById('ana-pdf-result').style.display = 'block';
+      document.getElementById('ana-img-result').style.display = 'none';
+    }
+
     document.getElementById('ana-respuestas').innerHTML =
       '<div class="resp-bloque">' +
         '<div class="resp-num"><div class="resp-num-dot" style="background:var(--naranja);"></div>1. RESPUESTA CONCRETA</div>' +
@@ -1667,10 +1729,10 @@ document.getElementById('ana-analizar').addEventListener('click', async function
     document.getElementById('ana-upload').style.display = 'none';
     document.getElementById('ana-resultado').style.display = 'block';
   } catch (e) {
-    alert('Error al analizar la imagen. Intenta de nuevo.');
+    alert('Error al analizar el archivo. Intenta de nuevo.');
   }
 
-  btn.disabled = false; btn.textContent = 'Analizar imagen';
+  btn.disabled = false; btn.textContent = 'Analizar';
 });
 
 // ═══════════════════════════════════════════════════════════════════════════
