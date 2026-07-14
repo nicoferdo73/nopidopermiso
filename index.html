@@ -751,8 +751,9 @@ textarea.form-input{resize:vertical;min-height:120px;}
 
         <label for="ana-file" id="ana-drop" style="display:block;background:#dedad3;border:2px dashed #bfb9b0;border-radius:14px;padding:44px 20px;text-align:center;cursor:pointer;transition:all 0.2s;">
           <div style="font-size:44px;margin-bottom:12px;">📎</div>
-          <div style="font-family:Bebas Neue,sans-serif;font-size:20px;letter-spacing:1px;color:#1a1a1a;margin-bottom:6px;">Click para subir una imagen</div>
-          <div style="font-size:12px;color:#888;">o arrastra el archivo hasta aquí</div>
+          <div style="font-family:Bebas Neue,sans-serif;font-size:20px;letter-spacing:1px;color:#1a1a1a;margin-bottom:6px;">Sube o pega una imagen</div>
+          <div style="font-size:13px;color:#666;margin-bottom:4px;">Click para elegir un archivo · Arrastra la imagen aquí · O simplemente <strong style="color:#1a1a1a;">pega con Ctrl+V</strong></div>
+          <div style="font-size:11px;color:#999;margin-top:8px;">Ideal para pantallazos — copia con Print Screen o Snipping Tool y pega directo aquí</div>
           <input type="file" id="ana-file" accept="image/png,image/jpeg,image/jpg,image/webp,image/gif" style="display:none;">
         </label>
 
@@ -1553,6 +1554,25 @@ document.getElementById('ana-cambiar').addEventListener('click', function() {
   document.getElementById('ana-drop').style.display = 'block';
   document.getElementById('ana-file').value = '';
   anaImagenBase64 = null;
+});
+
+// Paste global: si el usuario está en el Modo Analizar y pega una imagen, cargarla
+document.addEventListener('paste', function(e) {
+  // Solo actuar si el Modo Analizar está visible y el upload está activo (no ya con imagen cargada o resultado mostrado)
+  var analizarVisible = document.getElementById('mj-analizar').style.display !== 'none';
+  var uploadVisible = document.getElementById('ana-upload').style.display !== 'none';
+  var dropVisible = document.getElementById('ana-drop').style.display !== 'none';
+  if (!analizarVisible || !uploadVisible || !dropVisible) return;
+
+  var items = (e.clipboardData || e.originalEvent.clipboardData).items;
+  for (var i = 0; i < items.length; i++) {
+    if (items[i].type.indexOf('image') === 0) {
+      e.preventDefault();
+      var file = items[i].getAsFile();
+      cargarImagen(file);
+      break;
+    }
+  }
 });
 
 document.getElementById('ana-nueva').addEventListener('click', function() {
