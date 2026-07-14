@@ -205,6 +205,12 @@ a.bk { pointer-events:auto; }
 .form-input::placeholder{color:#999;}
 textarea.form-input{resize:vertical;min-height:120px;}
 
+/* MILTON JAVIER — Selector de modos y sub-UIs */
+.mj-modo-card:hover,.deb-rol-card:hover{border-color:var(--naranja)!important;transform:translateY(-2px);}
+.mj-modo-card:hover .mod-tag,.deb-rol-card:hover .mod-tag{background:rgba(232,93,0,0.15);}
+#ana-drop:hover{border-color:var(--naranja);background:#e4dfd6;}
+#ana-drop.dragover{border-color:var(--naranja);background:rgba(232,93,0,0.08);}
+
 .art-row { display:flex;align-items:center;gap:16px;padding:14px 18px;background:#dedad3;border:1px solid #bfb9b0;border-radius:8px;margin-bottom:2px;text-decoration:none;color:inherit;transition:all 0.2s;cursor:pointer;position:relative;z-index:1; }
 .art-row * { pointer-events:none; }
 .art-row { pointer-events:auto; }
@@ -592,38 +598,177 @@ textarea.form-input{resize:vertical;min-height:120px;}
     <button class="back-btn" data-page="modulos">← Volver</button>
     <div class="label">02 — Milton Javier IA</div>
     <h2 class="titulo">Milton Javier</h2>
-    <p style="color:var(--muted);font-size:15px;margin-top:8px;font-weight:300;max-width:640px;">Milton Javier te saluda! Escribe cualquier pregunta sobre economía, política, libertad o cualquier argumento que quieras debatir. Recibirás <strong style="color:var(--blanco);">tres (3) respuestas simultáneas</strong> al mejor estilo Friedman, Rothbard, Von Mises, Hayek o Javier — los gigantes de las ideas de la libertad.</p>
 
-    <div style="display:flex;align-items:center;gap:24px;margin-top:28px;margin-bottom:8px;flex-wrap:wrap;">
+    <div style="display:flex;align-items:center;gap:24px;margin-top:20px;margin-bottom:32px;flex-wrap:wrap;">
       <img src="/milton-javier.png" alt="Milton Javier" style="width:110px;border-radius:16px;border:2px solid var(--naranja);flex-shrink:0;box-shadow:0 4px 24px rgba(232,93,0,0.25);">
-      <div>
+      <div style="flex:1;min-width:220px;">
         <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;">Milton Javier</h3>
         <p style="font-size:13px;color:var(--muted);line-height:1.6;">Tu asistente virtual de ideas libertarias. Habla como Milei, piensa como Friedman y no le da papaya a nadie.</p>
       </div>
     </div>
-    <div class="chat-box" style="margin-top:16px;">
-      <div class="chat-top">
-        <div class="dot" style="background:#ff5f57;"></div>
-        <div class="dot" style="background:#ffbd2e;"></div>
-        <div class="dot" style="background:#28c840;"></div>
-        <span class="chat-title-bar">Milton Javier — Escuela Austriaca · Friedman · Sowell · Kaiser · Rallo · Laje · Milei · Benegas Lynch</span>
-      </div>
-      <div style="display:flex;gap:16px;padding:12px 18px;border-bottom:1px solid var(--gris-borde);background:var(--negro);flex-wrap:wrap;">
-        <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:50%;background:var(--naranja);flex-shrink:0;"></div><span style="font-size:11px;color:var(--muted);font-weight:600;letter-spacing:0.5px;">1. CONCRETA</span></div>
-        <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:50%;background:#888;flex-shrink:0;"></div><span style="font-size:11px;color:var(--muted);font-weight:600;letter-spacing:0.5px;">2. CON EVIDENCIA LIBERAL</span></div>
-        <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:50%;background:#ddd;flex-shrink:0;"></div><span style="font-size:11px;color:var(--muted);font-weight:600;letter-spacing:0.5px;">3. CONFRONTACIONAL</span></div>
-      </div>
-      <div id="msgs" style="padding:20px;min-height:300px;max-height:520px;overflow-y:auto;display:flex;flex-direction:column;gap:20px;">
-        <div class="mw ia">
-          <div class="ml org">Milton Javier</div>
-          <div class="mb ia">¡Milton Javier te saluda! Escribe cualquier pregunta sobre economía, política, libertad o cualquier argumento que quieras debatir. Recibirás 3 respuestas simultáneas al mejor estilo Friedman, Rothbard, Von Mises, Hayek o Javier — los gigantes de las ideas de la libertad.</div>
+
+    <!-- ═══ SELECTOR DE MODOS ═══ -->
+    <div id="mj-selector">
+      <p style="color:#555;font-size:15px;margin-bottom:24px;font-weight:300;">Elige qué quieres hacer hoy con Milton Javier:</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
+
+        <div class="mj-modo-card" data-modo="preguntar" style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:32px;cursor:pointer;transition:all 0.2s;">
+          <div style="font-size:34px;margin-bottom:12px;">💬</div>
+          <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:2px;margin-bottom:8px;">MODO 1</div>
+          <h3 style="font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:1px;color:#1a1a1a;margin-bottom:10px;">Preguntar</h3>
+          <p style="font-size:13px;color:#555;line-height:1.6;margin-bottom:16px;">Hazle una pregunta a Milton Javier. Recibirás <strong style="color:#1a1a1a;">tres respuestas</strong>: concreta, con evidencia liberal, y confrontacional al estilo Milei.</p>
+          <span class="mod-tag">Entrar →</span>
         </div>
-      </div>
-      <div class="chat-input-area">
-        <textarea id="cinput" placeholder="Ej: ¿El banco central es necesario? / El salario mínimo protege a los trabajadores / ¿Por qué el mercado libre es mejor que el Estado?"></textarea>
-        <button id="csend">Enviar</button>
+
+        <div class="mj-modo-card" data-modo="debatir" style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:32px;cursor:pointer;transition:all 0.2s;">
+          <div style="font-size:34px;margin-bottom:12px;">⚔️</div>
+          <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:2px;margin-bottom:8px;">MODO 2</div>
+          <h3 style="font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:1px;color:#1a1a1a;margin-bottom:10px;">Debatir</h3>
+          <p style="font-size:13px;color:#555;line-height:1.6;margin-bottom:16px;">Escoge tu posición — <strong style="color:#1a1a1a;">libertaria o colectivista</strong> — y Milton Javier asume la contraria. Entrena tus argumentos contra el mejor sparring.</p>
+          <span class="mod-tag">Entrar →</span>
+        </div>
+
+        <div class="mj-modo-card" data-modo="analizar" style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:32px;cursor:pointer;transition:all 0.2s;">
+          <div style="font-size:34px;margin-bottom:12px;">📎</div>
+          <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:2px;margin-bottom:8px;">MODO 3</div>
+          <h3 style="font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:1px;color:#1a1a1a;margin-bottom:10px;">Analizar</h3>
+          <p style="font-size:13px;color:#555;line-height:1.6;margin-bottom:16px;">Sube una imagen o pantallazo — un titular, un tuit, un anuncio, un gráfico. Milton Javier te da su <strong style="color:#1a1a1a;">diagnóstico libertario</strong> en tres formas.</p>
+          <span class="mod-tag">Entrar →</span>
+        </div>
+
       </div>
     </div>
+
+    <!-- ═══ MODO 1: PREGUNTAR ═══ -->
+    <div id="mj-preguntar" style="display:none;">
+      <button class="back-btn" id="mj-back-preguntar" style="margin-bottom:20px;">← Cambiar de modo</button>
+      <div class="chat-box">
+        <div class="chat-top">
+          <div class="dot" style="background:#ff5f57;"></div>
+          <div class="dot" style="background:#ffbd2e;"></div>
+          <div class="dot" style="background:#28c840;"></div>
+          <span class="chat-title-bar">Modo Preguntar — 3 respuestas simultáneas</span>
+        </div>
+        <div style="display:flex;gap:16px;padding:12px 18px;border-bottom:1px solid #bfb9b0;background:#c8c3bb;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:50%;background:var(--naranja);flex-shrink:0;"></div><span style="font-size:11px;color:#555;font-weight:600;letter-spacing:0.5px;">1. CONCRETA</span></div>
+          <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:50%;background:#888;flex-shrink:0;"></div><span style="font-size:11px;color:#555;font-weight:600;letter-spacing:0.5px;">2. CON EVIDENCIA LIBERAL</span></div>
+          <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:50%;background:#333;flex-shrink:0;"></div><span style="font-size:11px;color:#555;font-weight:600;letter-spacing:0.5px;">3. CONFRONTACIONAL</span></div>
+        </div>
+        <div id="msgs" style="padding:20px;min-height:300px;max-height:520px;overflow-y:auto;display:flex;flex-direction:column;gap:20px;">
+          <div class="mw ia">
+            <div class="ml org">Milton Javier</div>
+            <div class="mb ia">¡Milton Javier te saluda! Escribe cualquier pregunta sobre economía, política, libertad o cualquier argumento que quieras debatir. Recibirás 3 respuestas simultáneas al mejor estilo Friedman, Rothbard, Von Mises, Hayek o Javier — los gigantes de las ideas de la libertad.</div>
+          </div>
+        </div>
+        <div class="chat-input-area">
+          <textarea id="cinput" placeholder="Ej: ¿El banco central es necesario? / El salario mínimo protege a los trabajadores / ¿Por qué el mercado libre es mejor que el Estado?"></textarea>
+          <button id="csend">Enviar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ MODO 2: DEBATIR ═══ -->
+    <div id="mj-debatir" style="display:none;">
+      <button class="back-btn" id="mj-back-debatir" style="margin-bottom:20px;">← Cambiar de modo</button>
+
+      <!-- Selector de rol -->
+      <div id="deb-selector">
+        <div style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:28px;margin-bottom:20px;">
+          <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:3px;margin-bottom:8px;">PASO 1</div>
+          <h3 style="font-family:Bebas Neue,sans-serif;font-size:24px;letter-spacing:1px;color:#1a1a1a;margin-bottom:10px;">Elige tu posición</h3>
+          <p style="font-size:14px;color:#555;line-height:1.7;">Milton Javier asumirá la contraria. Tú abres el debate con tu primer argumento.</p>
+          <p style="font-size:12px;color:#888;line-height:1.6;margin-top:10px;font-style:italic;">Este es un ejercicio de entrenamiento. Cuando escojas "colectivista", Milton Javier fingirá defender esa posición para que sea un buen sparring — no son sus ideas reales.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;">
+          <div class="deb-rol-card" data-rol="libertario" style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:28px;cursor:pointer;transition:all 0.2s;">
+            <div style="font-size:32px;margin-bottom:10px;">🗽</div>
+            <h4 style="font-family:Bebas Neue,sans-serif;font-size:20px;letter-spacing:1px;color:#1a1a1a;margin-bottom:8px;">Yo soy libertario</h4>
+            <p style="font-size:13px;color:#555;line-height:1.6;">Milton Javier debate como colectivista. Tú defiendes propiedad, mercado libre e individuo.</p>
+          </div>
+          <div class="deb-rol-card" data-rol="colectivista" style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:28px;cursor:pointer;transition:all 0.2s;">
+            <div style="font-size:32px;margin-bottom:10px;">✊</div>
+            <h4 style="font-family:Bebas Neue,sans-serif;font-size:20px;letter-spacing:1px;color:#1a1a1a;margin-bottom:8px;">Yo soy colectivista</h4>
+            <p style="font-size:13px;color:#555;line-height:1.6;">Milton Javier debate como libertario. Tú defiendes Estado, redistribución y colectivo.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat del debate -->
+      <div id="deb-chat" style="display:none;">
+        <div id="deb-banner" style="background:rgba(232,93,0,0.08);border:1px solid rgba(232,93,0,0.25);border-left:3px solid var(--naranja);border-radius:8px;padding:12px 18px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+          <div style="font-size:13px;color:#1a1a1a;"><strong id="deb-banner-txt"></strong></div>
+          <button id="deb-terminar" style="background:none;border:1px solid #bfb9b0;color:#555;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;font-family:DM Sans,sans-serif;">Terminar debate</button>
+        </div>
+
+        <div class="chat-box">
+          <div class="chat-top">
+            <div class="dot" style="background:#ff5f57;"></div>
+            <div class="dot" style="background:#ffbd2e;"></div>
+            <div class="dot" style="background:#28c840;"></div>
+            <span class="chat-title-bar">Modo Debate — abre tú con el primer argumento</span>
+          </div>
+          <div id="deb-msgs" style="padding:20px;min-height:300px;max-height:520px;overflow-y:auto;display:flex;flex-direction:column;gap:14px;"></div>
+          <div class="chat-input-area">
+            <textarea id="deb-input" placeholder="Escribe tu argumento y presiona Enviar..."></textarea>
+            <button id="deb-send">Enviar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resumen final del debate -->
+      <div id="deb-resumen" style="display:none;">
+        <div style="background:#dedad3;border:1px solid var(--naranja);border-radius:14px;padding:36px;">
+          <div style="font-size:44px;margin-bottom:12px;">⚖️</div>
+          <div style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:3px;margin-bottom:8px;">VEREDICTO</div>
+          <h3 style="font-family:Bebas Neue,sans-serif;font-size:24px;letter-spacing:1px;color:#1a1a1a;margin-bottom:16px;">Debate terminado</h3>
+          <div id="deb-resumen-txt" style="font-size:14px;color:#333;line-height:1.7;"></div>
+          <button class="btn btn-naranja" id="deb-reiniciar" style="margin-top:24px;">Iniciar otro debate</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ MODO 3: ANALIZAR ═══ -->
+    <div id="mj-analizar" style="display:none;">
+      <button class="back-btn" id="mj-back-analizar" style="margin-bottom:20px;">← Cambiar de modo</button>
+
+      <div id="ana-upload">
+        <div style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:28px;margin-bottom:20px;">
+          <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:3px;margin-bottom:8px;">MODO 3 — ANÁLISIS DOCUMENTAL</div>
+          <h3 style="font-family:Bebas Neue,sans-serif;font-size:24px;letter-spacing:1px;color:#1a1a1a;margin-bottom:10px;">Sube una imagen para analizar</h3>
+          <p style="font-size:14px;color:#555;line-height:1.7;">Un titular, un tuit, un anuncio de política pública, un gráfico económico, una noticia. Milton Javier te dará su <strong style="color:#1a1a1a;">diagnóstico libertario</strong> en las 3 formas habituales.</p>
+          <p style="font-size:12px;color:#888;margin-top:10px;">Formatos: PNG, JPG, WEBP · Máximo 5 MB</p>
+        </div>
+
+        <label for="ana-file" id="ana-drop" style="display:block;background:#dedad3;border:2px dashed #bfb9b0;border-radius:14px;padding:44px 20px;text-align:center;cursor:pointer;transition:all 0.2s;">
+          <div style="font-size:44px;margin-bottom:12px;">📎</div>
+          <div style="font-family:Bebas Neue,sans-serif;font-size:20px;letter-spacing:1px;color:#1a1a1a;margin-bottom:6px;">Click para subir una imagen</div>
+          <div style="font-size:12px;color:#888;">o arrastra el archivo hasta aquí</div>
+          <input type="file" id="ana-file" accept="image/png,image/jpeg,image/jpg,image/webp,image/gif" style="display:none;">
+        </label>
+
+        <div id="ana-preview" style="display:none;margin-top:20px;background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:20px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+            <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:2px;">IMAGEN CARGADA</div>
+            <button id="ana-cambiar" style="background:none;border:1px solid #bfb9b0;color:#555;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;font-family:DM Sans,sans-serif;">Cambiar</button>
+          </div>
+          <img id="ana-img" style="max-width:100%;max-height:340px;border-radius:8px;border:1px solid #bfb9b0;display:block;margin:0 auto;">
+          <button class="btn btn-naranja" id="ana-analizar" style="width:100%;margin-top:18px;padding:14px;font-size:15px;">Analizar imagen</button>
+        </div>
+      </div>
+
+      <!-- Resultado del análisis -->
+      <div id="ana-resultado" style="display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px;">
+          <div style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:2px;">DIAGNÓSTICO LIBERTARIO</div>
+          <button id="ana-nueva" style="background:var(--naranja);color:#fff;border:none;padding:7px 16px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;font-family:DM Sans,sans-serif;">Analizar otra imagen</button>
+        </div>
+        <img id="ana-img-result" style="max-width:100%;max-height:280px;border-radius:8px;border:1px solid #bfb9b0;display:block;margin:0 auto 20px;">
+        <div id="ana-respuestas"></div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -1046,6 +1191,7 @@ function irA(id) {
     window.scrollTo(0, 0);
     cerrarMenu(); // por si estaba abierto en mobile
     if (id === 'autoexamen') mostrarTest();
+    if (id === 'sparring') inicializarMJ();
   }
 }
 
@@ -1088,14 +1234,45 @@ document.addEventListener('click', function(e) {
 });
 
 // ═══════════════════════════════════════════════════════════════════════════
-// SPARRING — MILTON JAVIER IA
+// SPARRING — MILTON JAVIER IA (3 modos: preguntar, debatir, analizar)
 // ═══════════════════════════════════════════════════════════════════════════
+
+// ─── Selector de modos ───
+var mjSelector = document.getElementById('mj-selector');
+var mjPreguntar = document.getElementById('mj-preguntar');
+var mjDebatir = document.getElementById('mj-debatir');
+var mjAnalizar = document.getElementById('mj-analizar');
+
+function mostrarModoMJ(modo) {
+  mjSelector.style.display = 'none';
+  mjPreguntar.style.display = 'none';
+  mjDebatir.style.display = 'none';
+  mjAnalizar.style.display = 'none';
+  if (modo === 'preguntar') mjPreguntar.style.display = 'block';
+  else if (modo === 'debatir') { mjDebatir.style.display = 'block'; resetearDebate(); }
+  else if (modo === 'analizar') { mjAnalizar.style.display = 'block'; resetearAnalisis(); }
+  else mjSelector.style.display = 'block';
+}
+
+document.querySelectorAll('.mj-modo-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    mostrarModoMJ(card.getAttribute('data-modo'));
+  });
+});
+document.getElementById('mj-back-preguntar').addEventListener('click', function() { mostrarModoMJ(null); });
+document.getElementById('mj-back-debatir').addEventListener('click', function() { mostrarModoMJ(null); });
+document.getElementById('mj-back-analizar').addEventListener('click', function() { mostrarModoMJ(null); });
+
+// Cuando el usuario navega a sparring desde otro lado, mostrar el selector
+function inicializarMJ() { mostrarModoMJ(null); }
+
+// ─── MODO 1: PREGUNTAR (llamada al backend) ───
 
 async function llamarIA(pregunta) {
   var response = await fetch('/.netlify/functions/sparring', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ pregunta: pregunta })
+    body: JSON.stringify({ modo: 'preguntar', pregunta: pregunta })
   });
   var data = await response.json();
   if (data.error) throw new Error(data.error + ' | ' + (data.detail || ''));
@@ -1129,7 +1306,7 @@ function addMsgIA(resp) {
       '<div class="resp-texto">' + resp.evidencia + '</div>' +
     '</div>' +
     '<div class="resp-bloque">' +
-      '<div class="resp-num"><div class="resp-num-dot" style="background:#ddd;"></div>3. CONFRONTACIONAL</div>' +
+      '<div class="resp-num"><div class="resp-num-dot" style="background:#333;"></div>3. CONFRONTACIONAL</div>' +
       '<div class="resp-texto">' + resp.confrontacional + '</div>' +
     '</div>';
   cont.appendChild(w);
@@ -1145,17 +1322,17 @@ function addMsgError(msg) {
   cont.scrollTop = cont.scrollHeight;
 }
 
-function showTyping() {
-  var cont = document.getElementById('msgs');
+function showTyping(contId) {
+  var cont = document.getElementById(contId || 'msgs');
   var w = document.createElement('div');
-  w.className = 'mw ia'; w.id = 'typ';
+  w.className = 'mw ia'; w.id = 'typ-' + (contId || 'msgs');
   w.innerHTML = '<div class="ml org">Milton Javier</div><div class="typing"><span></span><span></span><span></span></div>';
   cont.appendChild(w);
   cont.scrollTop = cont.scrollHeight;
 }
 
-function hideTyping() {
-  var t = document.getElementById('typ');
+function hideTyping(contId) {
+  var t = document.getElementById('typ-' + (contId || 'msgs'));
   if (t) t.remove();
 }
 
@@ -1186,6 +1363,237 @@ document.getElementById('cinput').addEventListener('keydown', function(e) {
 document.getElementById('cinput').addEventListener('input', function() {
   this.style.height = 'auto';
   this.style.height = Math.min(this.scrollHeight, 100) + 'px';
+});
+
+// ─── MODO 2: DEBATIR ───
+
+var debRolUsuario = null; // 'libertario' | 'colectivista'
+var debHistorial = []; // [{ role: 'user'|'assistant', content: '...' }]
+
+function resetearDebate() {
+  debRolUsuario = null;
+  debHistorial = [];
+  document.getElementById('deb-selector').style.display = 'block';
+  document.getElementById('deb-chat').style.display = 'none';
+  document.getElementById('deb-resumen').style.display = 'none';
+  document.getElementById('deb-msgs').innerHTML = '';
+  document.getElementById('deb-input').value = '';
+}
+
+document.querySelectorAll('.deb-rol-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    debRolUsuario = card.getAttribute('data-rol');
+    document.getElementById('deb-selector').style.display = 'none';
+    document.getElementById('deb-chat').style.display = 'block';
+    var rolIA = debRolUsuario === 'libertario' ? 'colectivista' : 'libertario';
+    var emoUser = debRolUsuario === 'libertario' ? '🗽' : '✊';
+    var emoIA = rolIA === 'libertario' ? '🗽' : '✊';
+    document.getElementById('deb-banner-txt').innerHTML =
+      emoUser + ' Tú: ' + debRolUsuario + ' &nbsp;·&nbsp; ' +
+      emoIA + ' Milton Javier: ' + rolIA;
+    document.getElementById('deb-input').focus();
+  });
+});
+
+function addDebMsg(role, texto) {
+  var cont = document.getElementById('deb-msgs');
+  var w = document.createElement('div');
+  w.className = 'mw ' + (role === 'user' ? 'u' : 'ia');
+  var label = role === 'user' ? 'Tú' : 'Milton Javier';
+  var labelClass = role === 'user' ? 'ml' : 'ml org';
+  w.innerHTML = '<div class="' + labelClass + '">' + label + '</div>' +
+                '<div class="mb ' + (role === 'user' ? 'u' : 'ia') + '">' + texto + '</div>';
+  cont.appendChild(w);
+  cont.scrollTop = cont.scrollHeight;
+}
+
+async function enviarDebate() {
+  var inp = document.getElementById('deb-input');
+  var txt = inp.value.trim();
+  if (!txt) return;
+  inp.value = ''; inp.style.height = 'auto';
+  var btn = document.getElementById('deb-send');
+  btn.disabled = true; btn.textContent = '...';
+
+  addDebMsg('user', txt);
+  debHistorial.push({ role: 'user', content: txt });
+  showTyping('deb-msgs');
+
+  try {
+    var response = await fetch('/.netlify/functions/sparring', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        modo: 'debatir',
+        rolUsuario: debRolUsuario,
+        historial: debHistorial
+      })
+    });
+    var data = await response.json();
+    hideTyping('deb-msgs');
+    if (data.error) throw new Error(data.error);
+    if (!data.respuesta) throw new Error('Respuesta vacía');
+    addDebMsg('assistant', data.respuesta);
+    debHistorial.push({ role: 'assistant', content: data.respuesta });
+  } catch (e) {
+    hideTyping('deb-msgs');
+    var cont = document.getElementById('deb-msgs');
+    var w = document.createElement('div');
+    w.className = 'mw ia';
+    w.innerHTML = '<div class="ml org">Milton Javier</div><div class="mb ia" style="color:#a30000;">Error al conectar. Intenta de nuevo.</div>';
+    cont.appendChild(w);
+  }
+  btn.disabled = false; btn.textContent = 'Enviar';
+}
+
+document.getElementById('deb-send').addEventListener('click', enviarDebate);
+document.getElementById('deb-input').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); enviarDebate(); }
+});
+document.getElementById('deb-input').addEventListener('input', function() {
+  this.style.height = 'auto';
+  this.style.height = Math.min(this.scrollHeight, 100) + 'px';
+});
+
+document.getElementById('deb-terminar').addEventListener('click', async function() {
+  if (debHistorial.length < 2) {
+    alert('Debate demasiado corto. Envía al menos un argumento antes de terminar.');
+    return;
+  }
+  if (!confirm('¿Terminar el debate y ver el veredicto?')) return;
+
+  document.getElementById('deb-chat').style.display = 'none';
+  var resumen = document.getElementById('deb-resumen');
+  resumen.style.display = 'block';
+  document.getElementById('deb-resumen-txt').innerHTML = '<div class="typing" style="display:inline-flex;"><span></span><span></span><span></span></div>';
+
+  try {
+    var response = await fetch('/.netlify/functions/sparring', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        modo: 'veredicto',
+        rolUsuario: debRolUsuario,
+        historial: debHistorial
+      })
+    });
+    var data = await response.json();
+    if (data.error) throw new Error(data.error);
+    document.getElementById('deb-resumen-txt').innerHTML = (data.veredicto || 'Debate cerrado.').replace(/\n/g, '<br><br>');
+  } catch (e) {
+    document.getElementById('deb-resumen-txt').textContent = 'No se pudo generar el veredicto. El debate quedó registrado.';
+  }
+});
+
+document.getElementById('deb-reiniciar').addEventListener('click', resetearDebate);
+
+// ─── MODO 3: ANALIZAR ───
+
+var anaImagenBase64 = null;
+var anaImagenTipo = null;
+
+function resetearAnalisis() {
+  anaImagenBase64 = null;
+  anaImagenTipo = null;
+  document.getElementById('ana-upload').style.display = 'block';
+  document.getElementById('ana-preview').style.display = 'none';
+  document.getElementById('ana-resultado').style.display = 'none';
+  document.getElementById('ana-file').value = '';
+}
+
+function cargarImagen(file) {
+  if (!file) return;
+  if (!file.type.startsWith('image/')) {
+    alert('El archivo debe ser una imagen (PNG, JPG, WEBP o GIF).');
+    return;
+  }
+  if (file.size > 5 * 1024 * 1024) {
+    alert('La imagen no puede pesar más de 5 MB.');
+    return;
+  }
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    anaImagenBase64 = e.target.result.split(',')[1]; // solo la parte base64
+    anaImagenTipo = file.type;
+    document.getElementById('ana-img').src = e.target.result;
+    document.getElementById('ana-preview').style.display = 'block';
+    document.getElementById('ana-drop').style.display = 'none';
+  };
+  reader.readAsDataURL(file);
+}
+
+document.getElementById('ana-file').addEventListener('change', function(e) {
+  cargarImagen(e.target.files[0]);
+});
+
+var dropZone = document.getElementById('ana-drop');
+dropZone.addEventListener('dragover', function(e) {
+  e.preventDefault();
+  dropZone.classList.add('dragover');
+});
+dropZone.addEventListener('dragleave', function() {
+  dropZone.classList.remove('dragover');
+});
+dropZone.addEventListener('drop', function(e) {
+  e.preventDefault();
+  dropZone.classList.remove('dragover');
+  if (e.dataTransfer.files.length > 0) cargarImagen(e.dataTransfer.files[0]);
+});
+
+document.getElementById('ana-cambiar').addEventListener('click', function() {
+  document.getElementById('ana-preview').style.display = 'none';
+  document.getElementById('ana-drop').style.display = 'block';
+  document.getElementById('ana-file').value = '';
+  anaImagenBase64 = null;
+});
+
+document.getElementById('ana-nueva').addEventListener('click', function() {
+  resetearAnalisis();
+});
+
+document.getElementById('ana-analizar').addEventListener('click', async function() {
+  if (!anaImagenBase64) return;
+  var btn = document.getElementById('ana-analizar');
+  btn.disabled = true; btn.textContent = 'Analizando...';
+
+  try {
+    var response = await fetch('/.netlify/functions/sparring', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        modo: 'analizar',
+        imagenBase64: anaImagenBase64,
+        imagenTipo: anaImagenTipo
+      })
+    });
+    var data = await response.json();
+    if (data.error) throw new Error(data.error);
+    if (!data.concreta || !data.evidencia || !data.confrontacional) {
+      throw new Error('Respuesta incompleta');
+    }
+
+    document.getElementById('ana-img-result').src = document.getElementById('ana-img').src;
+    document.getElementById('ana-respuestas').innerHTML =
+      '<div class="resp-bloque">' +
+        '<div class="resp-num"><div class="resp-num-dot" style="background:var(--naranja);"></div>1. RESPUESTA CONCRETA</div>' +
+        '<div class="resp-texto">' + data.concreta + '</div>' +
+      '</div>' +
+      '<div class="resp-bloque">' +
+        '<div class="resp-num"><div class="resp-num-dot" style="background:#888;"></div>2. CON EVIDENCIA LIBERAL</div>' +
+        '<div class="resp-texto">' + data.evidencia + '</div>' +
+      '</div>' +
+      '<div class="resp-bloque">' +
+        '<div class="resp-num"><div class="resp-num-dot" style="background:#333;"></div>3. CONFRONTACIONAL</div>' +
+        '<div class="resp-texto">' + data.confrontacional + '</div>' +
+      '</div>';
+
+    document.getElementById('ana-upload').style.display = 'none';
+    document.getElementById('ana-resultado').style.display = 'block';
+  } catch (e) {
+    alert('Error al analizar la imagen. Intenta de nuevo.');
+  }
+
+  btn.disabled = false; btn.textContent = 'Analizar imagen';
 });
 
 // ═══════════════════════════════════════════════════════════════════════════
