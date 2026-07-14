@@ -84,7 +84,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:cen
 .typing span:nth-child(2){animation-delay:.2s;}
 .typing span:nth-child(3){animation-delay:.4s;}
 @keyframes ty{0%,80%,100%{transform:scale(.6);opacity:.4}40%{transform:scale(1);opacity:1}}
-.chat-input-area{padding:14px 18px;border-top:1px solid #bfb9b0;display:flex;gap:10px;background:#d8d3cb;}
+.chat-input-area{padding:16px 18px;border-top:1px solid #bfb9b0;display:flex;gap:12px;background:#d8d3cb;align-items:stretch;}
 #cinput{flex:1;background:#ede9e3;border:1px solid #bfb9b0;border-radius:7px;padding:9px 13px;color:#1a1a1a;font-size:14px;font-family:DM Sans,sans-serif;resize:none;min-height:40px;max-height:100px;}
 #cinput:focus{outline:none;border-color:var(--naranja);}
 #csend{background:var(--naranja);border:none;border-radius:7px;padding:9px 15px;cursor:pointer;color:var(--blanco);font-size:14px;font-weight:600;font-family:DM Sans,sans-serif;}
@@ -210,6 +210,14 @@ textarea.form-input{resize:vertical;min-height:120px;}
 .mj-modo-card:hover .mod-tag,.deb-rol-card:hover .mod-tag{background:rgba(232,93,0,0.15);}
 #ana-drop:hover{border-color:var(--naranja);background:#e4dfd6;}
 #ana-drop.dragover{border-color:var(--naranja);background:rgba(232,93,0,0.08);}
+
+/* Inputs del debate y del preguntar más generosos */
+#deb-input,#cinput{flex:1;background:#ede9e3;border:1px solid #bfb9b0;border-radius:7px;padding:12px 15px;color:#1a1a1a;font-size:14px;font-family:DM Sans,sans-serif;resize:none;min-height:64px;max-height:160px;line-height:1.5;}
+#deb-input:focus,#cinput:focus{outline:none;border-color:var(--naranja);}
+#deb-input::placeholder,#cinput::placeholder{color:#999;}
+#deb-send,#csend{background:var(--naranja);border:none;border-radius:7px;padding:12px 20px;cursor:pointer;color:#fff;font-size:14px;font-weight:600;font-family:DM Sans,sans-serif;align-self:stretch;}
+#deb-send:hover,#csend:hover{background:#FF7A1A;}
+#deb-send:disabled,#csend:disabled{opacity:0.5;cursor:not-allowed;}
 
 .art-row { display:flex;align-items:center;gap:16px;padding:14px 18px;background:#dedad3;border:1px solid #bfb9b0;border-radius:8px;margin-bottom:2px;text-decoration:none;color:inherit;transition:all 0.2s;cursor:pointer;position:relative;z-index:1; }
 .art-row * { pointer-events:none; }
@@ -611,30 +619,30 @@ textarea.form-input{resize:vertical;min-height:120px;}
     <div id="mj-selector">
       <p style="color:#555;font-size:15px;margin-bottom:24px;font-weight:300;">Elige qué quieres hacer hoy con Milton Javier:</p>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;align-items:stretch;">
 
-        <div class="mj-modo-card" data-modo="preguntar" style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:32px;cursor:pointer;transition:all 0.2s;">
+        <div class="mj-modo-card" data-modo="preguntar" style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:32px;cursor:pointer;transition:all 0.2s;display:flex;flex-direction:column;">
           <div style="font-size:34px;margin-bottom:12px;">💬</div>
           <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:2px;margin-bottom:8px;">MODO 1</div>
           <h3 style="font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:1px;color:#1a1a1a;margin-bottom:10px;">Preguntar</h3>
           <p style="font-size:13px;color:#555;line-height:1.6;margin-bottom:16px;">Hazle una pregunta a Milton Javier. Recibirás <strong style="color:#1a1a1a;">tres respuestas</strong>: concreta, con evidencia liberal, y confrontacional al estilo Milei.</p>
-          <span class="mod-tag">Entrar →</span>
+          <span class="mod-tag" style="margin-top:auto;align-self:flex-start;">Entrar →</span>
         </div>
 
-        <div class="mj-modo-card" data-modo="debatir" style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:32px;cursor:pointer;transition:all 0.2s;">
+        <div class="mj-modo-card" data-modo="debatir" style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:32px;cursor:pointer;transition:all 0.2s;display:flex;flex-direction:column;">
           <div style="font-size:34px;margin-bottom:12px;">⚔️</div>
           <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:2px;margin-bottom:8px;">MODO 2</div>
           <h3 style="font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:1px;color:#1a1a1a;margin-bottom:10px;">Debatir</h3>
           <p style="font-size:13px;color:#555;line-height:1.6;margin-bottom:16px;">Escoge tu posición — <strong style="color:#1a1a1a;">libertaria o colectivista</strong> — y Milton Javier asume la contraria. Entrena tus argumentos contra el mejor sparring.</p>
-          <span class="mod-tag">Entrar →</span>
+          <span class="mod-tag" style="margin-top:auto;align-self:flex-start;">Entrar →</span>
         </div>
 
-        <div class="mj-modo-card" data-modo="analizar" style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:32px;cursor:pointer;transition:all 0.2s;">
+        <div class="mj-modo-card" data-modo="analizar" style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:32px;cursor:pointer;transition:all 0.2s;display:flex;flex-direction:column;">
           <div style="font-size:34px;margin-bottom:12px;">📎</div>
           <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:2px;margin-bottom:8px;">MODO 3</div>
           <h3 style="font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:1px;color:#1a1a1a;margin-bottom:10px;">Analizar</h3>
-          <p style="font-size:13px;color:#555;line-height:1.6;margin-bottom:16px;">Sube una imagen o pantallazo — un titular, un tuit, un anuncio, un gráfico. Milton Javier te da su <strong style="color:#1a1a1a;">diagnóstico libertario</strong> en tres formas.</p>
-          <span class="mod-tag">Entrar →</span>
+          <p style="font-size:13px;color:#555;line-height:1.6;margin-bottom:16px;">Sube una imagen o pantallazo — un titular, un tuit, un anuncio, un gráfico. Milton Javier te dará su <strong style="color:#1a1a1a;">diagnóstico libertario</strong> en tres formas.</p>
+          <span class="mod-tag" style="margin-top:auto;align-self:flex-start;">Entrar →</span>
         </div>
 
       </div>
