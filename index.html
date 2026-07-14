@@ -749,13 +749,15 @@ textarea.form-input{resize:vertical;min-height:120px;}
           <p style="font-size:12px;color:#888;margin-top:10px;">Formatos: PNG, JPG, WEBP · Máximo 5 MB</p>
         </div>
 
-        <label for="ana-file" id="ana-drop" style="display:block;background:#dedad3;border:2px dashed #bfb9b0;border-radius:14px;padding:44px 20px;text-align:center;cursor:pointer;transition:all 0.2s;">
-          <div style="font-size:44px;margin-bottom:12px;">📎</div>
-          <div style="font-family:Bebas Neue,sans-serif;font-size:20px;letter-spacing:1px;color:#1a1a1a;margin-bottom:6px;">Sube o pega una imagen</div>
-          <div style="font-size:13px;color:#666;margin-bottom:4px;">Click para elegir un archivo · Arrastra la imagen · O <strong style="color:#1a1a1a;">pega con Ctrl+V</strong></div>
-          <div style="font-size:11px;color:#999;margin-top:10px;line-height:1.5;">📌 Para pantallazos en Windows usa <strong>Win+Shift+S</strong> (Snipping Tool)<br>El PrntScrn a secas no siempre carga el portapapeles — abre Paint, pega ahí, copia de nuevo, y luego pega aquí</div>
+        <div id="ana-drop" style="display:block;background:#dedad3;border:2px dashed #bfb9b0;border-radius:14px;padding:44px 20px;text-align:center;cursor:pointer;transition:all 0.2s;">
+          <div style="pointer-events:none;">
+            <div style="font-size:44px;margin-bottom:12px;">📎</div>
+            <div style="font-family:Bebas Neue,sans-serif;font-size:20px;letter-spacing:1px;color:#1a1a1a;margin-bottom:6px;">Sube o pega una imagen</div>
+            <div style="font-size:13px;color:#666;margin-bottom:4px;">Click para elegir un archivo · Arrastra la imagen · O <strong style="color:#1a1a1a;">pega con Ctrl+V</strong></div>
+            <div style="font-size:11px;color:#999;margin-top:10px;line-height:1.5;">📌 Para pantallazos en Windows usa <strong>Win+Shift+S</strong> (Snipping Tool)<br>El PrntScrn a secas no siempre carga el portapapeles — abre Paint, pega ahí, copia de nuevo, y luego pega aquí</div>
+          </div>
           <input type="file" id="ana-file" accept="image/png,image/jpeg,image/jpg,image/webp,image/gif" style="display:none;">
-        </label>
+        </div>
 
         <div id="ana-preview" style="display:none;margin-top:20px;background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:20px;">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
@@ -1505,9 +1507,12 @@ function resetearAnalisis() {
   anaImagenBase64 = null;
   anaImagenTipo = null;
   document.getElementById('ana-upload').style.display = 'block';
+  document.getElementById('ana-drop').style.display = 'block';
   document.getElementById('ana-preview').style.display = 'none';
   document.getElementById('ana-resultado').style.display = 'none';
   document.getElementById('ana-file').value = '';
+  var aviso = document.getElementById('paste-aviso');
+  if (aviso) aviso.style.display = 'none';
 }
 
 function cargarImagen(file) {
@@ -1536,6 +1541,13 @@ document.getElementById('ana-file').addEventListener('change', function(e) {
 });
 
 var dropZone = document.getElementById('ana-drop');
+
+// Click en el drop zone abre el file picker
+dropZone.addEventListener('click', function(e) {
+  // Solo si el click NO fue en el input mismo (evitar loop)
+  if (e.target.id === 'ana-file') return;
+  document.getElementById('ana-file').click();
+});
 dropZone.addEventListener('dragover', function(e) {
   e.preventDefault();
   dropZone.classList.add('dragover');
