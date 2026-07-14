@@ -77,23 +77,24 @@ FORMATO:
 - Sé honesto. Si el usuario argumentó mejor que Milton Javier, dilo. Si Milton Javier argumentó mejor, dilo también. No hagas concesiones diplomáticas.
 - Responde en texto plano, sin JSON ni markdown.`;
 
-const SYS_ANALIZAR = `Eres Milton Javier analizando una imagen que el usuario acaba de subir. Puede ser un titular de noticia, un tuit, un anuncio de política pública, un gráfico económico, una infografía, un aviso publicitario, o cualquier documento visual.
+const SYS_ANALIZAR = `Eres Milton Javier analizando un documento que el usuario acaba de subir. Puede ser una imagen (titular de noticia, tuit, anuncio de política pública, gráfico económico, infografía, aviso publicitario) o un PDF (documento completo, informe, columna, propuesta política, ley, etc.).
 
 TU TAREA:
-1. Observa la imagen con cuidado.
+1. Observa/lee el contenido con cuidado.
 2. Identifica el mensaje central, las premisas ocultas, la narrativa que intenta vender, y las trampas conceptuales (falacias económicas, sesgos estatistas, apelaciones emocionales, datos manipulados, incentivos perversos que oculta).
-3. Da tu DIAGNÓSTICO LIBERTARIO en 3 respuestas siempre en el formato JSON exacto.
+3. Si es un PDF con varias secciones, cubre el contenido en su conjunto — no te quedes solo con la primera página.
+4. Da tu DIAGNÓSTICO LIBERTARIO en 3 respuestas siempre en el formato JSON exacto.
 
 REGLAS:
 1. Siempre respondes desde la óptica liberal-libertaria (Escuela Austriaca, Friedman, Sowell, Kaiser, Rallo, Laje, Milei, Benegas Lynch).
-2. Sé específico a la imagen — cita elementos que aparecen en ella. No des un análisis genérico que podría aplicar a cualquier cosa.
-3. Si la imagen no tiene contenido político/económico relevante (una foto casual, un paisaje, un meme sin fondo ideológico), responde honestamente que no encuentras material para un análisis libertario.
+2. Sé específico al contenido — cita elementos concretos que aparecen en él. No des un análisis genérico que podría aplicar a cualquier cosa.
+3. Si el documento no tiene contenido político/económico relevante (una foto casual, un paisaje, un meme sin fondo ideológico, un PDF puramente técnico sin dimensión política), responde honestamente que no encuentras material para un análisis libertario.
 4. Formato de respuesta EXACTO (JSON y nada más):
 
 {
-  "concreta": "Análisis directo y conciso: qué dice la imagen y por qué es problemática (o correcta) desde la óptica libertaria. Máximo 3 oraciones.",
+  "concreta": "Análisis directo y conciso: qué dice el documento y por qué es problemático (o correcto) desde la óptica libertaria. Máximo 3 oraciones.",
   "evidencia": "El mismo análisis pero respaldado con datos, estudios, ejemplos históricos, o citas de autores libertarios. Máximo 4 oraciones.",
-  "confrontacional": "Análisis en el tono combativo de Javier Milei. Va directo al punto y desmonta las trampas de la imagen. Máximo 4 oraciones."
+  "confrontacional": "Análisis en el tono combativo de Javier Milei. Va directo al punto y desmonta las trampas del documento. Máximo 4 oraciones."
 }
 
 SOLO responde con el JSON. Sin texto antes ni después. Sin markdown.`;
@@ -205,17 +206,49 @@ exports.handler = async function (event) {
 
     // ─── MODO ANALIZAR ─────────────────────────────────────────────────────
     if (modo === 'analizar') {
+      // Nuevos campos (frontend nuevo)
+      const categoria = body.categoria;           // 'image' | 'pdf'
+      const archivoBase64 = body.archivoBase64;
+      const archivoTipo = body.archivoTipo;
+
+      // Compatibilidad hacia atrás (por si algún cliente antiguo llama con el schema viejo)
       const imagenBase64 = body.imagenBase64;
-      const imagenTipo = body.imagenTipo || 'image/png';
-      if (!imagenBase64) return { statusCode: 400, headers: cors, body: JSON.stringify({ error: 'Falta imagen' }) };
+      const imagenTipo = body.imagenTipo;
+
+      const base64 = archivoBase64 || imagenBase64;
+      const tipo = archivoTipo || imagenTipo || 'image/png';
+
+      if (!base64) {
+        return { statusCode: 400, headers: cors, body: JSON.stringify({ error: 'Falta archivo' }) };
+      }
+
+      // Determinar si es imagen o PDF
+      const esPdf = categoria === 'pdf' || tipo === 'application/pdf';
+
+      let contentBlock;
+      if (esPdf) {
+        contentBlock = {
+          type: 'document',
+          source: { type: 'base64', media_type: 'application/pdf', data: base64 }
+        };
+      } else {
+        contentBlock = {
+          type: 'image',
+          source: { type: 'base64', media_type: tipo, data: base64 }
+        };
+      }
+
+      const textoInstruccion = esPdf
+        ? 'Analiza este PDF desde tu óptica libertaria y dame las 3 respuestas en JSON. Si el PDF tiene varias páginas, cubre el contenido en su conjunto.'
+        : 'Analiza esta imagen desde tu óptica libertaria y dame las 3 respuestas en JSON.';
 
       const respuesta = await callAnthropic(
         SYS_ANALIZAR,
         [{
           role: 'user',
           content: [
-            { type: 'image', source: { type: 'base64', media_type: imagenTipo, data: imagenBase64 } },
-            { type: 'text', text: 'Analiza esta imagen desde tu óptica libertaria y dame las 3 respuestas en JSON.' }
+            contentBlock,
+            { type: 'text', text: textoInstruccion }
           ]
         }]
       );
