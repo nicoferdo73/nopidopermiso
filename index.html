@@ -218,6 +218,11 @@ textarea.form-input{resize:vertical;min-height:120px;}
   #banner-valla img{max-height:220px;}
 }
 
+/* La Valla NPP - 3 columnas responsive */
+@media(max-width:900px){
+  .valla-cols{grid-template-columns:1fr!important;}
+}
+
 /* Inputs del debate y del preguntar más generosos */
 #deb-input,#cinput{flex:1;background:#ede9e3;border:1px solid #bfb9b0;border-radius:7px;padding:12px 15px;color:#1a1a1a;font-size:14px;font-family:DM Sans,sans-serif;resize:none;min-height:64px;max-height:160px;line-height:1.5;}
 #deb-input:focus,#cinput:focus{outline:none;border-color:var(--naranja);}
@@ -1261,7 +1266,7 @@ textarea.form-input{resize:vertical;min-height:120px;}
 
 <!-- LA VALLA NPP -->
 <div id="vallas" class="page">
-  <div class="inner" style="max-width:900px;">
+  <div class="inner" style="max-width:1080px;">
     <button class="back-btn" data-page="modulos">← Volver</button>
     <div class="label">09 — La Valla NPP</div>
     <h2 class="titulo">La Valla de NOPIDOPERMISO</h2>
@@ -1270,32 +1275,80 @@ textarea.form-input{resize:vertical;min-height:120px;}
     </p>
 
     <!-- NPP-01 -->
-    <div style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:0;margin-top:36px;overflow:hidden;">
-      <img src="valla-npp-01.jpg" alt="La Valla de NOPIDOPERMISO NPP-01 — El Estado NO somos todos" style="width:100%;display:block;">
+    <div style="margin-top:36px;">
 
-      <div style="padding:32px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap;">
-          <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:2px;background:rgba(232,93,0,0.1);padding:4px 10px;border-radius:4px;border:1px solid rgba(232,93,0,0.25);">NPP / 01</span>
-          <span style="font-size:12px;color:#666;">Agosto 2026</span>
-        </div>
-        <h3 style="font-family:Bebas Neue,sans-serif;font-size:32px;letter-spacing:1px;color:#1a1a1a;margin-bottom:14px;line-height:1.1;">EL ESTADO <span style="color:var(--naranja);">NO</span> SOMOS TODOS</h3>
-        <p style="font-size:15px;color:#444;line-height:1.7;margin-bottom:24px;">
-          La primera valla. Una frase que la izquierda colectivista nos ha vendido durante décadas para diluir responsabilidades, esconder el mapa del poder y convertir el despojo en autoservicio. Aquí la desarmamos pieza por pieza.
-        </p>
+      <!-- Encabezado con badge -->
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap;">
+        <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:2px;background:rgba(232,93,0,0.1);padding:4px 10px;border-radius:4px;border:1px solid rgba(232,93,0,0.25);">NPP / 01</span>
+        <span style="font-size:12px;color:#666;">Agosto 2026</span>
+      </div>
+      <h3 style="font-family:Bebas Neue,sans-serif;font-size:36px;letter-spacing:1px;color:#1a1a1a;margin-bottom:14px;line-height:1.05;">EL ESTADO <span style="color:var(--naranja);">NO</span> SOMOS TODOS</h3>
+      <p style="font-size:15px;color:#444;line-height:1.7;margin-bottom:28px;max-width:800px;">
+        La primera valla. Una frase que la izquierda colectivista nos ha vendido durante décadas para diluir responsabilidades, esconder el mapa del poder y convertir el despojo en autoservicio. Aquí la desarmamos pieza por pieza.
+      </p>
 
-        <!-- Video -->
-        <div style="background:#000;border-radius:10px;overflow:hidden;margin-bottom:24px;">
-          <video controls preload="metadata" style="width:100%;display:block;" poster="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23000'/%3E%3Ctext x='400' y='190' font-family='Arial Black, sans-serif' font-size='56' fill='white' text-anchor='middle' opacity='0.9'%3E%E2%96%B6%3C/text%3E%3Ctext x='400' y='260' font-family='Arial, sans-serif' font-size='30' font-weight='bold' fill='white' text-anchor='middle' letter-spacing='2'%3ECLIP CORTO EXPLICATIVO%3C/text%3E%3Ctext x='400' y='300' font-family='monospace' font-size='16' fill='%23E85D00' text-anchor='middle' letter-spacing='3'%3EVALLA NPP-01%3C/text%3E%3C/svg%3E">
-            <source src="valla-npp-01.mp4" type="video/mp4">
-            Tu navegador no soporta el reproductor de video.
-          </video>
+      <!-- Foto de la valla (banner grande) -->
+      <div style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;overflow:hidden;margin-bottom:20px;">
+        <img src="valla-npp-01.jpg" alt="La Valla de NOPIDOPERMISO NPP-01 — El Estado NO somos todos" style="width:100%;display:block;">
+      </div>
+
+      <!-- 3 columnas horizontales -->
+      <div class="valla-cols" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+
+        <!-- Columna 1: VIDEO -->
+        <div style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:20px;display:flex;flex-direction:column;">
+          <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:2px;margin-bottom:10px;">EL CLIP</div>
+          <div style="background:#000;border-radius:8px;overflow:hidden;margin-bottom:14px;">
+            <video controls preload="metadata" style="width:100%;display:block;" poster="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23000'/%3E%3Ctext x='400' y='200' font-family='Arial Black, sans-serif' font-size='72' fill='white' text-anchor='middle' opacity='0.9'%3E%E2%96%B6%3C/text%3E%3Ctext x='400' y='270' font-family='Arial, sans-serif' font-size='26' font-weight='bold' fill='white' text-anchor='middle' letter-spacing='2'%3ECLIP CORTO EXPLICATIVO%3C/text%3E%3Ctext x='400' y='310' font-family='monospace' font-size='16' fill='%23E85D00' text-anchor='middle' letter-spacing='3'%3EVALLA NPP-01%3C/text%3E%3C/svg%3E">
+              <source src="valla-npp-01.mp4" type="video/mp4">
+              Tu navegador no soporta el reproductor de video.
+            </video>
+          </div>
+          <p style="font-size:13px;color:#555;line-height:1.6;margin-top:auto;">54 segundos que resumen el argumento central de la valla. Compártelo con quien quieras.</p>
         </div>
 
-        <!-- Enlaces -->
-        <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <a href="https://nicolasfernandezgiraldo.substack.com/p/el-estado-no-somos-todos" target="_blank" class="btn btn-naranja" style="text-decoration:none;flex:1;min-width:220px;text-align:center;">Leer el Substack completo →</a>
-          <a href="https://www.10am.pro/" target="_blank" class="btn btn-outline" style="text-decoration:none;color:#1a1a1a;flex:1;min-width:220px;text-align:center;border-color:#bfb9b0;">Conversación en 10AMPRO →</a>
+        <!-- Columna 2: SUBSTACK -->
+        <div style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:20px;display:flex;flex-direction:column;">
+          <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:2px;margin-bottom:10px;">EL ENSAYO</div>
+          <div style="background:#c8c3bb;border:1px solid #bfb9b0;border-radius:8px;padding:24px;text-align:center;margin-bottom:14px;flex:1;display:flex;flex-direction:column;justify-content:center;">
+            <div style="font-size:44px;margin-bottom:10px;">📖</div>
+            <div style="font-family:Bebas Neue,sans-serif;font-size:18px;letter-spacing:1px;color:#1a1a1a;line-height:1.2;margin-bottom:6px;">El Estado NO<br>somos todos!</div>
+            <div style="font-size:11px;color:#666;">Substack · Ago 15, 2026</div>
+          </div>
+          <a href="https://nicolasfernandezgiraldo.substack.com/p/el-estado-no-somos-todos" target="_blank" class="btn btn-naranja" style="text-decoration:none;text-align:center;padding:12px;font-size:14px;">Leer el ensayo →</a>
+          <p style="font-size:13px;color:#555;line-height:1.6;margin-top:14px;">Los 3 pilares del engaño: la mentira ontológica, la asimetría del poder, y el consentimiento fabricado.</p>
         </div>
+
+        <!-- Columna 3: ESCRIBIR AL AUTOR -->
+        <div style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:20px;display:flex;flex-direction:column;">
+          <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:2px;margin-bottom:10px;">ESCRÍBELE AL AUTOR</div>
+          <p style="font-size:13px;color:#444;line-height:1.6;margin-bottom:14px;">Puede ser para complementar o contradecir. <strong style="color:#1a1a1a;">No pidas permiso para decir lo que piensas.</strong></p>
+
+          <form
+            name="valla-npp-01-comentarios"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            id="form-valla-01"
+            style="display:flex;flex-direction:column;gap:10px;flex:1;"
+          >
+            <input type="hidden" name="form-name" value="valla-npp-01-comentarios">
+            <input type="hidden" name="valla" value="NPP-01: El Estado NO somos todos">
+            <p style="display:none;"><label>No llenar: <input name="bot-field"></label></p>
+
+            <input type="text" name="nombre" required placeholder="Tu nombre" style="background:#ede9e3;border:1px solid #bfb9b0;border-radius:7px;padding:10px 12px;color:#1a1a1a;font-size:13px;font-family:DM Sans,sans-serif;">
+            <input type="email" name="correo" required placeholder="Tu correo" style="background:#ede9e3;border:1px solid #bfb9b0;border-radius:7px;padding:10px 12px;color:#1a1a1a;font-size:13px;font-family:DM Sans,sans-serif;">
+            <textarea name="mensaje" required rows="4" placeholder="Tu comentario, complemento o contradicción..." style="background:#ede9e3;border:1px solid #bfb9b0;border-radius:7px;padding:10px 12px;color:#1a1a1a;font-size:13px;font-family:DM Sans,sans-serif;resize:vertical;flex:1;min-height:80px;"></textarea>
+            <button type="submit" class="btn btn-naranja" id="btn-valla-01-enviar" style="text-align:center;padding:12px;font-size:14px;">Enviar comentario</button>
+          </form>
+
+          <div id="valla-01-exito" style="display:none;text-align:center;padding:20px;background:rgba(232,93,0,0.08);border:1px solid var(--naranja);border-radius:8px;margin-top:10px;">
+            <div style="font-size:32px;margin-bottom:6px;">📩</div>
+            <div style="font-family:Bebas Neue,sans-serif;font-size:18px;color:var(--naranja);letter-spacing:1px;">Mensaje enviado</div>
+            <p style="font-size:12px;color:#444;margin-top:6px;">Nicolás lo lee y responde pronto.</p>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -2035,6 +2088,40 @@ if (formContacto) {
       btn.disabled = false;
       btn.textContent = 'Enviar mensaje';
       alert('Hubo un error al enviar el mensaje. Intenta de nuevo o escribe directamente a nicolasfernandezgiraldo@hotmail.com');
+    });
+  });
+}
+
+// ─── FORMULARIO DE COMENTARIOS DE LA VALLA NPP-01 ───
+var formValla01 = document.getElementById('form-valla-01');
+if (formValla01) {
+  formValla01.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('btn-valla-01-enviar');
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    var formData = new FormData(formValla01);
+    var params = new URLSearchParams();
+    formData.forEach(function(v, k) { params.append(k, v); });
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: params.toString()
+    })
+    .then(function(response) {
+      if (response.ok) {
+        formValla01.style.display = 'none';
+        document.getElementById('valla-01-exito').style.display = 'block';
+      } else {
+        throw new Error('Error del servidor');
+      }
+    })
+    .catch(function() {
+      btn.disabled = false;
+      btn.textContent = 'Enviar comentario';
+      alert('Hubo un error al enviar el comentario. Intenta de nuevo.');
     });
   });
 }
