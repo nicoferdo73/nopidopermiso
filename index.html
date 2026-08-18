@@ -211,6 +211,13 @@ textarea.form-input{resize:vertical;min-height:120px;}
 #ana-drop:hover{border-color:var(--naranja);background:#e4dfd6;}
 #ana-drop.dragover{border-color:var(--naranja);background:rgba(232,93,0,0.08);}
 
+/* Banner destacado de La Valla NPP en Home */
+#banner-valla:hover{border-color:var(--naranja)!important;transform:translateY(-2px);box-shadow:0 8px 32px rgba(232,93,0,0.15)!important;}
+@media(max-width:700px){
+  #banner-valla > div{grid-template-columns:1fr!important;}
+  #banner-valla img{max-height:220px;}
+}
+
 /* Inputs del debate y del preguntar más generosos */
 #deb-input,#cinput{flex:1;background:#ede9e3;border:1px solid #bfb9b0;border-radius:7px;padding:12px 15px;color:#1a1a1a;font-size:14px;font-family:DM Sans,sans-serif;resize:none;min-height:64px;max-height:160px;line-height:1.5;}
 #deb-input:focus,#cinput:focus{outline:none;border-color:var(--naranja);}
@@ -247,6 +254,7 @@ textarea.form-input{resize:vertical;min-height:120px;}
     <li><a data-page="rinconcito">Rinconcito Colombiano</a></li>
     <li><a data-page="plataformas">Plataformas</a></li>
     <li><a data-page="contacto">Contacto</a></li>
+    <li><a data-page="vallas">La Valla NPP</a></li>
     <li class="nav-btn-mobile"><a data-page="modulos" class="nav-btn">Dar la batalla cultural ahora</a></li>
   </ul>
   <a data-page="modulos" class="nav-btn nav-btn-desktop">Dar la batalla cultural ahora</a>
@@ -260,13 +268,38 @@ textarea.form-input{resize:vertical;min-height:120px;}
     <p>Aprende, practica y lleva la batalla cultural con argumentos liberales claros y concretos. Sin permiso de nadie.</p>
     <button class="btn btn-naranja" data-page="modulos">Dar la batalla cultural ahora</button>
   </div>
+
+  <!-- BANNER DESTACADO: La Valla NPP -->
+  <div style="padding:20px 24px 80px;">
+    <div data-page="vallas" style="max-width:1000px;margin:0 auto;background:#dedad3;border:1px solid #bfb9b0;border-radius:16px;overflow:hidden;cursor:pointer;transition:all 0.25s;box-shadow:0 4px 24px rgba(0,0,0,0.06);" id="banner-valla">
+      <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:0;">
+
+        <!-- Imagen de la valla -->
+        <div style="background:#000;display:flex;align-items:center;justify-content:center;min-height:220px;">
+          <img src="valla-npp-01.jpg" alt="Valla NPP-01: El Estado NO somos todos" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+
+        <!-- Info -->
+        <div style="padding:32px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
+            <span style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:2px;background:rgba(232,93,0,0.1);padding:3px 8px;border-radius:4px;border:1px solid rgba(232,93,0,0.25);">NUEVO · NPP / 01</span>
+          </div>
+          <div style="font-family:DM Mono,monospace;font-size:10px;color:#888;letter-spacing:2px;margin-bottom:10px;">LA VALLA DE NOPIDOPERMISO</div>
+          <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;color:#1a1a1a;line-height:1.05;margin-bottom:12px;">EL ESTADO <span style="color:var(--naranja);">NO</span> SOMOS TODOS</h3>
+          <p style="font-size:14px;color:#555;line-height:1.6;margin-bottom:18px;">La primera valla ya está en la calle. Mira el video, lee el Substack, y suma a la conversación.</p>
+          <span style="align-self:flex-start;font-size:13px;font-weight:600;color:var(--naranja);letter-spacing:0.5px;">Ver la valla →</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- MÓDULOS -->
 <div id="modulos" class="page">
   <div class="modulos-wrap">
     <div class="mod-header">
-      <div class="label">Los 8 módulos</div>
+      <div class="label">Los 9 módulos</div>
       <h2 class="titulo">Todo lo que necesitas<br>para dar la batalla</h2>
       <p class="desc">Elige el módulo con el que quieres trabajar hoy.</p>
     </div>
@@ -326,6 +359,13 @@ textarea.form-input{resize:vertical;min-height:120px;}
         <h3>Escríbele al Autor</h3>
         <p>¿Tienes una pregunta, propuesta de colaboración o quieres traer la Masterclass de Batalla Cultural a tu empresa? Escribe sin pedir permiso.</p>
         <span class="mod-tag">Escribir →</span>
+      </div>
+      <div class="mod-card" data-page="vallas">
+        <div class="mod-num">09 — LA VALLA NPP</div>
+        <div class="mod-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="1"/><line x1="8" y1="20" x2="8" y2="18"/><line x1="16" y1="20" x2="16" y2="18"/></svg></div>
+        <h3>La Valla de NOPIDOPERMISO</h3>
+        <p>El primer billboard cultural libertario en Colombia. Argumentos que se ven, se escuchan y se quedan. La primera valla ya está en la calle: <strong>NPP-01 · "El Estado NO somos todos"</strong>.</p>
+        <span class="mod-tag">Ver la valla →</span>
       </div>
     </div>
   </div>
@@ -1214,6 +1254,55 @@ textarea.form-input{resize:vertical;min-height:120px;}
       <div style="font-size:44px;margin-bottom:12px;">📩</div>
       <div style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;color:var(--naranja);margin-bottom:8px;">Mensaje enviado</div>
       <p style="font-size:15px;color:#444;line-height:1.7;">Nicolás te responde pronto — sin pedir permiso.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- LA VALLA NPP -->
+<div id="vallas" class="page">
+  <div class="inner" style="max-width:900px;">
+    <button class="back-btn" data-page="modulos">← Volver</button>
+    <div class="label">09 — La Valla NPP</div>
+    <h2 class="titulo">La Valla de NOPIDOPERMISO</h2>
+    <p style="color:#555;font-size:15px;margin-top:8px;font-weight:300;max-width:680px;line-height:1.7;">
+      El primer proyecto de billboards culturales libertarios en Colombia. Cada valla es una frase que provoca, una idea que se planta en la calle, y un llamado a conversar. Argumentos que se ven, se escuchan y se quedan.
+    </p>
+
+    <!-- NPP-01 -->
+    <div style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:0;margin-top:36px;overflow:hidden;">
+      <img src="valla-npp-01.jpg" alt="La Valla de NOPIDOPERMISO NPP-01 — El Estado NO somos todos" style="width:100%;display:block;">
+
+      <div style="padding:32px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap;">
+          <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:2px;background:rgba(232,93,0,0.1);padding:4px 10px;border-radius:4px;border:1px solid rgba(232,93,0,0.25);">NPP / 01</span>
+          <span style="font-size:12px;color:#666;">Agosto 2026</span>
+        </div>
+        <h3 style="font-family:Bebas Neue,sans-serif;font-size:32px;letter-spacing:1px;color:#1a1a1a;margin-bottom:14px;line-height:1.1;">EL ESTADO <span style="color:var(--naranja);">NO</span> SOMOS TODOS</h3>
+        <p style="font-size:15px;color:#444;line-height:1.7;margin-bottom:24px;">
+          La primera valla. Una frase que la izquierda colectivista nos ha vendido durante décadas para diluir responsabilidades, esconder el mapa del poder y convertir el despojo en autoservicio. Aquí la desarmamos pieza por pieza.
+        </p>
+
+        <!-- Video -->
+        <div style="background:#000;border-radius:10px;overflow:hidden;margin-bottom:24px;">
+          <video controls preload="metadata" style="width:100%;display:block;" poster="valla-npp-01.jpg">
+            <source src="valla-npp-01.mp4" type="video/mp4">
+            Tu navegador no soporta el reproductor de video.
+          </video>
+        </div>
+
+        <!-- Enlaces -->
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://nicolasfernandezgiraldo.substack.com/p/el-estado-no-somos-todos" target="_blank" class="btn btn-naranja" style="text-decoration:none;flex:1;min-width:220px;text-align:center;">Leer el Substack completo →</a>
+          <a href="https://www.10am.pro/" target="_blank" class="btn btn-outline" style="text-decoration:none;color:#1a1a1a;flex:1;min-width:220px;text-align:center;border-color:#bfb9b0;">Conversación en 10AMPRO →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Próximas vallas -->
+    <div style="margin-top:32px;background:#d0cbc3;border:1px dashed #bfb9b0;border-radius:12px;padding:24px;text-align:center;">
+      <div style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:2px;margin-bottom:8px;">PRÓXIMAMENTE</div>
+      <p style="font-size:14px;color:#555;line-height:1.6;">Vienen más vallas. Cada una con una frase que provoca, un argumento que desnuda una trampa del lenguaje colectivista, y una conversación que hay que dar. <em>Sigue conectado.</em></p>
     </div>
 
   </div>
