@@ -223,6 +223,13 @@ textarea.form-input{resize:vertical;min-height:120px;}
   .valla-cols{grid-template-columns:1fr!important;}
 }
 
+/* Pop-up de la Valla al abrir el sitio */
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes popIn{from{opacity:0;transform:scale(0.9) translateY(20px);}to{opacity:1;transform:scale(1) translateY(0);}}
+#valla-popup-close:hover{background:#fff!important;transform:rotate(90deg);border-color:var(--naranja)!important;color:var(--naranja);}
+#valla-popup-clickable:hover img{opacity:0.95;}
+#valla-popup-later:hover{color:#333!important;text-decoration:underline;}
+
 /* Inputs del debate y del preguntar más generosos */
 #deb-input,#cinput{flex:1;background:#ede9e3;border:1px solid #bfb9b0;border-radius:7px;padding:12px 15px;color:#1a1a1a;font-size:14px;font-family:DM Sans,sans-serif;resize:none;min-height:64px;max-height:160px;line-height:1.5;}
 #deb-input:focus,#cinput:focus{outline:none;border-color:var(--naranja);}
@@ -1360,6 +1367,28 @@ textarea.form-input{resize:vertical;min-height:120px;}
   </div>
 </div>
 
+<!-- POP-UP LA VALLA NPP -->
+<div id="valla-popup" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:9999;align-items:center;justify-content:center;padding:24px;animation:fadeIn 0.25s ease-out;">
+  <div id="valla-popup-inner" style="background:#e8e3dc;border-radius:16px;max-width:520px;width:100%;max-height:92vh;overflow-y:auto;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.4);animation:popIn 0.35s cubic-bezier(0.34,1.56,0.64,1);">
+    <button id="valla-popup-close" aria-label="Cerrar" style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.9);border:1px solid #bfb9b0;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:18px;color:#333;display:flex;align-items:center;justify-content:center;z-index:2;line-height:1;transition:all 0.15s;">×</button>
+
+    <div id="valla-popup-clickable" style="cursor:pointer;">
+      <img src="valla-npp-01.jpg" alt="Valla NPP-01: El Estado NO somos todos" style="width:100%;display:block;border-radius:16px 16px 0 0;">
+
+      <div style="padding:24px 28px 28px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap;">
+          <span style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:2px;background:rgba(232,93,0,0.1);padding:3px 8px;border-radius:4px;border:1px solid rgba(232,93,0,0.25);">NUEVO · NPP / 01</span>
+        </div>
+        <h3 style="font-family:Bebas Neue,sans-serif;font-size:26px;letter-spacing:1px;color:#1a1a1a;line-height:1.05;margin-bottom:10px;">MIRA LA VALLA DE NOPIDOPERMISO</h3>
+        <p style="font-size:14px;color:#555;line-height:1.6;margin-bottom:20px;">La primera valla ya está en la calle. <strong style="color:#1a1a1a;">"El Estado NO somos todos"</strong> — mira el clip, lee el ensayo y suma tu comentario.</p>
+
+        <button class="btn btn-naranja" id="valla-popup-cta" style="width:100%;padding:14px;font-size:15px;margin-bottom:8px;">Mira la valla →</button>
+        <button id="valla-popup-later" style="width:100%;background:none;border:none;color:#888;font-size:13px;padding:8px;cursor:pointer;font-family:DM Sans,sans-serif;">Más tarde</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 // ═══════════════════════════════════════════════════════════════════════════
 // NAVEGACIÓN ENTRE PÁGINAS
@@ -2124,6 +2153,60 @@ if (formValla01) {
     });
   });
 }
+
+// ─── POP-UP DE LA VALLA NPP AL ABRIR EL SITIO ───
+(function() {
+  var popup = document.getElementById('valla-popup');
+  if (!popup) return;
+
+  function abrirPopup() {
+    popup.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // bloquea scroll de fondo
+  }
+
+  function cerrarPopup() {
+    popup.style.display = 'none';
+    document.body.style.overflow = ''; // restaura scroll
+  }
+
+  function irAValla() {
+    cerrarPopup();
+    irA('vallas');
+  }
+
+  // Click en imagen o en botón CTA → va a la valla
+  document.getElementById('valla-popup-clickable').addEventListener('click', function(e) {
+    if (e.target.id === 'valla-popup-close') return; // el X se maneja aparte
+    irAValla();
+  });
+  document.getElementById('valla-popup-cta').addEventListener('click', function(e) {
+    e.stopPropagation();
+    irAValla();
+  });
+
+  // Cerrar sin ir a la valla
+  document.getElementById('valla-popup-close').addEventListener('click', function(e) {
+    e.stopPropagation();
+    cerrarPopup();
+  });
+  document.getElementById('valla-popup-later').addEventListener('click', function(e) {
+    e.stopPropagation();
+    cerrarPopup();
+  });
+
+  // Click fuera del contenido → cerrar
+  popup.addEventListener('click', function(e) {
+    if (e.target === popup) cerrarPopup();
+  });
+
+  // Tecla Escape → cerrar
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && popup.style.display === 'flex') cerrarPopup();
+  });
+
+  // Abrir con delay de 1.5s
+  setTimeout(abrirPopup, 1500);
+})();
 </script>
 
 </body>
