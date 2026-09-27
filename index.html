@@ -1309,14 +1309,16 @@ textarea.form-input{resize:vertical;min-height:120px;}
       <!-- 3 columnas horizontales -->
       <div class="valla-cols" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
 
-        <!-- Columna 1: VIDEO (placeholder - próximamente) -->
+        <!-- Columna 1: VIDEO -->
         <div style="background:#dedad3;border:1px solid #bfb9b0;border-radius:14px;padding:20px;display:flex;flex-direction:column;">
           <div style="font-family:DM Mono,monospace;font-size:10px;color:var(--naranja);letter-spacing:2px;margin-bottom:10px;">EL CLIP</div>
-          <div style="background:#c8c3bb;border:1px dashed #bfb9b0;border-radius:8px;padding:32px 16px;text-align:center;margin-bottom:14px;flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:180px;">
-            <div style="font-size:36px;margin-bottom:8px;opacity:0.6;">🎬</div>
-            <div style="font-family:Bebas Neue,sans-serif;font-size:16px;letter-spacing:1px;color:#666;margin-bottom:4px;">Próximamente</div>
-            <div style="font-size:11px;color:#888;">El clip explicativo de esta valla está en producción.</div>
+          <div style="background:#000;border-radius:8px;overflow:hidden;margin-bottom:14px;">
+            <video controls preload="metadata" style="width:100%;display:block;" poster="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23000'/%3E%3Ctext x='400' y='200' font-family='Arial Black, sans-serif' font-size='72' fill='white' text-anchor='middle' opacity='0.9'%3E%E2%96%B6%3C/text%3E%3Ctext x='400' y='270' font-family='Arial, sans-serif' font-size='26' font-weight='bold' fill='white' text-anchor='middle' letter-spacing='2'%3ECLIP CORTO EXPLICATIVO%3C/text%3E%3Ctext x='400' y='310' font-family='monospace' font-size='16' fill='%23E85D00' text-anchor='middle' letter-spacing='3'%3EVALLA NPP-02%3C/text%3E%3C/svg%3E">
+              <source src="valla-npp-02.mp4" type="video/mp4">
+              Tu navegador no soporta el reproductor de video.
+            </video>
           </div>
+          <p style="font-size:13px;color:#555;line-height:1.6;">Clip corto que resume el argumento central de la valla.</p>
         </div>
 
         <!-- Columna 2: SUBSTACK -->
