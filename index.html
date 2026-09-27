@@ -398,130 +398,654 @@ textarea.form-input{resize:vertical;min-height:120px;}
 
     <!-- LIBROS -->
     <div id="tab-libros">
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;">
+      <p style="color:#555;font-size:14px;margin-bottom:32px;font-weight:300;line-height:1.7;max-width:780px;">Los pilares del pensamiento libertario, autor por autor. Cada obra con su año y una frase que resume su idea central. Sin links a PDFs: si te interesa un libro, cómpralo, apoya al autor, y aporta a que estas ideas sigan vivas.</p>
 
-        <a class="bk" href="https://archive.org/details/ayn-rand-la-rebelion-de-atlas/page/12/mode/2up" target="_blank" style="text-decoration:none;">
-          <div class="bk-cat">Filosofía Libertaria</div>
-          <div class="bk-inner">
-            <div class="bk-cover" style="background:linear-gradient(135deg,#1a1a1a,#2a1500);"><span>AR</span></div>
-            <div class="bk-info"><h4>La Rebelión de Atlas</h4><p>Ayn Rand</p><span class="bk-tag">Link →</span></div>
-          </div>
-        </a>
+      <div style="display:flex;flex-direction:column;gap:36px;">
 
-        <a class="bk" href="https://archive.org/details/fountainhead0000aynr/page/n1/mode/2up" target="_blank" style="text-decoration:none;">
-          <div class="bk-cat">Filosofía Libertaria</div>
-          <div class="bk-inner">
-            <div class="bk-cover" style="background:linear-gradient(135deg,#1a1a1a,#2a1500);"><span>AR</span></div>
-            <div class="bk-info"><h4>El Manantial</h4><p>Ayn Rand</p><span class="bk-tag">Link →</span></div>
+        <!-- Javier Milei -->
+        <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:28px;">
+          <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:20px;flex-wrap:wrap;">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#1a0a00,#3a1500);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:20px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);flex-shrink:0;letter-spacing:1px;">JM</div>
+            <div style="flex:1;min-width:220px;">
+              <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;color:var(--blanco);">Javier Milei</h3>
+              <p style="font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;">Economista y Presidente de Argentina. Divulgador incansable de la Escuela Austriaca. Su irrupción política transformó la conversación pública sobre libertad en toda América Latina.</p>
+            </div>
           </div>
-        </a>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">El camino del libertario</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2022</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Un manifiesto sobre por qué el Estado es siempre el problema y el mercado libre la única forma moral de organización social."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Pandenomics</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2020</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Análisis crítico de las políticas económicas de la pandemia y el costo real de las cuarentenas impuestas por el Estado."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Capitalismo, socialismo y la trampa neoclásica</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2019</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Reformulación técnica de por qué el capitalismo de libre mercado no falla — y por qué los modelos neoclásicos están equivocados."</p>
+            </div>
+          </div>
+        </div>
 
-        <a class="bk" href="https://cdn.mises.org/RoadtoSerfdom_camino-de-servidumbre.pdf" target="_blank" style="text-decoration:none;">
-          <div class="bk-cat">Economía Política</div>
-          <div class="bk-inner">
-            <div class="bk-cover" style="background:linear-gradient(135deg,#1a1a1a,#001a2a);"><span>FH</span></div>
-            <div class="bk-info"><h4>Camino de Servidumbre</h4><p>Friedrich Hayek</p><span class="bk-tag">Link →</span></div>
+        <!-- Axel Kaiser -->
+        <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:28px;">
+          <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:20px;flex-wrap:wrap;">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#0a0a1a,#15153a);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:20px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);flex-shrink:0;letter-spacing:1px;">AK</div>
+            <div style="flex:1;min-width:220px;">
+              <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;color:var(--blanco);">Axel Kaiser</h3>
+              <p style="font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;">Filósofo político chileno-alemán. Director de Fundación para el Progreso. Combina pensamiento clásico liberal con una crítica devastadora al progresismo cultural.</p>
+            </div>
           </div>
-        </a>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">La tiranía de la igualdad</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2015</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"El igualitarismo forzado es incompatible con la libertad. La única igualdad justa es la igualdad ante la ley."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">La fatal ignorancia</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2009</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Por qué la ignorancia sobre el funcionamiento del mercado hace posible que las malas ideas económicas triunfen en democracia."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">El engaño populista</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2016</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Anatomía del populismo latinoamericano: la retórica emocional que destruye instituciones y economías."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">El papa marxista</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2018</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Crítica frontal al giro colectivista de la Iglesia Católica y su encíclica Laudato Si."</p>
+            </div>
+          </div>
+        </div>
 
-        <a class="bk" href="https://jeffersonamericas.org/wp-content/uploads/2020/07/La-accion-Humana.pdf" target="_blank" style="text-decoration:none;">
-          <div class="bk-cat">Escuela Austriaca</div>
-          <div class="bk-inner">
-            <div class="bk-cover" style="background:linear-gradient(135deg,#1a1a1a,#1a2a00);"><span>LM</span></div>
-            <div class="bk-info"><h4>La Acción Humana</h4><p>Ludwig von Mises</p><span class="bk-tag">Link →</span></div>
+        <!-- Juan Ramón Rallo -->
+        <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:28px;">
+          <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:20px;flex-wrap:wrap;">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#001a15,#003a2a);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:20px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);flex-shrink:0;letter-spacing:1px;">JR</div>
+            <div style="flex:1;min-width:220px;">
+              <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;color:var(--blanco);">Juan Ramón Rallo</h3>
+              <p style="font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;">Economista español. Doctor en economía por la Universidad Rey Juan Carlos. Uno de los más prolíficos y didácticos divulgadores actuales de la Escuela Austriaca en español.</p>
+            </div>
           </div>
-        </a>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Contra la Modern Monetary Theory</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2017</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Desmontaje riguroso de la teoría monetaria moderna y sus promesas de gasto público ilimitado."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Una revolución liberal para España</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2014</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Propuesta concreta de cómo desmantelar el Estado de bienestar sin dejar a nadie atrás."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Los errores de la vieja economía</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2011</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Crítica a los mitos del intervencionismo económico y defensa del patrón oro y el liberalismo clásico."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Anti-Marx</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2022</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Refutación sistemática de la teoría marxista del valor y de todo el edificio conceptual del marxismo."</p>
+            </div>
+          </div>
+        </div>
 
-        <a class="bk" href="https://cdn.mises.org/Socialism%20An%20Economic%20and%20Sociological%20Analysis_3.pdf" target="_blank" style="text-decoration:none;">
-          <div class="bk-cat">Crítica al Socialismo</div>
-          <div class="bk-inner">
-            <div class="bk-cover" style="background:linear-gradient(135deg,#1a1a1a,#1a2a00);"><span>LM</span></div>
-            <div class="bk-info"><h4>El Socialismo</h4><p>Ludwig von Mises</p><span class="bk-tag">Link →</span></div>
+        <!-- Agustín Laje -->
+        <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:28px;">
+          <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:20px;flex-wrap:wrap;">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#1a1500,#3a2f00);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:20px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);flex-shrink:0;letter-spacing:1px;">AL</div>
+            <div style="flex:1;min-width:220px;">
+              <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;color:var(--blanco);">Agustín Laje</h3>
+              <p style="font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;">Politólogo argentino. Especialista en batalla cultural y crítico frontal del progresismo, la ideología de género y el marxismo cultural.</p>
+            </div>
           </div>
-        </a>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">La batalla cultural</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2022</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Manual de cómo la izquierda tomó las instituciones culturales y cómo darle batalla desde la derecha."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Generación idiota</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2023</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"El adoctrinamiento en las universidades y el infantilismo político de las nuevas generaciones."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">El libro negro de la nueva izquierda</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2016</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Coautoría con Nicolás Márquez sobre el aparato ideológico del progresismo contemporáneo."</p>
+            </div>
+          </div>
+        </div>
 
-        <a class="bk" href="https://cdn.mises.org/For%20a%20New%20Liberty%20The%20Libertarian%20Manifesto_3.pdf" target="_blank" style="text-decoration:none;">
-          <div class="bk-cat">Libertarismo</div>
-          <div class="bk-inner">
-            <div class="bk-cover" style="background:linear-gradient(135deg,#1a1a1a,#2a0015);"><span>MR</span></div>
-            <div class="bk-info"><h4>Por una Nueva Libertad</h4><p>Murray Rothbard</p><span class="bk-tag">Link →</span></div>
+        <!-- Alberto Benegas Lynch (h) -->
+        <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:28px;">
+          <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:20px;flex-wrap:wrap;">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#1a0505,#3a1010);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:14px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);flex-shrink:0;letter-spacing:1px;">ABL</div>
+            <div style="flex:1;min-width:220px;">
+              <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;color:var(--blanco);">Alberto Benegas Lynch (h)</h3>
+              <p style="font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;">Economista y filósofo argentino. Presidente honorario de la Escuela Austriaca de Economía en Argentina. Maestro de generaciones de libertarios y referente intelectual de Milei.</p>
+            </div>
           </div>
-        </a>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Fundamentos de análisis económico</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1972</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Manual clásico de introducción a la teoría económica desde la perspectiva austriaca."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Estados Unidos contra Estados Unidos</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2012</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Cómo Estados Unidos abandonó los principios de sus padres fundadores rumbo al estatismo."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Liberalismo para principiantes</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2015</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Introducción accesible a las ideas de la libertad para lectores nuevos."</p>
+            </div>
+          </div>
+        </div>
 
-        <a class="bk" href="https://riosmauricio.com/wp-content/uploads/2017/07/la-etica-de-la-libertad.pdf" target="_blank" style="text-decoration:none;">
-          <div class="bk-cat">Filosofía Libertaria</div>
-          <div class="bk-inner">
-            <div class="bk-cover" style="background:linear-gradient(135deg,#1a1a1a,#2a0015);"><span>MR</span></div>
-            <div class="bk-info"><h4>La Ética de la Libertad</h4><p>Murray Rothbard</p><span class="bk-tag">Link →</span></div>
+        <!-- Friedrich A. Hayek -->
+        <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:28px;">
+          <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:20px;flex-wrap:wrap;">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#001a1a,#003a3a);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:20px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);flex-shrink:0;letter-spacing:1px;">FH</div>
+            <div style="flex:1;min-width:220px;">
+              <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;color:var(--blanco);">Friedrich A. Hayek</h3>
+              <p style="font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;">Economista y filósofo austro-británico. Premio Nobel de Economía 1974. Pilar de la Escuela Austriaca. Su defensa del orden espontáneo y el conocimiento disperso es fundamento del liberalismo moderno.</p>
+            </div>
           </div>
-        </a>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Camino de servidumbre</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1944</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"La planificación económica centralizada por parte del Estado conduce inevitablemente a la pérdida de la libertad individual y al totalitarismo."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">La fatal arrogancia</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1988</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"El error del socialismo: creer que un puñado de planificadores puede saber más que millones de personas actuando libremente."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Los fundamentos de la libertad</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1960</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Tratado sobre la libertad individual como la condición sin la cual la civilización es imposible."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">El uso del conocimiento en la sociedad</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1945</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Ensayo fundacional: los precios de mercado son señales que sintetizan el conocimiento disperso de millones de personas — algo que ningún burócrata puede replicar."</p>
+            </div>
+          </div>
+        </div>
 
-        <a class="bk" href="http://pombo.free.fr/friedman2002.pdf" target="_blank" style="text-decoration:none;">
-          <div class="bk-cat">Economía Liberal</div>
-          <div class="bk-inner">
-            <div class="bk-cover" style="background:linear-gradient(135deg,#1a1a1a,#001a2a);"><span>MF</span></div>
-            <div class="bk-info"><h4>Capitalismo y Libertad</h4><p>Milton Friedman</p><span class="bk-tag">Link →</span></div>
+        <!-- Ludwig von Mises -->
+        <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:28px;">
+          <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:20px;flex-wrap:wrap;">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#001515,#003030);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:14px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);flex-shrink:0;letter-spacing:1px;">LvM</div>
+            <div style="flex:1;min-width:220px;">
+              <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;color:var(--blanco);">Ludwig von Mises</h3>
+              <p style="font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;">Economista austro-estadounidense. Padre de la Escuela Austriaca moderna. Su obra es el fundamento teórico más riguroso del liberalismo económico del siglo XX.</p>
+            </div>
           </div>
-        </a>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">La acción humana</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1949</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Tratado sistemático de economía basado en el axioma de la acción humana. La obra magna de la Escuela Austriaca."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Socialismo</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1922</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Demostración de que el cálculo económico racional es imposible bajo el socialismo: sin precios de mercado no hay forma de asignar recursos eficientemente."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Liberalismo</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1927</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Manifiesto clásico sobre por qué la libertad económica y la paz están indisolublemente unidas."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Teoría del dinero y del crédito</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1912</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Explica por qué la expansión del crédito por parte de los bancos centrales genera los ciclos económicos."</p>
+            </div>
+          </div>
+        </div>
 
-        <a class="bk" href="https://www.hacer.org/pdf/Hazlitt01.pdf" target="_blank" style="text-decoration:none;">
-          <div class="bk-cat">Economía Clásica</div>
-          <div class="bk-inner">
-            <div class="bk-cover" style="background:linear-gradient(135deg,#1a1a1a,#2a1500);"><span>HH</span></div>
-            <div class="bk-info"><h4>Economía en una Lección</h4><p>Henry Hazlitt</p><span class="bk-tag">Link →</span></div>
+        <!-- Murray Rothbard -->
+        <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:28px;">
+          <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:20px;flex-wrap:wrap;">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#1a0010,#3a0030);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:20px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);flex-shrink:0;letter-spacing:1px;">MR</div>
+            <div style="flex:1;min-width:220px;">
+              <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;color:var(--blanco);">Murray Rothbard</h3>
+              <p style="font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;">Economista y filósofo estadounidense. Discípulo de Mises y arquitecto del anarco-capitalismo. Su radicalismo intelectual llevó las ideas austriacas hasta sus últimas consecuencias.</p>
+            </div>
           </div>
-        </a>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">El hombre, la economía y el Estado</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1962</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Reformulación completa de la teoría económica austriaca. Tratado equivalente a La Acción Humana pero con desarrollo propio."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">La ética de la libertad</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1982</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Fundamentación filosófica de los derechos naturales y por qué el Estado es siempre agresión moral."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">¿Qué ha hecho el gobierno con nuestro dinero?</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1963</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Historia clara y devastadora de cómo los gobiernos han destruido el dinero sólido a lo largo del siglo XX."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">El manifiesto libertario</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1973</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Programa político anarcocapitalista: cómo se organizaría una sociedad completamente libre de Estado."</p>
+            </div>
+          </div>
+        </div>
 
-        <a class="bk" href="https://mises.org/es/poder-y-mercado/como-la-vision-del-ungido-explica-todas-las-crisis-en-america" target="_blank" style="text-decoration:none;">
-          <div class="bk-cat">Pensamiento Crítico</div>
-          <div class="bk-inner">
-            <div class="bk-cover" style="background:linear-gradient(135deg,#1a1a1a,#2a0800);"><span>TS</span></div>
-            <div class="bk-info"><h4>Visión de los Ungidos</h4><p>Thomas Sowell</p><span class="bk-tag">Link →</span></div>
+        <!-- Jesús Huerta de Soto -->
+        <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:28px;">
+          <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:20px;flex-wrap:wrap;">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#001a10,#003a20);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:14px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);flex-shrink:0;letter-spacing:1px;">JHS</div>
+            <div style="flex:1;min-width:220px;">
+              <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;color:var(--blanco);">Jesús Huerta de Soto</h3>
+              <p style="font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;">Economista español. Catedrático de Economía Política en la Universidad Rey Juan Carlos. Continuador contemporáneo de la Escuela Austriaca y crítico feroz del sistema bancario de reserva fraccionaria.</p>
+            </div>
           </div>
-        </a>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Dinero, crédito bancario y ciclos económicos</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1998</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Obra monumental que demuestra que la reserva fraccionaria bancaria es la causa raíz de los ciclos económicos y las crisis financieras."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Socialismo, cálculo económico y función empresarial</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1992</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Demostración rigurosa de por qué el socialismo es imposible como sistema económico: sin propiedad privada no hay cálculo, sin cálculo no hay coordinación."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">La escuela austriaca: mercado y creatividad empresarial</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2000</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Introducción compacta y rigurosa al pensamiento austriaco para lectores contemporáneos."</p>
+            </div>
+          </div>
+        </div>
 
-        <a class="bk" href="https://archive.org/details/economia-basica-thomas-sowell/page/508/mode/2up" target="_blank" style="text-decoration:none;">
-          <div class="bk-cat">Economía</div>
-          <div class="bk-inner">
-            <div class="bk-cover" style="background:linear-gradient(135deg,#1a1a1a,#2a0800);"><span>TS</span></div>
-            <div class="bk-info"><h4>Economía Básica</h4><p>Thomas Sowell</p><span class="bk-tag">Link →</span></div>
+        <!-- Milton Friedman -->
+        <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:28px;">
+          <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:20px;flex-wrap:wrap;">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#001a2a,#003a5a);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:20px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);flex-shrink:0;letter-spacing:1px;">MF</div>
+            <div style="flex:1;min-width:220px;">
+              <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;color:var(--blanco);">Milton Friedman</h3>
+              <p style="font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;">Economista estadounidense. Premio Nobel 1976. Líder de la Escuela de Chicago y el más influyente divulgador del libre mercado en el siglo XX. Su claridad expositiva es insuperable.</p>
+            </div>
           </div>
-        </a>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Capitalismo y libertad</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1962</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"El capitalismo de libre mercado es condición necesaria — aunque no suficiente — para la libertad política."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Libertad de elegir</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1980</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Manifiesto popular por la libertad económica y contra la intervención estatal. Escrito con Rose Friedman."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Historia monetaria de Estados Unidos</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1963</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Obra monumental que demostró que la Gran Depresión fue causada por errores de la Reserva Federal, no por el capitalismo."</p>
+            </div>
+          </div>
+        </div>
 
-        <a class="bk" href="https://www.academia.edu/109316284/Agusti_n_Laje_LA_BATALLA_CULTURAL" target="_blank" style="text-decoration:none;">
-          <div class="bk-cat">Batalla Cultural</div>
-          <div class="bk-inner">
-            <div class="bk-cover" style="background:linear-gradient(135deg,#1a1a1a,#1a0028);"><span>AL</span></div>
-            <div class="bk-info"><h4>La Batalla Cultural</h4><p>Agustín Laje</p><span class="bk-tag">Link →</span></div>
+        <!-- Thomas Sowell -->
+        <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:28px;">
+          <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:20px;flex-wrap:wrap;">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#2a1500,#5a3000);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:20px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);flex-shrink:0;letter-spacing:1px;">TS</div>
+            <div style="flex:1;min-width:220px;">
+              <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;color:var(--blanco);">Thomas Sowell</h3>
+              <p style="font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;">Economista estadounidense afroamericano. Discípulo de Friedman. Uno de los pensadores vivos más lúcidos sobre el fracaso de las políticas redistributivas y la teoría del capital humano.</p>
+            </div>
           </div>
-        </a>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Economía básica</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2000</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Explicación limpia y sin jerga de cómo funciona una economía de mercado. La mejor introducción a la economía jamás escrita."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Conflicto de visiones</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1987</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Dos visiones del mundo: la trágica (aceptar los límites del hombre) y la utópica (creer que se puede rediseñar todo). Explica todos los debates políticos."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Discriminación y disparidades</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2018</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Por qué las disparidades entre grupos no prueban discriminación — y por qué la izquierda insiste en confundirlas."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Economía para el hombre común</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2020</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Sintesis de décadas de trabajo sobre las falacias populares en política económica."</p>
+            </div>
+          </div>
+        </div>
 
-        <a class="bk" href="https://eet.pixel-online.org/files/etranslation/original/Schumpeter,%20Capitalism,%20Socialism%20and%20Democracy.pdf" target="_blank" style="text-decoration:none;">
-          <div class="bk-cat">Economía Política</div>
-          <div class="bk-inner">
-            <div class="bk-cover" style="background:linear-gradient(135deg,#1a1a1a,#001a2a);"><span>JS</span></div>
-            <div class="bk-info"><h4>Capitalismo, Socialismo y Democracia</h4><p>Joseph Schumpeter</p><span class="bk-tag">Link →</span></div>
+        <!-- Adam Smith -->
+        <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:28px;">
+          <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:20px;flex-wrap:wrap;">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#0a0a0a,#2a2a2a);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:20px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);flex-shrink:0;letter-spacing:1px;">AS</div>
+            <div style="flex:1;min-width:220px;">
+              <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;color:var(--blanco);">Adam Smith</h3>
+              <p style="font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;">Filósofo y economista escocés (1723-1790). Padre de la economía moderna. Fundador del pensamiento liberal clásico. La 'mano invisible' del mercado es su metáfora más famosa.</p>
+            </div>
           </div>
-        </a>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">La riqueza de las naciones</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1776</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"El interés propio de cada uno, canalizado por el mercado, produce mayor bienestar colectivo que cualquier plan centralizado del gobierno."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Teoría de los sentimientos morales</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1759</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Fundamentación moral del liberalismo: los seres humanos son capaces de simpatía, pero necesitan libertad para ejercer la virtud."</p>
+            </div>
+          </div>
+        </div>
 
-        <a class="bk" href="https://ia800600.us.archive.org/35/items/FriedrichAugustVonHayekLaFatalArrogancia/Friedrich%20August%20von%20Hayek%20-%20La%20fatal%20arrogancia_text.pdf" target="_blank" style="text-decoration:none;">
-          <div class="bk-cat">Crítica al Socialismo</div>
-          <div class="bk-inner">
-            <div class="bk-cover" style="background:linear-gradient(135deg,#1a1a1a,#001a2a);"><span>FH</span></div>
-            <div class="bk-info"><h4>La Fatal Arrogancia</h4><p>Friedrich Hayek</p><span class="bk-tag">Link →</span></div>
+        <!-- Frédéric Bastiat -->
+        <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:28px;">
+          <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:20px;flex-wrap:wrap;">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#0a1a0a,#1a3a1a);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:20px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);flex-shrink:0;letter-spacing:1px;">FB</div>
+            <div style="flex:1;min-width:220px;">
+              <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;color:var(--blanco);">Frédéric Bastiat</h3>
+              <p style="font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;">Economista y político francés (1801-1850). Maestro del ensayo económico. Su claridad y humor lo hacen tal vez el mejor divulgador de las ideas de la libertad en toda la historia.</p>
+            </div>
           </div>
-        </a>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">La ley</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1850</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"La ley pervertida se convierte en instrumento de saqueo legal. Manifiesto clásico contra el socialismo, escrito antes de que existiera el término."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Lo que se ve y lo que no se ve</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1850</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"El error económico fundamental: juzgar las políticas por sus efectos visibles ignorando los costos ocultos. La 'falacia de la ventana rota'."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Armonías económicas</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1850</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"El libre mercado no es un caos: es un orden armónico donde los intereses de todos se coordinan sin necesidad de coerción."</p>
+            </div>
+          </div>
+        </div>
 
-        <a class="bk" href="https://archive.org/details/ludwig-von-mises-liberalismo-1927/mode/2up" target="_blank" style="text-decoration:none;">
-          <div class="bk-cat">Liberalismo Clásico</div>
-          <div class="bk-inner">
-            <div class="bk-cover" style="background:linear-gradient(135deg,#1a1a1a,#2a0a00);"><span>AB</span></div>
-            <div class="bk-info"><h4>El Liberalismo según Mises</h4><p>Alberto Benegas Lynch Jr.</p><span class="bk-tag">Link →</span></div>
+        <!-- Henry Hazlitt -->
+        <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:28px;">
+          <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:20px;flex-wrap:wrap;">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#1a0a1a,#3a1a3a);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:20px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);flex-shrink:0;letter-spacing:1px;">HH</div>
+            <div style="flex:1;min-width:220px;">
+              <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;color:var(--blanco);">Henry Hazlitt</h3>
+              <p style="font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;">Periodista económico estadounidense (1894-1993). Su obra popularizó la economía austriaca ante millones de lectores. Escribió con una claridad que ningún académico ha superado.</p>
+            </div>
           </div>
-        </a>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">La economía en una lección</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1946</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"La economía se reduce a mirar los efectos de una política no solo a corto plazo, sino a largo plazo — no solo sobre un grupo, sino sobre todos."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Los fundamentos de la moral</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1964</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Fundamentación ética del liberalismo desde el utilitarismo bien entendido."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">El fracaso de la nueva economía</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1959</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Refutación sistemática de Keynes, línea por línea de la Teoría General."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ayn Rand -->
+        <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:28px;">
+          <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:20px;flex-wrap:wrap;">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#1a1a00,#3a3a00);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:20px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);flex-shrink:0;letter-spacing:1px;">AR</div>
+            <div style="flex:1;min-width:220px;">
+              <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;color:var(--blanco);">Ayn Rand</h3>
+              <p style="font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;">Novelista y filósofa ruso-estadounidense (1905-1982). Fundadora del Objetivismo. Sus novelas son la defensa moral más apasionada del individualismo y el capitalismo jamás escrita.</p>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">La rebelión de Atlas</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1957</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Novela épica: qué pasaría si los creadores de riqueza del mundo se declararan en huelga contra los saqueadores estatistas."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">El manantial</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1943</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"El individualismo radical de un arquitecto que se niega a comprometer su visión ante el colectivismo mediocre."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">La virtud del egoísmo</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1964</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"El egoísmo racional como virtud moral, contra la ética altruista que sacrifica al individuo por el colectivo."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Capitalismo: el ideal desconocido</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1966</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"El capitalismo defendido no como el sistema menos malo, sino como el único sistema moralmente justo."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Karl Popper -->
+        <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:28px;">
+          <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:20px;flex-wrap:wrap;">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#0a0a1a,#1a1a3a);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:20px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);flex-shrink:0;letter-spacing:1px;">KP</div>
+            <div style="flex:1;min-width:220px;">
+              <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;color:var(--blanco);">Karl Popper</h3>
+              <p style="font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;">Filósofo austro-británico (1902-1994). Padre de la epistemología moderna. Su defensa de la 'sociedad abierta' es uno de los pilares intelectuales del liberalismo del siglo XX.</p>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">La sociedad abierta y sus enemigos</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1945</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Crítica devastadora al historicismo de Platón, Hegel y Marx. Defensa de la sociedad abierta como la única compatible con la libertad."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">La miseria del historicismo</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1957</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Refutación filosófica de la idea de que la historia sigue leyes inevitables que justifican la ingeniería social."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ronald Coase -->
+        <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:28px;">
+          <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:20px;flex-wrap:wrap;">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#001a15,#003a30);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:20px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);flex-shrink:0;letter-spacing:1px;">RC</div>
+            <div style="flex:1;min-width:220px;">
+              <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;color:var(--blanco);">Ronald Coase</h3>
+              <p style="font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;">Economista británico-estadounidense (1910-2013). Premio Nobel 1991. Su teoría de los costos de transacción revolucionó la comprensión de por qué existen las empresas y cómo se resuelven los conflictos.</p>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">La empresa, el mercado y la ley</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1988</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Recopilación de sus ensayos fundamentales, incluido 'El problema del costo social' que demuestra por qué la regulación estatal suele ser innecesaria."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">El problema del costo social</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1960</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Ensayo fundacional: si los derechos de propiedad están bien definidos, los individuos pueden resolver las externalidades sin intervención estatal."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Antonio Escohotado -->
+        <div style="background:var(--gris-oscuro);border:1px solid var(--gris-borde);border-radius:14px;padding:28px;">
+          <div style="display:flex;align-items:flex-start;gap:20px;margin-bottom:20px;flex-wrap:wrap;">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#1a0a0a,#3a1515);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:20px;color:var(--naranja);border:1px solid rgba(232,93,0,0.3);flex-shrink:0;letter-spacing:1px;">AE</div>
+            <div style="flex:1;min-width:220px;">
+              <h3 style="font-family:Bebas Neue,sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:6px;color:var(--blanco);">Antonio Escohotado</h3>
+              <p style="font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;">Filósofo, ensayista y sociólogo español (1941-2021). Su recorrido intelectual —del marxismo al liberalismo— es uno de los itinerarios filosóficos más honestos y documentados del siglo XX en español.</p>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Los enemigos del comercio</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">2008–2016</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Trilogía monumental: historia moral de las ideas hostiles al comercio y a la propiedad privada, desde la Antigüedad hasta el siglo XXI."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Rameras y esposas</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1993</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Historia de las relaciones entre los sexos y de cómo la moralidad occidental ha ido evolucionando junto con el comercio."</p>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-left:3px solid var(--naranja);border-radius:6px;padding:14px 18px;">
+              <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+                <span style="font-family:Bebas Neue,sans-serif;font-size:17px;letter-spacing:0.5px;color:var(--blanco);line-height:1.2;">Historia general de las drogas</span>
+                <span style="font-family:DM Mono,monospace;font-size:11px;color:var(--naranja);letter-spacing:1px;">1989</span>
+              </div>
+              <p style="font-size:13px;color:var(--muted);line-height:1.55;font-weight:300;font-style:italic;">"Obra magna sobre las drogas, la libertad individual y el fracaso moral y práctico del prohibicionismo."</p>
+            </div>
+          </div>
+        </div>
+
 
       </div>
     </div>
+
 
     <!-- PODCASTS -->
     <div id="tab-podcasts" style="display:none;">
