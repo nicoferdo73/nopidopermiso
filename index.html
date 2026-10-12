@@ -14,7 +14,7 @@ body{background:#e8e3dc;color:#1a1a1a;font-family:DM Sans,sans-serif;overflow-x:
 nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;padding:18px 32px;background:rgba(30,28,26,0.97);border-bottom:1px solid var(--gris-borde);}
 .logo{font-family:Bebas Neue,sans-serif;font-size:22px;color:#ffffff;cursor:pointer;text-decoration:none;flex-shrink:0;margin-right:32px;}
 .logo span{color:var(--naranja);}
-.nav-links{display:flex;align-items:center;gap:24px;list-style:none;margin:0 auto;padding-right:24px;}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none;margin-left:auto;}
 .nav-links li a{color:#ccc;font-size:13px;font-weight:500;text-decoration:none;cursor:pointer;white-space:nowrap;}
 .nav-links li a:hover{color:#fff;}
 .nav-btn{background:var(--naranja);color:var(--blanco)!important;padding:8px 16px;border-radius:6px;font-weight:600!important;font-size:13px;text-decoration:none;}
@@ -24,7 +24,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:cen
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px 60px;position:relative;}
 .hero-grid{display:grid;grid-template-columns:35% 65%;gap:40px;align-items:center;width:100%;max-width:1200px;}
-.hero-content{text-align:center;}
+.hero-content{display:flex;flex-direction:column;align-items:center;text-align:center;}
+.hero-content h1{text-align:center;}
+.hero-content p{margin-left:auto;margin-right:auto;}
 .firewall-banner{position:relative;display:block;text-decoration:none;border-radius:14px;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s;box-shadow:0 6px 24px rgba(0,0,0,0.12);background:#1a1a1a;}
 .firewall-banner:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(232,93,0,0.25);}
 .firewall-banner img{width:100%;display:block;height:auto;}
@@ -271,9 +273,7 @@ textarea.form-input{resize:vertical;min-height:120px;}
     <li><a data-page="plataformas">Plataformas</a></li>
     <li><a data-page="contacto">Contacto</a></li>
     <li><a data-page="vallas">La Valla NPP</a></li>
-    <li class="nav-btn-mobile"><a data-page="modulos" class="nav-btn">Dar la batalla cultural ahora</a></li>
   </ul>
-  <a data-page="modulos" class="nav-btn nav-btn-desktop">Dar la batalla cultural ahora</a>
 </nav>
 <div class="nav-overlay" id="nav-overlay"></div>
 
