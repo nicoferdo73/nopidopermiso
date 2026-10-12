@@ -23,6 +23,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:cen
 
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px 60px;position:relative;}
+.hero-grid{display:grid;grid-template-columns:35% 65%;gap:40px;align-items:center;width:100%;max-width:1200px;}
+.hero-content{text-align:center;}
+.firewall-banner{position:relative;display:block;text-decoration:none;border-radius:14px;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s;box-shadow:0 6px 24px rgba(0,0,0,0.12);background:#1a1a1a;}
+.firewall-banner:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(232,93,0,0.25);}
+.firewall-banner img{width:100%;display:block;height:auto;}
+.firewall-badge{position:absolute;top:12px;left:12px;background:var(--naranja);color:#fff;font-family:DM Mono,monospace;font-size:11px;font-weight:700;letter-spacing:2px;padding:5px 10px;border-radius:4px;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
+.firewall-cta{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.85),rgba(0,0,0,0));color:#fff;font-family:DM Sans,sans-serif;font-size:13px;font-weight:600;padding:24px 16px 12px;text-align:center;letter-spacing:0.5px;}
+@media(max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:28px;}
+  .firewall-banner{max-width:360px;margin:0 auto;}
+}
 .hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(232,93,0,0.15) 0%,transparent 70%);pointer-events:none;}
 .hero h1{font-family:Bebas Neue,sans-serif;font-size:clamp(60px,10vw,118px);line-height:0.92;letter-spacing:2px;margin-bottom:28px;color:#1a1a1a;}
 .hero h1 .acc{color:var(--naranja);}
@@ -275,9 +286,21 @@ textarea.form-input{resize:vertical;min-height:120px;}
 <!-- HOME -->
 <div id="home" class="page active">
   <div class="hero">
-    <h1>LA <span class="acc">LIBERTAD</span><br>NO SE <span class="acc">NEGOCIA</span></h1>
-    <p>Aprende, practica y lleva la batalla cultural con argumentos liberales claros y concretos. Sin permiso de nadie.</p>
-    <button class="btn btn-naranja" data-page="modulos">Dar la batalla cultural ahora</button>
+    <div class="hero-grid">
+      <!-- Columna izquierda: Banner Firewall Semántico -->
+      <a href="firewall-semantico.pdf" target="_blank" rel="noopener" class="firewall-banner" id="firewall-banner">
+        <span class="firewall-badge">NUEVO</span>
+        <img src="firewall-semantico.png" alt="Firewall Semántico por la Libertad">
+        <span class="firewall-cta">Descarga el PDF →</span>
+      </a>
+
+      <!-- Columna derecha: Hero existente -->
+      <div class="hero-content">
+        <h1>LA <span class="acc">LIBERTAD</span><br>NO SE <span class="acc">NEGOCIA</span></h1>
+        <p>Aprende, practica y lleva la batalla cultural con argumentos liberales claros y concretos. Sin permiso de nadie.</p>
+        <button class="btn btn-naranja" data-page="modulos">Dar la batalla cultural ahora</button>
+      </div>
+    </div>
   </div>
 
   <!-- BANNER DESTACADO: La Valla NPP -->
