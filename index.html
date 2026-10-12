@@ -12,9 +12,9 @@ body{background:#e8e3dc;color:#1a1a1a;font-family:DM Sans,sans-serif;overflow-x:
 .page{display:none;min-height:100vh;}
 .page.active{display:block;}
 nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;padding:18px 32px;background:rgba(30,28,26,0.97);border-bottom:1px solid var(--gris-borde);}
-.logo{font-family:Bebas Neue,sans-serif;font-size:22px;color:#ffffff;cursor:pointer;text-decoration:none;flex-shrink:0;}
+.logo{font-family:Bebas Neue,sans-serif;font-size:22px;color:#ffffff;cursor:pointer;text-decoration:none;flex-shrink:0;margin-right:32px;}
 .logo span{color:var(--naranja);}
-.nav-links{display:flex;align-items:center;gap:24px;list-style:none;margin:0 auto;}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none;margin:0 auto;padding-right:24px;}
 .nav-links li a{color:#ccc;font-size:13px;font-weight:500;text-decoration:none;cursor:pointer;white-space:nowrap;}
 .nav-links li a:hover{color:#fff;}
 .nav-btn{background:var(--naranja);color:var(--blanco)!important;padding:8px 16px;border-radius:6px;font-weight:600!important;font-size:13px;text-decoration:none;}
@@ -221,12 +221,6 @@ textarea.form-input{resize:vertical;min-height:120px;}
 #ana-drop:hover{border-color:var(--naranja);background:#e4dfd6;}
 #ana-drop.dragover{border-color:var(--naranja);background:rgba(232,93,0,0.08);}
 
-/* Banner destacado de La Valla NPP en Home */
-#banner-valla:hover{border-color:var(--naranja)!important;transform:translateY(-2px);box-shadow:0 8px 32px rgba(232,93,0,0.15)!important;}
-@media(max-width:700px){
-  #banner-valla > div{grid-template-columns:1fr!important;}
-  #banner-valla img{max-height:220px;}
-}
 
 /* La Valla NPP - 3 columnas responsive */
 @media(max-width:780px){
